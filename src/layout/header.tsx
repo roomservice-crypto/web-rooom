@@ -2,7 +2,7 @@ import Logo from "@/svgs/logo.svg";
 
 export default function Header() {
   return (
-    <header className=" absolute top-0 left-0 right-0 flex justify-between px-[104px] py-3 text-white">
+    <header className="absolute top-0 left-0 right-0 flex justify-between px-[104px] py-3 text-white">
       <span>
         <Logo />
       </span>

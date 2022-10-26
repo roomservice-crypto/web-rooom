@@ -1,4 +1,18 @@
+import { useEffect, useState } from "react";
+
 export default function SectionComponents() {
+  const [offsetY, setOffsetY] = useState(360);
+
+  // useEffect(() => {
+  //   const scrollHandler = () => {
+  //     console.log("[suni scroll]", window.scrollY);
+  //     setOffsetY()
+  //   };
+  //   window.addEventListener("scroll", scrollHandler);
+
+  //   return () => window.removeEventListener("scroll", scrollHandler);
+  // }, []);
+
   return (
     <section className="bg-[#0A0517] rounded-t-[80px] -mt-[120px] px-[80px] pt-[144px] text-white pb-[999px] relative">
       <h2 className="text-[60px] font-popp font-semibold text-center">

@@ -1,36 +1,30 @@
 import Spline from "@splinetool/react-spline";
+import Logo from "@/assets/logo.svg";
+import Web3 from "@/assets/Web3.svg";
 
 export default function HeroScene() {
   return (
-    <section
-      className="w-full h-[100vh]"
-      style={{
-        background:
-          "linear-gradient(204.64deg, #4F46E5 15.72%, #A855F7 84.28%)",
-      }}
-    >
-      <div className="top-[84px] w-full absolute">
-        <div className="w-[1022px] mx-auto text-white">
-          <h1 className="text-[60px] font-popp font-semibold text-center">
-            The easiest way to build your own Web3 on-chain space
+    <section className="h-[900px] bg-slate-100 overflow-hidden relative">
+      <div className="w-[1440px] mx-auto h-full overflow-auto">
+        <div className="absolute w-[2500] h-[900px] -left-[60px]">
+          <Spline scene="https://prod.spline.design/MRt17A31cw5xjn5J/scene.splinecode" />
+        </div>
+
+        <div className="ml-[80px] mt-[164px] w-[655px]">
+          <Logo />
+          <h1 className="font-unbounded text-[60px] leading-[64px] mt-[17px]">
+            <span>Customize your</span>
+            <br />
+            <Web3 />
+            <span>wonderland and lifestyle</span>
           </h1>
-          <p className="mt-6 opacity-60 text-lg font-popp text-center">
+          <p className="font-medium mt-4 text-lg leading-6">
             Room Service is the protocol that powers Web3 room facilities,
             enabling users to build, launch and host their own blockchain-based
             spaces without any coding experience.
           </p>
-          <div className="text-center mt-8">
-            <button className="font-popp bg-[#0A0517] py-4 px-6 rounded-[99px]">
-              Explore Demo
-            </button>
-            <button className="ml-[20px] font-popp bg-opacity-10 bg-white py-4 px-6 rounded-[99px] border border-opacity-20 border-white">
-              Learn More
-            </button>
-          </div>
         </div>
       </div>
-
-      <Spline scene="https://prod.spline.design/MRt17A31cw5xjn5J/scene.splinecode" />
     </section>
   );
 }

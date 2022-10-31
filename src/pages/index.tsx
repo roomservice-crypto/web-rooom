@@ -1,4 +1,9 @@
+import EndSection from "@/components/home/EndSection";
+import FeatureScene from "@/components/home/FeatureScene";
 import HeroScene from "@/components/home/HeroScene";
+import LockedCard from "@/components/home/LockedCard";
+import LockedStarts from "@/components/home/LockedStarts";
+import RoomBanner from "@/components/home/RoomBanner";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -12,6 +17,13 @@ const Home: NextPage = () => {
 
       <main>
         <HeroScene />
+        <RoomBanner className="bg-[#0A0517]" />
+        <FeatureScene />
+        <LockedStarts />
+        <RoomBanner className="bg-[#FEFBF2]" />
+        <LockedCard />
+        <RoomBanner className="bg-[#FEFBF2]" />
+        <EndSection />
       </main>
     </>
   );

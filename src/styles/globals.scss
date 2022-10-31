@@ -3,3 +3,8 @@
 @tailwind utilities;
 @import "./fonts/unbounded.scss";
 @import "./fonts/poppins.scss";
+@import "./fonts/fontspring.scss";
+
+body {
+  @apply text-[#0A0517];
+}

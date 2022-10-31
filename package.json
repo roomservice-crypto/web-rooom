@@ -15,9 +15,12 @@
     "@splinetool/r3f-spline": "^1.0.2",
     "@splinetool/react-spline": "^2.2.3",
     "@splinetool/runtime": "^0.9.130",
+    "clsx": "^1.2.1",
+    "gsap": "npm:@gsap/business@^3.11.3",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-spring": "^9.5.5",
     "three": "^0.145.0"
   },
   "devDependencies": {

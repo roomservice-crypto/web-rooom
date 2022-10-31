@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
         unbounded: ["Unbounded", ...defaultTheme.fontFamily.sans],
+        fontspring: ["Fontspring", ...defaultTheme.fontFamily.sans],
       },
     },
   },

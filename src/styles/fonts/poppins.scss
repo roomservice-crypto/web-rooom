@@ -1,13 +1,13 @@
 // @font-face {
 //   font-family: "Poppins";
 //   src: url("/fonts/Poppins/Poppins-Black.ttf") ;
-//   font-weight: Black;
+//   font-weight: 900;
 // }
-// @font-face {
-//   font-family: "Poppins";
-//   src: url("/fonts/Poppins/Poppins-Bold.ttf") ;
-//   font-weight: Bold;
-// }
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Poppins-Bold.ttf") ;
+  font-weight: Bold;
+}
 // @font-face {
 //   font-family: "Poppins";
 //   src: url("/fonts/Poppins/Poppins-ExtraLight.ttf") ;
@@ -21,7 +21,7 @@
 @font-face {
   font-family: "Poppins";
   src: url("/fonts/Poppins/Poppins-Medium.ttf");
-  font-weight: Medium;
+  font-weight: 500;
 }
 @font-face {
   font-family: "Poppins";

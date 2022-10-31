@@ -1,4 +1,5 @@
 import Tag from "@/components/common/Tag";
+import Image from "next/image";
 import Button from "../common/Button";
 
 export default function LockedCard() {
@@ -7,7 +8,7 @@ export default function LockedCard() {
       <div className="flex">
         <div className="flex-1 flex justify-end bg-[#0A0517]">
           <div className="w-[720px] px-[77px] py-[188px]">
-            <img
+            <Image
               src="/assets/home/feature/01.png"
               className="top-[188px] sticky"
             />

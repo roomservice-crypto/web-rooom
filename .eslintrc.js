@@ -22,7 +22,8 @@ module.exports = {
 		'react/jsx-uses-react': 'off',
 		'react/react-in-jsx-scope': 'off',
 		'@typescript-eslint/no-floating-promises': 'off',
-		'@typescript-eslint/promise-function-async': 'off'
+		'@typescript-eslint/promise-function-async': 'off',
+		'react/no-unescaped-entities': 'off'
 	},
 	settings: {
 		react: {

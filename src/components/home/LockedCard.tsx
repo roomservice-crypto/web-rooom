@@ -2,6 +2,7 @@ import Tag from '@/components/common/Tag'
 import { useEffect, useRef, useState } from 'react'
 import Button from '../common/Button'
 import TransitionCard from '../common/TransitionCard'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export default function LockedCard() {
 	const [activeItem, setActiveItem] = useState(0)
@@ -9,6 +10,20 @@ export default function LockedCard() {
 	const article2 = useRef<HTMLElement>(null)
 	const article3 = useRef<HTMLElement>(null)
 	const article4 = useRef<HTMLElement>(null)
+	const stickyElement = useRef<HTMLDivElement>(null)
+	const stickyContainer = useRef<HTMLDivElement>(null)
+
+	useEffect(() => {
+		// fix sticky not working under GSAP ScrollSmoother
+		ScrollTrigger.create({
+			trigger: stickyContainer.current,
+			start: 'top top',
+			endTrigger: stickyContainer.current,
+			end: 'bottom bottom',
+			pin: stickyElement.current,
+			pinSpacing: false
+		})
+	}, [])
 
 	useEffect(() => {
 		if (article1.current && article2.current && article3.current && article4.current) {
@@ -30,7 +45,7 @@ export default function LockedCard() {
 				}
 
 				const centerIndex = centerArticle()
-				console.log('[suni centerArticle]', centerIndex)
+				console.log('[suni centerIndex]', centerIndex)
 
 				setActiveItem(centerIndex)
 			}
@@ -45,21 +60,21 @@ export default function LockedCard() {
 		<section>
 			<div className='flex'>
 				<div className='flex-1 flex justify-end bg-[#0A0517]'>
-					<div className='w-[720px] px-[77px] py-[188px]'>
-						<figure className='top-[188px] sticky w-[566px] h-[566px]'>
+					<div className='w-[720px] px-[77px] py-[188px]' ref={stickyContainer}>
+						<div className='w-[566px] h-[566px] relative' ref={stickyElement}>
 							<TransitionCard show={activeItem === 1}>
-								<img src='/assets/home/feature/01.png' className='absolute top-0' />
+								<img src='/assets/home/feature/01.png' className='absolute top-0 w-[566px] h-[566px]' />
 							</TransitionCard>
 							<TransitionCard show={activeItem === 2}>
-								<img src='/assets/home/feature/02.png' className='absolute top-0' />
+								<img src='/assets/home/feature/02.png' className='absolute top-0 w-[566px] h-[566px]' />
 							</TransitionCard>
 							<TransitionCard show={activeItem === 3}>
-								<img src='/assets/home/feature/03.png' className='absolute top-0' />
+								<img src='/assets/home/feature/03.png' className='absolute top-0 w-[566px] h-[566px]' />
 							</TransitionCard>
 							<TransitionCard show={activeItem === 4}>
-								<img src='/assets/home/feature/04.png' className='absolute top-0' />
+								<img src='/assets/home/feature/04.png' className='absolute top-0 w-[566px] h-[566px]' />
 							</TransitionCard>
-						</figure>
+						</div>
 					</div>
 				</div>
 				<div className='flex-1 bg-[#B9A9FB]'>

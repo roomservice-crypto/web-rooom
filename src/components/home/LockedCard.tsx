@@ -45,7 +45,6 @@ export default function LockedCard() {
 				}
 
 				const centerIndex = centerArticle()
-				console.log('[suni centerIndex]', centerIndex)
 
 				setActiveItem(centerIndex)
 			}

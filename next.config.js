@@ -2,7 +2,6 @@ const withTM = require('next-transpile-modules')(['three', 'gsap'])
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	reactStrictMode: false,
 	swcMinify: true,
 	webpack(config) {
 		config.module.rules.push({

@@ -23,7 +23,9 @@ module.exports = {
 		'react/react-in-jsx-scope': 'off',
 		'@typescript-eslint/no-floating-promises': 'off',
 		'@typescript-eslint/promise-function-async': 'off',
-		'react/no-unescaped-entities': 'off'
+		'react/no-unescaped-entities': 'off',
+		'react/no-unknown-property': 'off',
+		'@typescript-eslint/prefer-ts-expect-error': 'off'
 	},
 	settings: {
 		react: {

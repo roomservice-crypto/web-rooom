@@ -1,13 +1,13 @@
-import Spline from '@splinetool/react-spline'
 import Logo from '@/svgs/logo.svg'
 import Web3 from '@/svgs/Web3.svg'
 import Button from '@/components/common/Button'
+import ChainScene from './scenes/ChainScene'
 
 export default function HeroScene() {
 	return (
 		<section className='h-[900px] bg-slate-100 overflow-hidden relative'>
 			<div className='absolute w-[2500px] h-[900px] translate-x-[-800px] left-[50%]'>
-				{/* <Spline scene="https://prod.spline.design/MRt17A31cw5xjn5J/scene.splinecode" /> */}
+				<ChainScene />
 			</div>
 
 			<div className='w-[1440px] mx-auto h-full overflow-auto'>

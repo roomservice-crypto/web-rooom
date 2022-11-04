@@ -59,24 +59,24 @@ export default function LockedCard() {
 		<section>
 			<div className='flex'>
 				<div className='flex-1 flex justify-end bg-[#0A0517]'>
-					<div className='w-[720px] px-[77px] py-[188px]' ref={stickyContainer}>
-						<div className='w-[566px] h-[566px] relative' ref={stickyElement}>
+					<div className='w-[720px] py-[135px]' ref={stickyContainer}>
+						<div className='w-[720px] h-[720px] relative' ref={stickyElement}>
 							<TransitionCard show={activeItem === 1}>
-								<img src='/assets/home/feature/01.png' className='absolute top-0 w-[566px] h-[566px]' />
+								<img src='/assets/home/feature/01.png' className='absolute top-0 w-[720px] h-[720px]' />
 							</TransitionCard>
 							<TransitionCard show={activeItem === 2}>
-								<img src='/assets/home/feature/02.png' className='absolute top-0 w-[566px] h-[566px]' />
+								<img src='/assets/home/feature/02.png' className='absolute top-0 w-[720px] h-[720px]' />
 							</TransitionCard>
 							<TransitionCard show={activeItem === 3}>
-								<img src='/assets/home/feature/03.png' className='absolute top-0 w-[566px] h-[566px]' />
+								<img src='/assets/home/feature/03.png' className='absolute top-0 w-[720px] h-[720px]' />
 							</TransitionCard>
 							<TransitionCard show={activeItem === 4}>
-								<img src='/assets/home/feature/04.png' className='absolute top-0 w-[566px] h-[566px]' />
+								<img src='/assets/home/feature/04.png' className='absolute top-0 w-[720px] h-[720px]' />
 							</TransitionCard>
 						</div>
 					</div>
 				</div>
-				<div className='flex-1 bg-[#B9A9FB]'>
+				<div className='flex-1 bg-secondary'>
 					<div className='w-[720px]'>
 						<article className='p-20' ref={article1}>
 							<h3 className='font-unbounded font-[900] text-[60px] leading-[64px]'>

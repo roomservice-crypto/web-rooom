@@ -21,7 +21,7 @@ export default function LockedStarts() {
 	return (
 		<section>
 			<div className='flex'>
-				<div className='flex-1 flex justify-end  bg-[#B9A9FB]'>
+				<div className='flex-1 flex justify-end bg-secondary'>
 					<div className='p-[80px] w-[720px]' ref={stickyContainer}>
 						<div className='' ref={stickyElement}>
 							<span className='font-[900] font-unbounded text-[60px] leading-[64px]'>

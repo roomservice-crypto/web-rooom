@@ -5,7 +5,7 @@ import Button from '@/components/common/Button'
 
 export default function HeroScene() {
 	return (
-		<section className='h-[900px] bg-slate-100 overflow-hidden relative'>
+		<section className='h-[900px] overflow-hidden relative'>
 			<div className='absolute w-[2500px] h-[900px] translate-x-[-800px] left-[50%]'>
 				{/* <Spline scene="https://prod.spline.design/MRt17A31cw5xjn5J/scene.splinecode" /> */}
 			</div>
@@ -19,7 +19,7 @@ export default function HeroScene() {
 						<Web3 />
 						<span>wonderland and lifestyle</span>
 					</h1>
-					<p className='font-medium mt-4 text-lg leading-6 opacity-60'>
+					<p className='font-medium mt-4 text-lg leading-6 opacity-60 w-[613px]'>
 						Room Service is the protocol that powers Web3 room facilities, enabling users to build, launch and host
 						their own blockchain-based spaces without any coding experience.
 					</p>

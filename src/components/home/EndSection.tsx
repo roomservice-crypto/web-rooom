@@ -14,10 +14,10 @@ export default function EndSection() {
 						<Key />
 						<h3 className='mt-6 font-unbounded font-[900] leading-[36px] text-8'>
 							<svg width='300' height='72' fill='none' xmlns='http://www.w3.org/2000/svg'>
-								<text x='0' y='28' stroke='#131313' fontSize='30' strokeWidth='1' fill='#FAE76C'>
+								<text x='0' y='28' stroke='#131313' fontSize='30' strokeWidth='1.2' fill='#FAE76C'>
 									Emphasize
 								</text>
-								<text x='0' y='64' stroke='#131313' fontSize='30' strokeWidth='1' fill='#FAE76C'>
+								<text x='0' y='64' stroke='#131313' fontSize='30' strokeWidth='1.2' fill='#FAE76C'>
 									Ownership
 								</text>
 							</svg>
@@ -31,10 +31,10 @@ export default function EndSection() {
 						<Elements />
 						<h3 className='mt-6 font-unbounded font-[900] leading-[36px] text-8'>
 							<svg width='300' height='72' fill='none' xmlns='http://www.w3.org/2000/svg'>
-								<text x='0' y='28' stroke='#131313' fontSize='30' strokeWidth='1' fill='#FAE76C'>
+								<text x='0' y='28' stroke='#131313' fontSize='30' strokeWidth='1.2' fill='#FAE76C'>
 									Provide
 								</text>
-								<text x='0' y='64' stroke='#131313' fontSize='30' strokeWidth='1' fill='#FAE76C'>
+								<text x='0' y='64' stroke='#131313' fontSize='30' strokeWidth='1.2' fill='#FAE76C'>
 									Composability
 								</text>
 							</svg>
@@ -48,10 +48,10 @@ export default function EndSection() {
 						<Transform />
 						<h3 className='mt-6 font-unbounded font-[900] leading-[36px] text-8'>
 							<svg width='320' height='72' fill='none' xmlns='http://www.w3.org/2000/svg'>
-								<text x='0' y='28' stroke='#131313' fontSize='30' strokeWidth='1' fill='#FAE76C'>
+								<text x='0' y='28' stroke='#131313' fontSize='30' strokeWidth='1.2' fill='#FAE76C'>
 									Advocate
 								</text>
-								<text x='0' y='64' stroke='#131313' fontSize='30' strokeWidth='1' fill='#FAE76C'>
+								<text x='0' y='64' stroke='#131313' fontSize='30' strokeWidth='1.2' fill='#FAE76C'>
 									Interoperability
 								</text>
 							</svg>

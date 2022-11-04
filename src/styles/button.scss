@@ -1,0 +1,11 @@
+.button {
+	@apply text-[#0A0517] border border-[#0A0517] rounded-lg px-6 py-3 flex items-center;
+	box-shadow: 5px 5px 0px #0a0517;
+  transition: all 0.1s ease;
+
+	&:hover {
+		box-shadow: none;
+		background-color: #131313 !important;
+    color: white !important;
+	}
+}

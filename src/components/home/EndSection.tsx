@@ -10,7 +10,7 @@ export default function EndSection() {
 		<>
 			<section>
 				<div className='w-[1440px] mx-auto px-20 py-16 flex justify-between'>
-					<div className='w-[410px] bg-white border-2 border-dark rounded-3xl py-8 px-6'>
+					<div className='w-[414px] bg-white border-2 border-dark rounded-3xl py-8 px-6'>
 						<Key />
 						<h3 className='mt-6 font-unbounded font-[900] leading-[36px] text-8'>
 							<svg width='300' height='72' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -22,12 +22,12 @@ export default function EndSection() {
 								</text>
 							</svg>
 						</h3>
-						<p className=' font-[500] leading-[24px] mt-4 opacity-60'>
+						<p className=' font-[500] leading-[24px] mt-4 opacity-60 '>
 							Room Service is designed to build a personal environment to build your own content, where everyone owns
 							and controls their own room
 						</p>
 					</div>
-					<div className='w-[410px] bg-white border-2 border-dark rounded-3xl py-8 px-6'>
+					<div className='w-[414px] bg-white border-2 border-dark rounded-3xl py-8 px-6'>
 						<Elements />
 						<h3 className='mt-6 font-unbounded font-[900] leading-[36px] text-8'>
 							<svg width='300' height='72' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -44,7 +44,7 @@ export default function EndSection() {
 							free combination
 						</p>
 					</div>
-					<div className='w-[410px] bg-white border-2 border-dark rounded-3xl py-8 px-6'>
+					<div className='w-[414px] bg-white border-2 border-dark rounded-3xl py-8 px-6'>
 						<Transform />
 						<h3 className='mt-6 font-unbounded font-[900] leading-[36px] text-8'>
 							<svg width='320' height='72' fill='none' xmlns='http://www.w3.org/2000/svg'>

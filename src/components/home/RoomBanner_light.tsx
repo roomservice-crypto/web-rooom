@@ -13,16 +13,16 @@ export default function RoomBanner() {
 	})
 
 	return (
-		<svg height='180px' width='100%' className={clsx('text-[170px] font-bold font-fontspring  bg-primary-25')}>
+		<svg height='180px' width='100%' className={clsx('text-[170px] font-bold font-fontspring  bg-primary-500')}>
 			<animated.svg x={x} width={796 * 10}>
 				{Array(10)
 					.fill(1)
 					.map((item, i) => (
 						<React.Fragment key={i}>
-							<text x={i * 796 + 16} y='152' fill='#FAE76C'>
+							<text x={i * 796 + 16} y='152' fill='#131313'>
 								ROOM
 							</text>
-							<text x={i * 796 + 316} y='152' fill='none' stroke='#FAE76C' strokeWidth='1'>
+							<text x={i * 796 + 316} y='152' fill='none' stroke='#131313' strokeWidth='1'>
 								• ROOM •
 							</text>
 						</React.Fragment>

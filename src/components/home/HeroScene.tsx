@@ -2,36 +2,16 @@ import Spline from '@splinetool/react-spline'
 import Logo from '@/svgs/logo.svg'
 import Web3 from '@/svgs/Web3.svg'
 import Button from '@/components/common/Button'
-import { useEffect, useRef } from 'react'
 
 export default function HeroScene() {
-	const coverRef = useRef<HTMLDivElement>(null)
-	const canvasRef = useRef<HTMLCanvasElement>(null)
-
-	// useEffect(() => {
-	// 	function mouseoverPass(event: MouseEvent) {
-	// 		console.log('[suni in]', event)
-
-	// 		// canvasRef.current!.dispatchEvent(event)
-	// 	}
-	// 	coverRef.current!.addEventListener('mouseover', mouseoverPass)
-
-	// 	canvasRef.current!.addEventListener('mouseover', () => {
-	// 		console.log('[suni hover]')
-	// 	})
-
-	// 	return () => coverRef.current!.removeEventListener('mouseover', mouseoverPass)
-	// }, [])
-
 	return (
 		<section className='h-[900px] overflow-hidden bg-[#D0D5DD]'>
 			<div className='w-[1440px] mx-auto h-full overflow-auto relative'>
 				<div className='absolute w-full h-[900px]'>
-					<Spline ref={canvasRef} scene='https://prod.spline.design/FHV4M0cax6Jq53nl/scene.splinecode' />
+					<Spline scene='https://prod.spline.design/FHV4M0cax6Jq53nl/scene.splinecode' />
 					<div
-						ref={coverRef}
 						style={{ boxShadow: 'inset  0 0 30px 50px #D0D5DD' }}
-						className='absolute  top-0 h-full w-full'></div>
+						className='absolute  top-0 h-full w-full pointer-events-none'></div>
 				</div>
 
 				<div className='ml-[80px] mt-[164px] w-[655px] relative'>

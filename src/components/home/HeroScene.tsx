@@ -7,7 +7,7 @@ export default function HeroScene() {
 	return (
 		<section className='h-[900px] overflow-hidden relative'>
 			<div className='absolute w-[2500px] h-[900px] translate-x-[-800px] left-[50%]'>
-				{/* <Spline scene="https://prod.spline.design/MRt17A31cw5xjn5J/scene.splinecode" /> */}
+				<Spline scene='https://prod.spline.design/MRt17A31cw5xjn5J/scene.splinecode' />
 			</div>
 
 			<div className='w-[1440px] mx-auto h-full overflow-auto'>

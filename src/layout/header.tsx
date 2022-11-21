@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Header() {
 	return (
-		<header className='absolute top-0 left-0 right-0 flex h-[60px] bg-white bg-opacity-20 px-20 backdrop-blur justify-between items-center'>
+		<header className='fixed z-10 top-0 left-0 right-0 flex h-[60px] bg-white bg-opacity-20 px-20 backdrop-blur justify-between items-center'>
 			<span className='flex items-center'>
 				<Image src='/favicon.png' width='36px' height='36px' />
 				<Room className='ml-[10px] mt-1' />

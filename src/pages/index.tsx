@@ -1,3 +1,4 @@
+import Map from '@/components/home/Map'
 import Header from '@/layout/header'
 import type { NextPage } from 'next'
 import Head from 'next/head'
@@ -12,7 +13,9 @@ const Home: NextPage = () => {
 
 			<Header />
 
-			<main className='h-[100vh] bg-yellow-400'></main>
+			<main className='h-[100vh] bg-yellow-200'>
+				<Map />
+			</main>
 		</>
 	)
 }

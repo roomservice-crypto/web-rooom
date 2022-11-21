@@ -1,10 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './fonts/unbounded.scss';
+// @import './fonts/unbounded.scss';
 @import './fonts/poppins.scss';
-@import './fonts/fontspring.scss';
-@import './button.scss';
+// @import './fonts/fontspring.scss';
+@import './fonts/criteria.scss';
 
 body {
 	@apply text-[#0A0517];

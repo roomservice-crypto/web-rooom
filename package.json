@@ -11,11 +11,6 @@
 	},
 	"dependencies": {
 		"@headlessui/react": "^1.7.3",
-		"@react-three/drei": "^9.37.1",
-		"@react-three/fiber": "^8.8.10",
-		"@splinetool/r3f-spline": "^1.0.2",
-		"@splinetool/react-spline": "^2.2.3",
-		"@splinetool/runtime": "^0.9.130",
 		"clsx": "^1.2.1",
 		"gsap": "npm:@gsap/business@^3.11.3",
 		"next": "12.3.1",

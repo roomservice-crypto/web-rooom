@@ -1,4 +1,4 @@
-const withTM = require('next-transpile-modules')(['three', 'gsap'])
+// const withTM = require('next-transpile-modules')(['three', 'gsap'])
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -14,4 +14,4 @@ const nextConfig = {
 	}
 }
 
-module.exports = withTM(nextConfig)
+module.exports = nextConfig

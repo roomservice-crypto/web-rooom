@@ -5,8 +5,8 @@ import Record from '@/svgs/record.svg'
 import ArrowRight from '@/svgs/arrow-right.svg'
 import Close from '@/svgs/close.svg'
 
-export default function Badge(props: { className: string }) {
-	const [active, setActive] = useState(true)
+export default function Badge(props: { className: string; active?: boolean }) {
+	const [active, setActive] = useState(false)
 	const svgRef = useRef<SVGSVGElement>(null)
 
 	useEffect(() => {
@@ -28,8 +28,8 @@ export default function Badge(props: { className: string }) {
 
 	return (
 		<>
-			<TransitionBadge show={active}>
-				<div className='top-[92px] left-20 fixed w-[448px] h-[492px] border-2 border-black rounded-[32px] bg-white overflow-hidden'>
+			<TransitionBadge show={active} className='top-[92px] fixed' toClassName='left-20' fromClassName='left-0'>
+				<div className='w-[448px] h-[492px] border-2 border-black rounded-[32px] bg-white overflow-hidden'>
 					<div className='bg-[#BAEDBD] flex justify-end p-6 h-[120px] border-b-2 border-dashed border-black'>
 						<Close className='cursor-pointer' />
 					</div>
@@ -71,7 +71,7 @@ export default function Badge(props: { className: string }) {
 				<div
 					className={clsx(
 						'bg-white shadow-lg absolute rounded-lg flex px-3 py-[10px] min-w-[160px] -top-14 translate-x-[-50%] left-[50%]  transition-all',
-						active ? '-top-24 opacity-100 scale-95' : 'opacity-0 scale-100'
+						active ? '-top-24 opacity-100 scale-100' : 'opacity-0 scale-95'
 					)}>
 					<span className='rounded-full bg-green-400 w-9 h-9 items-center mr-3'></span>
 					<div>

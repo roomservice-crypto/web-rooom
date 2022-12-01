@@ -2,8 +2,10 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import mapboxgl from 'mapbox-gl'
 import { useEffect, useRef, useState } from 'react'
 import example from '../assets/example.json'
+import Location from '@/components/common/loaction'
+import { renderToString } from 'react-dom/server'
 
-const PUBLIC_KEY = 'pk.eyJ1IjoieXlzdW5pIiwiYSI6ImNsYjRzcHE2MjA2MHYzcnBqMTA2NWI4YWoifQ.Wg2EqZN4qi-y6pdffqUPPw'
+const PUBLIC_KEY = 'pk.eyJ1IjoibGlua2VsaXUtIiwiYSI6ImNsYjJiOXFyZDAyaHUzbm11emN3c25uMG0ifQ.RITRSYJAJ-Bk_QPlrWtD8g'
 mapboxgl.accessToken = PUBLIC_KEY
 
 export default function Map() {
@@ -13,7 +15,7 @@ export default function Map() {
 	useEffect(() => {
 		const map = new mapboxgl.Map({
 			container: ref.current!,
-			style: 'mapbox://styles/yysuni/clb4sxw3w000915phkfoa95i4',
+			style: 'mapbox://styles/linkeliu-/clb5006e9000915qqo1bg7i08',
 			zoom: 2,
 			projection: { name: 'globe' },
 			maxZoom: 14,
@@ -23,14 +25,19 @@ export default function Map() {
 		setMap(map)
 
 		example.features.forEach(f => {
-			new mapboxgl.Marker().setLngLat(f.geometry.coordinates as any).addTo(map)
+			const loactionSvgString: string = renderToString(<Location />)
+
+			const div = document.createElement('div')
+			div.innerHTML = loactionSvgString
+
+			new mapboxgl.Marker({ element: div }).setLngLat(f.geometry.coordinates as any).addTo(map)
 		})
 
 		map.on('load', () => {
 			setTimeout(() => {
 				map.easeTo({
 					center: [113.878678, 22.537162],
-					zoom: 12,
+					zoom: 10,
 					duration: 5000,
 					easing: t => 1 - Math.pow(1 - t, 3)
 				})

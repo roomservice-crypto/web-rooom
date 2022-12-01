@@ -1,9 +1,8 @@
 import Map from '@/components/home/MapOfPng'
 import Header from '@/layout/header'
-import type { NextPage } from 'next'
 import Head from 'next/head'
 
-const Home: NextPage = () => {
+export default function Home() {
 	return (
 		<>
 			<Head>
@@ -19,5 +18,3 @@ const Home: NextPage = () => {
 		</>
 	)
 }
-
-export default Home

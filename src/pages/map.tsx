@@ -1,6 +1,6 @@
 import 'mapbox-gl/dist/mapbox-gl.css'
 import mapboxgl from 'mapbox-gl'
-import { MouseEvent, MouseEventHandler, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import example from '../assets/example.json'
 import TransitionBadge from '@/components/common/TransitionBadge'
 import Record from '@/svgs/record.svg'

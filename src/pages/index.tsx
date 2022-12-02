@@ -1,4 +1,3 @@
-import Map from '@/components/home/MapOfPng'
 import Header from '@/layout/header'
 import Head from 'next/head'
 
@@ -12,9 +11,7 @@ export default function Home() {
 
 			<Header />
 
-			<main className='h-[100vh] flex justify-center items-center'>
-				<Map />
-			</main>
+			<main className='h-[100vh] flex justify-center items-center'>Home</main>
 		</>
 	)
 }

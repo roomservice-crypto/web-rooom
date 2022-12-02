@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom'
-import Loaction from './Loaction'
+import LoactionIcon from './LoactionIcon'
 
 export default function Marker(props: { container: HTMLDivElement; id: string; selected: string }) {
 	const { container, ...others } = props
 
-	return ReactDOM.createPortal(<Loaction {...others} />, container)
+	return ReactDOM.createPortal(<LoactionIcon {...others} />, container)
 }

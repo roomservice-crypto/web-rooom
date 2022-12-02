@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-export default function Loaction(props: { id: string; selected: string }) {
+export default function LoactionIcon(props: { id: string; selected: string }) {
 	const active = props.id === props.selected
 
 	return (

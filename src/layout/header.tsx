@@ -1,10 +1,11 @@
 import LogoText from '@/svgs/logo-text.svg'
+import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Header() {
+export default function Header(props: { className?: string }) {
 	return (
-		<header className='flex h-[60px] items-center border-b border-dark px-20'>
+		<header className={clsx('flex h-[60px] items-center border-b border-dark px-20', props.className)}>
 			<Link href='/'>
 				<a className='flex items-center'>
 					<Image src='/logo.svg' width='36px' height='36px' />

@@ -1,13 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-// @import './fonts/unbounded.scss';
 @import './fonts/poppins.scss';
-// @import './fonts/fontspring.scss';
-@import './fonts/criteria.scss';
+@import './fonts/mona.scss';
 
 body {
-	@apply bg-[#F0F0F0] text-[#1c1c1c];
+	@apply bg-[#F0F0F0] text-[#131313];
 }
 
 #__next {

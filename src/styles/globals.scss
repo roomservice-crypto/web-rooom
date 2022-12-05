@@ -7,5 +7,9 @@
 @import './fonts/criteria.scss';
 
 body {
-	@apply text-[#1c1c1c];
+	@apply bg-[#F0F0F0] text-[#1c1c1c];
+}
+
+#__next {
+	@apply flex min-h-[100vh] flex-col;
 }

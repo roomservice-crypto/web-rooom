@@ -8,9 +8,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				sans: ['Poppins', ...defaultTheme.fontFamily.sans],
-				// unbounded: ['Unbounded', ...defaultTheme.fontFamily.sans],
-				fontspring: ['Fontspring', ...defaultTheme.fontFamily.sans],
-				criteria: ['Criteria CF', ...defaultTheme.fontFamily.sans]
+				mona: ['Mona', ...defaultTheme.fontFamily.sans]
 			},
 			colors: {
 				primary: {
@@ -18,7 +16,7 @@ module.exports = {
 					25: '#FEFDF6'
 				},
 				secondary: '#C1BFFA',
-				dark: '#131313'
+				dark: '#1C1C1C'
 			}
 		}
 	},

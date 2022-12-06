@@ -10,7 +10,9 @@ export default function Home() {
 		<>
 			<Head>
 				<title>{TITLE}</title>
+				<meta name='title' content={TITLE}></meta>
 				<meta property='og:title' content={TITLE}></meta>
+				<meta name='twitter:title' content={TITLE} />
 			</Head>
 
 			<Header />

@@ -11,8 +11,8 @@ class MyDocument extends Document {
 					<meta lang='en' />
 					<link rel='icon' href='/logo.svg' />
 					<meta name='description' content={DESCRIPTION} />
-					<meta property='og:title' content={DESCRIPTION} />
-					<meta name='twitter:title' content={DESCRIPTION} />
+					<meta property='og:description' content={DESCRIPTION} />
+					<meta name='twitter:description' content={DESCRIPTION} />
 				</Head>
 				<body>
 					<Main />

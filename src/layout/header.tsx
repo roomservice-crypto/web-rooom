@@ -31,17 +31,22 @@ export default function Header(props: { className?: string }) {
 						</Link>
 					</li>
 					<li>
-						<Link href='/map'>
+						{/* <Link href='/map'>
 							<a
 								className={clsx('px-3 py-2 hover:rounded-md hover:bg-black hover:bg-opacity-5', router.pathname.startsWith('/map') && 'rounded-md bg-black bg-opacity-5')}>
 								Map
 							</a>
-						</Link>
+						</Link> */}
+							<span
+								className={clsx('px-3 py-2 hover:rounded-md cursor-not-allowed')}>
+								Map
+							</span>
 					</li>
 				</ul>
 			</nav>
 
-			<button className='rounded-3xl bg-dark px-4 py-2 text-sm text-white font-[500] hover:bg-opacity-80'>Explore Demo</button>
+			{/* <button className='rounded-3xl bg-dark px-4 py-2 text-sm text-white font-[500] hover:bg-opacity-80'>Explore Demo</button> */}
+			<button className='rounded-3xl bg-dark px-4 py-2 text-sm text-white font-[500] bg-opacity-60 cursor-not-allowed'>Explore Demo</button>
 		</header>
 	)
 }

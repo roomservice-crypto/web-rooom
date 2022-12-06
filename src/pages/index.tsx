@@ -27,12 +27,7 @@ export default function Home() {
 					<h1 className='mx-auto w-[1200px] text-center font-mona text-[60px] font-[900] uppercase leading-[1.2]'>
 						Custtomize your Web3 wonderland and lifestyle
 					</h1>
-					<button
-						className='mx-auto mt-8 flex items-center gap-x-3 rounded-3xl border-2 border-dark py-[21px] px-6 text-xl font-semibold'
-						style={{
-							background:
-								'linear-gradient(93.73deg, rgba(177, 250, 24, 0.45) 0%, rgba(236, 255, 22, 0.45) 46.37%, rgba(245, 210, 22, 0.45) 100%), #FFFFFF'
-						}}>
+					<button className='button mx-auto mt-8'>
 						<span>Explore Demo</span>
 
 						<ArrowRight />

@@ -1,5 +1,5 @@
 .button {
-	@apply flex items-center gap-x-3 rounded-3xl border-2 border-dark py-[21px] px-6 text-xl font-semibold leading-[26px];
+	@apply flex cursor-not-allowed items-center gap-x-3 rounded-3xl border-2 border-dark py-[21px] px-6 text-xl font-semibold leading-[26px];
 	background: linear-gradient(
 			93.73deg,
 			rgba(177, 250, 24, 0.45) 0%,

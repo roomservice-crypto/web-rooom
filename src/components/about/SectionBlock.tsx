@@ -5,7 +5,7 @@ export default function SectionBlock() {
 		<>
 			<section className='mx-auto flex h-[550px] w-[1440px] border-b border-dark'>
 				<div className='w-[50%] border-r border-dark px-[80px] py-[60px]'>
-					<h2 className='font-mona text-[48px] font-[900] leading-[52px]'>
+					<h2 className='font-mona text-[48px] font-[800] leading-[52px]'>
 						Free to choose on which chain the room will be created
 					</h2>
 				</div>
@@ -22,7 +22,7 @@ export default function SectionBlock() {
 					</figure>
 				</div>
 				<div className='w-[50%] px-[80px] py-[60px]'>
-					<h2 className='font-mona text-[48px] font-[900] leading-[52px]'>
+					<h2 className='font-mona text-[48px] font-[800] leading-[52px]'>
 						Each Room is a unique NFT owned by you and freely transferable
 					</h2>
 				</div>

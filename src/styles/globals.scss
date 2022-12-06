@@ -3,6 +3,7 @@
 @tailwind utilities;
 @import './fonts/poppins.scss';
 @import './fonts/mona.scss';
+@import './button.scss';
 
 body {
 	@apply bg-[#F0F0F0] text-[#131313];

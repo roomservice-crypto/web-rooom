@@ -1,0 +1,14 @@
+.button {
+	@apply flex items-center gap-x-3 rounded-3xl border-2 border-dark py-[21px] px-6 text-xl font-semibold leading-[26px];
+	background: linear-gradient(
+			93.73deg,
+			rgba(177, 250, 24, 0.45) 0%,
+			rgba(236, 255, 22, 0.45) 46.37%,
+			rgba(245, 210, 22, 0.45) 100%
+		),
+		#ffffff;
+}
+
+.button:hover {
+	background: linear-gradient(93.73deg, #f5d216 0%, #ecff16 46.37%, #b1fa18 100%);
+}

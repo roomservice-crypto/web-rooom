@@ -45,16 +45,11 @@ export default function SectionValues() {
 
 			<section className='mx-auto flex h-[550px] w-[1440px] border-t border-dark'>
 				<div className='w-[50%] border-r border-dark pl-20 pt-[96px]'>
-					<h3 className='w-[490px] font-mona text-[48px] font-[900] leading-[52px]'>
+					<h3 className='w-[490px] font-mona text-[48px] font-[800] leading-[52px]'>
 						Start owning your private <br /> room For Free Now
 					</h3>
 
-					<button
-						className='mt-16 flex items-center gap-x-3 rounded-3xl border-2 border-dark py-[21px] px-6 text-xl font-semibold'
-						style={{
-							background:
-								'linear-gradient(93.73deg, rgba(177, 250, 24, 0.45) 0%, rgba(236, 255, 22, 0.45) 46.37%, rgba(245, 210, 22, 0.45) 100%), #FFFFFF'
-						}}>
+					<button className='button mt-16'>
 						<span>Explore Demo</span>
 
 						<ArrowRight />

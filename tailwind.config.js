@@ -19,7 +19,7 @@ module.exports = {
 				dark: '#1C1C1C'
 			},
 			animation: {
-				'spin-about-loops': 'spin 8s linear infinite',
+				'spin-about-loops': 'spin 12s linear infinite',
 				'spin-about-circle': 'spin 12s linear infinite',
 			}
 		}

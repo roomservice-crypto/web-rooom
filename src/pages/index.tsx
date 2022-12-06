@@ -16,10 +16,10 @@ export default function Home() {
 			<main
 				className='relative flex-1 flex-col overflow-hidden pt-[60px]'
 				style={{
-					backgroundImage: 'url(/assets/home/grid.svg)',
-					backgroundRepeat: 'no-repeat',
-					backgroundPosition: 'center',
-					backgroundSize: 'cover'
+					backgroundImage: 'url(/assets/noise.png),url(/assets/home/grid.svg)',
+					backgroundRepeat: 'repeat,no-repeat',
+					backgroundPosition: 'left top,center',
+					backgroundSize: 'auto,cover'
 				}}>
 				<MapPad />
 

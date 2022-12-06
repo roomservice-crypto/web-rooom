@@ -72,71 +72,72 @@ export default function Loops() {
 
   <image xlinkHref="/assets/about/loops/badge-1.png" width="35" className="hover:scale-110 cursor-pointer origin-[17.5px_37.73px] transition-transform">
     <animateMotion
-        dur="20s"
-        begin="-15s"
+        begin="-22s"
+        dur="30s"
         repeatCount="indefinite"
         path="M283,580.1a298.5,298.5 0 1,0 597,0a298.5,298.5 0 1,0 -597,0" />
   </image>
 
   <image xlinkHref="/assets/about/loops/badge-2.png" width="35" className="hover:scale-110 cursor-pointer origin-[17.5px_37.73px] transition-transform">
     <animateMotion
-        dur="20s"
+        begin="-26s"
+        dur="30s"
         repeatCount="indefinite"
         path="M231.5,570a350,350 0 1,0 700,0a350,350 0 1,0 -700,0" />
   </image>
 
   <image xlinkHref="/assets/about/loops/badge-3.png" width="50"  className="hover:scale-110 cursor-pointer origin-[50px_54.82px] transition-transform">
     <animateMotion
-        begin="-12s"
-        dur="20s"
+        begin="-18s"
+        dur="30s"
         repeatCount="indefinite"
         path="M224,560a350,350 0 1,0 700,0a350,350 0 1,0 -700,0" />
   </image>
 
   <image xlinkHref="/assets/about/loops/badge-4.png" width="44"  className="hover:scale-110 cursor-pointer origin-[44px_48.25px] transition-transform">
     <animateMotion
-        begin="-1s"
-        dur="20s"
+        begin="-29s"
+        dur="30s"
         repeatCount="indefinite"
         path="M217.5,560a358.5,358.5 0 1,0 717,0a358.5,358.5 0 1,0 -717,0" />
   </image>
 
   <image xlinkHref="/assets/about/loops/badge-5.png" width="66" className="hover:scale-110 cursor-pointer origin-[33px_72.21px] transition-transform">
     <animateMotion
-        begin="-11s"
-        dur="20s"
+        begin="-15s"
+        dur="30s"
         repeatCount="indefinite"
         path="M327.5,539a238.5,238.5 0 1,0 477,0a238.5,238.5 0 1,0 -477,0" />
   </image>
 
   <image xlinkHref="/assets/about/loops/badge-6.png" width="66" className="hover:scale-110 cursor-pointer origin-[33px_72.21px] transition-transform">
     <animateMotion
-        begin="-24s"
-        dur="20s"
+        begin="-2s"
+        dur="30s"
         repeatCount="indefinite"
         path="M196,539a370,370 0 1,0 740,0a370,370 0 1,0 -740,0" />
   </image>
 
   <image xlinkHref="/assets/about/loops/badge-7.png" width="66" className="hover:scale-110 cursor-pointer origin-[33px_72.21px] transition-transform">
     <animateMotion
-        begin="-7s"
-        dur="20s"
+        begin="-10s"
+        dur="30s"
         repeatCount="indefinite"
         path="M251,539a315,315 0 1,0 630,0a315,315 0 1,0 -630,0" />
   </image>
 
   <image xlinkHref="/assets/about/loops/badge-8.png" width="35" className="hover:scale-110 cursor-pointer origin-[17.5px_37.73px] transition-transform">
     <animateMotion
-        begin="-11s"
-        dur="20s"
+        begin="-12s"
+        dur="30s"
         repeatCount="indefinite"
         path="M216.5,569a365,365 0 1,0 730,0a365,365 0 1,0 -730,0" />
   </image>
 
   <image xlinkHref="/assets/about/loops/badge-9.png" width="44"  className="hover:scale-110 cursor-pointer origin-[44px_48.25px] transition-transform">
     <animateMotion
-        begin="-5s"
-        dur="20s"
+        begin="-6s"
+        dur="30s"
         repeatCount="indefinite"
         path="M149,559a428,428 0 1,0 856,0a428,428 0 1,0 -856,0" />
   </image>

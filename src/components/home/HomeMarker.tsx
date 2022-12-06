@@ -1,10 +1,13 @@
 import clsx from 'clsx'
 import React, { useEffect, useRef, useState } from 'react'
 
+const INTERVAL_TIME = 8000
+
 export default function HomeMarker(props: { className: string; Card: React.FC<{ active: boolean }>; rise: boolean }) {
 	const [active, setActive] = useState(false)
-	const [clicked, setClicked] = useState(props.rise)
 	const svgRef = useRef<SVGSVGElement>(null)
+
+	const [rise, setRise] = useState(props.rise)
 
 	useEffect(() => {
 		if (svgRef.current) {
@@ -25,7 +28,16 @@ export default function HomeMarker(props: { className: string; Card: React.FC<{ 
 		}
 	}, [svgRef])
 
-	const show = active || clicked
+	useEffect(() => {
+		let v = rise
+		setInterval(() => {
+			setRise(!v)
+			v = !v
+		}, INTERVAL_TIME)
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
+
+	const show = active || rise
 
 	return (
 		<>
@@ -34,7 +46,6 @@ export default function HomeMarker(props: { className: string; Card: React.FC<{ 
 
 				<svg
 					ref={svgRef}
-					onClick={() => setClicked(!clicked)}
 					width='54'
 					height='59'
 					fill='none'

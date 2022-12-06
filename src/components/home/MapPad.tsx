@@ -1,6 +1,5 @@
 import clsx from 'clsx'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 import HomeMarker from './HomeMarker'
 
 const RISE_ORDER = [
@@ -8,18 +7,9 @@ const RISE_ORDER = [
 	[1, 4, 5, 7, 8]
 ]
 
+const rises = RISE_ORDER[0]
+
 export default function MapPad() {
-	const [rises, setRises] = useState<number[]>(RISE_ORDER[0])
-
-	// useEffect(() => {
-	// 	let i = 1
-	// 	setInterval(() => {
-	// 		setRises(RISE_ORDER[i])
-	// 		i++
-	// 		i %= RISE_ORDER.length
-	// 	}, 5000)
-	// }, [])
-
 	return (
 		<div className='absolute top-[400px] left-0 right-0'>
 			<div className='absolute left-[50%] -translate-x-[50%]'>
@@ -34,7 +24,7 @@ export default function MapPad() {
 						<div
 							key={1}
 							className={clsx(
-								'pointer-events-none absolute -top-[220px] -left-[80px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[225px] -left-[80px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-1.png' />
@@ -48,7 +38,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[220px] -left-[80px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[225px] -left-[80px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-2.png' />
@@ -62,7 +52,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[220px] -left-[80px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[225px] -left-[80px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-4.png' />
@@ -76,7 +66,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[220px] -left-[80px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[225px] -left-[80px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-3.png' />
@@ -90,7 +80,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[220px] -left-[80px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[225px] -left-[80px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-5.png' />
@@ -104,7 +94,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[220px] -left-[60px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[225px] -left-[60px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-6.png' />
@@ -118,7 +108,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[220px] -left-[60px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[225px] -left-[60px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-8.png' />
@@ -132,7 +122,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[220px] -left-[60px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[225px] -left-[60px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-7.png' />
@@ -146,7 +136,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[220px] -left-[60px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[225px] -left-[60px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-9.png' />

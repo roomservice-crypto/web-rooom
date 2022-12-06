@@ -1,4 +1,5 @@
 import ArrowRight from '@/svgs/arrow-right.svg'
+import clsx from 'clsx'
 import Loops from './Loops'
 
 export default function SectionHero() {
@@ -21,12 +22,7 @@ export default function SectionHero() {
 					Room Service is the protocol that powers Web3 room facilities, enabling users to build, launch and host their
 					own blockchain-based spaces without any coding experience.
 				</p>
-				<button
-					className='mt-8 flex items-center gap-x-3 rounded-3xl border-2 border-dark py-[21px] px-6 text-xl font-semibold'
-					style={{
-						background:
-							'linear-gradient(93.73deg, rgba(177, 250, 24, 0.45) 0%, rgba(236, 255, 22, 0.45) 46.37%, rgba(245, 210, 22, 0.45) 100%), #FFFFFF'
-					}}>
+				<button className='button mt-8'>
 					<span>Explore Demo</span>
 
 					<ArrowRight />

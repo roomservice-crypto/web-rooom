@@ -9,7 +9,7 @@ export default function SectionMore() {
 
 			<section className='mx-auto flex w-[1440px] border-t border-dark'>
 				<div className='w-[50%] border-r border-dark'>
-					<Image src='/assets/about/gallery.png' width={720} height={384} />
+					<img className='h-[384px] w-[720px]' src='/assets/about/gallery.png' />
 					<div className='px-20 py-8'>
 						<h3 className='text-[36px] font-semibold leading-[42px]'>Post & Gallery based on IPFS</h3>
 						<p className=' mt-4 text-lg leading-[24px]'>
@@ -28,13 +28,13 @@ export default function SectionMore() {
 						</p>
 					</div>
 
-					<Image src='/assets/about/message.png' width={720} height={384} />
+					<img className='h-[384px] w-[720px]' src='/assets/about/message.png' />
 				</div>
 			</section>
 
 			<section className='mx-auto flex w-[1440px] border-t border-b border-dark'>
 				<div className='w-[50%] border-r border-dark'>
-					<Image src='/assets/about/games.png' width={720} height={412} />
+					<img className='h-[412px] w-[720px]' src='/assets/about/games.png' />
 					<div className='px-20 py-8'>
 						<h3 className='text-[36px] font-semibold leading-[42px]'>Post & Gallery based on IPFS</h3>
 						<p className='mt-4 text-lg leading-[24px]'>
@@ -53,7 +53,7 @@ export default function SectionMore() {
 							Aggregate the portfolio and historical activity of any account through the Assets component.
 						</p>
 					</div>
-					<Image src='/assets/about/tags.png' width={720} height={182} />
+					<img className='h-[182px] w-[720px]' src='/assets/about/tags.png' />
 
 					<div className='mt-8 border-t border-dark p-20 pb-8'>
 						<h3 className='text-[36px] font-semibold leading-[42px]'>Hall of Fame</h3>
@@ -61,7 +61,7 @@ export default function SectionMore() {
 							On-chain reputation and achievements represent a room's Web3 experience and honor.
 						</p>
 					</div>
-					<Image className='mb-8' src='/assets/about/ranking.png' width={720} height={212} />
+					<img className='mb-8 h-[212px] w-[720px]' src='/assets/about/ranking.png' />
 				</div>
 			</section>
 
@@ -74,7 +74,7 @@ export default function SectionMore() {
 							missions, to achieve marketing goals.
 						</p>
 					</div>
-					<Image className='mt-auto' src='/assets/about/campaigns.png' width={480} height={290} />
+					<img className='mt-auto h-[290px] w-[480px]' src='/assets/about/campaigns.png' />
 				</div>
 				<div className='flex w-[33%] flex-1 flex-col border-l border-r border-dark pb-[50px]'>
 					<div className='p-20'>
@@ -84,7 +84,7 @@ export default function SectionMore() {
 							build your own marketplace.
 						</p>
 					</div>
-					<Image className='mt-auto' src='/assets/about/showcase.png' width={480} height={290} />
+					<img className='mt-auto h-[290px] w-[480px]' src='/assets/about/showcase.png' />
 				</div>
 				<div className='flex w-[33%] flex-1 flex-col pb-[50px]'>
 					<div className='p-20'>
@@ -93,7 +93,7 @@ export default function SectionMore() {
 							In your space, you are free to display any data panel you want to display or that you are watching.
 						</p>
 					</div>
-					<Image className='mt-auto' src='/assets/about/cube.png' width={480} height={290} />
+					<img className='mt-auto h-[290px] w-[480px]' src='/assets/about/cube.png' />
 				</div>
 			</section>
 		</>

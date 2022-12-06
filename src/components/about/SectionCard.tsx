@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function SectionCard() {
 	return (
 		<>
@@ -26,7 +24,7 @@ export default function SectionCard() {
 					</div>
 
 					<figure className='w-[813px] flex-shrink-0'>
-						<Image src='/assets/about/card-1.png' height={676} width={813} />
+						<img className='h-[676px] w-[813px]' src='/assets/about/card-1.png' />
 					</figure>
 				</div>
 			</section>
@@ -51,7 +49,7 @@ export default function SectionCard() {
 					</div>
 
 					<figure className='w-[813px] flex-shrink-0'>
-						<Image src='/assets/about/card-2.png' height={676} width={813} />
+						<img className='h-[676px] w-[813px]' src='/assets/about/card-2.png' />
 					</figure>
 				</div>
 			</section>
@@ -79,7 +77,7 @@ export default function SectionCard() {
 					</div>
 
 					<figure className='w-[813px] flex-shrink-0'>
-						<Image src='/assets/about/card-3.png' height={612} width={813} />
+						<img className='h-[612px] w-[813px]' src='/assets/about/card-3.png' />
 					</figure>
 				</div>
 			</section>
@@ -105,7 +103,7 @@ export default function SectionCard() {
 					</div>
 
 					<figure className='w-[813px] flex-shrink-0'>
-						<Image src='/assets/about/card-4.png' height={676} width={813} />
+						<img className='h-[676px] w-[813px]' src='/assets/about/card-4.png' />
 					</figure>
 				</div>
 			</section>

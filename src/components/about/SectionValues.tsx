@@ -2,7 +2,6 @@ import Value1 from '@/svgs/about/value-1.svg'
 import Value2 from '@/svgs/about/value-2.svg'
 import Value3 from '@/svgs/about/value-3.svg'
 import ArrowRight from '@/svgs/arrow-right.svg'
-import Image from 'next/image'
 
 export default function SectionValues() {
 	return (
@@ -32,7 +31,7 @@ export default function SectionValues() {
 						combination
 					</p>
 				</div>
-				<div className='border-l border-r border-dark p-20 pt-[90px]'>
+				<div className='p-20 pt-[90px]'>
 					<Value3 />
 
 					<h3 className='mt-8 mb-3 text-[30px] font-semibold leading-[36px]'>Advocate Interoperability</h3>
@@ -61,8 +60,15 @@ export default function SectionValues() {
 						<ArrowRight />
 					</button>
 				</div>
-				<div>
-					<Image src='/assets/about/circle.png' width={720} height={550} />
+				<div className='relative w-[50%] overflow-hidden'>
+					<figure className='absolute top-[30px] left-[-210px]'>
+						<img
+							className='h-[851px] w-[851px] origin-center animate-spin-about-circle'
+							src='/assets/about/circle-full.png'
+							width={851}
+							height={851}
+						/>
+					</figure>
 				</div>
 			</section>
 		</>

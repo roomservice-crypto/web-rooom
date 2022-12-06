@@ -1,7 +1,7 @@
 export default function SectionCard() {
 	return (
 		<>
-			<section className='mx-auto h-[900px] w-[1440px] overflow-hidden border-b border-dark pt-[96px]'>
+			<section className='overflow-hidden border-b border-dark pt-[96px]'>
 				<h2 className='px-20 font-mona text-[60px] font-[900] uppercase leading-[64px]'>
 					Personalize own on-chain space and socialize with friends
 				</h2>
@@ -23,13 +23,13 @@ export default function SectionCard() {
 						</div>
 					</div>
 
-					<figure className='w-[813px] flex-shrink-0'>
-						<img className='h-[676px] w-[813px]' src='/assets/about/card-1.png' />
+					<figure className='w-[56.46%] flex-shrink-0 self-end'>
+						<img className='w-full' src='/assets/about/card-1.png' />
 					</figure>
 				</div>
 			</section>
 
-			<section className='mx-auto h-[900px] w-[1440px] overflow-hidden border-b border-dark pt-[96px]'>
+			<section className='overflow-hidden border-b border-dark pt-[96px]'>
 				<h2 className='px-20 font-mona text-[60px] font-[900] uppercase leading-[64px]'>
 					Enjoy a variety of Fun Games with tradable assets
 				</h2>
@@ -48,13 +48,13 @@ export default function SectionCard() {
 						</div>
 					</div>
 
-					<figure className='w-[813px] flex-shrink-0'>
-						<img className='h-[676px] w-[813px]' src='/assets/about/card-2.png' />
+					<figure className='w-[56.46%] flex-shrink-0 self-end'>
+						<img className='w-full' src='/assets/about/card-2.png' />
 					</figure>
 				</div>
 			</section>
 
-			<section className='mx-auto h-[900px] w-[1440px] overflow-hidden border-b border-dark pt-[96px]'>
+			<section className=' overflow-hidden border-b border-dark pt-[96px]'>
 				<h2 className='px-20 font-mona text-[60px] font-[900] uppercase leading-[64px]'>
 					Composite room that communicates directly with target users
 				</h2>
@@ -76,13 +76,13 @@ export default function SectionCard() {
 						</div>
 					</div>
 
-					<figure className='w-[813px] flex-shrink-0'>
-						<img className='h-[612px] w-[813px]' src='/assets/about/card-3.png' />
+					<figure className='w-[56.46%] flex-shrink-0 self-end'>
+						<img className='w-full' src='/assets/about/card-3.png' />
 					</figure>
 				</div>
 			</section>
 
-			<section className='mx-auto h-[900px] w-[1440px] overflow-hidden pt-[96px]'>
+			<section className='overflow-hidden pt-[96px]'>
 				<h2 className='px-20 font-mona text-[60px] font-[900] uppercase leading-[64px]'>
 					Easily Customize your on-chain paradise without coding
 				</h2>
@@ -102,8 +102,8 @@ export default function SectionCard() {
 						</div>
 					</div>
 
-					<figure className='w-[813px] flex-shrink-0'>
-						<img className='h-[676px] w-[813px]' src='/assets/about/card-4.png' />
+					<figure className='w-[56.46%] flex-shrink-0 self-end'>
+						<img className='w-full' src='/assets/about/card-4.png' />
 					</figure>
 				</div>
 			</section>

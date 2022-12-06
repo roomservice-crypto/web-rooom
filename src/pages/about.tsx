@@ -11,7 +11,7 @@ import Header from '@/layout/header'
 export default function About() {
 	return (
 		<>
-			<Header className='mx-auto w-[1440px]' />
+			<Header  />
 
 			<SectionHero />
 

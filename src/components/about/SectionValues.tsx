@@ -6,11 +6,11 @@ import ArrowRight from '@/svgs/arrow-right.svg'
 export default function SectionValues() {
 	return (
 		<>
-			<div className='mx-auto w-[1440px] bg-[#FAE76C] px-20 py-10 font-mona text-[60px] font-[900] leading-[95px]'>
+			<div className='bg-[#FAE76C] px-20 py-10 font-mona text-[60px] font-[900] leading-[95px]'>
 				Room Service's Values
 			</div>
 
-			<section className='mx-auto flex w-[1440px] border-t border-dark'>
+			<section className='flex border-t border-dark'>
 				<div className='p-20 pt-[90px]'>
 					<Value1 />
 
@@ -43,7 +43,7 @@ export default function SectionValues() {
 				</div>
 			</section>
 
-			<section className='mx-auto flex h-[550px] w-[1440px] border-t border-dark'>
+			<section className='aspect-[1440/550] flex border-t border-dark'>
 				<div className='w-[50%] border-r border-dark pl-20 pt-[96px]'>
 					<h3 className='w-[490px] font-mona text-[48px] font-[800] leading-[52px]'>
 						Start owning your private <br /> room For Free Now
@@ -55,10 +55,11 @@ export default function SectionValues() {
 						<ArrowRight />
 					</button>
 				</div>
+
 				<div className='relative w-[50%] overflow-hidden'>
-					<figure className='absolute top-[30px] left-[-210px]'>
+					<figure className='absolute w-full top-[30px] left-[-210px]'>
 						<img
-							className='h-[851px] w-[851px] origin-center animate-spin-about-circle'
+							className='w-[100%] origin-center animate-spin-about-circle'
 							src='/assets/about/circle-full.png'
 							width={851}
 							height={851}

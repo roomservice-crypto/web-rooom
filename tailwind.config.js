@@ -20,7 +20,7 @@ module.exports = {
 			},
 			animation: {
 				'spin-about-loops': 'spin 12s linear infinite',
-				'spin-about-circle': 'spin 12s linear infinite',
+				'spin-about-circle': 'spin 16s linear infinite',
 			}
 		}
 	},

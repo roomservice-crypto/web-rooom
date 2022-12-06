@@ -2,8 +2,11 @@ import LogoText from '@/svgs/logo-text.svg'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export default function Header(props: { className?: string }) {
+	const router = useRouter()
+
 	return (
 		<header className={clsx('flex h-[60px] items-center border-b border-dark px-20', props.className)}>
 			<Link href='/'>
@@ -17,17 +20,22 @@ export default function Header(props: { className?: string }) {
 				<ul className='flex items-center gap-x-6'>
 					<li>
 						<Link href='/'>
-							<a className='px-2 py-3'>Home</a>
+							<a className={clsx('px-3 py-2', router.pathname === '/' && 'rounded-md bg-black bg-opacity-5')}>Home</a>
 						</Link>
 					</li>
 					<li>
 						<Link href='/about'>
-							<a className='px-2 py-3'>About</a>
+							<a className={clsx('px-3 py-2', router.pathname === '/about' && 'rounded-md bg-black bg-opacity-5')}>
+								About
+							</a>
 						</Link>
 					</li>
 					<li>
 						<Link href='/map'>
-							<a className='px-2 py-3'>Map</a>
+							<a
+								className={clsx('px-3 py-2', router.pathname.startsWith('/map') && 'rounded-md bg-black bg-opacity-5')}>
+								Map
+							</a>
 						</Link>
 					</li>
 				</ul>

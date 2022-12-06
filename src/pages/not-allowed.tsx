@@ -1,3 +1,4 @@
+import { NOT_ALLOWED_WIDTH } from '@/constants'
 import NotAllowedSvg from '@/svgs/not-allowed.svg'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
@@ -7,7 +8,7 @@ export default function NotAllowded() {
 
 	useEffect(() => {
 		const handler = () => {
-			if (window.innerWidth >= 960) router.push('/')
+			if (window.innerWidth >= NOT_ALLOWED_WIDTH) router.push('/')
 		}
 
 		window.addEventListener('resize', handler)
@@ -21,7 +22,7 @@ export default function NotAllowded() {
 			<div>Please open this page with pc</div>
 			<button
 				onClick={() => {
-					if (window.innerWidth >= 960) router.push('/')
+					if (window.innerWidth >= NOT_ALLOWED_WIDTH) router.push('/')
 				}}
 				className='mt-6 rounded-2xl bg-dark py-3 px-[100px] text-white'>
 				Home
@@ -29,7 +30,7 @@ export default function NotAllowded() {
 			<br />
 			<button
 				onClick={() => {
-					if (window.innerWidth >= 960) history.back()
+					if (window.innerWidth >= NOT_ALLOWED_WIDTH) history.back()
 				}}
 				className='mt-4 rounded-2xl border border-dark py-3 px-[100px]'>
 				Back

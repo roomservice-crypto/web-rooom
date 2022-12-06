@@ -16,7 +16,7 @@ export default function Header(props: { className?: string }) {
 				</a>
 			</Link>
 
-			<nav className='mx-auto flex items-center'>
+			<nav className='mx-auto flex items-center tablet:hidden'>
 				<ul className='flex items-center gap-x-6'>
 					<li>
 						<Link href='/'>
@@ -56,8 +56,8 @@ export default function Header(props: { className?: string }) {
 				</ul>
 			</nav>
 
-			{/* <button className='rounded-3xl bg-dark px-4 py-2 text-sm text-white font-[500] hover:bg-opacity-80'>Explore Demo</button> */}
-			<button className='cursor-not-allowed rounded-3xl bg-dark bg-opacity-60 px-4 py-2 text-sm font-[500] text-white'>
+			{/* <button className='rounded-3xl bg-dark px-4 py-2 text-sm text-white font-[500] hover:bg-opacity-80  tablet:hidden'>Explore Demo</button> */}
+			<button className='cursor-not-allowed rounded-3xl bg-dark bg-opacity-60 px-4 py-2 text-sm font-[500] text-white tablet:hidden'>
 				Explore Demo
 			</button>
 		</header>

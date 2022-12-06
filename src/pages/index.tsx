@@ -26,7 +26,7 @@ export default function Home() {
 				<MapPad />
 
 				<div className=' z-1 relative'>
-					<h1 className='mx-auto w-[1200px] text-center font-mona text-[60px] font-[900] uppercase leading-[1.2]'>
+					<h1 className='mx-auto max-w-[1200px] text-center font-mona text-[60px] font-[900] uppercase leading-[1.2]'>
 						Custtomize your Web3 wonderland and lifestyle
 					</h1>
 					<button className='button mx-auto mt-8'>

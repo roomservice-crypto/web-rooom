@@ -12,6 +12,7 @@ function App({ Component, pageProps }: AppProps) {
 		}
 
 		window.addEventListener('resize', handler)
+		handler()
 
 		return () => window.removeEventListener('resize', handler)
 	}, [])

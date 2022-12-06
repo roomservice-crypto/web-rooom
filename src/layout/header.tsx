@@ -20,12 +20,22 @@ export default function Header(props: { className?: string }) {
 				<ul className='flex items-center gap-x-6'>
 					<li>
 						<Link href='/'>
-							<a className={clsx('px-3 py-2 hover:rounded-md hover:bg-black hover:bg-opacity-5', router.pathname === '/' && 'rounded-md bg-black bg-opacity-5')}>Home</a>
+							<a
+								className={clsx(
+									'px-3 py-2 hover:rounded-md hover:bg-black hover:bg-opacity-5',
+									router.pathname === '/' && 'rounded-md bg-black bg-opacity-5'
+								)}>
+								Home
+							</a>
 						</Link>
 					</li>
 					<li>
 						<Link href='/about'>
-							<a className={clsx('px-3 py-2 hover:rounded-md hover:bg-black hover:bg-opacity-5', router.pathname === '/about' && 'rounded-md bg-black bg-opacity-5')}>
+							<a
+								className={clsx(
+									'px-3 py-2 hover:rounded-md hover:bg-black hover:bg-opacity-5',
+									router.pathname === '/about' && 'rounded-md bg-black bg-opacity-5'
+								)}>
 								About
 							</a>
 						</Link>
@@ -37,16 +47,19 @@ export default function Header(props: { className?: string }) {
 								Map
 							</a>
 						</Link> */}
-							<span
-								className={clsx('px-3 py-2 hover:rounded-md cursor-not-allowed')}>
-								Map
-							</span>
+						<Link
+							href='mailto:contact@roomservice.gg'
+							className={clsx('cursor-not-allowed px-3 py-2 hover:rounded-md')}>
+							Contact
+						</Link>
 					</li>
 				</ul>
 			</nav>
 
 			{/* <button className='rounded-3xl bg-dark px-4 py-2 text-sm text-white font-[500] hover:bg-opacity-80'>Explore Demo</button> */}
-			<button className='rounded-3xl bg-dark px-4 py-2 text-sm text-white font-[500] bg-opacity-60 cursor-not-allowed'>Explore Demo</button>
+			<button className='cursor-not-allowed rounded-3xl bg-dark bg-opacity-60 px-4 py-2 text-sm font-[500] text-white'>
+				Explore Demo
+			</button>
 		</header>
 	)
 }

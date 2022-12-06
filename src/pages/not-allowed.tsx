@@ -19,11 +19,19 @@ export default function NotAllowded() {
 		<main className='text-center'>
 			<NotAllowedSvg className='mx-auto' />
 			<div>Please open this page with pc</div>
-			<button onClick={() => router.push('/')} className='mt-6 rounded-2xl bg-dark py-3 px-[100px] text-white'>
+			<button
+				onClick={() => {
+					if (window.innerWidth >= 960) router.push('/')
+				}}
+				className='mt-6 rounded-2xl bg-dark py-3 px-[100px] text-white'>
 				Home
 			</button>
 			<br />
-			<button onClick={() => router.back()} className='mt-4 rounded-2xl border border-dark py-3 px-[100px]'>
+			<button
+				onClick={() => {
+					if (window.innerWidth >= 960) history.back()
+				}}
+				className='mt-4 rounded-2xl border border-dark py-3 px-[100px]'>
 				Back
 			</button>
 		</main>

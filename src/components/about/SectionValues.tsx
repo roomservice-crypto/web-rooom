@@ -10,40 +10,46 @@ export default function SectionValues() {
 				Room Service's Values
 			</div>
 
-			<section className='flex border-t border-dark'>
+			<section className=' grid grid-cols-3 border-t border-dark'>
 				<div className='p-20 pt-[90px]'>
-					<Value1 />
+					<div className='max-w-[450px] '>
+						<Value1 />
 
-					<h3 className='mt-8 mb-3  text-[30px] font-semibold leading-[36px]'>Emphasize Ownership</h3>
+						<h3 className='mt-8 mb-3  text-[30px] font-semibold leading-[36px]'>Emphasize Ownership</h3>
 
-					<p>
-						Room Service is designed to build a personal environment to build your own content, where everyone owns and
-						controls their own room
-					</p>
+						<p>
+							Room Service is designed to build a personal environment to build your own content, where everyone owns
+							and controls their own room
+						</p>
+					</div>
 				</div>
 				<div className='border-l border-r border-dark p-20 pt-[90px]'>
-					<Value2 />
+					<div className='max-w-[450px] '>
+						<Value2 />
 
-					<h3 className='mt-8 mb-3  text-[30px] font-semibold leading-[36px]'>Provide Composability</h3>
+						<h3 className='mt-8 mb-3  text-[30px] font-semibold leading-[36px]'>Provide Composability</h3>
 
-					<p>
-						Room Service provides a series of room infrastructure components, which will appear in various rooms in free
-						combination
-					</p>
+						<p>
+							Room Service provides a series of room infrastructure components, which will appear in various rooms in
+							free combination
+						</p>
+					</div>
 				</div>
 				<div className='p-20 pt-[90px]'>
-					<Value3 />
+					<div className='max-w-[450px] '>
+						<Value3 />
 
-					<h3 className='mt-8 mb-3 text-[30px] font-semibold leading-[36px]'>Advocate Interoperability</h3>
+						<h3 className='mt-8 mb-3 text-[30px] font-semibold leading-[36px]'>Advocate Interoperability</h3>
 
-					<p>
-						In addition to realizing interoperability between multiple chains, it also aims to allow game assets to
-						interoperate between ecosystems
-					</p>
+						<p>
+							In addition to realizing interoperability between multiple chains, it also aims to allow game assets to
+							interoperate between ecosystems
+						</p>
+					</div>
 				</div>
 			</section>
 
-			<section className='aspect-[1440/550] flex border-t border-dark'>
+			<section className='flex aspect-[1440/550] border-t border-dark'>
 				<div className='w-[50%] border-r border-dark pl-20 pt-[96px]'>
 					<h3 className='w-[490px] font-mona text-[48px] font-[800] leading-[52px]'>
 						Start owning your private <br /> room For Free Now
@@ -57,7 +63,7 @@ export default function SectionValues() {
 				</div>
 
 				<div className='relative w-[50%] overflow-hidden'>
-					<figure className='absolute w-full top-[30px] left-[-210px]'>
+					<figure className='absolute top-[30px] left-[-210px] w-full'>
 						<img
 							className='w-[100%] origin-center animate-spin-about-circle'
 							src='/assets/about/circle-full.png'

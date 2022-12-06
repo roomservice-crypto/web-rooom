@@ -24,7 +24,7 @@ export default function MapPad() {
 						<div
 							key={1}
 							className={clsx(
-								'pointer-events-none absolute -top-[225px] -left-[80px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[226px] -left-[80px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-1.png' />
@@ -38,7 +38,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[225px] -left-[80px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[226px] -left-[80px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-2.png' />
@@ -52,7 +52,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[225px] -left-[80px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[226px] -left-[80px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-4.png' />
@@ -66,7 +66,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[225px] -left-[80px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[226px] -left-[80px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-3.png' />
@@ -80,7 +80,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[225px] -left-[80px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[226px] -left-[80px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-5.png' />
@@ -94,7 +94,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[225px] -left-[60px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[226px] -left-[60px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-6.png' />
@@ -108,7 +108,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[225px] -left-[60px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[226px] -left-[60px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-8.png' />
@@ -122,7 +122,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[225px] -left-[60px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[226px] -left-[60px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-7.png' />
@@ -136,7 +136,7 @@ export default function MapPad() {
 					Card={({ active }) => (
 						<div
 							className={clsx(
-								'pointer-events-none absolute -top-[225px] -left-[60px] w-[196px] transition-all',
+								'pointer-events-none absolute -top-[226px] -left-[60px] w-[196px] transition-all',
 								active ? '-top-[200px] scale-100 opacity-100' : 'scale-95 opacity-0'
 							)}>
 							<Image width={394} height={565} src='/assets/home/card-9.png' />

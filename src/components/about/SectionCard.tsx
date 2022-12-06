@@ -5,7 +5,7 @@ export default function SectionCard() {
 				<h2 className='px-20 font-mona text-[60px] font-[900] uppercase leading-[64px]'>
 					Personalize own on-chain space and socialize with friends
 				</h2>
-				<div className='flex'>
+				<div className='flex justify-between'>
 					<div className='flex w-[547px] flex-1 flex-col justify-between pb-[96px] pt-10'>
 						<p className='px-20 text-lg leading-[24px]'>
 							Once you've created your own room, you can start personalizing it for free. Show all the information you
@@ -23,9 +23,7 @@ export default function SectionCard() {
 						</div>
 					</div>
 
-					<figure className='w-[56.46%] flex-shrink-0 self-end'>
-						<img className='w-full' src='/assets/about/card-1.png' />
-					</figure>
+					<img className='w-[56.46%] max-w-[1000px]  self-end' src='/assets/about/card-1.png' />
 				</div>
 			</section>
 
@@ -48,9 +46,7 @@ export default function SectionCard() {
 						</div>
 					</div>
 
-					<figure className='w-[56.46%] flex-shrink-0 self-end'>
-						<img className='w-full' src='/assets/about/card-2.png' />
-					</figure>
+					<img className='w-[56.46%] max-w-[1000px]  self-end' src='/assets/about/card-2.png' />
 				</div>
 			</section>
 
@@ -76,9 +72,7 @@ export default function SectionCard() {
 						</div>
 					</div>
 
-					<figure className='w-[56.46%] flex-shrink-0 self-end'>
-						<img className='w-full' src='/assets/about/card-3.png' />
-					</figure>
+					<img className='w-[56.46%] max-w-[1000px]  self-end' src='/assets/about/card-3.png' />
 				</div>
 			</section>
 
@@ -102,9 +96,7 @@ export default function SectionCard() {
 						</div>
 					</div>
 
-					<figure className='w-[56.46%] flex-shrink-0 self-end'>
-						<img className='w-full' src='/assets/about/card-4.png' />
-					</figure>
+					<img className='w-[56.46%] max-w-[1000px]  self-end' src='/assets/about/card-4.png' />
 				</div>
 			</section>
 		</>

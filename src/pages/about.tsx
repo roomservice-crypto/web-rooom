@@ -7,11 +7,19 @@ import SectionHero from '@/components/about/SectionHero'
 import SectionMore from '@/components/about/SectionMore'
 import SectionValues from '@/components/about/SectionValues'
 import Header from '@/layout/header'
+import Head from 'next/head'
+
+const TITLE = 'About | Room Service'
 
 export default function About() {
 	return (
 		<>
-			<Header  />
+			<Head>
+				<title>{TITLE}</title>
+				<meta property='og:title' content={TITLE}></meta>
+			</Head>
+
+			<Header />
 
 			<SectionHero />
 

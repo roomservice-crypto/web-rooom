@@ -1,5 +1,6 @@
 import ArrowRight from '@/svgs/arrow-right.svg'
 import Loops from './Loops'
+import { toast } from 'react-hot-toast'
 
 export default function SectionHero() {
 	return (
@@ -22,7 +23,7 @@ export default function SectionHero() {
 						Room Service is the protocol that powers Web3 room facilities, enabling users to build, launch and host
 						their own blockchain-based spaces without any coding experience.
 					</p>
-					<button className='button mt-8'>
+					<button onClick={() => toast('Coming Soon')} className='button mt-8'>
 						<span>Explore Demo</span>
 
 						<ArrowRight />

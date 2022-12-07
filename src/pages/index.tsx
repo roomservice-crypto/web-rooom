@@ -2,6 +2,7 @@ import Header from '@/layout/header'
 import Head from 'next/head'
 import ArrowRight from '@/svgs/arrow-right.svg'
 import MapPad from '@/components/home/MapPad'
+import { toast } from 'react-hot-toast'
 
 const TITLE = 'Room Service'
 
@@ -27,7 +28,7 @@ export default function Home() {
 						Customize your Web3 wonderland and lifestyle
 					</h1>
 
-					<button className='button mx-auto mt-8'>
+					<button onClick={() => toast('Coming Soon')} className='button mx-auto mt-8'>
 						<span>Explore Demo</span>
 
 						<ArrowRight />

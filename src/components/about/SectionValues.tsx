@@ -2,6 +2,7 @@ import Value1 from '@/svgs/about/value-1.svg'
 import Value2 from '@/svgs/about/value-2.svg'
 import Value3 from '@/svgs/about/value-3.svg'
 import ArrowRight from '@/svgs/arrow-right.svg'
+import { toast } from 'react-hot-toast'
 
 export default function SectionValues() {
 	return (
@@ -55,7 +56,7 @@ export default function SectionValues() {
 						Start owning your private <br /> room For Free Now
 					</h3>
 
-					<button className='button mt-16 mobile:mt-8'>
+					<button onClick={() => toast('Coming Soon')} className='button mt-16 mobile:mt-8'>
 						<span>Explore Demo</span>
 
 						<ArrowRight />

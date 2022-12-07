@@ -14,8 +14,8 @@ export default function Banner() {
 	})
 
 	return (
-		<div className='border-t border-b border-dark overflow-hidden'>
-			<svg width='7200' height='132' viewBox='0 0 7200 132' fill='none' xmlns='http://www.w3.org/2000/svg'>
+		<div className='overflow-hidden border-t border-b border-dark'>
+			<svg className='h-[132px] mobile:h-[72px]' viewBox='0 0 7200 132' fill='none' xmlns='http://www.w3.org/2000/svg'>
 				<animated.svg x={x} width={SINGLE_WIDTH * 10}>
 					{Array(10)
 						.fill(1)

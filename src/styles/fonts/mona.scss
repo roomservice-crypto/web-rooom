@@ -4,24 +4,19 @@
 	font-weight: 900;
 }
 @font-face {
-  font-family: "Mona";
-  src: url("/fonts/Mona/Mona-Sans-Bold.woff2") ;
-  font-weight: 800;
+	font-family: 'Mona';
+	src: url('/fonts/Mona/Mona-Sans-ExtraBold.woff2');
+	font-weight: 800;
 }
-// @font-face {
-//   font-family: "Mona";
-//   src: url("/fonts/Mona/Mona-ExtraLight.ttf") ;
-//   font-weight: Extra Light;
-// }
-// @font-face {
-//   font-family: "Mona";
-//   src: url("/fonts/Mona/Mona-Light.ttf") ;
-//   font-weight: Light;
-// }
 @font-face {
-  font-family: "Mona";
-  src: url("/fonts/Mona/Mona-Sans-SemiBold.woff2");
-  font-weight: 600;
+	font-family: 'Mona';
+	src: url('/fonts/Mona/Mona-Sans-Bold.woff2');
+	font-weight: 700;
+}
+@font-face {
+	font-family: 'Mona';
+	src: url('/fonts/Mona/Mona-Sans-SemiBold.woff2');
+	font-weight: 600;
 }
 // @font-face {
 //   font-family: "Mona";

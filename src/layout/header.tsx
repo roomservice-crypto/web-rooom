@@ -3,12 +3,17 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Menu from '@/svgs/menu.svg'
 
 export default function Header(props: { className?: string }) {
 	const router = useRouter()
 
 	return (
-		<header className={clsx('flex h-[60px] items-center border-b border-dark px-20', props.className)}>
+		<header
+			className={clsx(
+				'flex h-[60px] items-center border-b border-dark px-20 mobile:h-[72px] mobile:px-4',
+				props.className
+			)}>
 			<Link href='/'>
 				<a className='flex items-center'>
 					<Image src='/logo.svg' width='36px' height='36px' />
@@ -16,7 +21,7 @@ export default function Header(props: { className?: string }) {
 				</a>
 			</Link>
 
-			<nav className='mx-auto flex items-center tablet:hidden'>
+			<nav className='mx-auto flex items-center mobile:hidden'>
 				<ul className='flex items-center gap-x-6'>
 					<li>
 						<Link href='/'>
@@ -56,9 +61,13 @@ export default function Header(props: { className?: string }) {
 				</ul>
 			</nav>
 
-			{/* <button className='rounded-3xl bg-dark px-4 py-2 text-sm text-white font-[500] hover:bg-opacity-80  tablet:hidden'>Explore Demo</button> */}
-			<button className='cursor-not-allowed rounded-3xl bg-dark bg-opacity-60 px-4 py-2 text-sm font-[500] text-white tablet:hidden'>
+			{/* <button className='rounded-3xl bg-dark px-4 py-2 text-sm text-white font-[500] hover:bg-opacity-80  mobile:hidden'>Explore Demo</button> */}
+			<button className='cursor-not-allowed rounded-3xl bg-dark bg-opacity-60 px-4 py-2 text-sm font-[500] text-white mobile:hidden'>
 				Explore Demo
+			</button>
+
+			<button className='ml-auto p-2'>
+				<Menu />
 			</button>
 		</header>
 	)

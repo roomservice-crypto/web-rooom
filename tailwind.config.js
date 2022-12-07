@@ -24,8 +24,7 @@ module.exports = {
 			}
 		},
 		screens: {
-			tablet: { max: '960px' },
-			mobile: { max: '640px' }
+			mobile: { max: '960px' }
 		}
 	},
 	plugins: []

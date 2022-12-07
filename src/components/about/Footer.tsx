@@ -4,13 +4,15 @@ import Link from 'next/link'
 
 export default function Footer() {
 	return (
-		<footer className='flex items-center border-t border-dark px-20 py-12'>
-			<span className='font-mona text-[36px] font-[900]'>ROOMSERVICE</span>
+		<footer className='flex items-center border-t border-dark px-20 py-12 mobile:flex-col mobile:px-4 mobile:py-8'>
+			<span className='font-mona text-[36px] font-[900] mobile:mb-4 mobile:text-[24px] mobile:font-[700] mobile:leading-[42px]'>
+				ROOMSERVICE
+			</span>
 
 			<Link href='https://twitter.com/roomservice_gg'>
 				<a
 					target='_blank'
-					className='ml-auto flex items-center gap-x-[10px] rounded-full border-[1.5px] border-dark py-4 px-6 hover:bg-black hover:bg-opacity-5'>
+					className='ml-auto flex items-center gap-x-[10px]  rounded-full border-[1.5px] border-dark py-4 px-6 hover:bg-black hover:bg-opacity-5 mobile:ml-0 mobile:w-full mobile:justify-center'>
 					<Twitter />
 					<span>Follow us on Twitter</span>
 				</a>
@@ -18,7 +20,7 @@ export default function Footer() {
 			<Link href='https://medium.com/@roomservicegg'>
 				<a
 					target='_blank'
-					className='ml-6 flex items-center gap-x-[10px] rounded-full border-[1.5px] border-dark py-4 px-6 hover:bg-black hover:bg-opacity-5'>
+					className='ml-6 flex items-center gap-x-[10px] rounded-full border-[1.5px] border-dark py-4 px-6 hover:bg-black hover:bg-opacity-5 mobile:mt-3 mobile:ml-0 mobile:w-full mobile:justify-center'>
 					<Medium />
 					<span>Visit our medium</span>
 				</a>

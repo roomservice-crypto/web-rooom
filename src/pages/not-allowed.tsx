@@ -22,7 +22,7 @@ export default function NotAllowded() {
 			<div>Please open this page with pc</div>
 			<button
 				onClick={() => {
-					if (window.innerWidth >= NOT_ALLOWED_WIDTH) router.push('/')
+					router.push('/')
 				}}
 				className='mt-6 rounded-2xl bg-dark py-3 px-[100px] text-white'>
 				Home
@@ -30,7 +30,7 @@ export default function NotAllowded() {
 			<br />
 			<button
 				onClick={() => {
-					if (window.innerWidth >= NOT_ALLOWED_WIDTH) history.back()
+					history.back()
 				}}
 				className='mt-4 rounded-2xl border border-dark py-3 px-[100px]'>
 				Back

@@ -1,6 +1,6 @@
 export default function Loops() {
   return (
-  <svg className="w-[calc(10vw+1160px)] mobile:w-[360%] mobile:translate-x-[-50%]" viewBox="0 0 1198 1198" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg className="w-[calc(10vw+1160px)] mobile:w-[360%] mobile:translate-x-[-50%] mobile:min-w-[700px] mobile:max-w-[1000px]" viewBox="0 0 1198 1198" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect x="0.5" y="0.5" width="1197" height="1197" rx="598.5" fill="url(#paint0_linear_1506_66234)" stroke="black"/>
   <circle cx="599" cy="599" r="538" stroke="black" />
   <circle cx="599" cy="599" r="478.5" stroke="black" />

@@ -5,9 +5,9 @@ import { toast } from 'react-hot-toast'
 export default function SectionHero() {
 	return (
 		<section className='overflow-hidden'>
-			<div className='relative h-[820px] pt-[171px] pl-[80px] mobile:h-[678px] mobile:px-4 mobile:pt-12'>
+			<div className='relative h-[820px] pt-[171px] pl-[80px] mobile:h-[678px] mobile:px-4 mobile:pt-12 mini:h-[720px]'>
 				<div className='absolute right-0 top-0 left-0 flex h-full items-center justify-end overflow-hidden pb-1'>
-					<div className='relative left-[233px] mobile:absolute mobile:left-[50%] mobile:right-0 mobile:top-[120px]'>
+					<div className='relative left-[233px] mobile:absolute mobile:left-[50%] mobile:right-0 mobile:top-[120px] mini:top-[200px]'>
 						<Loops />
 					</div>
 					<div className='pointer-events-none absolute left-0 top-0 h-full w-full bg-[linear-gradient(80.28deg,#F0F0F0_39.95%,_rgba(240,240,240,0)_67.74%)] mobile:bg-[linear-gradient(170.28deg,#F0F0F0_39.95%,_rgba(240,240,240,0)_67.74%)]'></div>

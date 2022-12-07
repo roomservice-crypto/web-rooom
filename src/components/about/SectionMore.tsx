@@ -10,7 +10,7 @@ export default function SectionMore() {
 					<img className='w-full max-w-[1000px]' src='/assets/about/gallery.png' />
 					<div className='px-20 py-8 mobile:p-4'>
 						<h3 className='text-[36px] font-semibold leading-[42px] mobile:text-[24px] mobile:leading-[30px]'>
-							Post & Gallery based on IPFS
+							Posts & Gallery based on IPFS
 						</h3>
 						<p className=' mt-4 text-lg leading-[24px]'>
 							The content component implemented based on IPFS can ensure that the blog or photos you publish will

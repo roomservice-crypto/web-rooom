@@ -51,7 +51,8 @@ export default function MobileMenu() {
 					<ul>
 						<li>
 							<a
-								className='flex cursor-pointer items-center gap-x-3 px-4 py-4 hover:rounded-md hover:bg-black hover:bg-opacity-5'
+								className='hover:rounded-[10px]hover:bg-black flex cursor-pointer items-center gap-x-3 px-4 py-4 hover:bg-opacity-5'
+								href='https://twitter.com/roomservice_gg'
 								target='_blank'
 								rel='noreferrer'>
 								<Twitter />
@@ -60,7 +61,7 @@ export default function MobileMenu() {
 						</li>
 						<li>
 							<a
-								className='flex cursor-pointer items-center gap-x-3 px-4 py-4 hover:rounded-md hover:bg-black hover:bg-opacity-5 '
+								className='flex cursor-pointer items-center gap-x-3 px-4 py-4 hover:rounded-[10px] hover:bg-black hover:bg-opacity-5 '
 								href='https://medium.com/@roomservicegg'
 								target='_blank'
 								rel='noreferrer'>
@@ -70,7 +71,7 @@ export default function MobileMenu() {
 						</li>
 						<li>
 							<a
-								className='flex cursor-pointer items-center gap-x-3 px-4 py-4 hover:rounded-md hover:bg-black hover:bg-opacity-5 '
+								className='flex cursor-pointer items-center gap-x-3 px-4 py-4 hover:rounded-[10px] hover:bg-black hover:bg-opacity-5 '
 								href='mailto:contact@roomservice.gg'>
 								<Email />
 								Email

@@ -55,44 +55,42 @@ export default function Header(props: { className?: string }) {
 								Map
 							</a>
 						</Link> */}
-					<li>
-						<Menu>
-							<Menu.Button className='px-3 py-2 hover:rounded-md hover:bg-black hover:bg-opacity-5'>
-								Contact
-							</Menu.Button>
-							<Menu.Items className='absolute z-10 w-[206px] rounded-[20px] bg-white p-3 mobile:hidden'>
-								<ul>
-									<li>
-										<a
-											className='flex cursor-pointer items-center gap-x-3 px-4 py-[10px] hover:rounded-md hover:bg-black hover:bg-opacity-5'
-											href='https://twitter.com/roomservice_gg'
-											target='_blank'
-											rel='noreferrer'>
-											<Twitter />
-											Twitter
-										</a>
-									</li>
-									<li>
-										<a
-											className='flex cursor-pointer items-center gap-x-3 px-4 py-[10px] hover:rounded-md hover:bg-black hover:bg-opacity-5 '
-											href='https://medium.com/@roomservicegg'
-											target='_blank'
-											rel='noreferrer'>
-											<Medium />
-											Medium
-										</a>
-									</li>
-									<li>
-										<a
-											className='flex cursor-pointer items-center gap-x-3 px-4 py-[10px] hover:rounded-md hover:bg-black hover:bg-opacity-5 '
-											href='mailto:contact@roomservice.gg'>
-											<Email />
-											Email
-										</a>
-									</li>
-								</ul>
-							</Menu.Items>
-						</Menu>
+					<li className='relative'>
+						<span className='peer cursor-pointer px-3 py-2 hover:rounded-md hover:bg-black hover:bg-opacity-5'>
+							Contact
+						</span>
+						<div className='absolute left-[-50px] z-10 hidden pt-[18px] hover:block peer-hover:block mobile:hidden'>
+							<ul className='w-[206px] rounded-[20px] border border-dark bg-white p-3 text-sm shadow-[0px_20px_24px_-4px_rgba(16,24,40,0.08),0px_8px_8px_-4px_rgba(16,_24,_40,_0.03)]'>
+								<li>
+									<a
+										className='flex cursor-pointer items-center gap-x-3 px-4 py-[10px] hover:rounded-[10px] hover:bg-black hover:bg-opacity-5'
+										href='https://twitter.com/roomservice_gg'
+										target='_blank'
+										rel='noreferrer'>
+										<Twitter />
+										Twitter
+									</a>
+								</li>
+								<li>
+									<a
+										className='flex cursor-pointer items-center gap-x-3 px-4 py-[10px] hover:rounded-[10px] hover:bg-black hover:bg-opacity-5 '
+										href='https://medium.com/@roomservicegg'
+										target='_blank'
+										rel='noreferrer'>
+										<Medium />
+										Medium
+									</a>
+								</li>
+								<li>
+									<a
+										className='flex cursor-pointer items-center gap-x-3 px-4 py-[10px] hover:rounded-[10px] hover:bg-black hover:bg-opacity-5 '
+										href='mailto:contact@roomservice.gg'>
+										<Email />
+										Email
+									</a>
+								</li>
+							</ul>
+						</div>
 					</li>
 				</ul>
 			</nav>

@@ -2,7 +2,7 @@ export default function SectionMore() {
 	return (
 		<>
 			<div className='bg-[#FAE76C] px-20 py-10 font-mona text-[60px] font-[900] leading-[95px] mobile:px-4 mobile:pt-8 mobile:pb-4 mobile:text-[36px] mobile:leading-[42px]'>
-				MORE FUTURE
+				MORE FEATURES
 			</div>
 
 			<section className='flex aspect-[1440/702] border-t border-dark mobile:aspect-auto mobile:flex-col'>

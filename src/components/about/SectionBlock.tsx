@@ -16,7 +16,7 @@ export default function SectionBlock() {
 				<div className='flex  w-[50%] items-center justify-center border-r border-dark mobile:w-full mobile:border-none'>
 					<img className='w-full max-w-[1000px]' src='/assets/about/nft.png' />
 				</div>
-				<div className='py-[60px]] w-[50%] px-[80px] mobile:w-full mobile:border-none mobile:px-4 mobile:py-5'>
+				<div className='w-[50%] py-[60px] px-[80px] mobile:w-full mobile:border-none mobile:px-4 mobile:py-5'>
 					<h2 className='font-mona text-[48px] font-[800] leading-[52px] mobile:text-[24px] mobile:leading-[30px]'>
 						Each Room is a unique NFT owned by you and freely transferable
 					</h2>

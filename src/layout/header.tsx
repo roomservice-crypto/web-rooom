@@ -65,6 +65,7 @@ export default function Header(props: { className?: string }) {
 									<li>
 										<a
 											className='flex cursor-pointer items-center gap-x-3 px-4 py-[10px] hover:rounded-md hover:bg-black hover:bg-opacity-5'
+											href='https://twitter.com/roomservice_gg'
 											target='_blank'
 											rel='noreferrer'>
 											<Twitter />

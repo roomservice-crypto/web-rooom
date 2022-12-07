@@ -9,7 +9,7 @@ export default function SectionHero() {
 					<div className='relative left-[233px] mobile:absolute mobile:left-[50%] mobile:right-0 mobile:top-[120px]'>
 						<Loops />
 					</div>
-					<div className='pointer-events-none absolute left-0 top-0 h-full w-full bg-[linear-gradient(170.28deg,#F0F0F0_39.95%,_rgba(240,240,240,0)_67.74%)] mobile:bg-[]'></div>
+					<div className='pointer-events-none absolute left-0 top-0 h-full w-full bg-[linear-gradient(80.28deg,#F0F0F0_39.95%,_rgba(240,240,240,0)_67.74%)] mobile:bg-[linear-gradient(170.28deg,#F0F0F0_39.95%,_rgba(240,240,240,0)_67.74%)]'></div>
 				</div>
 
 				<div className='relative w-[536px] mobile:w-full'>

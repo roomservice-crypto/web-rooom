@@ -34,12 +34,12 @@ export default function SectionMore() {
 				</div>
 			</section>
 
-			<section className='flex aspect-[1440/884] border-t border-b border-dark mobile:flex-col'>
+			<section className='flex aspect-[1440/884] border-t border-b border-dark mobile:aspect-auto mobile:flex-col'>
 				<div className='flex w-[50%] flex-col items-center justify-center border-r border-dark mobile:w-full mobile:border-r-0 mobile:border-b'>
-					<img className='w-full  max-w-[1000px]' src='/assets/about/games.png' />
+					<img className='w-full max-w-[1000px]' src='/assets/about/games.png' />
 					<div className='px-20 py-8 mobile:p-4'>
 						<h3 className='text-[36px] font-semibold leading-[42px] mobile:text-[24px] mobile:leading-[30px]'>
-							Post & Gallery based on IPFS
+							Open Lightweight Gaming Ecosystem
 						</h3>
 						<p className='mt-4 text-lg leading-[24px]'>
 							Room Service is always open to working with third-party developers to build a whole new ecosystem of games

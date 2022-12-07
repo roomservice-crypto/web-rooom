@@ -23,7 +23,7 @@ export default function Footer() {
 				href='https://medium.com/@roomservicegg'
 				className='ml-6 flex items-center gap-x-[10px] rounded-full border-[1.5px] border-dark py-4 px-6 hover:bg-black hover:bg-opacity-5 mobile:mt-3 mobile:ml-0 mobile:w-full mobile:justify-center'>
 				<Medium />
-				<span>Visit our medium</span>
+				<span>Visit our Medium</span>
 			</a>
 		</footer>
 	)

@@ -6,6 +6,7 @@ import SectionCard from '@/components/about/SectionCard'
 import SectionHero from '@/components/about/SectionHero'
 import SectionMore from '@/components/about/SectionMore'
 import SectionValues from '@/components/about/SectionValues'
+import ToTop from '@/components/common/ToTop'
 import Header from '@/layout/header'
 import Head from 'next/head'
 
@@ -20,6 +21,8 @@ export default function About() {
 				<meta property='og:title' content={TITLE}></meta>
 				<meta name='twitter:title' content={TITLE} />
 			</Head>
+
+			<ToTop />
 
 			<Header />
 

@@ -102,7 +102,7 @@ export default function SectionMore() {
 					</div>
 					<img className='mt-auto  w-full' src='/assets/about/showcase.png' />
 				</div>
-				<div className='flex w-[33%] flex-1 flex-col items-center justify-center pb-[50px] mobile:w-full mobile:pb-0'>
+				<div className='flex w-[33%] flex-1 flex-col items-center justify-center pb-[50px] mobile:w-full mobile:pb-0 mobile:flex-col-reverse'>
 					<div className='p-20 mobile:p-4'>
 						<h3 className='text-[36px] font-semibold leading-[42px] mobile:text-[24px] mobile:leading-[30px]'>
 							Data Cube

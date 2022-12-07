@@ -19,7 +19,9 @@ export default function MobileMenu() {
 			</button>
 
 			{open && (
-				<div className='fixed left-0 right-0 top-0 bottom-0 z-10 bg-[#F0F0F0] mobile:block'>
+				<div
+					className='fixed left-0 right-0 top-0 bottom-0 z-10 bg-[#F0F0F0] mobile:block'
+					style={{ backgroundImage: 'url(/assets/noise.png)' }}>
 					<div className='flex h-[72px] items-center justify-between border-b border-dark px-4'>
 						<span className='flex items-center'>
 							<Image src='/logo.svg' width='36px' height='36px' />

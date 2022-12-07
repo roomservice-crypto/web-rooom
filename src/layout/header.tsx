@@ -15,7 +15,7 @@ export default function Header(props: { className?: string }) {
 	return (
 		<header
 			className={clsx(
-				'flex h-[60px] items-center border-b border-dark px-20 mobile:h-[72px] mobile:px-4',
+				'flex h-[60px] items-center border-b border-dark bg-[#F0F0F0] px-20 mobile:h-[72px] mobile:px-4',
 				props.className
 			)}>
 			<Link href='/'>

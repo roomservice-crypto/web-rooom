@@ -7,6 +7,10 @@
 
 body {
 	@apply bg-[#F0F0F0] text-[#131313];
+	background-image: url(/assets/noise.png);
+	background-repeat: repeat;
+	background-position: left top;
+	background-size: auto;
 }
 
 #__next {
@@ -14,6 +18,7 @@ body {
 }
 
 .home {
+	@apply bg-[#F0F0F0];
 	background-image: url(/assets/noise.png), url(/assets/home/grid.svg);
 	background-repeat: repeat, no-repeat;
 	background-position: left top, center -5px;

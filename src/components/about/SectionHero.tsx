@@ -13,7 +13,9 @@ export default function SectionHero() {
 				</div>
 
 				<div className='relative w-[536px] mobile:w-full'>
-					<h1 className='font-mona text-[60px] font-[900] uppercase leading-[1.2] mobile:text-[36px]'>
+					<h1
+						className='font-mona text-[60px] font-[900] uppercase leading-[1.2] mobile:text-[36px]'
+						style={{ textShadow: '0px 5px 0px #E1E1E1' }}>
 						Web3 wonderland and lifestyle
 					</h1>
 					<p className='mt-6 text-lg font-normal'>

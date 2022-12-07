@@ -21,7 +21,9 @@ export default function Home() {
 				<MapPad />
 
 				<div className='z-1 relative mobile:px-4'>
-					<h1 className='mx-auto max-w-[1200px] text-center font-mona text-[60px] font-[900] uppercase leading-[1.2] mobile:text-4xl mobile:text-left'>
+					<h1
+						className='mx-auto max-w-[1200px] text-center font-mona text-[60px] font-[900] uppercase leading-[1.2] mobile:text-left mobile:text-4xl'
+						style={{ textShadow: '0px 5px 0px #E1E1E1' }}>
 						Customize your Web3 wonderland and lifestyle
 					</h1>
 

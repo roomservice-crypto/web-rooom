@@ -47,7 +47,7 @@ export default function Header(props: { className?: string }) {
 						<span className='peer cursor-pointer px-3 py-2 hover:rounded-md hover:bg-black hover:bg-opacity-5'>
 							Contact
 						</span>
-						<div className='absolute left-[-50px] z-50 hidden pt-[18px] hover:block peer-hover:block mobile:hidden'>
+						<div className='absolute left-[-50px] z-50 hidden pt-[12px] hover:block peer-hover:block mobile:hidden'>
 							<ul className='w-[206px] rounded-[20px] border border-dark bg-white p-3 text-sm shadow-[0px_20px_24px_-4px_rgba(16,24,40,0.08),0px_8px_8px_-4px_rgba(16,_24,_40,_0.03)]'>
 								<li>
 									<a

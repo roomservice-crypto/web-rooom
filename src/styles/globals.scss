@@ -12,3 +12,15 @@ body {
 #__next {
 	@apply flex min-h-[100vh] flex-col;
 }
+
+.home {
+	background-image: url(/assets/noise.png), url(/assets/home/grid.svg);
+	background-repeat: repeat, no-repeat;
+	background-position: left top, center -5px;
+	background-size: auto, cover;
+}
+@media (max-width: 960px) {
+	.home {
+		background-image: url(/assets/noise.png), url(/assets/home/grid-mobile.svg);
+	}
+}

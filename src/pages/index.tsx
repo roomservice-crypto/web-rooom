@@ -17,19 +17,15 @@ export default function Home() {
 
 			<Header />
 
-			<main
-				className='relative flex-1 flex-col overflow-hidden pt-[60px]'
-				style={{
-					backgroundImage: 'url(/assets/noise.png),url(/assets/home/grid.svg)',
-					backgroundRepeat: 'repeat,no-repeat',
-					backgroundPosition: 'left top,center',
-					backgroundSize: 'auto,cover'
-				}}>
+			<main className='home relative flex-1 flex-col overflow-hidden pt-[60px]'>
 				<MapPad />
 
-				<div className=' z-1 relative'>
-					<h1 className='mx-auto max-w-[1200px] text-center font-mona text-[60px] font-[900] uppercase leading-[1.2]'>
+				<div className='z-1 relative mobile:px-4'>
+					<h1 className='mx-auto max-w-[1200px] text-center font-mona text-[60px] font-[900] uppercase leading-[1.2] mobile:hidden'>
 						Customize your Web3 wonderland and lifestyle
+					</h1>
+					<h1 className='hidden text-4xl font-[900] uppercase mobile:block'>
+						Web3 <br /> wonderland <br /> and lifestyle
 					</h1>
 					<button className='button mx-auto mt-8'>
 						<span>Explore Demo</span>

@@ -9,22 +9,22 @@ export default function Footer() {
 				ROOMSERVICE
 			</span>
 
-			<Link href='https://twitter.com/roomservice_gg'>
-				<a
-					target='_blank'
-					className='ml-auto flex items-center gap-x-[10px]  rounded-full border-[1.5px] border-dark py-4 px-6 hover:bg-black hover:bg-opacity-5 mobile:ml-0 mobile:w-full mobile:justify-center'>
-					<Twitter />
-					<span>Follow us on Twitter</span>
-				</a>
-			</Link>
-			<Link href='https://medium.com/@roomservicegg'>
-				<a
-					target='_blank'
-					className='ml-6 flex items-center gap-x-[10px] rounded-full border-[1.5px] border-dark py-4 px-6 hover:bg-black hover:bg-opacity-5 mobile:mt-3 mobile:ml-0 mobile:w-full mobile:justify-center'>
-					<Medium />
-					<span>Visit our medium</span>
-				</a>
-			</Link>
+			<a
+				target='_blank'
+				href='https://twitter.com/roomservice_gg'
+				className='ml-auto flex items-center gap-x-[10px]  rounded-full border-[1.5px] border-dark py-4 px-6 hover:bg-black hover:bg-opacity-5 mobile:ml-0 mobile:w-full mobile:justify-center'
+				rel='noreferrer'>
+				<Twitter />
+				<span>Follow us on Twitter</span>
+			</a>
+			<a
+				rel='noreferrer'
+				target='_blank'
+				href='https://medium.com/@roomservicegg'
+				className='ml-6 flex items-center gap-x-[10px] rounded-full border-[1.5px] border-dark py-4 px-6 hover:bg-black hover:bg-opacity-5 mobile:mt-3 mobile:ml-0 mobile:w-full mobile:justify-center'>
+				<Medium />
+				<span>Visit our medium</span>
+			</a>
 		</footer>
 	)
 }

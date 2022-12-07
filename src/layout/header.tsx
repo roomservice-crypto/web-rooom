@@ -3,7 +3,11 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Menu from '@/svgs/menu.svg'
+import { Menu } from '@headlessui/react'
+import Medium from '@/svgs/medium.svg'
+import Twitter from '@/svgs/twitter.svg'
+import Email from '@/svgs/email.svg'
+import MobileMenu from './MobileMenu'
 
 export default function Header(props: { className?: string }) {
 	const router = useRouter()
@@ -38,25 +42,56 @@ export default function Header(props: { className?: string }) {
 						<Link href='/about'>
 							<a
 								className={clsx(
-									'px-3 py-2 hover:rounded-md hover:bg-black hover:bg-opacity-5',
+									'px-3 py-2 hover:rounded-md hover:bg-black hover:bg-opacity-5 ',
 									router.pathname === '/about' && 'rounded-md bg-black bg-opacity-5'
 								)}>
 								About
 							</a>
 						</Link>
 					</li>
-					<li>
-						{/* <Link href='/map'>
+					{/* <Link href='/map'>
 							<a
 								className={clsx('px-3 py-2 hover:rounded-md hover:bg-black hover:bg-opacity-5', router.pathname.startsWith('/map') && 'rounded-md bg-black bg-opacity-5')}>
 								Map
 							</a>
 						</Link> */}
-						<Link
-							href='mailto:contact@roomservice.gg'
-							className={clsx('cursor-not-allowed px-3 py-2 hover:rounded-md')}>
-							Contact
-						</Link>
+					<li>
+						<Menu>
+							<Menu.Button className='px-3 py-2 hover:rounded-md hover:bg-black hover:bg-opacity-5'>
+								Contact
+							</Menu.Button>
+							<Menu.Items className='absolute z-10 w-[206px] rounded-[20px] bg-white p-3 mobile:hidden'>
+								<ul>
+									<li>
+										<a
+											className='flex cursor-pointer items-center gap-x-3 px-4 py-[10px] hover:rounded-md hover:bg-black hover:bg-opacity-5'
+											target='_blank'
+											rel='noreferrer'>
+											<Twitter />
+											Twitter
+										</a>
+									</li>
+									<li>
+										<a
+											className='flex cursor-pointer items-center gap-x-3 px-4 py-[10px] hover:rounded-md hover:bg-black hover:bg-opacity-5 '
+											href='https://medium.com/@roomservicegg'
+											target='_blank'
+											rel='noreferrer'>
+											<Medium />
+											Medium
+										</a>
+									</li>
+									<li>
+										<a
+											className='flex cursor-pointer items-center gap-x-3 px-4 py-[10px] hover:rounded-md hover:bg-black hover:bg-opacity-5 '
+											href='mailto:contact@roomservice.gg'>
+											<Email />
+											Email
+										</a>
+									</li>
+								</ul>
+							</Menu.Items>
+						</Menu>
 					</li>
 				</ul>
 			</nav>
@@ -66,9 +101,7 @@ export default function Header(props: { className?: string }) {
 				Explore Demo
 			</button>
 
-			<button className='ml-auto p-2'>
-				<Menu />
-			</button>
+			<MobileMenu />
 		</header>
 	)
 }

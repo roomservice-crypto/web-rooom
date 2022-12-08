@@ -82,7 +82,7 @@ export default function BaseLayer(props: {
 				setRoom(null)
 			}
 		})
-	}, [setMap, setRoom])
+	}, [setMap, setReady, setRoom])
 
 	return (
 		<>

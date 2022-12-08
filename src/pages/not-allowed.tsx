@@ -14,7 +14,7 @@ export default function NotAllowded() {
 		window.addEventListener('resize', handler)
 
 		return () => window.removeEventListener('resize', handler)
-	}, [])
+	}, [router])
 
 	return (
 		<main className='text-center'>

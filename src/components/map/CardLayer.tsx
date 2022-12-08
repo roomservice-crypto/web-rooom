@@ -1,5 +1,4 @@
 import TransitionBadge from '@/components/common/TransitionBadge'
-import Record from '@/svgs/record.svg'
 import ArrowRight from '@/svgs/arrow-right.svg'
 import Close from '@/svgs/close.svg'
 import { shortenAddress } from '@/utils'

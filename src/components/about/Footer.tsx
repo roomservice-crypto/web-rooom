@@ -1,6 +1,5 @@
 import Medium from '@/svgs/medium.svg'
 import Twitter from '@/svgs/twitter.svg'
-import Link from 'next/link'
 
 export default function Footer() {
 	return (

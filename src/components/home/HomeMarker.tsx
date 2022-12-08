@@ -23,6 +23,7 @@ export default function HomeMarker(props: { className: string; Card: React.FC<{ 
 
 			return () => {
 				svgRef.current?.removeEventListener('mouseover', hover)
+				// eslint-disable-next-line react-hooks/exhaustive-deps
 				svgRef.current?.removeEventListener('mouseleave', hoverOut)
 			}
 		}

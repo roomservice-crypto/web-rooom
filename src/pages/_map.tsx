@@ -20,7 +20,7 @@ export default function Map() {
 		<>
 			<BaseLayer filter={filter} setMap={setMap} setRoom={setRoom} room={room} setReady={setReady} />
 			<CardLayer room={room} />
-			<ToolLayer filter={filter} setFilter={setFilter} map={map} ready={ready} />
+			<ToolLayer room={room} filter={filter} setFilter={setFilter} map={map} ready={ready} />
 		</>
 	)
 }

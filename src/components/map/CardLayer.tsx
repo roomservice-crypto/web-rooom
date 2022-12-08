@@ -5,9 +5,11 @@ import { shortenAddress } from '@/utils'
 import { typeWords } from '@/mock'
 import { toast } from 'react-hot-toast'
 import StateIcon from './StateIcon'
+import { useRouter } from 'next/router'
 
 export default function CardLayer(props: { room: any }) {
 	const { room } = props
+	const router = useRouter()
 
 	if (room)
 		return (
@@ -63,7 +65,9 @@ export default function CardLayer(props: { room: any }) {
 							<button onClick={() => toast('Coming Soon')} className='rounded-[24px] bg-[#1C1C1C] py-6 px-8 text-white'>
 								Say Hi
 							</button>
-							<button className='ml-3 flex rounded-[24px] border-2 border-[#1c1c1c] bg-white py-6 px-8 shadow-[0_4px_#141414]'>
+							<button
+								onClick={() => router.push(`/room/${room.address}`)}
+								className='ml-3 flex rounded-[24px] border-2 border-[#1c1c1c] bg-white py-6 px-8 shadow-[0_4px_#141414]'>
 								Explore room <ArrowRight />
 							</button>
 						</div>

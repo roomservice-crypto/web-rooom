@@ -14,3 +14,14 @@
 .button:hover {
 	background: linear-gradient(93.73deg, #f5d216 0%, #ecff16 46.37%, #b1fa18 100%);
 }
+
+.button_normal {
+	@apply rounded-[10px] border border-dark px-4 py-[10px] font-semibold;
+	background: linear-gradient(
+			93.73deg,
+			rgba(177, 250, 24, 0.45) 0%,
+			rgba(236, 255, 22, 0.45) 46.37%,
+			rgba(245, 210, 22, 0.45) 100%
+		),
+		#ffffff;
+}

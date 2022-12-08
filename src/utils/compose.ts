@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-redeclare */
+
 type Func<T extends any[], R> = (...a: T) => R
 
 /**

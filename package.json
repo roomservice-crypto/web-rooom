@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@headlessui/react": "^1.7.3",
 		"clsx": "^1.2.1",
+		"ethers": "^5.7.2",
 		"gsap": "npm:@gsap/business@^3.11.3",
 		"mapbox-gl": "^2.11.0",
 		"next": "12.3.1",
@@ -21,12 +22,14 @@
 		"react-spring": "^9.5.5"
 	},
 	"devDependencies": {
+		"@nastyox/rando.js": "^2.0.5",
 		"@svgr/webpack": "^6.5.0",
 		"@types/mapbox-gl": "^2.7.8",
 		"@types/node": "18.11.5",
 		"@types/react": "18.0.22",
 		"@types/react-dom": "18.0.7",
 		"autoprefixer": "^10.4.12",
+		"csvtojson": "^2.0.10",
 		"eslint": "8.26.0",
 		"eslint-config-next": "12.3.1",
 		"eslint-config-prettier": "^8.5.0",

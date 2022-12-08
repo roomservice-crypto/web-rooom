@@ -1,17 +1,22 @@
+import { ALL } from '@/constants'
 import clsx from 'clsx'
+import rooms from '../../mock/rooms.json'
 
-export default function LoactionIcon(props: { id: string; selected: string }) {
-	const active = props.id === props.selected
+export default function LoactionIcon(props: { id: number; selected: any; filter: string }) {
+	const { id, selected, filter } = props
+
+	const active = id == selected?._id
+	const display = filter === ALL || filter === rooms[props.id].type ? true : false
 
 	return (
-		<div className='group cursor-pointer' data-id={props.id}>
+		<div className={clsx('group cursor-pointer', !display && 'hidden')} data-id={props.id}>
 			<svg
 				width='54'
 				height='59'
 				fill='none'
 				xmlns='http://www.w3.org/2000/svg'
 				className={clsx(
-					'cursor-pointer transition-transform origin-[center_bottom] group-hover:drop-shadow-[0px_10px_20px_rgba(250,231,108,0.8)] group-hover:scale-150 pointer-events-none',
+					'pointer-events-none origin-[center_bottom] cursor-pointer transition-transform group-hover:scale-150 group-hover:drop-shadow-[0px_10px_20px_rgba(250,231,108,0.8)]',
 					active && 'drop-shadow-[0px_10px_20px_rgba(250,231,108,0.8) scale-150'
 				)}>
 				<path

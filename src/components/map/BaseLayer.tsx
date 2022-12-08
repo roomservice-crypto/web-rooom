@@ -1,10 +1,16 @@
 import mapboxgl, { LngLatLike } from 'mapbox-gl'
 import { Dispatch, useEffect, useRef, useState } from 'react'
-import example from '../../assets/example.json'
+import rooms from '../../mock/rooms.json'
 import Marker from '../common/Marker'
 
-export default function BaseLayer(props: { setMap: Dispatch<mapboxgl.Map>; setRoom: Dispatch<any>; room: any }) {
-	const { setMap, setRoom, room } = props
+export default function BaseLayer(props: {
+	setMap: Dispatch<mapboxgl.Map>
+	setRoom: Dispatch<any>
+	room: any
+	setReady: Dispatch<boolean>
+	filter: string
+}) {
+	const { setMap, setRoom, room, setReady, filter } = props
 	const [markerDivs, setMarkerDivs] = useState<HTMLDivElement[] | null>(null)
 
 	const ref = useRef<HTMLDivElement>(null)
@@ -12,7 +18,7 @@ export default function BaseLayer(props: { setMap: Dispatch<mapboxgl.Map>; setRo
 	useEffect(() => {
 		const map = new mapboxgl.Map({
 			container: ref.current!,
-			style: 'mapbox://styles/mapbox/streets-v11',
+			style: 'mapbox://styles/yysuni/clb4sxw3w000915phkfoa95i4',
 			zoom: 2,
 			projection: { name: 'globe' },
 			maxZoom: 14,
@@ -23,24 +29,16 @@ export default function BaseLayer(props: { setMap: Dispatch<mapboxgl.Map>; setRo
 		setMap(map)
 
 		map.on('load', () => {
+			// first locate
 			setTimeout(() => {
 				map.flyTo({
-					center: example.features[0].geometry.coordinates as LngLatLike,
-					zoom: 10,
+					center: rooms[0].coordinates as LngLatLike,
+					zoom: 8,
 					duration: 4000,
 					easing: t => 1 - Math.pow(1 - t, 3)
 				})
 
 				map.once('moveend', () => {
-					const divs: HTMLDivElement[] = []
-					example.features.forEach(f => {
-						let div = document.createElement('div')
-						divs.push(div)
-
-						new mapboxgl.Marker({ element: div }).setLngLat(f.geometry.coordinates as any).addTo(map)
-					})
-					setMarkerDivs(divs)
-
 					map.dragPan.enable()
 					map.scrollZoom.enable()
 					map.boxZoom.enable()
@@ -51,25 +49,46 @@ export default function BaseLayer(props: { setMap: Dispatch<mapboxgl.Map>; setRo
 					map.touchPitch.enable()
 
 					map.setMinZoom(2)
+
+					setRoom(rooms[0])
+
+					setReady(true)
 				})
 			}, 500)
+
+			// display rooms
+			setTimeout(() => {
+				const divs: HTMLDivElement[] = []
+				rooms.forEach(r => {
+					let div = document.createElement('div')
+					divs.push(div)
+
+					new mapboxgl.Marker({ element: div }).setLngLat(r.coordinates as any).addTo(map)
+				})
+				setMarkerDivs(divs)
+			}, 3000)
 		})
 
 		ref.current!.addEventListener('click', e => {
 			let i
 			if ((i = (e.target as HTMLDivElement | null)?.dataset.id)) {
-				setRoom(i)
+				setRoom(rooms[Number(i)])
+				map.flyTo({
+					center: rooms[Number(i)].coordinates as LngLatLike,
+					easing: t => 1 - Math.pow(1 - t, 3),
+					duration: 500
+				})
 			} else {
 				setRoom(null)
 			}
 		})
-	}, [])
+	}, [setMap, setRoom])
 
 	return (
 		<>
 			<div ref={ref} className='h-[100vh] w-full'></div>
 			{markerDivs?.map((d, i) => (
-				<Marker key={i} container={d} id={String(i)} selected={room} />
+				<Marker key={i} container={d} id={i} selected={room} filter={filter} />
 			))}
 		</>
 	)

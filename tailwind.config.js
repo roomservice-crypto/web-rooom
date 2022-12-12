@@ -8,7 +8,8 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				sans: ['Poppins', ...defaultTheme.fontFamily.sans],
-				mona: ['Mona', ...defaultTheme.fontFamily.sans]
+				mona: ['Mona', ...defaultTheme.fontFamily.sans],
+				helve: ['Helvetica Neue', ...defaultTheme.fontFamily.sans]
 			},
 			colors: {
 				primary: {

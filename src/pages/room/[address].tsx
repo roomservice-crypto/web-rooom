@@ -1,4 +1,4 @@
-import Room1 from '@/components/rooms/Room1'
+import Room2 from '@/components/rooms/Room2'
 import { useRouter } from 'next/router'
 import rooms from '@/mock/rooms.json'
 
@@ -10,7 +10,7 @@ export default function Room() {
 	if (address) {
 		const room = rooms.find(r => r.address === address)
 
-		return <Room1 room={room} />
+		return <Room2 room={room} />
 	}
 
 	return <>Loading...</>

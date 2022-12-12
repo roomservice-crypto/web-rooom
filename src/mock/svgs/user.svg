@@ -1,8 +1,14 @@
 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.12">
-<path d="M2 9.4C2 8.07452 3.07452 7 4.4 7H7.6C8.92548 7 10 8.07452 10 9.4C10 10.2837 9.28366 11 8.4 11H3.6C2.71634 11 2 10.2837 2 9.4Z" fill="white" fill-opacity="0.8"/>
-<path d="M8 3C8 4.10457 7.10457 5 6 5C4.89543 5 4 4.10457 4 3C4 1.89543 4.89543 1 6 1C7.10457 1 8 1.89543 8 3Z" fill="white" fill-opacity="0.8"/>
-</g>
-<path d="M2 9.4C2 8.07452 3.07452 7 4.4 7H7.6C8.92548 7 10 8.07452 10 9.4V9.4C10 10.2837 9.28366 11 8.4 11H3.6C2.71634 11 2 10.2837 2 9.4V9.4Z" stroke="white" stroke-opacity="0.8" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8 3C8 4.10457 7.10457 5 6 5C4.89543 5 4 4.10457 4 3C4 1.89543 4.89543 1 6 1C7.10457 1 8 1.89543 8 3Z" stroke="white" stroke-opacity="0.8" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"/>
+  <g opacity="0.12">
+    <path
+      d="M2 9.4C2 8.07452 3.07452 7 4.4 7H7.6C8.92548 7 10 8.07452 10 9.4C10 10.2837 9.28366 11 8.4 11H3.6C2.71634 11 2 10.2837 2 9.4Z"
+      fill="currentColor" fill-opacity="0.8" />
+    <path d="M8 3C8 4.10457 7.10457 5 6 5C4.89543 5 4 4.10457 4 3C4 1.89543 4.89543 1 6 1C7.10457 1 8 1.89543 8 3Z"
+      fill="currentColor" fill-opacity="0.8" />
+  </g>
+  <path
+    d="M2 9.4C2 8.07452 3.07452 7 4.4 7H7.6C8.92548 7 10 8.07452 10 9.4V9.4C10 10.2837 9.28366 11 8.4 11H3.6C2.71634 11 2 10.2837 2 9.4V9.4Z"
+    stroke="currentColor" stroke-opacity="0.8" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M8 3C8 4.10457 7.10457 5 6 5C4.89543 5 4 4.10457 4 3C4 1.89543 4.89543 1 6 1C7.10457 1 8 1.89543 8 3Z"
+    stroke="currentColor" stroke-opacity="0.8" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" />
 </svg>

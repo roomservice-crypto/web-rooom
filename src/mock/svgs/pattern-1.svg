@@ -1,0 +1,6 @@
+<svg stroke-miterlimit="10" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"
+  clip-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+
+  <path d="M20 0v40V0zM0 20h40H0z" fill="none" stroke="black" stroke-opacity="0.1" stroke-linecap="butt"
+    stroke-linejoin="miter" stroke-width="1" />
+</svg>

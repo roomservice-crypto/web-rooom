@@ -13,7 +13,6 @@ import avatar4 from '@/mock/images/avatar-4.png'
 import avatar5 from '@/mock/images/avatar-5.png'
 import avatar6 from '@/mock/images/avatar-6.png'
 import avatar7 from '@/mock/images/avatar-7.png'
-import avatar8 from '@/mock/images/avatar-8.png'
 import avatar9 from '@/mock/images/avatar-9.png'
 import avatar10 from '@/mock/images/avatar-10.png'
 import avatar11 from '@/mock/images/avatar-11.png'
@@ -41,7 +40,6 @@ import ExternalLink from '@/mock/svgs/external-link.svg'
 import Edit from '@/mock/svgs/edit.svg'
 import Maximize from '@/mock/svgs/maximize.svg'
 import ArrowRight from '@/mock/svgs/arrow-right.svg'
-import LinearRect from './LinearGradient'
 
 export default function Room2(props: { room: any }) {
 	const { room } = props

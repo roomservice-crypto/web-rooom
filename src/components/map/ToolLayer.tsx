@@ -1,6 +1,8 @@
 import Plus from '@/svgs/plus.svg'
 import Minus from '@/svgs/minus.svg'
 import Crosshair from '@/svgs/crosshair.svg'
+import Earth from '@/svgs/earth.svg'
+import ChevronRight from '@/svgs/chevron-right.svg'
 import mapboxgl, { LngLatLike } from 'mapbox-gl'
 import React, { Dispatch, useEffect, useState } from 'react'
 import ChevronsLeft from '@/svgs/chevrons-left.svg'
@@ -9,6 +11,7 @@ import { Transition } from '@headlessui/react'
 import clsx from 'clsx'
 import { ALL } from '@/constants'
 import { useRouter } from 'next/router'
+import { getRooms } from '@/utils/storage'
 
 export default function ToolLayer(props: {
 	map: mapboxgl.Map | null
@@ -18,8 +21,10 @@ export default function ToolLayer(props: {
 	room: any
 }) {
 	const { map, ready, filter, setFilter, room } = props
+	const rooms = getRooms()
 	const router = useRouter()
 	const [localCoords, setLocalCoords] = useState([0, 0])
+	const [open, setOpen] = useState(true)
 
 	useEffect(() => {
 		navigator.geolocation.getCurrentPosition(position => {
@@ -92,6 +97,35 @@ export default function ToolLayer(props: {
 					<button className='rounded-[10px] border border-dark bg-white p-[10px]'>
 						<ChevronsLeft />
 					</button>
+				</div>
+			</Transition>
+
+			{/* right top buttons */}
+			<Transition appear show={open} enterFrom='opacity-0 right-[-100px]' enter='transition-all ' as={React.Fragment}>
+				<div className='fixed top-8 right-8 z-[11] flex h-[764px] gap-x-4 rounded-[32px] border-2 border-dark bg-[#BAEDBD] bg-opacity-20 p-3'>
+					<div className='w-[368px] overflow-auto rounded-[32px] bg-white'>
+						<div className='flex items-center gap-x-2 px-8 pt-8'>
+							<span className=' inline-block p-1'>
+								<Earth className='h-5 w-5' />
+							</span>
+							<ChevronRight />
+							<span>South Korea</span>
+						</div>
+						<div>Seoul area</div>
+						<div>440+ Room</div>
+
+						<div className='mt-4 border-t border-dashed'></div>
+
+						{rooms.map(r => (
+							<div key={r._id} className='flex'>
+								<img src={r.avatar} className=' h-10 w-10 rounded-full' />
+								<div>
+									<div>{r.name}</div>
+									<div>xxxx</div>
+								</div>
+							</div>
+						))}
+					</div>
 				</div>
 			</Transition>
 		</>

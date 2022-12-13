@@ -2,9 +2,11 @@ import Value1 from '@/svgs/about/value-1.svg'
 import Value2 from '@/svgs/about/value-2.svg'
 import Value3 from '@/svgs/about/value-3.svg'
 import ArrowRight from '@/svgs/arrow-right.svg'
-import { toast } from 'react-hot-toast'
+import { useRouter } from 'next/router'
 
 export default function SectionValues() {
+	const router = useRouter()
+
 	return (
 		<>
 			<div className='bg-[#FAE76C] px-20 py-10 font-mona text-[60px] font-[900] leading-[95px] mobile:px-4 mobile:pt-8 mobile:pb-4 mobile:text-[36px] mobile:leading-[42px]'>
@@ -56,7 +58,7 @@ export default function SectionValues() {
 						Start owning your private <br /> room For Free Now
 					</h3>
 
-					<button onClick={() => toast('Coming Soon')} className='button mt-16 mobile:mt-8'>
+					<button onClick={() => router.push('/map')} className='button mt-16 mobile:mt-8'>
 						<span>Explore Demo</span>
 
 						<ArrowRight />

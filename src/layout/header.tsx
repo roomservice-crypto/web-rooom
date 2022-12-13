@@ -7,7 +7,6 @@ import Medium from '@/svgs/medium.svg'
 import Twitter from '@/svgs/twitter.svg'
 import Email from '@/svgs/email.svg'
 import MobileMenu from './MobileMenu'
-import { toast } from 'react-hot-toast'
 
 export default function Header(props: { className?: string }) {
 	const router = useRouter()
@@ -95,11 +94,9 @@ export default function Header(props: { className?: string }) {
 				</ul>
 			</nav>
 
-			{/* <button className='rounded-3xl bg-dark px-4 py-2 text-sm text-white font-[500] hover:bg-opacity-80  mobile:hidden'>Explore Demo</button> */}
 			<button
-				onClick={() => toast('Coming Soon')}
-				className='cursor-not-allowed rounded-3xl bg-dark px-4 py-2 text-sm font-[500] text-white disabled:bg-black disabled:bg-opacity-5 disabled:text-black disabled:text-opacity-10 mobile:hidden'
-				disabled>
+				onClick={() => router.push('/map')}
+				className='rounded-3xl bg-dark px-4 py-2 text-sm font-[500] text-white disabled:bg-black disabled:bg-opacity-5 disabled:text-black disabled:text-opacity-10 mobile:hidden'>
 				Explore Demo
 			</button>
 

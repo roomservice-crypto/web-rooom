@@ -1,8 +1,10 @@
 import ArrowRight from '@/svgs/arrow-right.svg'
 import Loops from './Loops'
-import { toast } from 'react-hot-toast'
+import { useRouter } from 'next/router'
 
 export default function SectionHero() {
+	const router = useRouter()
+
 	return (
 		<section className='overflow-hidden'>
 			<div className='relative h-[820px] pt-[171px] pl-[80px] mobile:h-[678px] mobile:px-4 mobile:pt-12 mini:h-[720px]'>
@@ -23,7 +25,7 @@ export default function SectionHero() {
 						Room Service is the protocol that powers Web3 room facilities, enabling users to build, launch and host
 						their own blockchain-based spaces without any coding experience.
 					</p>
-					<button onClick={() => toast('Coming Soon')} className='button mt-8'>
+					<button onClick={() => router.push('/map')} className='button mt-8'>
 						<span>Explore Demo</span>
 
 						<ArrowRight />

@@ -2,11 +2,13 @@ import Header from '@/layout/header'
 import Head from 'next/head'
 import ArrowRight from '@/svgs/arrow-right.svg'
 import MapPad from '@/components/home/MapPad'
-import { toast } from 'react-hot-toast'
+import { useRouter } from 'next/router'
 
 const TITLE = 'Room Service'
 
 export default function Home() {
+	const router = useRouter()
+
 	return (
 		<>
 			<Head>
@@ -28,7 +30,7 @@ export default function Home() {
 						Customize your Web3 wonderland and lifestyle
 					</h1>
 
-					<button onClick={() => toast('Coming Soon')} className='button mx-auto mt-8'>
+					<button onClick={() => router.push('/map')} className='button mx-auto mt-8'>
 						<span>Explore Demo</span>
 
 						<ArrowRight />

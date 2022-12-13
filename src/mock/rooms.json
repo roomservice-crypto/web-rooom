@@ -3,1260 +3,1320 @@
 		"_id": 0,
 		"name": "Oliver",
 		"description": "",
-		"followers": 10433,
-		"likes": 62,
+		"followers": 80622,
+		"likes": 89,
 		"type": "Social",
 		"avatar": "https://i.postimg.cc/RVT2nqP5/avatar-en-10.png",
 		"backgroundColor": "#CBD5E1",
-		"address": "0x435D239Ee22606600d5bc0dc125F4bB1d573A68c",
+		"address": "0xd531B707cF2c433577870c85bf3c424f9233F70A",
 		"coordinates": [
 			28.10792434615061,
 			7.844889862030939
 		],
-		"visitorsNumber": 18,
+		"visitorsNumber": 11,
 		"visitors": [
-			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png",
-			"https://i.postimg.cc/PxkM4Qx6/avatar-en-30.png",
-			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png"
-		]
+			"https://i.postimg.cc/qvbYjSV1/avatar-en-13.png",
+			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png",
+			"https://i.postimg.cc/6QZ0nm92/avatar-en-27.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 1,
 		"name": "Charlie",
 		"description": "",
-		"followers": 6667,
-		"likes": 34,
+		"followers": 1845,
+		"likes": 85,
 		"type": "Game Playing",
 		"avatar": "https://i.postimg.cc/15SLtDrr/avatar-en-11.png",
 		"backgroundColor": "#D1D5DB",
-		"address": "0xAf8F584C16AE01e4500E56f5A6486312DBfe7304",
+		"address": "0xE208D07fd297DF85196748e5387f1d402fa5Aea7",
 		"coordinates": [
 			28.83456077356456,
 			7.983017123920632
 		],
-		"visitorsNumber": 23,
+		"visitorsNumber": 20,
 		"visitors": [
+			"https://i.postimg.cc/PxkM4Qx6/avatar-en-30.png",
 			"https://i.postimg.cc/FKY6qphN/avatar-en-14.png",
-			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png",
-			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png"
-		]
+			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png"
+		],
+		"them": 1
 	},
 	{
 		"_id": 2,
 		"name": "Jacob",
 		"description": "",
-		"followers": 61410,
-		"likes": 15,
+		"followers": 47812,
+		"likes": 74,
 		"type": "Voice Chat",
 		"avatar": "https://i.postimg.cc/HLFNCML5/avatar-en-12.png",
 		"backgroundColor": "#D4D4D8",
-		"address": "0x6D7C159285Fc3BdaD670a3d9554437279D998a57",
+		"address": "0x4e4e3454fd3678E303A46e9fa4FA8F7747C8db4c",
 		"coordinates": [
 			29.465780296368933,
 			8.687448880478513
 		],
 		"visitorsNumber": 30,
 		"visitors": [
-			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png",
-			"https://i.postimg.cc/g2JtXsX8/avatar-en-18.png",
-			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png"
-		]
+			"https://i.postimg.cc/PxkM4Qx6/avatar-en-30.png",
+			"https://i.postimg.cc/Hn9v5P94/avatar-en-15.png",
+			"https://i.postimg.cc/bJXm5j69/avatar-en-20.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 3,
 		"name": "Charlie",
 		"description": "",
-		"followers": 29915,
-		"likes": 28,
+		"followers": 69456,
+		"likes": 27,
 		"type": "Music Sessions",
 		"avatar": "https://i.postimg.cc/qvbYjSV1/avatar-en-13.png",
 		"backgroundColor": "#D4D4D4",
-		"address": "0xA825AA8942cDD1d2a1C9f6AAAB1B20E288282995",
+		"address": "0x198e10d3B034843077b50374Fff8e6429343b2FA",
 		"coordinates": [
 			27.417986728200788,
 			8.854289231380633
 		],
-		"visitorsNumber": 27,
+		"visitorsNumber": 12,
 		"visitors": [
+			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png",
 			"https://i.postimg.cc/6QZ0nm92/avatar-en-27.png",
-			"https://i.postimg.cc/RhdGqJvg/avatar-en-24.png",
-			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png"
-		]
+			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 4,
 		"name": "Thomas",
 		"description": "",
-		"followers": 31289,
-		"likes": 33,
+		"followers": 96996,
+		"likes": 36,
 		"type": "DIY Avatar",
 		"avatar": "https://i.postimg.cc/FKY6qphN/avatar-en-14.png",
 		"backgroundColor": "#FCA5A5",
-		"address": "0x6367e676F2963380F9d0c9916FEAF2294707674D",
+		"address": "0x86486a3a5644098860b01BE3aC695ce712439511",
 		"coordinates": [
 			30.346551723538738,
 			9.252945963751458
 		],
-		"visitorsNumber": 28,
+		"visitorsNumber": 5,
 		"visitors": [
-			"https://i.postimg.cc/RhdGqJvg/avatar-en-24.png",
-			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png",
+			"https://i.postimg.cc/85hZQn9Q/avatar-en-23.png",
+			"https://i.postimg.cc/0yVghrmd/avatar-en-6.png",
 			"https://i.postimg.cc/tCHHxKpP/avatar-en-3.png"
-		]
+		],
+		"them": 0
 	},
 	{
 		"_id": 5,
 		"name": "George",
 		"description": "",
-		"followers": 2027,
-		"likes": 43,
+		"followers": 57156,
+		"likes": 71,
 		"type": "Web3 Projects",
 		"avatar": "https://i.postimg.cc/Hn9v5P94/avatar-en-15.png",
 		"backgroundColor": "#FDBA74",
-		"address": "0x309941102DDaC714673B7Af7C65F8560baEC2cEB",
+		"address": "0x453000f7A6473AB75bF36589D7F80C5bEC3e8a1E",
 		"coordinates": [
 			30.486007199507384,
 			9.202232510819172
 		],
-		"visitorsNumber": 4,
+		"visitorsNumber": 20,
 		"visitors": [
-			"https://i.postimg.cc/0yVghrmd/avatar-en-6.png",
-			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png",
-			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png"
-		]
+			"https://i.postimg.cc/tCHHxKpP/avatar-en-3.png",
+			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png",
+			"https://i.postimg.cc/dtnSVp1J/avatar-en-17.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 6,
 		"name": "Oscar",
 		"description": "",
-		"followers": 40758,
-		"likes": 50,
+		"followers": 23852,
+		"likes": 91,
 		"type": "Key Users",
 		"avatar": "https://i.postimg.cc/yxHrDzc8/avatar-en-16.png",
 		"backgroundColor": "#FCD34D",
-		"address": "0x1F5043fddD09be4fA18A7BF187D7281Ad8E0d2e6",
+		"address": "0xdf3f74DEfCeeC871db3c4Bc43eeca9D5969101E1",
 		"coordinates": [
 			30.229115533249683,
 			7.5466704323820295
 		],
-		"visitorsNumber": 16,
+		"visitorsNumber": 21,
 		"visitors": [
-			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png",
+			"https://i.postimg.cc/6QZ0nm92/avatar-en-27.png",
 			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png",
-			"https://i.postimg.cc/0yVghrmd/avatar-en-6.png"
-		]
+			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 7,
 		"name": "James",
 		"description": "",
-		"followers": 23615,
+		"followers": 72474,
 		"likes": 43,
 		"type": "Social",
 		"avatar": "https://i.postimg.cc/dtnSVp1J/avatar-en-17.png",
 		"backgroundColor": "#FDE047",
-		"address": "0xDb4D0430cfe8EaC8B45007fb2d465772A33E7667",
+		"address": "0x832505D867a48ecD98473969BE677395b475184C",
 		"coordinates": [
 			30.522706008972364,
 			7.058896965063326
 		],
-		"visitorsNumber": 6,
+		"visitorsNumber": 11,
 		"visitors": [
-			"https://i.postimg.cc/qvbYjSV1/avatar-en-13.png",
-			"https://i.postimg.cc/g2JtXsX8/avatar-en-18.png",
-			"https://i.postimg.cc/tgnrDgzg/avatar-en-21.png"
-		]
+			"https://i.postimg.cc/FKY6qphN/avatar-en-14.png",
+			"https://i.postimg.cc/dtnSVp1J/avatar-en-17.png",
+			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 8,
 		"name": "William",
 		"description": "",
-		"followers": 1476,
-		"likes": 12,
+		"followers": 60286,
+		"likes": 5,
 		"type": "Game Playing",
 		"avatar": "https://i.postimg.cc/g2JtXsX8/avatar-en-18.png",
 		"backgroundColor": "#BEF264",
-		"address": "0x16F350d8F47EB5E9c44424747F5a6242d4884375",
+		"address": "0xD64354C83ea1e4a7c4fFcCfB5aE6b2930A38d568",
 		"coordinates": [
 			28.019847203433443,
 			6.862184062901676
 		],
-		"visitorsNumber": 8,
+		"visitorsNumber": 10,
 		"visitors": [
 			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png",
-			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png",
-			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png"
-		]
+			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png",
+			"https://i.postimg.cc/yxHrDzc8/avatar-en-16.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 9,
 		"name": "Margaret",
 		"description": "",
-		"followers": 9402,
-		"likes": 3,
+		"followers": 20872,
+		"likes": 46,
 		"type": "Voice Chat",
 		"avatar": "https://i.postimg.cc/D0nB2P3W/avatar-en-19.png",
 		"backgroundColor": "#86EFAC",
-		"address": "0xD03EC623580dE58782A27C57FC3F5422DFe4CbAf",
+		"address": "0x3FCCC34bBD7aa572B580C32685576765b6Cd7A2F",
 		"coordinates": [
 			27.183114347622706,
 			7.895784234706909
 		],
-		"visitorsNumber": 6,
+		"visitorsNumber": 26,
 		"visitors": [
-			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png",
-			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png",
-			"https://i.postimg.cc/BnXNQvkC/avatar-en-25.png"
-		]
+			"https://i.postimg.cc/BnXNQvkC/avatar-en-25.png",
+			"https://i.postimg.cc/tCHHxKpP/avatar-en-3.png",
+			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 10,
 		"name": "Samantha",
 		"description": "",
-		"followers": 35823,
-		"likes": 24,
+		"followers": 99374,
+		"likes": 37,
 		"type": "Music Sessions",
 		"avatar": "https://i.postimg.cc/gchWrzFm/avatar-en-2.png",
 		"backgroundColor": "#6EE7B7",
-		"address": "0xaadAE1364415D16dD3B997149a55e68295065B92",
+		"address": "0x9B65c07e36f70f981aA00CacA38Cb42705101B83",
 		"coordinates": [
 			28.73914386895501,
 			9.658387123483607
 		],
-		"visitorsNumber": 12,
+		"visitorsNumber": 17,
 		"visitors": [
-			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png",
-			"https://i.postimg.cc/BnXNQvkC/avatar-en-25.png",
-			"https://i.postimg.cc/RhdGqJvg/avatar-en-24.png"
-		]
+			"https://i.postimg.cc/j2y01XQL/avatar-en-7.png",
+			"https://i.postimg.cc/FKY6qphN/avatar-en-14.png",
+			"https://i.postimg.cc/j2y01XQL/avatar-en-7.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 11,
 		"name": "Bethany",
 		"description": "",
-		"followers": 74682,
-		"likes": 45,
+		"followers": 68233,
+		"likes": 46,
 		"type": "DIY Avatar",
 		"avatar": "https://i.postimg.cc/bJXm5j69/avatar-en-20.png",
 		"backgroundColor": "#5EEAD4",
-		"address": "0xa3674FeDf3BB5cF004604fcBd2c60E5A049733c3",
+		"address": "0x5F67Eb8727dea08020482BB2Dc1Ce036E1A25884",
 		"coordinates": [
 			31.359438864783073,
 			8.47697927806793
 		],
-		"visitorsNumber": 21,
+		"visitorsNumber": 4,
 		"visitors": [
-			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png",
-			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png",
-			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png"
-		]
+			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png",
+			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png",
+			"https://i.postimg.cc/RhdGqJvg/avatar-en-24.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 12,
 		"name": "Elizabeth",
 		"description": "",
-		"followers": 51743,
-		"likes": 78,
+		"followers": 93021,
+		"likes": 42,
 		"type": "Web3 Projects",
 		"avatar": "https://i.postimg.cc/tgnrDgzg/avatar-en-21.png",
 		"backgroundColor": "#67E8F9",
-		"address": "0x04955f902a2711fDbFbfe92f801B733C4FF7CEAA",
+		"address": "0xf12985376292a12847f10ba57Fc8e254F26D7C88",
 		"coordinates": [
 			29.451100772583487,
 			6.621646991300992
 		],
-		"visitorsNumber": 22,
+		"visitorsNumber": 20,
 		"visitors": [
-			"https://i.postimg.cc/g2JtXsX8/avatar-en-18.png",
-			"https://i.postimg.cc/0yVghrmd/avatar-en-6.png",
-			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png"
-		]
+			"https://i.postimg.cc/yxHrDzc8/avatar-en-16.png",
+			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png",
+			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 13,
 		"name": "Joanne",
 		"description": "",
-		"followers": 35508,
-		"likes": 33,
+		"followers": 39376,
+		"likes": 85,
 		"type": "Social",
 		"avatar": "https://i.postimg.cc/dVxH8CrX/avatar-en-22.png",
 		"backgroundColor": "#7DD3FC",
-		"address": "0x01Ba78b8b3DB1CC716E6D215Ea6E60C384E73F96",
+		"address": "0xe6B3F1A654AE7b327ff58B0C7f5Bf02fbb2840f6",
 		"coordinates": [
 			28.408854583766498,
 			8.861541453664302
 		],
-		"visitorsNumber": 8,
+		"visitorsNumber": 2,
 		"visitors": [
-			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png",
-			"https://i.postimg.cc/BnXNQvkC/avatar-en-25.png",
-			"https://i.postimg.cc/FKY6qphN/avatar-en-14.png"
-		]
+			"https://i.postimg.cc/6QZ0nm92/avatar-en-27.png",
+			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png",
+			"https://i.postimg.cc/BnXNQvkC/avatar-en-25.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 14,
 		"name": "Megan",
 		"description": "",
-		"followers": 96929,
-		"likes": 44,
+		"followers": 34272,
+		"likes": 57,
 		"type": "Social",
 		"avatar": "https://i.postimg.cc/85hZQn9Q/avatar-en-23.png",
 		"backgroundColor": "#93C5FD",
-		"address": "0x882e73C125d27135289Fba38ef093b016b606456",
+		"address": "0x3Ac437e9B675881a81F42c43dF3C63FaC2e09507",
 		"coordinates": [
 			28.64372696434461,
 			7.946672338393469
 		],
-		"visitorsNumber": 0,
+		"visitorsNumber": 17,
 		"visitors": [
-			"https://i.postimg.cc/RhdGqJvg/avatar-en-24.png",
-			"https://i.postimg.cc/qvbYjSV1/avatar-en-13.png",
+			"https://i.postimg.cc/bJXm5j69/avatar-en-20.png",
+			"https://i.postimg.cc/85hZQn9Q/avatar-en-23.png",
 			"https://i.postimg.cc/RhdGqJvg/avatar-en-24.png"
-		]
+		],
+		"them": 0
 	},
 	{
 		"_id": 15,
 		"name": "Victoria",
 		"description": "",
-		"followers": 30872,
-		"likes": 90,
+		"followers": 85054,
+		"likes": 50,
 		"type": "Game Playing",
 		"avatar": "https://i.postimg.cc/RhdGqJvg/avatar-en-24.png",
 		"backgroundColor": "#A5B4FC",
-		"address": "0x65A1a834f944D97d4372c96746Bb95da44c39479",
+		"address": "0x804FE4ac0856784164EB377c800db657a4FDFe32",
 		"coordinates": [
 			30.33921196164556,
 			8.201017445086364
 		],
-		"visitorsNumber": 10,
+		"visitorsNumber": 19,
 		"visitors": [
-			"https://i.postimg.cc/yxHrDzc8/avatar-en-16.png",
-			"https://i.postimg.cc/BnXNQvkC/avatar-en-25.png",
-			"https://i.postimg.cc/FKY6qphN/avatar-en-14.png"
-		]
+			"https://i.postimg.cc/6QZ0nm92/avatar-en-27.png",
+			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png",
+			"https://i.postimg.cc/6QZ0nm92/avatar-en-27.png"
+		],
+		"them": 1
 	},
 	{
 		"_id": 16,
 		"name": "Lauren",
 		"description": "",
-		"followers": 36718,
-		"likes": 42,
+		"followers": 41894,
+		"likes": 92,
 		"type": "Music Sessions",
 		"avatar": "https://i.postimg.cc/BnXNQvkC/avatar-en-25.png",
 		"backgroundColor": "#C4B5FD",
-		"address": "0xCf84E2d73048279cf1083Ee4370820238EEf4A4D",
+		"address": "0x1a7FA91f9879259b798864f9E4E551da69a3d927",
 		"coordinates": [
 			27.80699410853387,
 			6.818458961993684
 		],
-		"visitorsNumber": 30,
+		"visitorsNumber": 12,
 		"visitors": [
-			"https://i.postimg.cc/RhdGqJvg/avatar-en-24.png",
-			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png",
-			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png"
-		]
+			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png",
+			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png",
+			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 17,
 		"name": "Michelle",
 		"description": "",
-		"followers": 66440,
-		"likes": 23,
+		"followers": 85571,
+		"likes": 58,
 		"type": "Game Playing",
 		"avatar": "https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png",
 		"backgroundColor": "#D8B4FE",
-		"address": "0xb4Cd1ac6a2A562189A26B00F0d249c1361B32898",
+		"address": "0xdfCA58c72a2639Df04cc6c5855D61acE0AdCe38e",
 		"coordinates": [
 			28.753823392741424,
 			6.0891391653978815
 		],
-		"visitorsNumber": 13,
+		"visitorsNumber": 6,
 		"visitors": [
-			"https://i.postimg.cc/Hn9v5P94/avatar-en-15.png",
-			"https://i.postimg.cc/85hZQn9Q/avatar-en-23.png",
-			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png"
-		]
+			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png",
+			"https://i.postimg.cc/FKY6qphN/avatar-en-14.png",
+			"https://i.postimg.cc/dtnSVp1J/avatar-en-17.png"
+		],
+		"them": 1
 	},
 	{
 		"_id": 18,
 		"name": "Tracy",
 		"description": "",
-		"followers": 62528,
-		"likes": 80,
+		"followers": 35428,
+		"likes": 31,
 		"type": "DIY Avatar",
 		"avatar": "https://i.postimg.cc/6QZ0nm92/avatar-en-27.png",
 		"backgroundColor": "#F0ABFC",
-		"address": "0x139A3322EBD78f4B4b2337dCb44fC111b589d7c7",
+		"address": "0x215D22A5B30BC379aE911863Cf6D091d4070e3ED",
 		"coordinates": [
 			31.065848389059482,
 			6.439343630755928
 		],
-		"visitorsNumber": 22,
+		"visitorsNumber": 14,
 		"visitors": [
-			"https://i.postimg.cc/tCHHxKpP/avatar-en-3.png",
-			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png",
-			"https://i.postimg.cc/BnXNQvkC/avatar-en-25.png"
-		]
+			"https://i.postimg.cc/0yVghrmd/avatar-en-6.png",
+			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png",
+			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 19,
 		"name": "Orlando",
 		"description": "",
-		"followers": 9237,
-		"likes": 91,
+		"followers": 67685,
+		"likes": 93,
 		"type": "Voice Chat",
 		"avatar": "https://i.postimg.cc/dQ692dKB/avatar-en-28.png",
 		"backgroundColor": "#F9A8D4",
-		"address": "0x6b3D4263335473196C90cbddaf7CDC6416a9DB4D",
+		"address": "0x223E2041c9D329556B8ed4Deff1D10EA4b1153d6",
 		"coordinates": [
 			30.91171338930542,
 			6.577900254969563
 		],
-		"visitorsNumber": 8,
+		"visitorsNumber": 29,
 		"visitors": [
-			"https://i.postimg.cc/dVxH8CrX/avatar-en-22.png",
-			"https://i.postimg.cc/qvbYjSV1/avatar-en-13.png",
-			"https://i.postimg.cc/FKY6qphN/avatar-en-14.png"
-		]
+			"https://i.postimg.cc/g2JtXsX8/avatar-en-18.png",
+			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png",
+			"https://i.postimg.cc/bJXm5j69/avatar-en-20.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 20,
 		"name": "Sebastian",
 		"description": "",
-		"followers": 80342,
-		"likes": 37,
+		"followers": 64959,
+		"likes": 10,
 		"type": "Game Playing",
 		"avatar": "https://i.postimg.cc/fy8jM4vF/avatar-en-29.png",
 		"backgroundColor": "#FDA4AF",
-		"address": "0xD3165a1738549c3a127cBa143d1FD5F730214E8b",
+		"address": "0xBA61F3aA5998A1530a4fFc79CF96580d769B2136",
 		"coordinates": [
 			29.95020458131245,
 			9.889850090553864
 		],
-		"visitorsNumber": 15,
+		"visitorsNumber": 16,
 		"visitors": [
-			"https://i.postimg.cc/dVxH8CrX/avatar-en-22.png",
-			"https://i.postimg.cc/dtnSVp1J/avatar-en-17.png",
-			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png"
-		]
+			"https://i.postimg.cc/85hZQn9Q/avatar-en-23.png",
+			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png",
+			"https://i.postimg.cc/FKY6qphN/avatar-en-14.png"
+		],
+		"them": 1
 	},
 	{
 		"_id": 21,
 		"name": "Marshall",
 		"description": "",
-		"followers": 72685,
+		"followers": 32423,
 		"likes": 76,
 		"type": "Social",
 		"avatar": "https://i.postimg.cc/tCHHxKpP/avatar-en-3.png",
 		"backgroundColor": "#CBD5E1",
-		"address": "0xc57F7E591b1Fb1b9DD2c7367Cc95311B8c8a1092",
+		"address": "0xf925F0a8008AfCaf337dAc87C71F64334ED65DCa",
 		"coordinates": [
 			29.67863339126842,
 			10.070567367010838
 		],
-		"visitorsNumber": 15,
+		"visitorsNumber": 12,
 		"visitors": [
-			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png",
-			"https://i.postimg.cc/PxkM4Qx6/avatar-en-30.png",
-			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png"
-		]
+			"https://i.postimg.cc/bJXm5j69/avatar-en-20.png",
+			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png",
+			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 22,
 		"name": "Greyson",
 		"description": "",
-		"followers": 22120,
-		"likes": 47,
+		"followers": 5712,
+		"likes": 11,
 		"type": "Social",
 		"avatar": "https://i.postimg.cc/PxkM4Qx6/avatar-en-30.png",
 		"backgroundColor": "#D1D5DB",
-		"address": "0x158aE2D5D8D79aCacF16E4CC14085f316947c390",
+		"address": "0x0D29ea55D581f6948C7e8A3f273599a0074BB2d2",
 		"coordinates": [
 			27.498724109024863,
 			6.97876463330509
 		],
-		"visitorsNumber": 21,
+		"visitorsNumber": 5,
 		"visitors": [
-			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png",
-			"https://i.postimg.cc/qvbYjSV1/avatar-en-13.png",
-			"https://i.postimg.cc/qvbYjSV1/avatar-en-13.png"
-		]
+			"https://i.postimg.cc/0yVghrmd/avatar-en-6.png",
+			"https://i.postimg.cc/j2y01XQL/avatar-en-7.png",
+			"https://i.postimg.cc/tCHHxKpP/avatar-en-3.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 23,
 		"name": "Christopher",
 		"description": "",
-		"followers": 47996,
-		"likes": 29,
+		"followers": 41749,
+		"likes": 92,
 		"type": "Game Playing",
 		"avatar": "https://i.postimg.cc/TwqJH55T/avatar-en-31.png",
 		"backgroundColor": "#D4D4D8",
-		"address": "0xB6a1Ebb7c5A18a5322B2D11C245d64d4F20AF39c",
+		"address": "0x10C805341354fc60aC4D2A2D1Fdc3267Fb686b4E",
 		"coordinates": [
 			31.814504102153847,
 			7.866702501140281
 		],
-		"visitorsNumber": 0,
+		"visitorsNumber": 6,
 		"visitors": [
-			"https://i.postimg.cc/6QZ0nm92/avatar-en-27.png",
-			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png",
-			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png"
-		]
+			"https://i.postimg.cc/tgnrDgzg/avatar-en-21.png",
+			"https://i.postimg.cc/Hn9v5P94/avatar-en-15.png",
+			"https://i.postimg.cc/tgnrDgzg/avatar-en-21.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 24,
 		"name": "Deborah",
 		"description": "",
-		"followers": 40508,
-		"likes": 82,
+		"followers": 67111,
+		"likes": 22,
 		"type": "Voice Chat",
 		"avatar": "https://i.postimg.cc/5y4Sc98L/avatar-en-32.png",
 		"backgroundColor": "#D4D4D4",
-		"address": "0x55DBD9058Ff08d8fA7330C348A51076920299184",
+		"address": "0xEeF8E996500d9F9E301c26C3c789b2fC395A6AB7",
 		"coordinates": [
 			27.425326490093966,
 			9.998292499865727
 		],
-		"visitorsNumber": 28,
+		"visitorsNumber": 12,
 		"visitors": [
-			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png",
-			"https://i.postimg.cc/0yVghrmd/avatar-en-6.png",
-			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png"
-		]
+			"https://i.postimg.cc/bJXm5j69/avatar-en-20.png",
+			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png",
+			"https://i.postimg.cc/0yVghrmd/avatar-en-6.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 25,
 		"name": "Christina",
 		"description": "",
-		"followers": 57241,
-		"likes": 15,
+		"followers": 64264,
+		"likes": 39,
 		"type": "Music Sessions",
 		"avatar": "https://i.postimg.cc/zXfF0Bz1/avatar-en-33.png",
 		"backgroundColor": "#FCA5A5",
-		"address": "0x22487F79B5DE46d923Dae32A46c8BE9f08D77609",
+		"address": "0x7975Ea5929863002DfD1d99C2a4869E1b3680260",
 		"coordinates": [
 			27.491384347131685,
 			10.012748762981943
 		],
-		"visitorsNumber": 16,
+		"visitorsNumber": 5,
 		"visitors": [
-			"https://i.postimg.cc/g2JtXsX8/avatar-en-18.png",
-			"https://i.postimg.cc/tgnrDgzg/avatar-en-21.png",
-			"https://i.postimg.cc/j2y01XQL/avatar-en-7.png"
-		]
+			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png",
+			"https://i.postimg.cc/yxHrDzc8/avatar-en-16.png",
+			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 26,
 		"name": "Stephanie",
 		"description": "",
-		"followers": 51343,
-		"likes": 12,
+		"followers": 270,
+		"likes": 42,
 		"type": "DIY Avatar",
 		"avatar": "https://i.postimg.cc/L8YBFbgC/avatar-en-34.png",
 		"backgroundColor": "#FDBA74",
-		"address": "0x48d778f44ACf160e6efE1c0058cdf9Bb8b433bCC",
+		"address": "0x4205E70283D6957abd8F7928B9eaA93eb9723166",
 		"coordinates": [
 			26.911543157578677,
 			9.115278263524814
 		],
-		"visitorsNumber": 7,
+		"visitorsNumber": 18,
 		"visitors": [
+			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png",
 			"https://i.postimg.cc/6QZ0nm92/avatar-en-27.png",
-			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png",
-			"https://i.postimg.cc/dVxH8CrX/avatar-en-22.png"
-		]
+			"https://i.postimg.cc/Hn9v5P94/avatar-en-15.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 27,
 		"name": "Valentina",
 		"description": "",
-		"followers": 64436,
-		"likes": 84,
+		"followers": 88479,
+		"likes": 16,
 		"type": "Web3 Projects",
 		"avatar": "https://i.postimg.cc/9FNtSh0w/avatar-en-35.png",
 		"backgroundColor": "#FCD34D",
-		"address": "0x2E725c34bF95B7EE138F24E17d5832cd7659A8F3",
+		"address": "0x667585A5d126551FAf7449998C7Aa909A5E8AfBF",
 		"coordinates": [
 			26.816126252969127,
 			9.042800204377698
 		],
-		"visitorsNumber": 20,
+		"visitorsNumber": 26,
 		"visitors": [
-			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png",
-			"https://i.postimg.cc/tgnrDgzg/avatar-en-21.png",
-			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png"
-		]
+			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png",
+			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png",
+			"https://i.postimg.cc/qvbYjSV1/avatar-en-13.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 28,
 		"name": "Angelique",
 		"description": "",
-		"followers": 9370,
-		"likes": 64,
+		"followers": 50362,
+		"likes": 2,
 		"type": "Key Users",
 		"avatar": "https://i.postimg.cc/qR08nBbS/avatar-en-36.png",
 		"backgroundColor": "#FDE047",
-		"address": "0x66199cec476254DcA7aF9890a5766D5c4494F6C3",
+		"address": "0xC248fb2904D1dfFFdad5b2db770F29d417Fe1583",
 		"coordinates": [
 			26.750068395931436,
 			7.328330271188861
 		],
-		"visitorsNumber": 2,
+		"visitorsNumber": 25,
 		"visitors": [
-			"https://i.postimg.cc/tgnrDgzg/avatar-en-21.png",
-			"https://i.postimg.cc/RhdGqJvg/avatar-en-24.png",
-			"https://i.postimg.cc/Hn9v5P94/avatar-en-15.png"
-		]
+			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png",
+			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png",
+			"https://i.postimg.cc/RhdGqJvg/avatar-en-24.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 29,
 		"name": "Kimberly",
 		"description": "",
-		"followers": 69462,
-		"likes": 13,
+		"followers": 51446,
+		"likes": 9,
 		"type": "Social",
 		"avatar": "https://i.postimg.cc/Z5GPbxrT/avatar-en-37.png",
 		"backgroundColor": "#BEF264",
-		"address": "0x4161e8b0ADb57107554D8ba3d837748b08811bE2",
+		"address": "0x89F6605106E14797e62f7D5c48078efBC0d1Ff3b",
 		"coordinates": [
 			31.50623410264484,
 			10.207844924929915
 		],
-		"visitorsNumber": 9,
+		"visitorsNumber": 12,
 		"visitors": [
-			"https://i.postimg.cc/BnXNQvkC/avatar-en-25.png",
-			"https://i.postimg.cc/bJXm5j69/avatar-en-20.png",
-			"https://i.postimg.cc/j2y01XQL/avatar-en-7.png"
-		]
+			"https://i.postimg.cc/j2y01XQL/avatar-en-7.png",
+			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png",
+			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 30,
 		"name": "Monique",
 		"description": "",
-		"followers": 91287,
-		"likes": 95,
+		"followers": 44598,
+		"likes": 28,
 		"type": "Game Playing",
 		"avatar": "https://i.postimg.cc/tJ4WSSHz/avatar-en-38.png",
 		"backgroundColor": "#86EFAC",
-		"address": "0x35E1A40c16e2A38e7B64aef1eC456c51067BfD7F",
+		"address": "0xf0CD7c2617919eE9240945E3f026fCCe2e15c5FC",
 		"coordinates": [
 			26.918882919471827,
 			6.439343630755928
 		],
-		"visitorsNumber": 6,
+		"visitorsNumber": 17,
 		"visitors": [
-			"https://i.postimg.cc/dVxH8CrX/avatar-en-22.png",
-			"https://i.postimg.cc/RhdGqJvg/avatar-en-24.png",
-			"https://i.postimg.cc/qvbYjSV1/avatar-en-13.png"
-		]
+			"https://i.postimg.cc/g2JtXsX8/avatar-en-18.png",
+			"https://i.postimg.cc/PxkM4Qx6/avatar-en-30.png",
+			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 31,
 		"name": "Warburton",
 		"description": "",
-		"followers": 4443,
-		"likes": 86,
+		"followers": 12428,
+		"likes": 19,
 		"type": "Voice Chat",
 		"avatar": "https://i.postimg.cc/mr7Yt1w7/avatar-en-39.png",
 		"backgroundColor": "#6EE7B7",
-		"address": "0x4E1B885075c55833131628FBCeA18796eFa1268b",
+		"address": "0xa651576B9765A3939C856d3e58cfCC850d8dBA44",
 		"coordinates": [
 			31.57963172157477,
 			6.264270768727755
 		],
-		"visitorsNumber": 26,
+		"visitorsNumber": 7,
 		"visitors": [
-			"https://i.postimg.cc/RhdGqJvg/avatar-en-24.png",
-			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png",
-			"https://i.postimg.cc/PxkM4Qx6/avatar-en-30.png"
-		]
+			"https://i.postimg.cc/FKY6qphN/avatar-en-14.png",
+			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png",
+			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 32,
 		"name": "Rodriguez",
 		"description": "",
-		"followers": 39726,
-		"likes": 2,
+		"followers": 82819,
+		"likes": 98,
 		"type": "Music Sessions",
 		"avatar": "https://i.postimg.cc/mgLfd7cg/avatar-en-4.png",
 		"backgroundColor": "#5EEAD4",
-		"address": "0x496a1a5078630f360b70341A8EF3Ec3106745fad",
+		"address": "0x1a8B464DB9e43a936cb434451C3FD9f7Fa3237C4",
 		"coordinates": [
 			29.39972243933215,
 			8.368070275849703
 		],
-		"visitorsNumber": 14,
+		"visitorsNumber": 15,
 		"visitors": [
-			"https://i.postimg.cc/bJXm5j69/avatar-en-20.png",
-			"https://i.postimg.cc/Hn9v5P94/avatar-en-15.png",
-			"https://i.postimg.cc/dVxH8CrX/avatar-en-22.png"
-		]
+			"https://i.postimg.cc/yxHrDzc8/avatar-en-16.png",
+			"https://i.postimg.cc/yxHrDzc8/avatar-en-16.png",
+			"https://i.postimg.cc/BnXNQvkC/avatar-en-25.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 33,
 		"name": "Gonzalez",
 		"description": "",
-		"followers": 43642,
-		"likes": 45,
+		"followers": 77407,
+		"likes": 74,
 		"type": "DIY Avatar",
 		"avatar": "https://i.postimg.cc/k4cWyrL4/avatar-en-40.png",
 		"backgroundColor": "#67E8F9",
-		"address": "0x399de0045f83f868a54861EDa64a9D347DC4cd10",
+		"address": "0x48768D7b33f02e0CA3f7E499f23B3a9fEB3e7fBC",
 		"coordinates": [
 			29.238247677683972,
 			7.532117814839438
 		],
-		"visitorsNumber": 2,
+		"visitorsNumber": 22,
 		"visitors": [
-			"https://i.postimg.cc/g2JtXsX8/avatar-en-18.png",
-			"https://i.postimg.cc/g2JtXsX8/avatar-en-18.png",
-			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png"
-		]
+			"https://i.postimg.cc/85hZQn9Q/avatar-en-23.png",
+			"https://i.postimg.cc/tCHHxKpP/avatar-en-3.png",
+			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 34,
 		"name": "Patterson",
 		"description": "",
-		"followers": 17435,
-		"likes": 6,
+		"followers": 1606,
+		"likes": 35,
 		"type": "Web3 Projects",
 		"avatar": "https://i.postimg.cc/qMYywxD8/avatar-en-41.png",
 		"backgroundColor": "#7DD3FC",
-		"address": "0xd32B5C82Dd60b4e6CdeEb97f1483F88346DE86BB",
+		"address": "0xB69d4d54f6A061404555690761F5c83A1bF9eDA9",
 		"coordinates": [
 			28.218816025568856,
 			10.534589944483287
 		],
-		"visitorsNumber": 9,
+		"visitorsNumber": 29,
 		"visitors": [
-			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png",
 			"https://i.postimg.cc/tCHHxKpP/avatar-en-3.png",
-			"https://i.postimg.cc/g2JtXsX8/avatar-en-18.png"
-		]
+			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png",
+			"https://i.postimg.cc/BnXNQvkC/avatar-en-25.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 35,
 		"name": "Matthews",
 		"description": "",
-		"followers": 61707,
-		"likes": 65,
+		"followers": 52660,
+		"likes": 17,
 		"type": "Social",
 		"avatar": "https://i.postimg.cc/jqMzwbz3/avatar-en-42.png",
 		"backgroundColor": "#93C5FD",
-		"address": "0xcdA8Fc8f8f24dd896923170d7990FEE0f4525e2C",
+		"address": "0x24E6DB213D49bdB10bB9E220aBdDe53b8678e4b4",
 		"coordinates": [
 			29.31541591646524,
 			10.841216882949311
 		],
-		"visitorsNumber": 24,
+		"visitorsNumber": 13,
 		"visitors": [
-			"https://i.postimg.cc/dtnSVp1J/avatar-en-17.png",
-			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png",
-			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png"
-		]
+			"https://i.postimg.cc/bJXm5j69/avatar-en-20.png",
+			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png",
+			"https://i.postimg.cc/yxHrDzc8/avatar-en-16.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 36,
 		"name": "Woodward",
 		"description": "",
-		"followers": 89094,
-		"likes": 12,
+		"followers": 42459,
+		"likes": 45,
 		"type": "Social",
 		"avatar": "https://i.postimg.cc/wM4JSXqY/avatar-en-43.png",
 		"backgroundColor": "#A5B4FC",
-		"address": "0x4053BB9056c203621c73101A3aF43Ff1377aB931",
+		"address": "0x7CE595B00D0F87d03bAE6F538cbCD4E50a8f3a1D",
 		"coordinates": [
 			29.181684222452645,
 			10.771158097698006
 		],
-		"visitorsNumber": 23,
+		"visitorsNumber": 4,
 		"visitors": [
-			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png",
-			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png",
-			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png"
-		]
+			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png",
+			"https://i.postimg.cc/tgnrDgzg/avatar-en-21.png",
+			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 37,
 		"name": "Livingston",
 		"description": "",
-		"followers": 58739,
-		"likes": 32,
+		"followers": 47336,
+		"likes": 63,
 		"type": "Game Playing",
 		"avatar": "https://i.postimg.cc/vHD55NhY/avatar-en-44.png",
 		"backgroundColor": "#C4B5FD",
-		"address": "0x96e44E3534a151D5879f35B6073b7ED535592682",
+		"address": "0x420185a477414be6AfD539447362402D8f26fA7B",
 		"coordinates": [
 			28.236646918103986,
 			5.20235879058248
 		],
-		"visitorsNumber": 9,
+		"visitorsNumber": 6,
 		"visitors": [
-			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png",
-			"https://i.postimg.cc/qvbYjSV1/avatar-en-13.png",
-			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png"
-		]
+			"https://i.postimg.cc/dVxH8CrX/avatar-en-22.png",
+			"https://i.postimg.cc/tCHHxKpP/avatar-en-3.png",
+			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png"
+		],
+		"them": 1
 	},
 	{
 		"_id": 38,
 		"name": "Sheppard",
 		"description": "",
-		"followers": 83356,
-		"likes": 79,
+		"followers": 40868,
+		"likes": 65,
 		"type": "Music Sessions",
 		"avatar": "https://i.postimg.cc/nLKmHbFk/avatar-en-45.png",
 		"backgroundColor": "#D8B4FE",
-		"address": "0xdF1869b61eC5aFD83B4A5666A3Ed3b2a577B5a2a",
+		"address": "0x1E375406Eb09cD1e4326075870C94513547a340B",
 		"coordinates": [
 			30.117806080534905,
 			5.584025162151804
 		],
-		"visitorsNumber": 4,
+		"visitorsNumber": 14,
 		"visitors": [
-			"https://i.postimg.cc/85hZQn9Q/avatar-en-23.png",
-			"https://i.postimg.cc/BnXNQvkC/avatar-en-25.png",
-			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png"
-		]
+			"https://i.postimg.cc/j2y01XQL/avatar-en-7.png",
+			"https://i.postimg.cc/dtnSVp1J/avatar-en-17.png",
+			"https://i.postimg.cc/g2JtXsX8/avatar-en-18.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 39,
 		"name": "Eloise",
 		"description": "",
-		"followers": 86591,
-		"likes": 13,
+		"followers": 52756,
+		"likes": 26,
 		"type": "Game Playing",
 		"avatar": "https://i.postimg.cc/3xvpc0zz/avatar-en-47.png",
 		"backgroundColor": "#F0ABFC",
-		"address": "0x9AA0F0689c2C50D792206eB76F2986ADa63e5cdc",
+		"address": "0x7A5d087fAA9E61cE4bca9bec4d73201baAD1322a",
 		"coordinates": [
 			30.162383311872787,
 			5.486412555869663
 		],
-		"visitorsNumber": 8,
+		"visitorsNumber": 29,
 		"visitors": [
-			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png",
-			"https://i.postimg.cc/dVxH8CrX/avatar-en-22.png",
-			"https://i.postimg.cc/j2y01XQL/avatar-en-7.png"
-		]
+			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png",
+			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png",
+			"https://i.postimg.cc/85hZQn9Q/avatar-en-23.png"
+		],
+		"them": 1
 	},
 	{
 		"_id": 40,
 		"name": "Eleanor",
 		"description": "",
-		"followers": 45099,
-		"likes": 59,
+		"followers": 45380,
+		"likes": 60,
 		"type": "DIY Avatar",
 		"avatar": "https://i.postimg.cc/SKb8FNhR/avatar-en-48.png",
 		"backgroundColor": "#F9A8D4",
-		"address": "0xf82dCC66CF50AeAAcBE63f39c7559D44Fb7780Ce",
+		"address": "0x6801DD1Df84BE6C44e7f826220EE6698b108787a",
 		"coordinates": [
 			31.99004979669934,
 			5.708235840393385
 		],
-		"visitorsNumber": 30,
+		"visitorsNumber": 29,
 		"visitors": [
 			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png",
-			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png",
-			"https://i.postimg.cc/dtnSVp1J/avatar-en-17.png"
-		]
+			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png",
+			"https://i.postimg.cc/85hZQn9Q/avatar-en-23.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 41,
 		"name": "Emmett",
 		"description": "",
-		"followers": 28940,
-		"likes": 81,
+		"followers": 44858,
+		"likes": 96,
 		"type": "Voice Chat",
 		"avatar": "https://i.postimg.cc/xC0z8xqS/avatar-en-49.png",
 		"backgroundColor": "#FDA4AF",
-		"address": "0x868b7899B15e7DD103104431c7bc1404C4f1d0e1",
+		"address": "0x475da455F0053eD361a733F58C4d7ddD5a004421",
 		"coordinates": [
 			32.2485977384558,
 			7.320316300170688
 		],
-		"visitorsNumber": 21,
+		"visitorsNumber": 6,
 		"visitors": [
-			"https://i.postimg.cc/tCHHxKpP/avatar-en-3.png",
-			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png",
-			"https://i.postimg.cc/0yVghrmd/avatar-en-6.png"
-		]
+			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png",
+			"https://i.postimg.cc/RhdGqJvg/avatar-en-24.png",
+			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 42,
 		"name": "Scarlett",
 		"description": "",
-		"followers": 87362,
-		"likes": 49,
+		"followers": 34630,
+		"likes": 87,
 		"type": "Game Playing",
 		"avatar": "https://i.postimg.cc/wB3KzHQK/avatar-en-5.png",
 		"backgroundColor": "#CBD5E1",
-		"address": "0x1Bdccd82322695b83575066b6B4EBc40F3F50d29",
+		"address": "0x1463b039f678eEa8250727bDd665b9775a647cA5",
 		"coordinates": [
 			26.578373912358018,
 			10.639754019731484
 		],
-		"visitorsNumber": 15,
+		"visitorsNumber": 23,
 		"visitors": [
-			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png",
-			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png",
-			"https://i.postimg.cc/PxkM4Qx6/avatar-en-30.png"
-		]
+			"https://i.postimg.cc/qvbYjSV1/avatar-en-13.png",
+			"https://i.postimg.cc/g2JtXsX8/avatar-en-18.png",
+			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 43,
 		"name": "Alexandra",
 		"description": "",
-		"followers": 57388,
-		"likes": 51,
+		"followers": 58781,
+		"likes": 83,
 		"type": "Social",
 		"avatar": "https://i.postimg.cc/4dBh96hH/avatar-en-51.jpg",
 		"backgroundColor": "#D1D5DB",
-		"address": "0x0a937E0374a07a149ce177D3dC181C03Fc9974eD",
+		"address": "0x1973018cED486AdE4cF20496F7E2F22bf614d98f",
 		"coordinates": [
 			26.159347937787402,
 			7.762231806574334
 		],
-		"visitorsNumber": 24,
+		"visitorsNumber": 29,
 		"visitors": [
-			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png",
-			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png",
+			"https://i.postimg.cc/85hZQn9Q/avatar-en-23.png",
+			"https://i.postimg.cc/dtnSVp1J/avatar-en-17.png",
 			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png"
-		]
+		],
+		"them": 0
 	},
 	{
 		"_id": 44,
 		"name": "Anastasia",
 		"description": "",
-		"followers": 91519,
-		"likes": 44,
+		"followers": 4182,
+		"likes": 52,
 		"type": "Social",
 		"avatar": "https://i.postimg.cc/vTTxL4Wq/avatar-en-52.jpg",
 		"backgroundColor": "#D4D4D8",
-		"address": "0xA626f640e707aC561F933FbCBfCdd1bceCa76d10",
+		"address": "0xf321E8d32a871dBF518ab6d5f016a2B1FaC41c4c",
 		"coordinates": [
 			26.382234094473546,
 			7.61203131701626
 		],
 		"visitorsNumber": 27,
 		"visitors": [
-			"https://i.postimg.cc/tgnrDgzg/avatar-en-21.png",
-			"https://i.postimg.cc/FKY6qphN/avatar-en-14.png",
-			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png"
-		]
+			"https://i.postimg.cc/6QZ0nm92/avatar-en-27.png",
+			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png",
+			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 45,
 		"name": "Annabelle",
 		"description": "",
-		"followers": 48031,
-		"likes": 99,
+		"followers": 9732,
+		"likes": 7,
 		"type": "Game Playing",
 		"avatar": "https://i.postimg.cc/HnNcSTzp/avatar-en-53.jpg",
 		"backgroundColor": "#D4D4D4",
-		"address": "0xC31Fb9126D9eCeAA91B814bddcC87908918a0Aa0",
+		"address": "0xDbF4709C04d2151665594FcDbf31d3B1805A9394",
 		"coordinates": [
 			25.65116750054338,
 			8.433045960817864
 		],
-		"visitorsNumber": 27,
+		"visitorsNumber": 25,
 		"visitors": [
-			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png",
-			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png",
-			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png"
-		]
+			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png",
+			"https://i.postimg.cc/Hn9v5P94/avatar-en-15.png",
+			"https://i.postimg.cc/bJXm5j69/avatar-en-20.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 46,
 		"name": "Bethany",
 		"description": "",
-		"followers": 69104,
-		"likes": 28,
+		"followers": 70701,
+		"likes": 12,
 		"type": "Voice Chat",
 		"avatar": "https://i.postimg.cc/CMrqM4gW/avatar-en-54.jpg",
 		"backgroundColor": "#FCA5A5",
-		"address": "0xb0767835eFE9A6c91D175c9BB39F8Ef65e630ae7",
+		"address": "0x3992D16d1366cB06E2Be9a4aD0f5AdB6b9D4bb07",
 		"coordinates": [
 			25.32129598864745,
 			6.036375856016221
 		],
-		"visitorsNumber": 3,
+		"visitorsNumber": 5,
 		"visitors": [
-			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png",
-			"https://i.postimg.cc/tCHHxKpP/avatar-en-3.png",
-			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png"
-		]
+			"https://i.postimg.cc/RhdGqJvg/avatar-en-24.png",
+			"https://i.postimg.cc/FKY6qphN/avatar-en-14.png",
+			"https://i.postimg.cc/dVxH8CrX/avatar-en-22.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 47,
 		"name": "Catherine",
 		"description": "",
-		"followers": 30913,
-		"likes": 19,
+		"followers": 87824,
+		"likes": 49,
 		"type": "Music Sessions",
 		"avatar": "https://i.postimg.cc/0yVghrmd/avatar-en-6.png",
 		"backgroundColor": "#FDBA74",
-		"address": "0xa93462c912aBf9b6a29C38CC70CC7087D8dD71FB",
+		"address": "0x1Da87C7b5f7711dcEE16547D0C387EeE81e1a0ca",
 		"coordinates": [
 			26.489219449683304,
 			5.442037891321064
 		],
-		"visitorsNumber": 24,
+		"visitorsNumber": 8,
 		"visitors": [
-			"https://i.postimg.cc/dVxH8CrX/avatar-en-22.png",
-			"https://i.postimg.cc/qvbYjSV1/avatar-en-13.png",
-			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png"
-		]
+			"https://i.postimg.cc/yxHrDzc8/avatar-en-16.png",
+			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png",
+			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 48,
 		"name": "Charlotte",
 		"description": "",
-		"followers": 18404,
-		"likes": 59,
+		"followers": 93260,
+		"likes": 73,
 		"type": "DIY Avatar",
 		"avatar": "https://i.postimg.cc/j2y01XQL/avatar-en-7.png",
 		"backgroundColor": "#FCD34D",
-		"address": "0xF1F9743FB98Dbc36350BF31f4DCf139fcb55F0eB",
+		"address": "0x35Af984C6C7D580155F65Aa9bf5230C912f2eCb1",
 		"coordinates": [
 			27.737381927126336,
 			6.266842545413141
 		],
-		"visitorsNumber": 25,
+		"visitorsNumber": 21,
 		"visitors": [
-			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png",
-			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png",
-			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png"
-		]
+			"https://i.postimg.cc/PxkM4Qx6/avatar-en-30.png",
+			"https://i.postimg.cc/85hZQn9Q/avatar-en-23.png",
+			"https://i.postimg.cc/0yVghrmd/avatar-en-6.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 49,
 		"name": "Christina",
 		"description": "",
-		"followers": 42405,
-		"likes": 78,
+		"followers": 47008,
+		"likes": 27,
 		"type": "Web3 Projects",
 		"avatar": "https://i.postimg.cc/4NbRbWx0/avatar-en-8.png",
 		"backgroundColor": "#FDE047",
-		"address": "0x9EDC2C0C6BDC6E1244139a5E26D47C1C99aec7f3",
+		"address": "0x7C0eBEB662FA490Dfb1cF47Caeb931F3A6f3257e",
 		"coordinates": [
 			27.46100309283591,
 			5.584025162151804
 		],
-		"visitorsNumber": 1,
+		"visitorsNumber": 3,
 		"visitors": [
-			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png",
-			"https://i.postimg.cc/0yVghrmd/avatar-en-6.png",
-			"https://i.postimg.cc/dtnSVp1J/avatar-en-17.png"
-		]
+			"https://i.postimg.cc/j2y01XQL/avatar-en-7.png",
+			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png",
+			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 50,
 		"name": "Dorothy",
 		"description": "",
-		"followers": 23195,
-		"likes": 16,
+		"followers": 97664,
+		"likes": 42,
 		"type": "Key Users",
 		"avatar": "https://i.postimg.cc/YCqZNkV4/avatar-en-9.png",
 		"backgroundColor": "#BEF264",
-		"address": "0x592892B8C9075A8cd2fF7211C21ED24b2B51a577",
+		"address": "0xe43AabC3EEC50d422e1dCC2aF87CC2c989103d88",
 		"coordinates": [
 			25.134071617030543,
 			8.477138699396264
 		],
-		"visitorsNumber": 30,
+		"visitorsNumber": 22,
 		"visitors": [
-			"https://i.postimg.cc/BnXNQvkC/avatar-en-25.png",
 			"https://i.postimg.cc/Hn9v5P94/avatar-en-15.png",
-			"https://i.postimg.cc/85hZQn9Q/avatar-en-23.png"
-		]
+			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png",
+			"https://i.postimg.cc/6QZ0nm92/avatar-en-27.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 51,
 		"name": "Elizabeth",
 		"description": "",
-		"followers": 75005,
-		"likes": 65,
+		"followers": 38354,
+		"likes": 60,
 		"type": "Social",
 		"avatar": "https://i.postimg.cc/15SLtDrr/avatar-en-11.png",
 		"backgroundColor": "#86EFAC",
-		"address": "0x823003ED1CDAA248782BE2D31376aA41bac562F3",
+		"address": "0x571B643888028Bb1a74073FaA078277fF21D84e8",
 		"coordinates": [
 			25.882969103497032,
 			10.411853163997861
 		],
-		"visitorsNumber": 12,
+		"visitorsNumber": 0,
 		"visitors": [
-			"https://i.postimg.cc/j2y01XQL/avatar-en-7.png",
-			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png",
-			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png"
-		]
+			"https://i.postimg.cc/tgnrDgzg/avatar-en-21.png",
+			"https://i.postimg.cc/yxHrDzc8/avatar-en-16.png",
+			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 52,
 		"name": "Gabriella",
 		"description": "",
-		"followers": 86114,
-		"likes": 3,
+		"followers": 92177,
+		"likes": 73,
 		"type": "Game Playing",
 		"avatar": "https://i.postimg.cc/HLFNCML5/avatar-en-12.png",
 		"backgroundColor": "#6EE7B7",
-		"address": "0x361993e444D85D2BD4b661BafCeE8099dc4a1542",
+		"address": "0x8ebb08d91B94d5C05Abc25e25DEe79FF0F7bEb8e",
 		"coordinates": [
 			25.160817955833267,
 			10.86748470433109
 		],
-		"visitorsNumber": 3,
+		"visitorsNumber": 19,
 		"visitors": [
-			"https://i.postimg.cc/j2y01XQL/avatar-en-7.png",
-			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png",
-			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png"
-		]
+			"https://i.postimg.cc/dQ692dKB/avatar-en-28.png",
+			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png",
+			"https://i.postimg.cc/85hZQn9Q/avatar-en-23.png"
+		],
+		"them": 1
 	},
 	{
 		"_id": 53,
 		"name": "Genevieve",
 		"description": "",
-		"followers": 67157,
-		"likes": 90,
+		"followers": 5009,
+		"likes": 64,
 		"type": "Voice Chat",
 		"avatar": "https://i.postimg.cc/qvbYjSV1/avatar-en-13.png",
 		"backgroundColor": "#5EEAD4",
-		"address": "0x9bb8F515FEfb87f99b8b76a37e5b0fd2Ca834D1d",
+		"address": "0x40E6348fefd7C01b172c921Dc933976D5138E5BE",
 		"coordinates": [
 			27.7462973733939,
 			11.03379366914217
 		],
-		"visitorsNumber": 29,
+		"visitorsNumber": 2,
 		"visitors": [
-			"https://i.postimg.cc/yxHrDzc8/avatar-en-16.png",
-			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png",
-			"https://i.postimg.cc/RhdGqJvg/avatar-en-24.png"
-		]
+			"https://i.postimg.cc/BnXNQvkC/avatar-en-25.png",
+			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png",
+			"https://i.postimg.cc/dtnSVp1J/avatar-en-17.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 54,
 		"name": "Isabella",
 		"description": "",
-		"followers": 80366,
-		"likes": 64,
+		"followers": 74317,
+		"likes": 53,
 		"type": "Music Sessions",
 		"avatar": "https://i.postimg.cc/FKY6qphN/avatar-en-14.png",
 		"backgroundColor": "#67E8F9",
-		"address": "0xA0B7093CD7EE61da6CdAD4a8F80E9f15FDAC512b",
+		"address": "0x8cF0391570AC517083b86b0F960F4ae7590975BF",
 		"coordinates": [
 			30.39418491482644,
 			10.622229181967839
 		],
-		"visitorsNumber": 30,
+		"visitorsNumber": 11,
 		"visitors": [
-			"https://i.postimg.cc/15SLtDrr/avatar-en-11.png",
-			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png",
-			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png"
-		]
+			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png",
+			"https://i.postimg.cc/qvbYjSV1/avatar-en-13.png",
+			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 55,
 		"name": "Jasmine",
 		"description": "",
-		"followers": 28043,
-		"likes": 54,
+		"followers": 62703,
+		"likes": 40,
 		"type": "DIY Avatar",
 		"avatar": "https://i.postimg.cc/Hn9v5P94/avatar-en-15.png",
 		"backgroundColor": "#7DD3FC",
-		"address": "0x5E799EE06074EdA699c48C37395B665427311916",
+		"address": "0xf5617b3da2B578eA005D6d1B34efc7522129114a",
 		"coordinates": [
 			24.420835915635507,
 			9.28751620165177
 		],
-		"visitorsNumber": 12,
+		"visitorsNumber": 30,
 		"visitors": [
-			"https://i.postimg.cc/qvbYjSV1/avatar-en-13.png",
-			"https://i.postimg.cc/bJXm5j69/avatar-en-20.png",
-			"https://i.postimg.cc/dVxH8CrX/avatar-en-22.png"
-		]
+			"https://i.postimg.cc/yxHrDzc8/avatar-en-16.png",
+			"https://i.postimg.cc/FKY6qphN/avatar-en-14.png",
+			"https://i.postimg.cc/Hn9v5P94/avatar-en-15.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 56,
 		"name": "Jennifer",
 		"description": "",
-		"followers": 29289,
-		"likes": 22,
+		"followers": 40240,
+		"likes": 29,
 		"type": "Web3 Projects",
 		"avatar": "https://i.postimg.cc/yxHrDzc8/avatar-en-16.png",
 		"backgroundColor": "#93C5FD",
-		"address": "0xd79989E532CDD6B579D852557062C6d7eA366FA7",
+		"address": "0x5A4B7ba0cd09A1acb18e1aE39AD14653E755B600",
 		"coordinates": [
 			30.982604368477666,
 			10.884995301258982
 		],
-		"visitorsNumber": 4,
+		"visitorsNumber": 24,
 		"visitors": [
-			"https://i.postimg.cc/tCHHxKpP/avatar-en-3.png",
-			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png",
-			"https://i.postimg.cc/YCqZNkV4/avatar-en-9.png"
-		]
+			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png",
+			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png",
+			"https://i.postimg.cc/FKY6qphN/avatar-en-14.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 57,
 		"name": "Jessica",
 		"description": "",
-		"followers": 73665,
-		"likes": 66,
+		"followers": 84330,
+		"likes": 72,
 		"type": "Social",
 		"avatar": "https://i.postimg.cc/dtnSVp1J/avatar-en-17.png",
 		"backgroundColor": "#A5B4FC",
-		"address": "0xBafcbCb46a29a397874e4614105d2a7cA219B659",
+		"address": "0xC0ECA905311FcCd07cCB6Fc6212029a33A8fBC79",
 		"coordinates": [
 			31.686924623606217,
 			9.533788887769518
 		],
 		"visitorsNumber": 0,
 		"visitors": [
-			"https://i.postimg.cc/j2y01XQL/avatar-en-7.png",
-			"https://i.postimg.cc/gchWrzFm/avatar-en-2.png",
-			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png"
-		]
+			"https://i.postimg.cc/6QZ0nm92/avatar-en-27.png",
+			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png",
+			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 58,
 		"name": "Jocelyn",
 		"description": "",
-		"followers": 10576,
-		"likes": 53,
+		"followers": 31268,
+		"likes": 69,
 		"type": "Social",
 		"avatar": "https://i.postimg.cc/g2JtXsX8/avatar-en-18.png",
 		"backgroundColor": "#C4B5FD",
-		"address": "0xd57C65Bb73e3B2763C29b4dC0ac0E0d16f5Ff740",
+		"address": "0xc6648b4eFFf4f325791F8352184720209e54E6b8",
 		"coordinates": [
 			31.553192929594786,
 			9.173116158115363
 		],
-		"visitorsNumber": 19,
+		"visitorsNumber": 17,
 		"visitors": [
-			"https://i.postimg.cc/fy8jM4vF/avatar-en-29.png",
-			"https://i.postimg.cc/fRpC3NhQ/avatar-en-26.png",
-			"https://i.postimg.cc/Hn9v5P94/avatar-en-15.png"
-		]
+			"https://i.postimg.cc/dVxH8CrX/avatar-en-22.png",
+			"https://i.postimg.cc/PxkM4Qx6/avatar-en-30.png",
+			"https://i.postimg.cc/D0nB2P3W/avatar-en-19.png"
+		],
+		"them": 0
 	},
 	{
 		"_id": 59,
 		"name": "Jordyn",
 		"description": "",
-		"followers": 53179,
-		"likes": 100,
+		"followers": 112,
+		"likes": 36,
 		"type": "Game Playing",
 		"avatar": "https://i.postimg.cc/D0nB2P3W/avatar-en-19.png",
 		"backgroundColor": "#D8B4FE",
-		"address": "0xd79220987E77210E323f9DEf41a90DB2F16f8C1e",
+		"address": "0xF876D001A70c62AcB1D82398F77D589E3e9bA29E",
 		"coordinates": [
 			29.716610998500613,
 			11.025042899344314
 		],
-		"visitorsNumber": 10,
+		"visitorsNumber": 18,
 		"visitors": [
-			"https://i.postimg.cc/tCHHxKpP/avatar-en-3.png",
+			"https://i.postimg.cc/FKY6qphN/avatar-en-14.png",
 			"https://i.postimg.cc/dVxH8CrX/avatar-en-22.png",
-			"https://i.postimg.cc/HLFNCML5/avatar-en-12.png"
-		]
+			"https://i.postimg.cc/4NbRbWx0/avatar-en-8.png"
+		],
+		"them": 1
 	}
 ]

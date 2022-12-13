@@ -54,7 +54,7 @@ export default function ToolLayer(props: {
 					<Tag text='Social' src='/assets/map/tags/social.png' filter={filter} setFilter={setFilter} />
 					<Tag text='Game Playing' src='/assets/map/tags/game.png' filter={filter} setFilter={setFilter} />
 					<Tag text='Voice Chat' src='/assets/map/tags/voice.png' filter={filter} setFilter={setFilter} />
-					<Tag text='Music Session' src='/assets/map/tags/music.png' filter={filter} setFilter={setFilter} />
+					<Tag text='Music Sessions' src='/assets/map/tags/music.png' filter={filter} setFilter={setFilter} />
 					<Tag text='DIY Avatar' src='/assets/map/tags/diy.png' filter={filter} setFilter={setFilter} />
 					<Tag text='Key Users' src='/assets/map/tags/key.png' filter={filter} setFilter={setFilter} />
 					<Tag text='Web3 Projects' src='/assets/map/tags/web3.png' filter={filter} setFilter={setFilter} />

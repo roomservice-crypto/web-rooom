@@ -9,6 +9,7 @@ import Microphone from '@/mock/svgs/microphone.svg'
 import PoundSign from '@/mock/svgs/#.svg'
 import Add from '@/mock/svgs/add.svg'
 import Chat from '@/mock/svgs/chat.svg'
+import ArrowUp from '@/mock/svgs/arrow-up.svg'
 import { shortenAddress } from '@/utils'
 import speaker from '@/mock/images/speaker.png'
 import human1 from '@/mock/images/human-1.png'
@@ -78,7 +79,7 @@ export default function Room4(props: { room: any }) {
 						</div>
 
 						{/* body */}
-						<div className='p-[60px]'>
+						<div className='p-[60px] pb-[100px]'>
 							{/* first section - introduce */}
 							<div className='flex justify-between'>
 								{/* introduce */}
@@ -169,7 +170,7 @@ export default function Room4(props: { room: any }) {
 							</div>
 
 							{/* third section - others */}
-							<div className='mt-14 flex justify-between'>
+							<div className='mt-14 flex items-start justify-between'>
 								{/* DIY */}
 								<div className='w-[500px] bg-white shadow-[16px_12px_black]'>
 									<div className='flex h-[46px] items-center justify-between bg-black px-3 font-ibm text-white'>
@@ -204,27 +205,56 @@ export default function Room4(props: { room: any }) {
 										<Chat />
 									</div>
 
-									<div className='px-10'>
-										<div>
-											<img src='' alt='' />
-											<div>
+									<div className='h-[400px] flex-col px-10 font-ibm'>
+										<div className='mt-8 flex'>
+											<figure className='relative flex h-[39px] w-[39px] items-center justify-center gap-y-[9px] rounded-full border-[1.2px] border-black border-opacity-60 p-[2px]'>
+												<img src={human1.src} className='h-full w-full rounded-full' />
+
+												<span className='absolute right-0 bottom-0 h-2 w-2 rounded-full border-2 border-white border-opacity-20 bg-[#11B97C]'></span>
+											</figure>
+											<div className='ml-3'>
+												<div className='text-sm'>Luc Ganssou</div>
+												<div className='mt-[6px] w-[260px] bg-[#F2F4F7] px-[14px] py-[10px]'>
+													Thanks everyone! Almost there.
+												</div>
+											</div>
+										</div>
+										<div className='mt-4 flex'>
+											<figure className='relative flex h-[39px] w-[39px] items-center justify-center gap-y-[9px] rounded-full border-[1.2px] border-black border-opacity-60 p-[2px]'>
+												<img src={human2.src} className='h-full w-full rounded-full' />
+
+												<span className='absolute right-0 bottom-0 h-2 w-2 rounded-full border-2 border-white border-opacity-20 bg-[#11B97C]'></span>
+											</figure>
+											<div className='ml-3'>
 												<div>Luc Ganssou</div>
-												<div>Thanks everyone! Almost there.</div>
+												<div className='mt-[6px] w-[260px] bg-[#F2F4F7] px-[14px] py-[10px]'>
+													Hey team, I’ve finished with the requirements doc!
+												</div>
 											</div>
 										</div>
-										<div>
-											<img src='' alt='' />
-											<div>
-												<div>Luc Ganssou</div>
-												<div>Hey team, I’ve finished with the requirements doc!</div>
+										<div className='mt-4 self-end'>
+											<div className='flex flex-col items-end'>
+												<div>
+													<div className='text-sm'>You</div>
+													<div className='mt-[6px] w-[260px] bg-black px-[14px] py-[10px] text-white'>
+														Awesome! Thanks.
+													</div>
+												</div>
 											</div>
 										</div>
-										<div>
-											<div>
-												<div>You</div>
-												<div>Awesome! Thanks.</div>
-											</div>
-										</div>
+									</div>
+
+									<div className='flex items-center gap-x-3 border-t border-black px-10 py-6'>
+										<input
+											type='text'
+											placeholder='Message'
+											className='flex-1 border-2 border-black px-[14px] py-[10px]'
+										/>
+										<button
+											className='border-2 border-black bg-[#04866E] p-3 text-black'
+											style={{ boxShadow: '6px 6px 0px #000000, 0px 1px 2px rgba(16, 24, 40, 0.05);' }}>
+											<ArrowUp />
+										</button>
 									</div>
 								</div>
 							</div>

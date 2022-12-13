@@ -29,20 +29,22 @@ export default function CardLayer(props: { room: any }) {
 								src={room.avatar}
 								className='-mt-12 h-[96px] w-[96px] rounded-full border-4 border-white bg-green-400 shadow-lg'
 								style={{ backgroundColor: room.backgroundColor }}></img>
-							<span className='flex'>
-								<img
-									src={room.visitors[0]}
-									className='inline-block h-8 w-8 rounded-full border border-white bg-blue-400'></img>
-								<img
-									src={room.visitors[1]}
-									className='-ml-4 inline-block h-8 w-8 rounded-full border border-white bg-indigo-400'></img>
-								<img
-									src={room.visitors[2]}
-									className='-ml-4 inline-block h-8 w-8 rounded-full border border-white bg-violet-400'></img>
-								<span className='-ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-white'>
-									+{room.visitorsNumber}
+							{room.visitors?.length > 0 && (
+								<span className='flex'>
+									<img
+										src={room.visitors[0]}
+										className='inline-block h-8 w-8 rounded-full border border-white bg-blue-400'></img>
+									<img
+										src={room.visitors[1]}
+										className='-ml-4 inline-block h-8 w-8 rounded-full border border-white bg-indigo-400'></img>
+									<img
+										src={room.visitors[2]}
+										className='-ml-4 inline-block h-8 w-8 rounded-full border border-white bg-violet-400'></img>
+									<span className='-ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-white'>
+										+{room.visitorsNumber}
+									</span>
 								</span>
-							</span>
+							)}
 						</div>
 
 						{/* base */}

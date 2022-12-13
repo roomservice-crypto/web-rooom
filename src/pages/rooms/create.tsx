@@ -14,6 +14,8 @@ import Card6 from '@/svgs/create/card-6.svg'
 import Card7 from '@/svgs/create/card-7.svg'
 import Card8 from '@/svgs/create/card-8.svg'
 import clsx from 'clsx'
+import { addRoom, getRooms } from '@/utils/storage'
+import { useRouter } from 'next/router'
 
 const TYPES = [
 	{ name: 'Social', src: '/assets/map/tags/social.png' },
@@ -47,9 +49,22 @@ const TYPE_CARDS = {
 	'Web3 Projects': ['Hall of fame', 'Post', 'Game room']
 }
 
+function getBase64(file: File) {}
+
+declare const window: {
+	ethereum?: any
+} & Window
+
 export default function Create() {
+	const rooms = getRooms()
+	const router = useRouter()
 	const formRef = useRef<HTMLFormElement>(null)
+	const nameRef = useRef<HTMLInputElement>(null)
+	const fileRef = useRef<HTMLInputElement>(null)
 	const [type, setType] = useState(TYPES[0])
+	const [address, setAddress] = useState('')
+	const [avatar, setAvatar] = useState('')
+	const [coordinates, setCoordinates] = useState([45.32137374940089, 21.41105690156455])
 
 	const [selectedCards, setSelectedCards] = useState(TYPE_CARDS['Social'])
 
@@ -60,6 +75,60 @@ export default function Create() {
 
 	// dialog control
 	const [dialog, setDialog] = useState(false)
+
+	// handle address
+	const connectMetamask = async () => {
+		if (typeof window.ethereum !== 'undefined') {
+			console.log('MetaMask is installed!')
+
+			const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+			const account = accounts[0]
+
+			console.log('[metamask account]', account)
+
+			setAddress(account)
+		}
+	}
+
+	// upload avatar
+	const uploadAvatar = () => {
+		fileRef.current?.click()
+	}
+
+	// get location
+	useEffect(() => {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(position => {
+				setCoordinates([position.coords.longitude, position.coords.latitude])
+			})
+		} else {
+			console.warn('[location error]')
+		}
+	}, [])
+
+	const createRoom = () => {
+		const room: any = {}
+		room.name = nameRef.current?.value
+		room.type = type.name
+		room.address = address
+		room._id = rooms.length
+		room.followers = 0
+		room.likes = 0
+		room.visitors = []
+		room.visitorsNumber = 0
+
+		// to do
+		room.theme = 0
+		room.backgroundColor = '#CBD5E1'
+		room.coordinates = coordinates
+		room.avatar = avatar
+
+		addRoom(room)
+
+		setDialog(false)
+
+		router.push('/map')
+	}
 
 	return (
 		<>
@@ -86,11 +155,34 @@ export default function Create() {
 						}}>
 						<h3 className='mb-8 text-[30px] font-semibold leading-[1.2]'>Create Room</h3>
 						<div>
-							<img src='/assets/create/avatar-create.png' className='inline-block h-16 w-16' />
+							<img
+								onClick={uploadAvatar}
+								src={avatar || '/assets/create/avatar-create.png'}
+								className='inline-block h-16 w-16 cursor-pointer'
+							/>
+							<input
+								onChange={e => {
+									const file = e.target.files![0]
+									const reader = new FileReader()
+									reader.readAsDataURL(file)
+									reader.onload = function () {
+										console.log('[Base64 result]', reader.result)
+										setAvatar(reader.result as string)
+										e.target.files = null
+									}
+									reader.onerror = function (error) {
+										console.log('[Base64 Error]', error)
+									}
+								}}
+								ref={fileRef}
+								type='file'
+								className='hidden'
+							/>
 						</div>
 						<div className='mx-auto mt-5 w-[360px] text-left'>
 							<div className='text-sm font-medium'>Room Name</div>
 							<input
+								ref={nameRef}
 								required
 								type='text'
 								placeholder='Enter your room name'
@@ -102,7 +194,10 @@ export default function Create() {
 							<div className='mt-[6px] flex w-full items-center rounded-[10px] border border-black border-opacity-10 py-[10px] px-[14px]'>
 								<Metamask className='mr-2 h-5 w-5' />
 								<span>Metamask</span>
-								<button type='button' className='ml-auto rounded-lg bg-black bg-opacity-10 px-3 py-1 text-xs'>
+								<button
+									onClick={connectMetamask}
+									type='button'
+									className='ml-auto rounded-lg bg-black bg-opacity-10 px-3 py-1 text-xs'>
 									Connect
 								</button>
 							</div>
@@ -120,10 +215,10 @@ export default function Create() {
 									<Listbox.Options
 										className='absolute top-[58px] w-full gap-y-1 rounded-[10px] border border-dark bg-white p-[6px]'
 										style={{
-											boxShadow: '0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);'
+											boxShadow: '0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03)'
 										}}>
 										{TYPES.map(t => (
-											<Listbox.Option key={t.name} value={t} className='flex gap-x-3 px-4 py-[10px]'>
+											<Listbox.Option key={t.name} value={t} className='flex cursor-pointer gap-x-3 px-4 py-[10px]'>
 												<img src={t.src} className='h-5 w-5' />
 												<span>{t.name}</span>
 											</Listbox.Option>
@@ -196,7 +291,9 @@ export default function Create() {
 							<button className='w-[180px] rounded-[10px] border border-dark py-3' onClick={() => setDialog(false)}>
 								Cancel
 							</button>
-							<button className='w-[180px] rounded-[10px] bg-black text-white'>Create room</button>
+							<button onClick={createRoom} className='w-[180px] rounded-[10px] bg-black text-white'>
+								Create room
+							</button>
 						</div>
 					</div>
 				</Dialog.Panel>

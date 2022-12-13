@@ -1,9 +1,11 @@
 import { ALL } from '@/constants'
+import { getRooms } from '@/utils/storage'
 import clsx from 'clsx'
-import rooms from '../../mock/rooms.json'
 
 export default function LoactionIcon(props: { id: number; selected: any; filter: string }) {
 	const { id, selected, filter } = props
+
+	const rooms = getRooms()
 
 	const active = id == selected?._id
 	const display = filter === ALL || filter === rooms[props.id].type ? true : false

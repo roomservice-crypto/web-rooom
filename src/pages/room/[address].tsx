@@ -3,7 +3,7 @@ import Room2 from '@/components/rooms/Room2'
 import Room3 from '@/components/rooms/Room3'
 import Room4 from '@/components/rooms/Room4'
 import { useRouter } from 'next/router'
-import rooms from '@/mock/rooms.json'
+import { getRooms } from '@/utils/storage'
 
 export default function Room() {
 	const router = useRouter()
@@ -11,7 +11,7 @@ export default function Room() {
 	const address = router.query.address
 
 	if (address) {
-		const room = rooms.find(r => r.address === address)
+		const room = getRooms().find(r => r.address === address)
 
 		if (!room) return <>ERROR</>
 

@@ -1,8 +1,8 @@
 import Plus from '@/svgs/plus.svg'
 import Minus from '@/svgs/minus.svg'
 import Crosshair from '@/svgs/crosshair.svg'
-import mapboxgl from 'mapbox-gl'
-import React, { Dispatch, useState } from 'react'
+import mapboxgl, { LngLatLike } from 'mapbox-gl'
+import React, { Dispatch, useEffect, useState } from 'react'
 import ChevronsLeft from '@/svgs/chevrons-left.svg'
 import Filter from '@/svgs/filter.svg'
 import { Transition } from '@headlessui/react'
@@ -19,6 +19,13 @@ export default function ToolLayer(props: {
 }) {
 	const { map, ready, filter, setFilter, room } = props
 	const router = useRouter()
+	const [localCoords, setLocalCoords] = useState([0, 0])
+
+	useEffect(() => {
+		navigator.geolocation.getCurrentPosition(position => {
+			setLocalCoords([position.coords.longitude, position.coords.latitude])
+		})
+	}, [])
 
 	return (
 		<>
@@ -27,7 +34,11 @@ export default function ToolLayer(props: {
 				<div className='fixed right-8 bottom-[104px] z-[11]'>
 					<button
 						onClick={() => {
-							if (room) map!.flyTo({ center: room.coordinates })
+							if (navigator.geolocation) {
+								navigator.geolocation.getCurrentPosition(position => {
+									map!.flyTo({ center: localCoords as LngLatLike, zoom: 9 })
+								})
+							}
 						}}
 						className='rounded-lg border border-dark bg-white p-[10px]'>
 						<Crosshair className='h-[20px] w-[20px]' />

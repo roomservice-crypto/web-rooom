@@ -1,7 +1,7 @@
 import mapboxgl, { LngLatLike } from 'mapbox-gl'
 import { Dispatch, useEffect, useRef, useState } from 'react'
-import rooms from '../../mock/rooms.json'
 import Marker from '../common/Marker'
+import { getRooms } from '@/utils/storage'
 
 export default function BaseLayer(props: {
 	setMap: Dispatch<mapboxgl.Map>
@@ -14,6 +14,7 @@ export default function BaseLayer(props: {
 	const [markerDivs, setMarkerDivs] = useState<HTMLDivElement[] | null>(null)
 
 	const ref = useRef<HTMLDivElement>(null)
+	const rooms = getRooms()
 
 	useEffect(() => {
 		const map = new mapboxgl.Map({

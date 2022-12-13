@@ -34,7 +34,7 @@ export default function BaseLayer(props: {
 				map.flyTo({
 					center: rooms[0].coordinates as LngLatLike,
 					zoom: 8,
-					duration: 4000,
+					duration: 3000,
 					easing: t => 1 - Math.pow(1 - t, 3)
 				})
 
@@ -54,7 +54,7 @@ export default function BaseLayer(props: {
 
 					setReady(true)
 				})
-			}, 500)
+			}, 300)
 
 			// display rooms
 			setTimeout(() => {

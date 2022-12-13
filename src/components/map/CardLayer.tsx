@@ -30,10 +30,18 @@ export default function CardLayer(props: { room: any }) {
 								className='-mt-12 h-[96px] w-[96px] rounded-full border-4 border-white bg-green-400 shadow-lg'
 								style={{ backgroundColor: room.backgroundColor }}></img>
 							<span className='flex'>
-								<span className='inline-block h-8 w-8 rounded-full border border-white bg-blue-400'></span>
-								<span className='-ml-4 inline-block h-8 w-8 rounded-full border border-white bg-indigo-400'></span>
-								<span className='-ml-4 inline-block h-8 w-8 rounded-full border border-white bg-violet-400'></span>
-								<span className='-ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-white'>+6</span>
+								<img
+									src={room.visitors[0]}
+									className='inline-block h-8 w-8 rounded-full border border-white bg-blue-400'></img>
+								<img
+									src={room.visitors[1]}
+									className='-ml-4 inline-block h-8 w-8 rounded-full border border-white bg-indigo-400'></img>
+								<img
+									src={room.visitors[2]}
+									className='-ml-4 inline-block h-8 w-8 rounded-full border border-white bg-violet-400'></img>
+								<span className='-ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-white'>
+									+{room.visitorsNumber}
+								</span>
 							</span>
 						</div>
 
@@ -48,7 +56,7 @@ export default function CardLayer(props: { room: any }) {
 							<StateIcon type={room.type} /> {typeWords(room.type)}
 						</button>
 
-						{/* number */}
+						{/* following & likes */}
 						<div className='mt-4 text-sm font-normal text-black text-opacity-40'>
 							<span>
 								<span className='mr-1 font-semibold text-black text-opacity-80'>{room.followers}</span>

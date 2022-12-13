@@ -58,7 +58,7 @@ async function main() {
 		]
 
 		if (room.type === 'Game Playing') room.them = rando(0, 1)
-		else room.them = 0
+		else room.theme = 0
 
 		rooms.push(room)
 	})

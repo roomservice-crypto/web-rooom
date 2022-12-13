@@ -3,7 +3,7 @@ import Link from 'next/link'
 import LogoText from '@/svgs/logo-text.svg'
 import Metamask from '@/svgs/metamask.svg'
 import ChevronDown from '@/svgs/chevron-down.svg'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Listbox, Dialog } from '@headlessui/react'
 import Card1 from '@/svgs/create/card-1.svg'
 import Card2 from '@/svgs/create/card-2.svg'
@@ -13,6 +13,7 @@ import Card5 from '@/svgs/create/card-5.svg'
 import Card6 from '@/svgs/create/card-6.svg'
 import Card7 from '@/svgs/create/card-7.svg'
 import Card8 from '@/svgs/create/card-8.svg'
+import clsx from 'clsx'
 
 const TYPES = [
 	{ name: 'Social', src: '/assets/map/tags/social.png' },
@@ -35,9 +36,27 @@ const CARDS = [
 	{ card: Card8, name: 'Hall of fame' }
 ]
 
+// type map cards
+const TYPE_CARDS = {
+	Social: ['Post', 'Galllery', 'DIY avatar'],
+	'Game Playing': ['Game room', 'Gaming profile', 'Hall of fame'],
+	'Voice Chat': ['Voice chat', 'DIY avatar', 'Post'],
+	'Music Sessions': ['Music sessions', 'Gallery', 'Hall of fame'],
+	'DIY Avatar': ['DIY Avatar', 'Music sessions', 'Gallery'],
+	'Key Users': ['Gaming profile', 'Hall of fame', 'Post'],
+	'Web3 Projects': ['Hall of fame', 'Post', 'Game room']
+}
+
 export default function Create() {
 	const formRef = useRef<HTMLFormElement>(null)
 	const [type, setType] = useState(TYPES[0])
+
+	const [selectedCards, setSelectedCards] = useState(TYPE_CARDS['Social'])
+
+	useEffect(() => {
+		// @ts-ignore
+		setSelectedCards(TYPE_CARDS[type.name])
+	}, [type])
 
 	// dialog control
 	const [dialog, setDialog] = useState(false)
@@ -151,7 +170,18 @@ export default function Create() {
 							<div className='grid grid-cols-4 gap-5'>
 								{CARDS.map(c => (
 									<div
-										className='w-[200px] overflow-hidden rounded-2xl border border-black border-opacity-10'
+										onClick={() => {
+											const i = selectedCards.indexOf(c.name)
+											if (i > -1) {
+												selectedCards.splice(i, 1)
+											} else selectedCards.push(c.name)
+
+											setSelectedCards([...selectedCards])
+										}}
+										className={clsx(
+											'w-[200px] cursor-pointer overflow-hidden rounded-2xl border',
+											selectedCards.includes(c.name) ? 'border-dark' : 'border-black border-opacity-10'
+										)}
 										key={c.name}>
 										<c.card />
 										<div className='py-3 px-5'>{c.name}</div>

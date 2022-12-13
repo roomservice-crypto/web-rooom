@@ -8,6 +8,7 @@ import Filter from '@/svgs/filter.svg'
 import { Transition } from '@headlessui/react'
 import clsx from 'clsx'
 import { ALL } from '@/constants'
+import { useRouter } from 'next/router'
 
 export default function ToolLayer(props: {
 	map: mapboxgl.Map | null
@@ -17,6 +18,7 @@ export default function ToolLayer(props: {
 	room: any
 }) {
 	const { map, ready, filter, setFilter, room } = props
+	const router = useRouter()
 
 	return (
 		<>
@@ -69,7 +71,9 @@ export default function ToolLayer(props: {
 			{/* right top buttons */}
 			<Transition appear show={ready} enterFrom='opacity-0 right-[-100px]' enter='transition-all ' as={React.Fragment}>
 				<div className='fixed top-[30px] right-8 z-[11] flex gap-x-4 rounded-2xl bg-white bg-opacity-20 p-3 shadow-[0px_4px_49px_rgba(0,_7,_72,_0.12)] backdrop-blur-[7.5px]'>
-					<button className='button_normal'>Create room</button>
+					<button onClick={() => router.push('/rooms/create')} className='button_normal'>
+						Create room
+					</button>
 					{/* <button
 						className='flex gap-x-2 rounded-[10px] border border-dark bg-white p-[10px] font-semibold'>
 						<Filter /> Filters

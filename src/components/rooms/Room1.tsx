@@ -16,6 +16,12 @@ import avatar5 from '@/mock/images/avatar-5.png'
 import avatar6 from '@/mock/images/avatar-6.png'
 import avatar7 from '@/mock/images/avatar-7.png'
 import avatar8 from '@/mock/images/avatar-8.png'
+import avatar15 from '@/mock/images/avatar-15.png'
+import avatar16 from '@/mock/images/avatar-16.png'
+import avatar17 from '@/mock/images/avatar-17.png'
+import avatar18 from '@/mock/images/avatar-18.png'
+import avatar19 from '@/mock/images/avatar-19.png'
+import avatar20 from '@/mock/images/avatar-20.png'
 import nft1 from '@/mock/nfts/nft-1.png'
 import nft2 from '@/mock/nfts/nft-2.png'
 import nft3 from '@/mock/nfts/nft-3.png'
@@ -38,9 +44,19 @@ import Edit from '@/mock/svgs/edit.svg'
 import Maximize from '@/mock/svgs/maximize.svg'
 import Close from '@/svgs/close.svg'
 import ArrowRight from '@/mock/svgs/arrow-right.svg'
+import DialogBorder from '@/mock/svgs/dialog-border.svg'
 import LinearRect from './LinearGradient'
 import { Dialog } from '@headlessui/react'
 import { useState } from 'react'
+
+const FRIENDS = [
+	{ avatar: avatar15.src, name: 'Angel' },
+	{ avatar: avatar16.src, name: 'Cody' },
+	{ avatar: avatar17.src, name: 'Esther' },
+	{ avatar: avatar18.src, name: 'Eduardo' },
+	{ avatar: avatar19.src, name: 'Aubrey' },
+	{ avatar: avatar20.src, name: 'Darlene' }
+]
 
 export default function Room1(props: { room: any }) {
 	const { room } = props
@@ -573,23 +589,24 @@ export default function Room1(props: { room: any }) {
 					backgroundImage:
 						'radial-gradient(50.49% 104.08% at 73.33% 50%, rgba(28, 28, 28, 0) 0%, rgba(28, 28, 28, 0.2) 100%)'
 				}}>
-				<Dialog.Panel className='relative h-[400px] w-[640px] bg-white px-6 py-8'>
-					<div className='flex justify-between'>
-						<span>Invite your friends</span>
-						<Close className='h-5 w-5' />
-					</div>
-					<div className='mt-10 grid grid-cols-2'>
-						{Array(6)
-							.fill(0)
-							.map((_, i) => (
-								<div className='' key={i}>
-									<span className='h-14 w-14 rounded-full'></span>
+				<Dialog.Panel className='relative h-[400px] w-[640px] bg-black text-white'>
+					<DialogBorder className=' -z-1 absolute left-0 right-0' />
+					<div className='relative px-6 py-8'>
+						<div className='flex justify-between'>
+							<span className='text-xl font-semibold'>Invite your friends</span>
+							<Close className='h-5 w-5' />
+						</div>
+						<div className='mt-10 grid grid-cols-2 gap-x-10 gap-y-4'>
+							{FRIENDS.map((f, i) => (
+								<div className=' flex items-center gap-x-4' key={i}>
+									<img src={f.avatar} className='h-14 w-14 rounded-full'></img>
 									<div>
-										<div>Angel</div>
+										<div className=' font-semibold'>Angel</div>
 									</div>
-									<button>send</button>
+									<button className='ml-auto rounded-full bg-white bg-opacity-10 px-4 py-2 text-sm'>send</button>
 								</div>
 							))}
+						</div>
 					</div>
 				</Dialog.Panel>
 			</Dialog>

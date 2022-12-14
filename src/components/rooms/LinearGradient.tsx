@@ -18,7 +18,7 @@ export default function LinearRect(props: { strokeWidth?: number }) {
 	}, [containerRef])
 
 	return (
-		<div className='absolute left-0 top-0 h-full w-full' ref={containerRef}>
+		<div className='absolute left-0 top-0 h-full w-full -z-1' ref={containerRef}>
 			{data && (
 				<>
 					<svg

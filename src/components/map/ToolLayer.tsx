@@ -24,7 +24,7 @@ export default function ToolLayer(props: {
 	const rooms = getRooms()
 	const router = useRouter()
 	const [localCoords, setLocalCoords] = useState([0, 0])
-	const [open, setOpen] = useState(true)
+	const [open, setOpen] = useState(false)
 
 	useEffect(() => {
 		navigator.geolocation.getCurrentPosition(position => {
@@ -35,7 +35,7 @@ export default function ToolLayer(props: {
 	return (
 		<>
 			{/* right bottom zoom buttons */}
-			<Transition appear show={ready} enterFrom='opacity-0' enter='transition-all ' as={React.Fragment}>
+			<Transition appear show={ready && !open} enterFrom='opacity-0' enter='transition-all ' as={React.Fragment}>
 				<div className='fixed right-8 bottom-[104px] z-[11]'>
 					<button
 						onClick={() => {
@@ -85,8 +85,13 @@ export default function ToolLayer(props: {
 			</Transition>
 
 			{/* right top buttons */}
-			<Transition appear show={ready} enterFrom='opacity-0 right-[-100px]' enter='transition-all ' as={React.Fragment}>
-				<div className='fixed top-[30px] right-8 z-[11] flex gap-x-4 rounded-2xl bg-white bg-opacity-20 p-3 shadow-[0px_4px_49px_rgba(0,_7,_72,_0.12)] backdrop-blur-[7.5px]'>
+			<Transition appear show={ready} enterFrom='opacity-0 right-[-100px]' as={React.Fragment}>
+				<div
+					className={clsx(
+						'fixed top-8 z-[11] flex gap-x-4 rounded-2xl bg-white bg-opacity-20 p-3 backdrop-blur-[7.5px] transition-all',
+						open ? 'right-[456px]' : 'right-8'
+					)}
+					style={{ boxShadow: '0px 4px 49pxrgba(0, 7, 72, 0.12)' }}>
 					<button onClick={() => router.push('/rooms/create')} className='button_normal'>
 						Create room
 					</button>
@@ -94,37 +99,49 @@ export default function ToolLayer(props: {
 						className='flex gap-x-2 rounded-[10px] border border-dark bg-white p-[10px] font-semibold'>
 						<Filter /> Filters
 					</button> */}
-					<button className='rounded-[10px] border border-dark bg-white p-[10px]'>
+					<button
+						onClick={() => setOpen(!open)}
+						className={clsx(
+							'rounded-[10px] border border-dark  p-[10px]',
+							open ? 'rotate-180 bg-black text-white' : 'bg-white'
+						)}>
 						<ChevronsLeft />
 					</button>
 				</div>
 			</Transition>
 
-			{/* right top buttons */}
-			<Transition appear show={open} enterFrom='opacity-0 right-[-100px]' enter='transition-all ' as={React.Fragment}>
-				<div className='fixed top-8 right-8 z-[11] flex h-[764px] gap-x-4 rounded-[32px] border-2 border-dark bg-[#BAEDBD] bg-opacity-20 p-3'>
-					<div className='w-[368px] overflow-auto rounded-[32px] bg-white'>
+			{/* right top pad */}
+			<Transition
+				appear
+				show={ready && open}
+				enterFrom='opacity-0 right-[-100px]'
+				enter='transition-all '
+				as={React.Fragment}>
+				<div className='fixed top-8 right-8 z-[11] flex h-[764px] gap-x-4 rounded-[32px] border-2 border-dark bg-[#BAEDBD] p-3'>
+					<div className='w-[368px] overflow-auto rounded-[32px] border border-dark bg-white'>
 						<div className='flex items-center gap-x-2 px-8 pt-8'>
-							<span className=' inline-block p-1'>
+							<span className='inline-block p-1'>
 								<Earth className='h-5 w-5' />
 							</span>
 							<ChevronRight />
-							<span>South Korea</span>
+							<span className=' inline-block rounded-md bg-black bg-opacity-5 py-1 px-2'>South Korea</span>
 						</div>
-						<div>Seoul area</div>
-						<div>440+ Room</div>
+						<div className='mt-4 px-8 text-2xl font-semibold'>Seoul area</div>
+						<div className='mt-1 px-8 text-black text-opacity-80'>440+ Room</div>
 
-						<div className='mt-4 border-t border-dashed'></div>
+						<div className='mt-4 border-t border-dashed border-dark'></div>
 
-						{rooms.map(r => (
-							<div key={r._id} className='flex'>
-								<img src={r.avatar} className=' h-10 w-10 rounded-full' />
-								<div>
-									<div>{r.name}</div>
-									<div>xxxx</div>
+						<div className='divide-y divide-black divide-opacity-10'>
+							{rooms.map(r => (
+								<div key={r._id} className='flex gap-x-3 px-8 py-6'>
+									<img src={r.avatar} className=' h-10 w-10 rounded-full' />
+									<div>
+										<div className='font-semibold'>{r.name}</div>
+										<div className='text-sm text-black text-opacity-40'>xxxx</div>
+									</div>
 								</div>
-							</div>
-						))}
+							))}
+						</div>
 					</div>
 				</div>
 			</Transition>

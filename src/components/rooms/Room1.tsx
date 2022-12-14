@@ -36,11 +36,16 @@ import Users from '@/mock/svgs/users.svg'
 import ExternalLink from '@/mock/svgs/external-link.svg'
 import Edit from '@/mock/svgs/edit.svg'
 import Maximize from '@/mock/svgs/maximize.svg'
+import Close from '@/svgs/close.svg'
 import ArrowRight from '@/mock/svgs/arrow-right.svg'
 import LinearRect from './LinearGradient'
+import { Dialog } from '@headlessui/react'
+import { useState } from 'react'
 
 export default function Room1(props: { room: any }) {
 	const { room } = props
+
+	const [dialog, setDialog] = useState(false)
 
 	return (
 		<>
@@ -58,7 +63,7 @@ export default function Room1(props: { room: any }) {
 					<img src={room.avatar} className='h-40 w-40 rounded-full border-4 border-[#7B61FF]' />
 				</figure>
 
-				{/* data */}
+				{/* introduce */}
 				<div>
 					<div className='mx-auto mt-6 w-max text-[30px] font-semibold leading-[1.2]'>{room.name}</div>
 					<div className='mx-auto w-max opacity-40'>Room NFT owned by {shortenAddress(room.address)}</div>
@@ -83,126 +88,136 @@ export default function Room1(props: { room: any }) {
 					<div className='relative flex-[720] p-[26px]'>
 						<LinearRect />
 
-						<div className='flex justify-between border-b border-white border-opacity-10 pb-5 text-lg'>
-							<span>Private Game Room</span>
-							<Maximize />
+						<div className=' relative'>
+							<div className='flex justify-between border-b border-white border-opacity-10 pb-5 text-lg'>
+								<span>Private Game Room</span>
+								<Maximize />
+							</div>
+
+							<div className='border-t border-black border-opacity-10'></div>
+
+							<ul className='mt-6 flex flex-col gap-y-3'>
+								<li className='flex gap-x-2 rounded-3xl border-[0.8px] border-white border-opacity-20 bg-white bg-opacity-5 p-2'>
+									<figure>
+										<img src={game1.src} className='h-[180px] w-[256px]' />
+									</figure>
+									<div className='flex-1 pt-6'>
+										<div>
+											<span className='inline-flex items-center gap-x-[6px] rounded-full bg-[#7B61FF] bg-opacity-25 px-2 py-[2px] text-[#7B61FF]'>
+												<Gaming />
+												<span>In Progress</span>
+											</span>
+										</div>
+										<div className='mt-1 text-lg font-semibold'>Monopoly Dreams World</div>
+										<div className='mt-2 opacity-40'>Multiplayer Group Game</div>
+										<div className='mt-5 flex justify-between'>
+											<div className='flex items-center'>
+												<img src={avatar1.src} className='h-8 w-8' />
+												<img src={avatar2.src} className='-m-1 h-8 w-8' />
+												<img src={avatar3.src} className='-m-1 h-8 w-8' />
+												<img src={avatar4.src} className='-m-1 h-8 w-8' />
+											</div>
+
+											<button
+												onClick={() => setDialog(true)}
+												className=' flex cursor-pointer items-center gap-x-2 rounded-full bg-white bg-opacity-30 px-4 py-2'>
+												<span>Ask to join</span> <ArrowRight />
+											</button>
+										</div>
+									</div>
+								</li>
+
+								<li className='flex gap-x-2 rounded-3xl border-[0.8px] border-white border-opacity-20 bg-white bg-opacity-5 p-2'>
+									<figure>
+										<img src={game2.src} className='h-[180px] w-[256px]' />
+									</figure>
+									<div className='flex-1 pt-6'>
+										<div>
+											<span className='inline-flex items-center gap-x-[6px] rounded-full bg-[#7B61FF] bg-opacity-25 px-2 py-[2px] text-[#7B61FF]'>
+												<Gaming />
+												<span>In Progress</span>
+											</span>
+										</div>
+										<div className='mt-1 text-lg font-semibold'>Jenny Wilson</div>
+										<div className='mt-2 opacity-40'>3v3 Confrontation</div>
+										<div className='mt-5 flex justify-between'>
+											<div className='flex items-center'>
+												<img src={avatar5.src} className='h-8 w-8' />
+												<img src={avatar6.src} className='-m-1 h-8 w-8' />
+												<img src={avatar7.src} className='-m-1 h-8 w-8' />
+												<img src={avatar2.src} className='-m-1 h-8 w-8' />
+											</div>
+
+											<button
+												onClick={() => setDialog(true)}
+												className=' flex cursor-pointer items-center gap-x-2 rounded-full bg-white bg-opacity-30 px-4 py-2'>
+												<span>Ask to join</span> <ArrowRight />
+											</button>
+										</div>
+									</div>
+								</li>
+
+								<li className='flex gap-x-2 rounded-3xl border-[0.8px] border-white border-opacity-20 bg-white bg-opacity-5 p-2'>
+									<figure>
+										<img src={game3.src} className='h-[180px] w-[256px]' />
+									</figure>
+									<div className='flex-1 pt-6'>
+										<div>
+											<span className='inline-flex items-center gap-x-[6px] rounded-full bg-[#7B61FF] bg-opacity-25 px-2 py-[2px] text-[#7B61FF]'>
+												<Gaming />
+												<span>In Progress</span>
+											</span>
+										</div>
+										<div className='mt-1 text-lg font-semibold'>Kathryn Murphy</div>
+										<div className='mt-2 opacity-40'>3v3 Confrontation</div>
+										<div className='mt-5 flex justify-between'>
+											<div className='flex items-center'>
+												<img src={avatar5.src} className='h-8 w-8' />
+												<img src={avatar6.src} className='-m-1 h-8 w-8' />
+												<img src={avatar7.src} className='-m-1 h-8 w-8' />
+												<img src={avatar2.src} className='-m-1 h-8 w-8' />
+											</div>
+
+											<button
+												onClick={() => setDialog(true)}
+												className=' flex cursor-pointer items-center gap-x-2 rounded-full bg-white bg-opacity-30 px-4 py-2'>
+												<span>Ask to join</span> <ArrowRight />
+											</button>
+										</div>
+									</div>
+								</li>
+
+								<li className='flex gap-x-2 rounded-3xl border-[0.8px] border-white border-opacity-20 bg-white bg-opacity-5 p-2'>
+									<figure>
+										<img src={game4.src} className='h-[180px] w-[256px]' />
+									</figure>
+									<div className='flex-1 pt-6'>
+										<div>
+											<span className='inline-flex items-center gap-x-[6px] rounded-full bg-[#7B61FF] bg-opacity-25 px-2 py-[2px] text-[#7B61FF]'>
+												<Gaming />
+												<span>In Progress</span>
+											</span>
+										</div>
+										<div className='mt-1 text-lg font-semibold'>Cody Fisher</div>
+										<div className='mt-2 opacity-40'>3v3 Confrontation</div>
+										<div className='mt-5 flex justify-between'>
+											<div className='flex items-center'>
+												<img src={avatar5.src} className='h-8 w-8' />
+												<img src={avatar6.src} className='-m-1 h-8 w-8' />
+												<img src={avatar7.src} className='-m-1 h-8 w-8' />
+												<img src={avatar2.src} className='-m-1 h-8 w-8' />
+											</div>
+
+											<button
+												onClick={() => setDialog(true)}
+												className=' flex cursor-pointer items-center gap-x-2 rounded-full bg-white bg-opacity-30 px-4 py-2'>
+												<span>Ask to join</span> <ArrowRight />
+											</button>
+										</div>
+									</div>
+								</li>
+							</ul>
 						</div>
-
-						<div className='border-t border-black border-opacity-10'></div>
-
-						<ul className='mt-6 flex flex-col gap-y-3'>
-							<li className='flex gap-x-2 rounded-3xl border-[0.8px] border-white border-opacity-20 bg-white bg-opacity-5 p-2'>
-								<figure>
-									<img src={game1.src} className='h-[180px] w-[256px]' />
-								</figure>
-								<div className='flex-1 pt-6'>
-									<div>
-										<span className='inline-flex items-center gap-x-[6px] rounded-full bg-[#7B61FF] bg-opacity-25 px-2 py-[2px] text-[#7B61FF]'>
-											<Gaming />
-											<span>In Progress</span>
-										</span>
-									</div>
-									<div className='mt-1 text-lg font-semibold'>Monopoly Dreams World</div>
-									<div className='mt-2 opacity-40'>Multiplayer Group Game</div>
-									<div className='mt-5 flex justify-between'>
-										<div className='flex items-center'>
-											<img src={avatar1.src} className='h-8 w-8' />
-											<img src={avatar2.src} className='-m-1 h-8 w-8' />
-											<img src={avatar3.src} className='-m-1 h-8 w-8' />
-											<img src={avatar4.src} className='-m-1 h-8 w-8' />
-										</div>
-
-										<button className='flex items-center gap-x-2 rounded-full bg-white bg-opacity-30 px-4 py-2'>
-											<span>Ask to join</span> <ArrowRight />
-										</button>
-									</div>
-								</div>
-							</li>
-
-							<li className='flex gap-x-2 rounded-3xl border-[0.8px] border-white border-opacity-20 bg-white bg-opacity-5 p-2'>
-								<figure>
-									<img src={game2.src} className='h-[180px] w-[256px]' />
-								</figure>
-								<div className='flex-1 pt-6'>
-									<div>
-										<span className='inline-flex items-center gap-x-[6px] rounded-full bg-[#7B61FF] bg-opacity-25 px-2 py-[2px] text-[#7B61FF]'>
-											<Gaming />
-											<span>In Progress</span>
-										</span>
-									</div>
-									<div className='mt-1 text-lg font-semibold'>Jenny Wilson</div>
-									<div className='mt-2 opacity-40'>3v3 Confrontation</div>
-									<div className='mt-5 flex justify-between'>
-										<div className='flex items-center'>
-											<img src={avatar5.src} className='h-8 w-8' />
-											<img src={avatar6.src} className='-m-1 h-8 w-8' />
-											<img src={avatar7.src} className='-m-1 h-8 w-8' />
-											<img src={avatar2.src} className='-m-1 h-8 w-8' />
-										</div>
-
-										<button className='flex items-center gap-x-2 rounded-full bg-white bg-opacity-30 px-4 py-2'>
-											<span>Ask to join</span> <ArrowRight />
-										</button>
-									</div>
-								</div>
-							</li>
-
-							<li className='flex gap-x-2 rounded-3xl border-[0.8px] border-white border-opacity-20 bg-white bg-opacity-5 p-2'>
-								<figure>
-									<img src={game3.src} className='h-[180px] w-[256px]' />
-								</figure>
-								<div className='flex-1 pt-6'>
-									<div>
-										<span className='inline-flex items-center gap-x-[6px] rounded-full bg-[#7B61FF] bg-opacity-25 px-2 py-[2px] text-[#7B61FF]'>
-											<Gaming />
-											<span>In Progress</span>
-										</span>
-									</div>
-									<div className='mt-1 text-lg font-semibold'>Kathryn Murphy</div>
-									<div className='mt-2 opacity-40'>3v3 Confrontation</div>
-									<div className='mt-5 flex justify-between'>
-										<div className='flex items-center'>
-											<img src={avatar5.src} className='h-8 w-8' />
-											<img src={avatar6.src} className='-m-1 h-8 w-8' />
-											<img src={avatar7.src} className='-m-1 h-8 w-8' />
-											<img src={avatar2.src} className='-m-1 h-8 w-8' />
-										</div>
-
-										<button className='flex items-center gap-x-2 rounded-full bg-white bg-opacity-30 px-4 py-2'>
-											<span>Ask to join</span> <ArrowRight />
-										</button>
-									</div>
-								</div>
-							</li>
-
-							<li className='flex gap-x-2 rounded-3xl border-[0.8px] border-white border-opacity-20 bg-white bg-opacity-5 p-2'>
-								<figure>
-									<img src={game4.src} className='h-[180px] w-[256px]' />
-								</figure>
-								<div className='flex-1 pt-6'>
-									<div>
-										<span className='inline-flex items-center gap-x-[6px] rounded-full bg-[#7B61FF] bg-opacity-25 px-2 py-[2px] text-[#7B61FF]'>
-											<Gaming />
-											<span>In Progress</span>
-										</span>
-									</div>
-									<div className='mt-1 text-lg font-semibold'>Cody Fisher</div>
-									<div className='mt-2 opacity-40'>3v3 Confrontation</div>
-									<div className='mt-5 flex justify-between'>
-										<div className='flex items-center'>
-											<img src={avatar5.src} className='h-8 w-8' />
-											<img src={avatar6.src} className='-m-1 h-8 w-8' />
-											<img src={avatar7.src} className='-m-1 h-8 w-8' />
-											<img src={avatar2.src} className='-m-1 h-8 w-8' />
-										</div>
-
-										<button className='flex items-center gap-x-2 rounded-full bg-white bg-opacity-30 px-4 py-2'>
-											<span>Ask to join</span> <ArrowRight />
-										</button>
-									</div>
-								</div>
-							</li>
-						</ul>
 					</div>
 
 					{/* right */}
@@ -210,104 +225,106 @@ export default function Room1(props: { room: any }) {
 						<div className='relative p-[26px]'>
 							<LinearRect />
 
-							<div className='flex justify-between border-b border-white border-opacity-10 pb-5 text-lg'>
-								<span>Gaming Profile</span>
-								<Maximize />
-							</div>
+							<div className=' relative'>
+								<div className='flex justify-between border-b border-white border-opacity-10 pb-5 text-lg'>
+									<span>Gaming Profile</span>
+									<Maximize />
+								</div>
 
-							<div className='border-t border-black border-opacity-10'></div>
+								<div className='border-t border-black border-opacity-10'></div>
 
-							{/* smalls cards */}
-							<div className='mt-6 flex justify-between gap-x-6'>
-								<div className='flex flex-1 gap-x-6 rounded-2xl border-white border-opacity-30 bg-white bg-opacity-5'>
-									<figure>
-										<img src={game5.src} className='h-[96px] w-[72px]' />
-									</figure>
-									<div className='py-3'>
-										<div>Arlene</div>
-										<div className='mt-1 flex gap-x-3'>
-											<span className='flex items-center'>
-												<ThumbsUp />
-												<span className='text-xs opacity-80'>98%</span>
-											</span>
-											<span className='flex items-center'>
-												<User />
-												<span className='text-xs opacity-80'>36.7K</span>
-											</span>
+								{/* smalls cards */}
+								<div className='mt-6 flex justify-between gap-x-6'>
+									<div className='flex flex-1 gap-x-6 rounded-2xl border-white border-opacity-30 bg-white bg-opacity-5'>
+										<figure>
+											<img src={game5.src} className='h-[96px] w-[72px]' />
+										</figure>
+										<div className='py-3'>
+											<div>Arlene</div>
+											<div className='mt-1 flex gap-x-3'>
+												<span className='flex items-center'>
+													<ThumbsUp />
+													<span className='text-xs opacity-80'>98%</span>
+												</span>
+												<span className='flex items-center'>
+													<User />
+													<span className='text-xs opacity-80'>36.7K</span>
+												</span>
+											</div>
+											<div className='mt-3 flex gap-x-2 text-[#7B61FF]'>
+												<span className='text-xs'>Just playing</span>
+												<Play />
+											</div>
 										</div>
-										<div className='mt-3 flex gap-x-2 text-[#7B61FF]'>
-											<span className='text-xs'>Just playing</span>
-											<Play />
+									</div>
+
+									<div className='flex flex-1 gap-x-6 rounded-2xl border-white border-opacity-30 bg-white bg-opacity-5'>
+										<figure>
+											<img src={game6.src} className='h-[96px] w-[72px]' />
+										</figure>
+										<div className='py-3'>
+											<div>Leslie</div>
+											<div className='mt-1 flex gap-x-3'>
+												<span className='flex items-center'>
+													<ThumbsUp />
+													<span className='text-xs opacity-80'>98%</span>
+												</span>
+												<span className='flex items-center'>
+													<User />
+													<span className='text-xs opacity-80'>36.7K</span>
+												</span>
+											</div>
+											<div className='mt-3 flex gap-x-2 text-[#7B61FF]'>
+												<span className='text-xs'>Just playing</span>
+												<Play />
+											</div>
 										</div>
 									</div>
 								</div>
 
-								<div className='flex flex-1 gap-x-6 rounded-2xl border-white border-opacity-30 bg-white bg-opacity-5'>
-									<figure>
-										<img src={game6.src} className='h-[96px] w-[72px]' />
-									</figure>
-									<div className='py-3'>
-										<div>Leslie</div>
-										<div className='mt-1 flex gap-x-3'>
-											<span className='flex items-center'>
-												<ThumbsUp />
-												<span className='text-xs opacity-80'>98%</span>
-											</span>
-											<span className='flex items-center'>
-												<User />
-												<span className='text-xs opacity-80'>36.7K</span>
-											</span>
+								<div className='mt-6 flex justify-between gap-x-6 text-center'>
+									<div>
+										<div className='flex h-[68px] w-[68px] items-center justify-center rounded-full bg-[#11B97C]'>
+											<Add />
 										</div>
-										<div className='mt-3 flex gap-x-2 text-[#7B61FF]'>
-											<span className='text-xs'>Just playing</span>
-											<Play />
-										</div>
+										<div className='mt-3 w-[68px] text-xs'>Invite to play</div>
 									</div>
-								</div>
-							</div>
+									<div>
+										<figure className='relative flex h-[68px] w-[68px] items-center justify-center rounded-full border-2 border-[#11B97C] p-[1px]'>
+											<img src={avatar4.src} className='h-full w-full rounded-full' />
 
-							<div className='mt-6 flex justify-between gap-x-6 text-center'>
-								<div>
-									<div className='flex h-[68px] w-[68px] items-center justify-center rounded-full bg-[#11B97C]'>
-										<Add />
+											<span className='absolute right-0 bottom-0 h-4 w-4 rounded-full border-2 border-white bg-[#11B97C]'></span>
+										</figure>
+										<div className='mt-3 w-[68px] text-xs'>Luc Ganssou</div>
+										<div className='text-xs opacity-40 '>14m ago</div>
 									</div>
-									<div className='mt-3 w-[68px] text-xs'>Invite to play</div>
-								</div>
-								<div>
-									<figure className='relative flex h-[68px] w-[68px] items-center justify-center rounded-full border-2 border-[#11B97C] p-[1px]'>
-										<img src={avatar4.src} className='h-full w-full rounded-full' />
+									<div>
+										<figure className='relative flex h-[68px] w-[68px] items-center justify-center rounded-full border-2 border-[#11B97C] p-[1px]'>
+											<img src={avatar3.src} className='h-full w-full rounded-full' />
 
-										<span className='absolute right-0 bottom-0 h-4 w-4 rounded-full border-2 border-white bg-[#11B97C]'></span>
-									</figure>
-									<div className='mt-3 w-[68px] text-xs'>Luc Ganssou</div>
-									<div className='text-xs opacity-40 '>14m ago</div>
-								</div>
-								<div>
-									<figure className='relative flex h-[68px] w-[68px] items-center justify-center rounded-full border-2 border-[#11B97C] p-[1px]'>
-										<img src={avatar3.src} className='h-full w-full rounded-full' />
+											<span className='absolute right-0 bottom-0 h-4 w-4 rounded-full border-2 border-white bg-[#11B97C]'></span>
+										</figure>
+										<div className='mt-3 w-[68px] text-xs'>Jacob Jones</div>
+										<div className='text-xs opacity-40 '>14m ago</div>
+									</div>
+									<div>
+										<figure className='relative flex h-[68px] w-[68px] items-center justify-center rounded-full border-2 border-white border-opacity-20 p-[1px]'>
+											<img src={avatar2.src} className='h-full w-full rounded-full' />
 
-										<span className='absolute right-0 bottom-0 h-4 w-4 rounded-full border-2 border-white bg-[#11B97C]'></span>
-									</figure>
-									<div className='mt-3 w-[68px] text-xs'>Jacob Jones</div>
-									<div className='text-xs opacity-40 '>14m ago</div>
-								</div>
-								<div>
-									<figure className='relative flex h-[68px] w-[68px] items-center justify-center rounded-full border-2 border-white border-opacity-20 p-[1px]'>
-										<img src={avatar2.src} className='h-full w-full rounded-full' />
+											<span className='absolute right-0 bottom-0 h-4 w-4 rounded-full border-2 border-white border-opacity-20 bg-[#2B2F3D]'></span>
+										</figure>
+										<div className='mt-3 w-[68px] text-xs'>Christian Apithy</div>
+										<div className='text-xs opacity-40 '>14m ago</div>
+									</div>
+									<div>
+										<figure className='relative flex h-[68px] w-[68px] items-center justify-center rounded-full border-2 border-white border-opacity-20 p-[1px]'>
+											<img src={avatar8.src} className='h-full w-full rounded-full' />
 
-										<span className='absolute right-0 bottom-0 h-4 w-4 rounded-full border-2 border-white border-opacity-20 bg-[#2B2F3D]'></span>
-									</figure>
-									<div className='mt-3 w-[68px] text-xs'>Christian Apithy</div>
-									<div className='text-xs opacity-40 '>14m ago</div>
-								</div>
-								<div>
-									<figure className='relative flex h-[68px] w-[68px] items-center justify-center rounded-full border-2 border-white border-opacity-20 p-[1px]'>
-										<img src={avatar8.src} className='h-full w-full rounded-full' />
-
-										<span className='absolute right-0 bottom-0 h-4 w-4 rounded-full border-2 border-white border-opacity-20 bg-[#2B2F3D]'></span>
-									</figure>
-									<div className='mt-3 w-[68px] text-xs'>Christian Apithy</div>
-									<div className='text-xs opacity-40 '>14m ago</div>
+											<span className='absolute right-0 bottom-0 h-4 w-4 rounded-full border-2 border-white border-opacity-20 bg-[#2B2F3D]'></span>
+										</figure>
+										<div className='mt-3 w-[68px] text-xs'>Christian Apithy</div>
+										<div className='text-xs opacity-40 '>14m ago</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -403,136 +420,179 @@ export default function Room1(props: { room: any }) {
 					<div className='relative mt-6 flex-1 rounded-3xl p-[26px]'>
 						<LinearRect />
 
-						<div className='flex justify-between border-b border-white border-opacity-10 pb-5 text-lg'>
-							<span>Hall of fame</span>
-							<Maximize />
-						</div>
+						<div className=' relative'>
+							<div className='flex justify-between border-b border-white border-opacity-10 pb-5 text-lg'>
+								<span>Hall of fame</span>
+								<Maximize />
+							</div>
 
-						<table className='w-full border-separate border-spacing-0 border-spacing-y-4'>
-							<thead>
-								<tr>
-									<th className='py-2 text-left font-semibold opacity-80'></th>
-									<th className='py-2 text-left font-semibold opacity-80'>Name</th>
-									<th className='py-2 text-left font-semibold opacity-80'>Sales</th>
-									<th className='py-2 text-left font-semibold opacity-80'>Income</th>
-									<th className='py-2 text-left font-semibold opacity-80'>Items</th>
-									<th className='py-2 text-left font-semibold opacity-80'>Followers</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr className='border-opacity-20 '>
-									<td className='rounded-l-2xl border-y border-l border-white border-opacity-20 bg-white bg-opacity-5 py-6 pl-6'>
-										1
-									</td>
-									<td className='flex border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
-										<img src={avatar4.src} className='mr-4 h-14 w-14 rounded-full' />
-										Luc Ganssou
-									</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>15,085,035.95</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>111,850</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>50,850</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>10,150</td>
-									<td className='rounded-r-2xl border-y border-r border-white border-opacity-20 bg-white bg-opacity-5 py-6 pr-6 text-right'>
-										<button className=' rounded-[10px] bg-[#7B61FF] bg-opacity-25 py-[6px] px-[10px] text-[#7B61FF]'>
-											Follow
-										</button>
-									</td>
-								</tr>
-								<tr className='border-opacity-20 '>
-									<td className='rounded-l-2xl border-y border-l border-white border-opacity-20 bg-white bg-opacity-5 py-6 pl-6'>
-										2
-									</td>
-									<td className='flex border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
-										<img src={avatar3.src} className='mr-4 h-14 w-14 rounded-full' />
-										Jacob Jones
-									</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>15,085,035.95</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>111,850</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>50,850</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>10,150</td>
-									<td className='rounded-r-2xl border-y border-r border-white border-opacity-20 bg-white bg-opacity-5 py-6 pr-6 text-right'>
-										<button className=' rounded-[10px] bg-[#7B61FF] bg-opacity-25 py-[6px] px-[10px] text-[#7B61FF]'>
-											Follow
-										</button>
-									</td>
-								</tr>
-								<tr className='border-opacity-20 '>
-									<td className='rounded-l-2xl border-y border-l border-white border-opacity-20 bg-white bg-opacity-5 py-6 pl-6'>
-										3
-									</td>
-									<td className='flex border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
-										<img src={avatar4.src} className='mr-4 h-14 w-14 rounded-full' />
-										Christian Apithy
-									</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>15,085,035.95</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>111,850</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>50,850</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>10,150</td>
-									<td className='rounded-r-2xl border-y border-r border-white border-opacity-20 bg-white bg-opacity-5 py-6 pr-6 text-right'>
-										<button className=' rounded-[10px] bg-[#7B61FF] bg-opacity-25 py-[6px] px-[10px] text-[#7B61FF]'>
-											Follow
-										</button>
-									</td>
-								</tr>
-								<tr className='border-opacity-20 '>
-									<td className='rounded-l-2xl border-y border-l border-white border-opacity-20 bg-white bg-opacity-5 py-6 pl-6'>
-										4
-									</td>
-									<td className='flex border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
-										<img src={avatar1.src} className='mr-4 h-14 w-14 rounded-full' />
-										Geraud Babalola
-									</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>15,085,035.95</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>111,850</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>50,850</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>10,150</td>
-									<td className='rounded-r-2xl border-y border-r border-white border-opacity-20 bg-white bg-opacity-5 py-6 pr-6 text-right'>
-										<button className=' rounded-[10px] bg-[#7B61FF] bg-opacity-25 py-[6px] px-[10px] text-[#7B61FF]'>
-											Follow
-										</button>
-									</td>
-								</tr>
-								<tr className='border-opacity-20 '>
-									<td className='rounded-l-2xl border-y border-l border-white border-opacity-20 bg-white bg-opacity-5 py-6 pl-6'>
-										5
-									</td>
-									<td className='flex border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
-										<img src={avatar1.src} className='mr-4 h-14 w-14 rounded-full' />
-										Jaurès Kpobli
-									</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>15,085,035.95</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>111,850</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>50,850</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>10,150</td>
-									<td className='rounded-r-2xl border-y border-r border-white border-opacity-20 bg-white bg-opacity-5 py-6 pr-6 text-right'>
-										<button className=' rounded-[10px] bg-[#7B61FF] bg-opacity-25 py-[6px] px-[10px] text-[#7B61FF]'>
-											Follow
-										</button>
-									</td>
-								</tr>
-								<tr className='border-opacity-20 '>
-									<td className='rounded-l-2xl border-y border-l border-white border-opacity-20 bg-white bg-opacity-5 py-6 pl-6'>
-										5
-									</td>
-									<td className='flex border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
-										<img src={avatar5.src} className='mr-4 h-14 w-14 rounded-full' />
-										Abdias Cossou
-									</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>15,085,035.95</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>111,850</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>50,850</td>
-									<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>10,150</td>
-									<td className='rounded-r-2xl border-y border-r border-white border-opacity-20 bg-white bg-opacity-5 py-6 pr-6 text-right'>
-										<button className=' rounded-[10px] bg-[#7B61FF] bg-opacity-25 py-[6px] px-[10px] text-[#7B61FF]'>
-											Follow
-										</button>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+							<table className='w-full border-separate border-spacing-0 border-spacing-y-4'>
+								<thead>
+									<tr>
+										<th className='py-2 text-left font-semibold opacity-80'></th>
+										<th className='py-2 text-left font-semibold opacity-80'>Name</th>
+										<th className='py-2 text-left font-semibold opacity-80'>Sales</th>
+										<th className='py-2 text-left font-semibold opacity-80'>Income</th>
+										<th className='py-2 text-left font-semibold opacity-80'>Items</th>
+										<th className='py-2 text-left font-semibold opacity-80'>Followers</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr className='border-opacity-20 '>
+										<td className='rounded-l-2xl border-y border-l border-white border-opacity-20 bg-white bg-opacity-5 py-6 pl-6'>
+											1
+										</td>
+										<td className='flex border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
+											<img src={avatar4.src} className='mr-4 h-14 w-14 rounded-full' />
+											Luc Ganssou
+										</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
+											15,085,035.95
+										</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>111,850</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>50,850</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>10,150</td>
+										<td className='rounded-r-2xl border-y border-r border-white border-opacity-20 bg-white bg-opacity-5 py-6 pr-6 text-right'>
+											<button className=' rounded-[10px] bg-[#7B61FF] bg-opacity-25 py-[6px] px-[10px] text-[#7B61FF]'>
+												Follow
+											</button>
+										</td>
+									</tr>
+									<tr className='border-opacity-20 '>
+										<td className='rounded-l-2xl border-y border-l border-white border-opacity-20 bg-white bg-opacity-5 py-6 pl-6'>
+											2
+										</td>
+										<td className='flex border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
+											<img src={avatar3.src} className='mr-4 h-14 w-14 rounded-full' />
+											Jacob Jones
+										</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
+											15,085,035.95
+										</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>111,850</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>50,850</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>10,150</td>
+										<td className='rounded-r-2xl border-y border-r border-white border-opacity-20 bg-white bg-opacity-5 py-6 pr-6 text-right'>
+											<button className=' rounded-[10px] bg-[#7B61FF] bg-opacity-25 py-[6px] px-[10px] text-[#7B61FF]'>
+												Follow
+											</button>
+										</td>
+									</tr>
+									<tr className='border-opacity-20 '>
+										<td className='rounded-l-2xl border-y border-l border-white border-opacity-20 bg-white bg-opacity-5 py-6 pl-6'>
+											3
+										</td>
+										<td className='flex border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
+											<img src={avatar4.src} className='mr-4 h-14 w-14 rounded-full' />
+											Christian Apithy
+										</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
+											15,085,035.95
+										</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>111,850</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>50,850</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>10,150</td>
+										<td className='rounded-r-2xl border-y border-r border-white border-opacity-20 bg-white bg-opacity-5 py-6 pr-6 text-right'>
+											<button className=' rounded-[10px] bg-[#7B61FF] bg-opacity-25 py-[6px] px-[10px] text-[#7B61FF]'>
+												Follow
+											</button>
+										</td>
+									</tr>
+									<tr className='border-opacity-20 '>
+										<td className='rounded-l-2xl border-y border-l border-white border-opacity-20 bg-white bg-opacity-5 py-6 pl-6'>
+											4
+										</td>
+										<td className='flex border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
+											<img src={avatar1.src} className='mr-4 h-14 w-14 rounded-full' />
+											Geraud Babalola
+										</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
+											15,085,035.95
+										</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>111,850</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>50,850</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>10,150</td>
+										<td className='rounded-r-2xl border-y border-r border-white border-opacity-20 bg-white bg-opacity-5 py-6 pr-6 text-right'>
+											<button className=' rounded-[10px] bg-[#7B61FF] bg-opacity-25 py-[6px] px-[10px] text-[#7B61FF]'>
+												Follow
+											</button>
+										</td>
+									</tr>
+									<tr className='border-opacity-20 '>
+										<td className='rounded-l-2xl border-y border-l border-white border-opacity-20 bg-white bg-opacity-5 py-6 pl-6'>
+											5
+										</td>
+										<td className='flex border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
+											<img src={avatar1.src} className='mr-4 h-14 w-14 rounded-full' />
+											Jaurès Kpobli
+										</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
+											15,085,035.95
+										</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>111,850</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>50,850</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>10,150</td>
+										<td className='rounded-r-2xl border-y border-r border-white border-opacity-20 bg-white bg-opacity-5 py-6 pr-6 text-right'>
+											<button className=' rounded-[10px] bg-[#7B61FF] bg-opacity-25 py-[6px] px-[10px] text-[#7B61FF]'>
+												Follow
+											</button>
+										</td>
+									</tr>
+									<tr className='border-opacity-20 '>
+										<td className='rounded-l-2xl border-y border-l border-white border-opacity-20 bg-white bg-opacity-5 py-6 pl-6'>
+											5
+										</td>
+										<td className='flex border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
+											<img src={avatar5.src} className='mr-4 h-14 w-14 rounded-full' />
+											Abdias Cossou
+										</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>
+											15,085,035.95
+										</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>111,850</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>50,850</td>
+										<td className='border-y border-white border-opacity-20 bg-white bg-opacity-5 py-6'>10,150</td>
+										<td className='rounded-r-2xl border-y border-r border-white border-opacity-20 bg-white bg-opacity-5 py-6 pr-6 text-right'>
+											<button className=' rounded-[10px] bg-[#7B61FF] bg-opacity-25 py-[6px] px-[10px] text-[#7B61FF]'>
+												Follow
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
+
+			<Dialog
+				open={dialog}
+				onClose={() => setDialog(false)}
+				className='fixed top-0 left-0 right-0 bottom-0 z-[20] flex items-center justify-center'
+				style={{
+					backgroundImage:
+						'radial-gradient(50.49% 104.08% at 73.33% 50%, rgba(28, 28, 28, 0) 0%, rgba(28, 28, 28, 0.2) 100%)'
+				}}>
+				<Dialog.Panel className='relative h-[400px] w-[640px] bg-white px-6 py-8'>
+					<div className='flex justify-between'>
+						<span>Invite your friends</span>
+						<Close className='h-5 w-5' />
+					</div>
+					<div className='mt-10 grid grid-cols-2'>
+						{Array(6)
+							.fill(0)
+							.map((_, i) => (
+								<div className='' key={i}>
+									<span className='h-14 w-14 rounded-full'></span>
+									<div>
+										<div>Angel</div>
+									</div>
+									<button>send</button>
+								</div>
+							))}
+					</div>
+				</Dialog.Panel>
+			</Dialog>
 		</>
 	)
 }

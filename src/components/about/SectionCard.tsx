@@ -3,13 +3,14 @@ export default function SectionCard() {
 		<>
 			<section className='overflow-hidden border-b border-dark pt-[96px] mobile:pt-12'>
 				<h2 className='px-20 font-mona text-[60px] font-[900] uppercase leading-[64px] mobile:px-4 mobile:text-[36px] mobile:leading-[42px]'>
-					Personalize own on-chain space and socialize with friends
+					Customize your own space and engage with friends all over the world
 				</h2>
 				<div className='flex justify-between mobile:flex-col'>
 					<div className='flex w-[547px] flex-1 flex-col justify-between pb-[96px] pt-10 mobile:w-full mobile:pt-5 mobile:pb-8'>
 						<p className='px-20 text-lg leading-[24px] mobile:px-4'>
-							Once you've created your own room, you can start personalizing it for free. Show all the information you
-							want and invite friends into the space to start socializing with you!
+							Once you've created your own room, you can start customizing it to meet your needs, for free! Highlight
+							and showcase whatever you'd like as you transform your personal space on the blockchain . When you're
+							ready, invite and join friends as you take on a new world of Web3 possibilities!
 						</p>
 
 						<div className='flex flex-wrap gap-x-3 gap-y-2 pl-20 mobile:mt-4 mobile:px-4'>
@@ -29,13 +30,13 @@ export default function SectionCard() {
 
 			<section className='overflow-hidden border-b border-dark pt-[96px] mobile:pt-12'>
 				<h2 className='px-20 font-mona text-[60px] font-[900] uppercase leading-[64px] mobile:px-4 mobile:text-[36px] mobile:leading-[42px]'>
-					Enjoy a variety of Fun Games with tradable assets
+					Unlock the power of tradable In-game assets
 				</h2>
 				<div className='flex mobile:flex-col'>
 					<div className='flex w-[547px] flex-1 flex-col justify-between pb-[96px] pt-10 mobile:w-full mobile:pt-5 mobile:pb-8'>
 						<p className='px-20 text-lg leading-[24px] mobile:px-4'>
-							Freely shuttle between fun games with your space friends, and game assets can be sold or auctioned as NFTs
-							in the NFT market in your room.
+							Users can freely engage not only with exciting and competitive games with friends but also enjoy the
+							ability to trade tokenized in-game assets. With Room Service, gaming is "leveled up"!
 						</p>
 
 						<div className='flex flex-wrap gap-x-3 gap-y-2 pl-20 mobile:mt-4 mobile:px-4'>
@@ -52,14 +53,15 @@ export default function SectionCard() {
 
 			<section className=' overflow-hidden border-b border-dark pt-[96px] mobile:pt-12'>
 				<h2 className='px-20 font-mona text-[60px] font-[900] uppercase leading-[64px] mobile:px-4 mobile:text-[36px] mobile:leading-[42px]'>
-					Composite room that communicates directly with target users
+					Composite Rooms for engaging and marketing your project to reach target audiences
 				</h2>
 				<div className='flex mobile:flex-col'>
 					<div className='flex w-[547px] flex-1 flex-col justify-between pb-[96px] pt-10 mobile:w-full mobile:pt-5 mobile:pb-8'>
 						<p className='px-20 text-lg leading-[24px] mobile:px-4'>
-							As a project party, you can publish the latest news about the project, recruitment information, display
-							relevant token/NFT data, and launch various marketing activities in the room. And these are fast,
-							composite, and blockchain-secured (compared to Twitter).
+							Room Service can be an effective tool for projects looking to expand their marketing efforts. Rooms can be
+							used to publish and display the latest news about a project. Furthermore, Rooms can be used to facilitate
+							the recruitment process, display relevant token & NFT data, as well as launch various different marketing
+							activities. All within a fast, composite, and blockchain-secured space.
 						</p>
 
 						<div className='flex flex-wrap gap-x-3 gap-y-2 pl-20 mobile:mt-4 mobile:px-4'>
@@ -78,14 +80,14 @@ export default function SectionCard() {
 
 			<section className='overflow-hidden pt-[96px] mobile:pt-12'>
 				<h2 className='px-20 font-mona text-[60px] font-[900] uppercase leading-[64px] mobile:px-4 mobile:text-[36px] mobile:leading-[42px]'>
-					Easily Customize your on-chain paradise without coding
+					A no-code solution to easily customize your on-chain reality
 				</h2>
 				<div className='flex mobile:flex-col'>
 					<div className='flex w-[547px] flex-1 flex-col justify-between pb-[96px] pt-10 mobile:w-full mobile:pt-5 mobile:pb-8'>
 						<p className='px-20 text-lg leading-[24px] mobile:px-4'>
-							As a project party, you can publish the latest news about the project, recruitment information, display
-							relevant token/NFT data, and launch various marketing activities in the room. And these are fast,
-							composite, and blockchain-secured (compared to Twitter).
+							Can't code? No problem! Room Service is designed to help users maximize their on-chain experience
+							regardless of their technical background. Customize your room to fit your needs with our easy, no-code
+							solution!
 						</p>
 
 						<div className='flex flex-wrap gap-x-3 gap-y-2 pl-20 mobile:mt-4 mobile:px-4'>

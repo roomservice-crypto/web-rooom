@@ -25,9 +25,9 @@ export default function Home() {
 
 				<div className='z-1 relative mobile:px-4'>
 					<h1
-						className='mx-auto max-w-[1200px] text-center font-mona text-[60px] font-[900] uppercase leading-[1.2] mobile:text-left mobile:text-4xl'
+						className='mx-auto max-w-[1250px] text-center font-mona text-[60px] font-[900] uppercase leading-[1.2] mobile:text-left mobile:text-4xl'
 						style={{ textShadow: '0px 5px 0px #E1E1E1' }}>
-						Customize your Web3 wonderland and lifestyle
+						Reimagine web3 with your own, customizable on-chain spaces
 					</h1>
 
 					<button onClick={() => router.push('/map')} className='button mx-auto mt-8'>

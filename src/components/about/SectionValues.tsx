@@ -18,11 +18,12 @@ export default function SectionValues() {
 					<div className='max-w-[450px] '>
 						<Value1 />
 
-						<h3 className='mt-8 mb-3  text-[30px] font-semibold leading-[36px]'>Emphasize Ownership</h3>
+						<h3 className='mt-8 mb-3  text-[30px] font-semibold leading-[36px]'>Emphasis on User Ownership</h3>
 
 						<p>
-							Room Service is designed to build a personal environment to build your own content, where everyone owns
-							and controls their own room
+							Room Service strives not only to help user create and customize their own spaces but also take ownership
+							of these spaces and the content they create and publish within them- an important ethos consistent with
+							that of crypto as a whole!
 						</p>
 					</div>
 				</div>
@@ -55,7 +56,7 @@ export default function SectionValues() {
 			<section className='flex aspect-[1440/550] border-t border-dark mobile:aspect-auto mobile:flex-col'>
 				<div className='w-[50%] border-r border-dark pl-20 pt-[96px] mobile:w-full mobile:border-none mobile:px-4 mobile:pt-8'>
 					<h3 className='w-[490px] font-mona text-[48px] font-[800] leading-[52px] mobile:w-full mobile:text-[36px] mobile:font-[700] mobile:leading-[1.2]'>
-						Start owning your private <br /> room For Free Now
+						Create, customize and take ownership of your own free web3 space today!
 					</h3>
 
 					<button onClick={() => router.push('/map')} className='button mt-16 mobile:mt-8'>

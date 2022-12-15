@@ -10,11 +10,11 @@ export default function SectionMore() {
 					<img className='w-full max-w-[1000px]' src='/assets/about/gallery.png' />
 					<div className='px-20 py-8 mobile:p-4'>
 						<h3 className='text-[36px] font-semibold leading-[42px] mobile:text-[24px] mobile:leading-[30px]'>
-							Posts & Gallery based on IPFS
+							IPFS Secured User Content
 						</h3>
 						<p className=' mt-4 text-lg leading-[24px]'>
-							The content component implemented based on IPFS can ensure that the blog or photos you publish will
-							confirm your ownership through the blockchain and be used to display in any room.
+							Content within Room Service is built on top of IPFS, ensuring that user blog posts, photos and other
+							content is user owned. Securely confirm ownership using the power of IPFS's peer to peer network!
 						</p>
 					</div>
 				</div>
@@ -22,11 +22,11 @@ export default function SectionMore() {
 				<div className='flex w-[50%] flex-col items-center justify-center mobile:w-full mobile:flex-col-reverse'>
 					<div className='px-20 py-8 mobile:p-4'>
 						<h3 className='text-[36px] font-semibold leading-[42px] mobile:text-[24px] mobile:leading-[30px]'>
-							Chitchat with your friends in a private space
+							Privately chat with friends on-chain!
 						</h3>
 						<p className='mt-4 text-lg leading-[24px]'>
-							Explore your friend's personal room, participate in activities initiated by him, and build intimacy
-							through social components such as Audio Chat.
+							Explore your friend's rooms, participate in activities initated by hosts and build friendships using
+							social integrations like our Audio Chat system.
 						</p>
 					</div>
 
@@ -39,13 +39,12 @@ export default function SectionMore() {
 					<img className='w-full max-w-[1000px]' src='/assets/about/games.png' />
 					<div className='px-20 py-8 mobile:p-4'>
 						<h3 className='text-[36px] font-semibold leading-[42px] mobile:text-[24px] mobile:leading-[30px]'>
-							Open Lightweight Gaming Ecosystem
+							Open, Lightweight Gaming Ecosystem
 						</h3>
 						<p className='mt-4 text-lg leading-[24px]'>
-							Room Service is always open to working with third-party developers to build a whole new ecosystem of games
-							by integrating the wonderful games of Web2 into the Web3 world and harnessing the power of the economic
-							layer of smart contracts. Inviting your social friends to join the game now will unlock even more fun and
-							rewards!
+							Room Service openly collaborates with third-party gaming developers to integrate Web2 native games with
+							Web3! In doing so, we've built a diverse ecosystem of on-chain games harnessing the power of smart
+							contracts. Invite friends to unlock even more fun and rewards while you game!
 						</p>
 					</div>
 				</div>
@@ -69,7 +68,8 @@ export default function SectionMore() {
 								Hall of Fame
 							</h3>
 							<p className=' mt-4 text-lg leading-[24px]'>
-								On-chain reputation and achievements represent a room's Web3 experience and honor.
+								The Hall of Fame feature is a way to track and rank on-chain reputations and achievements. Users will
+								compete to boost their room's Web3 experience and social rankings!
 							</p>
 						</div>
 						<img className='mb-8 w-full max-w-[1000px] mobile:mb-0' src='/assets/about/ranking.png' />
@@ -81,11 +81,11 @@ export default function SectionMore() {
 				<div className='flex w-[33%] flex-1 flex-col items-center justify-center pb-[50px] mobile:w-full mobile:flex-col-reverse mobile:border-b mobile:border-dark mobile:pb-0'>
 					<div className='p-20 mobile:p-4 mobile:py-8'>
 						<h3 className='text-[36px] font-semibold leading-[42px] mobile:text-[24px] mobile:leading-[30px]'>
-							Fun Campaigns
+							Engaging Campaigns
 						</h3>
 						<p className='mt-4 text-lg leading-[24px]'>
-							With the Campaigns component, you can quickly launch specific activities in the room, such as funny game
-							missions, to achieve marketing goals.
+							With Room Service Campaigns, users can quickly launch specific activities in their room, such as funny
+							game missions. Doing so can be a powerful tool to boost engagement and achieve marketing goals.
 						</p>
 					</div>
 					<img className='mt-auto  w-full' src='/assets/about/campaigns.png' />
@@ -96,19 +96,21 @@ export default function SectionMore() {
 							NFT Showcase
 						</h3>
 						<p className='mt-4 text-lg leading-[24px]'>
-							NFT Bundle contains a series of NFT tools for minting, selling and auctioning NFTs that you can use to
-							build your own marketplace.
+							Build your own NFT marketplace with Room Service's NFT Bundle which provides multiple tools to help
+							facilitate the minting, selling and auctioning processes.
 						</p>
 					</div>
 					<img className='mt-auto  w-full' src='/assets/about/showcase.png' />
 				</div>
-				<div className='flex w-[33%] flex-1 flex-col items-center justify-center pb-[50px] mobile:w-full mobile:pb-0 mobile:flex-col-reverse'>
+				<div className='flex w-[33%] flex-1 flex-col items-center justify-center pb-[50px] mobile:w-full mobile:flex-col-reverse mobile:pb-0'>
 					<div className='p-20 mobile:p-4'>
 						<h3 className='text-[36px] font-semibold leading-[42px] mobile:text-[24px] mobile:leading-[30px]'>
 							Data Cube
 						</h3>
 						<p className='mt-4 text-lg leading-[24px]'>
-							In your space, you are free to display any data panel you want to display or that you are watching.
+							Within Rooms users can freely display powerful metrics and live-feeds of data. Doing so can be done for
+							multiple reasons including: tracking engagement, raising awareness and just for fun ( displaying coin
+							prices etc)!
 						</p>
 					</div>
 					<img className='mt-auto  w-full' src='/assets/about/cube.png' />

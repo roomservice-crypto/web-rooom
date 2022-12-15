@@ -19,11 +19,11 @@ export default function SectionHero() {
 					<h1
 						className='font-mona text-[60px] font-[900] uppercase leading-[1.2] mobile:text-[36px]'
 						style={{ textShadow: '0px 5px 0px #E1E1E1' }}>
-						Web3 wonderland and lifestyle
+						A "Web3 Wonderland"
 					</h1>
 					<p className='mt-6 text-lg font-normal'>
-						Room Service is the protocol that powers Web3 room facilities, enabling users to build, launch and host
-						their own blockchain-based spaces without any coding experience.
+						Room Service enables web3 users to build, launch and host their own blockchain-based spaces without any
+						coding experience. The possibilities are endless!
 					</p>
 					<button onClick={() => router.push('/map')} className='button mt-8'>
 						<span>Explore Demo</span>

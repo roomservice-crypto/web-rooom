@@ -2,13 +2,13 @@ import Plus from '@/svgs/plus.svg'
 import Minus from '@/svgs/minus.svg'
 import Crosshair from '@/svgs/crosshair.svg'
 import Earth from '@/svgs/earth.svg'
+import Home from '@/svgs/home.svg'
 import Location from '@/svgs/location.svg'
 import ChevronRight from '@/svgs/chevron-right.svg'
 import ChevronLeft from '@/svgs/chevron-left.svg'
 import mapboxgl, { LngLatLike } from 'mapbox-gl'
 import React, { Dispatch, useEffect, useState } from 'react'
 import ChevronsLeft from '@/svgs/chevrons-left.svg'
-import ArrowTopLeft from '@/svgs/arrow-top-left.svg'
 import { Transition } from '@headlessui/react'
 import clsx from 'clsx'
 import { ALL } from '@/constants'
@@ -75,9 +75,9 @@ export default function ToolLayer(props: {
 				{/* left top back button */}
 				<Transition appear show={ready} enterFrom='opacity-0' enter='transition-all ' as={React.Fragment}>
 					<button
-						onClick={() => router.back()}
+						onClick={() => router.push('/')}
 						className='fixed left-8 top-8 z-[11] rounded-full bg-white bg-opacity-40 p-[10px]'>
-						<ArrowTopLeft />
+						<Home />
 					</button>
 				</Transition>
 

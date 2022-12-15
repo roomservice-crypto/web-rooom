@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import React, { useEffect, useRef, useState } from 'react'
 
-const INTERVAL_TIME = 8000
+const INTERVAL_TIME = 2500
 
 export default function HomeMarker(props: { className: string; Card: React.FC<{ active: boolean }>; rise: boolean }) {
 	const [active, setActive] = useState(false)

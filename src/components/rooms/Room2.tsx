@@ -62,7 +62,7 @@ export default function Room2(props: { room: any }) {
 
 				{/* introduce */}
 				<div>
-					<div className='mx-auto mt-6 w-max text-[30px] font-semibold leading-[1.2]'>{room.name}</div>
+					<div className='mx-auto mt-6 w-max text-[30px] font-semibold leading-[1.2]'>{room.name}.rooom</div>
 					<div className='mx-auto w-max opacity-40'>Room NFT owned by {shortenAddress(room.address)}</div>
 					<div className='mx-auto mt-5 flex w-max gap-x-3'>
 						<button className='flex items-center gap-x-2 rounded-full bg-[#FAE76C] px-6 py-[10px]'>
@@ -471,10 +471,8 @@ export default function Room2(props: { room: any }) {
 							</thead>
 							<tbody>
 								<tr>
-									<td className='rounded-l-2xl bg-white bg-opacity-40 py-6 pl-6'>
-										1
-									</td>
-									<td className='flex bg-white bg-opacity-40 py-6 items-center'>
+									<td className='rounded-l-2xl bg-white bg-opacity-40 py-6 pl-6'>1</td>
+									<td className='flex items-center bg-white bg-opacity-40 py-6'>
 										<img src={avatar4.src} className='mr-4 h-14 w-14 rounded-full' />
 										Luc Ganssou
 									</td>
@@ -489,10 +487,8 @@ export default function Room2(props: { room: any }) {
 									</td>
 								</tr>
 								<tr>
-									<td className='rounded-l-2xl bg-white bg-opacity-40 py-6 pl-6'>
-										2
-									</td>
-									<td className='flex bg-white bg-opacity-40 py-6 items-center'>
+									<td className='rounded-l-2xl bg-white bg-opacity-40 py-6 pl-6'>2</td>
+									<td className='flex items-center bg-white bg-opacity-40 py-6'>
 										<img src={avatar3.src} className='mr-4 h-14 w-14 rounded-full' />
 										Jacob Jones
 									</td>
@@ -507,10 +503,8 @@ export default function Room2(props: { room: any }) {
 									</td>
 								</tr>
 								<tr>
-									<td className='rounded-l-2xl bg-white bg-opacity-40 py-6 pl-6'>
-										3
-									</td>
-									<td className='flex bg-white bg-opacity-40 py-6 items-center'>
+									<td className='rounded-l-2xl bg-white bg-opacity-40 py-6 pl-6'>3</td>
+									<td className='flex items-center bg-white bg-opacity-40 py-6'>
 										<img src={avatar4.src} className='mr-4 h-14 w-14 rounded-full' />
 										Christian Apithy
 									</td>
@@ -525,10 +519,8 @@ export default function Room2(props: { room: any }) {
 									</td>
 								</tr>
 								<tr>
-									<td className='rounded-l-2xl bg-white bg-opacity-40 py-6 pl-6'>
-										4
-									</td>
-									<td className='flex bg-white bg-opacity-40 py-6 items-center'>
+									<td className='rounded-l-2xl bg-white bg-opacity-40 py-6 pl-6'>4</td>
+									<td className='flex items-center bg-white bg-opacity-40 py-6'>
 										<img src={avatar1.src} className='mr-4 h-14 w-14 rounded-full' />
 										Geraud Babalola
 									</td>
@@ -543,10 +535,8 @@ export default function Room2(props: { room: any }) {
 									</td>
 								</tr>
 								<tr>
-									<td className='rounded-l-2xl bg-white bg-opacity-40 py-6 pl-6'>
-										5
-									</td>
-									<td className='flex bg-white bg-opacity-40 py-6 items-center'>
+									<td className='rounded-l-2xl bg-white bg-opacity-40 py-6 pl-6'>5</td>
+									<td className='flex items-center bg-white bg-opacity-40 py-6'>
 										<img src={avatar1.src} className='mr-4 h-14 w-14 rounded-full' />
 										Jaurès Kpobli
 									</td>
@@ -561,10 +551,8 @@ export default function Room2(props: { room: any }) {
 									</td>
 								</tr>
 								<tr>
-									<td className='rounded-l-2xl bg-white bg-opacity-40 py-6 pl-6'>
-										5
-									</td>
-									<td className='flex bg-white bg-opacity-40 py-6 items-center'>
+									<td className='rounded-l-2xl bg-white bg-opacity-40 py-6 pl-6'>5</td>
+									<td className='flex items-center bg-white bg-opacity-40 py-6'>
 										<img src={avatar5.src} className='mr-4 h-14 w-14 rounded-full' />
 										Abdias Cossou
 									</td>

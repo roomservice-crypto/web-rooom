@@ -1,6 +1,8 @@
 import { ALL } from '@/constants'
+import { shortenAddress } from '@/utils'
 import { getRooms } from '@/utils/storage'
 import clsx from 'clsx'
+import TypeIcon from '../map/TypeIcon'
 
 export default function LoactionIcon(props: { id: number; selected: any; filter: string }) {
 	const { id, selected, filter } = props
@@ -8,10 +10,19 @@ export default function LoactionIcon(props: { id: number; selected: any; filter:
 	const rooms = getRooms()
 
 	const active = id == selected?._id
-	const display = filter === ALL || filter === rooms[props.id].type ? true : false
+	const display = filter === ALL || filter === rooms[id].type ? true : false
 
 	return (
-		<div className={clsx('group cursor-pointer', !display && 'hidden')} data-id={props.id}>
+		<div className={clsx('group relative flex cursor-pointer justify-center', !display && 'hidden')} data-id={props.id}>
+			<div
+				className={clsx(
+					'absolute bottom-[88px] rounded-xl bg-dark px-4 py-[10px] text-center text-white group-hover:block',
+					active ? 'block' : 'hidden'
+				)}>
+				<div className='text-sm font-semibold'>{rooms[id]?.name}.room</div>
+				<div className='text-xs opacity-80'>{shortenAddress(rooms[id]?.address)}</div>
+			</div>
+
 			<svg
 				width='54'
 				height='59'
@@ -36,9 +47,28 @@ export default function LoactionIcon(props: { id: number; selected: any; filter:
 					r='7'
 					fill='#FBEC95'
 					stroke='#292929'
-					className={clsx('transition-colors group-hover:fill-white', active && 'fill-white')}
+					className={clsx('transition-colors group-hover:fill-white', active && 'hidden fill-white')}
+				/>
+
+				<image
+					x='10'
+					y='6'
+					href={rooms[id].avatar}
+					className={clsx(
+						'w-[34px] rounded-full transition-opacity group-hover:opacity-100',
+						active ? 'opacity-100' : 'opacity-0'
+					)}
+					clip-path='inset(0% round 99px)'
 				/>
 			</svg>
+
+			<div
+				className={clsx(
+					'pointer-events-none absolute bottom-[14px] ml-8 transition-opacity group-hover:opacity-100',
+					active ? 'opacity-100' : 'opacity-0'
+				)}>
+				<TypeIcon type={rooms[id].type} className='h-6 w-6' />
+			</div>
 		</div>
 	)
 }

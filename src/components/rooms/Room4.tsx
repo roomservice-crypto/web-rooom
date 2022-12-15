@@ -97,7 +97,7 @@ export default function Room4(props: { room: any }) {
 											<img src={avatar.src} className='h-full w-full rounded-full' />
 										</div>
 										<div>
-											<div className='text-[48px] leading-[52px]'>{room.name}</div>
+											<div className='text-[48px] leading-[52px]'>{room.name}.room</div>
 											<div className='mt-4 text-lg leading-[24px] text-black text-opacity-80'>
 												Room NFT owned by {shortenAddress(room.address)}
 											</div>

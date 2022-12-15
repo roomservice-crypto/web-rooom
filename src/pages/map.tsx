@@ -1,6 +1,6 @@
 import 'mapbox-gl/dist/mapbox-gl.css'
 import mapboxgl from 'mapbox-gl'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import BaseLayer from '@/components/map/BaseLayer'
 import CardLayer from '@/components/map/CardLayer'
@@ -15,12 +15,29 @@ export default function Map() {
 	const [room, setRoom] = useState<null | any>(null)
 	const [ready, setReady] = useState(false)
 	const [filter, setFilter] = useState(ALL)
+	const [isMobile, setIsMobile] = useState(false)
+
+	useEffect(() => {
+		const handler = () => setIsMobile(window.innerWidth < 960)
+		handler()
+
+		window.addEventListener('resize', handler)
+		return () => window.removeEventListener('resize', handler)
+	}, [])
 
 	return (
 		<>
 			<BaseLayer filter={filter} setMap={setMap} setRoom={setRoom} room={room} setReady={setReady} />
-			<CardLayer room={room} />
-			<ToolLayer room={room} filter={filter} setFilter={setFilter} map={map} ready={ready} />
+			<CardLayer isMobile={isMobile} room={room} setRoom={setRoom} map={map} />
+			<ToolLayer
+				isMobile={isMobile}
+				room={room}
+				setRoom={setRoom}
+				filter={filter}
+				setFilter={setFilter}
+				map={map}
+				ready={ready}
+			/>
 		</>
 	)
 }

@@ -126,7 +126,7 @@ export default function Room3(props: { room: any }) {
 
 				{/* introduce */}
 				<div>
-					<div className='mx-auto mt-6 w-max text-[30px] font-semibold leading-[1.2]'>{room.name}</div>
+					<div className='mx-auto mt-6 w-max text-[30px] font-semibold leading-[1.2]'>{room.name}.room</div>
 					<div className='mx-auto w-max opacity-40'>Room NFT owned by {shortenAddress(room.address)}</div>
 					<div className='mx-auto mt-5 flex w-max gap-x-3'>
 						<button className='flex items-center gap-x-2 rounded-full bg-dark px-6 py-[10px] text-white'>

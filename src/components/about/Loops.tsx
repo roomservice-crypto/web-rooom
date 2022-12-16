@@ -70,21 +70,22 @@ export default function Loops() {
   <path fillRule="evenodd" clipRule="evenodd" d="M559 648H609C617.973 648 626.395 645.636 633.675 641.497L636.273 639.914C649.955 630.993 659 615.553 659 598C659 570.386 636.614 548 609 548C581.386 548 559 570.386 559 598V648ZM609 550.597C582.82 550.597 561.597 571.82 561.597 598V645.403H581.078V601.131C581.078 587.422 593.588 576.571 608.675 576.571C623.763 576.571 636.273 587.422 636.273 601.131L636.273 636.776C648.449 628.197 656.403 614.027 656.403 598C656.403 571.82 635.18 550.597 609 550.597ZM609 645.403C618.039 645.403 626.487 642.873 633.675 638.482L633.675 601.131C633.675 589.147 622.637 579.169 608.675 579.169C594.714 579.169 583.675 589.147 583.675 601.131V645.403H609Z" fill="#1C1C1C"/>
   </g>
 
-  <image xlinkHref="/assets/about/loops/badge-1.png" width="35" className="hover:scale-110 cursor-pointer origin-[17.5px_37.73px] transition-transform">
+  <image xlinkHref="/assets/about/loops/badge-1.png" width="50" className="hover:scale-110 cursor-pointer origin-[17.5px_37.73px] transition-transform">
     <animateMotion
         begin="-22s"
         dur="30s"
         repeatCount="indefinite"
-        path="M283,580.1a298.5,298.5 0 1,0 597,0a298.5,298.5 0 1,0 -597,0" />
+        path="M288,553a286,286 0 1,0 572,0a286,286 0 1,0 -572,0" />
   </image>
 
-  <image xlinkHref="/assets/about/loops/badge-2.png" width="35" className="hover:scale-110 cursor-pointer origin-[17.5px_37.73px] transition-transform">
+  <image xlinkHref="/assets/about/loops/badge-2.png" width="50" className="hover:scale-110 cursor-pointer origin-[17.5px_37.73px] transition-transform">
     <animateMotion
         begin="-26s"
         dur="30s"
         repeatCount="indefinite"
-        path="M231.5,570a350,350 0 1,0 700,0a350,350 0 1,0 -700,0" />
+        path="M222,553a352,352 0 1,0 704,0a352,352 0 1,0 -704,0" />
   </image>
+
 
   <image xlinkHref="/assets/about/loops/badge-3.png" width="50"  className="hover:scale-110 cursor-pointer origin-[50px_54.82px] transition-transform">
     <animateMotion
@@ -126,12 +127,12 @@ export default function Loops() {
         path="M251,539a315,315 0 1,0 630,0a315,315 0 1,0 -630,0" />
   </image>
 
-  <image xlinkHref="/assets/about/loops/badge-8.png" width="35" className="hover:scale-110 cursor-pointer origin-[17.5px_37.73px] transition-transform">
+  <image xlinkHref="/assets/about/loops/badge-8.png" width="50" className="hover:scale-110 cursor-pointer origin-[17.5px_37.73px] transition-transform">
     <animateMotion
         begin="-12s"
         dur="30s"
         repeatCount="indefinite"
-        path="M216.5,569a365,365 0 1,0 730,0a365,365 0 1,0 -730,0" />
+        path="M210,553a364,364 0 1,0 728,0a364,364 0 1,0 -728,0" stroke="red" />
   </image>
 
   <image xlinkHref="/assets/about/loops/badge-9.png" width="44"  className="hover:scale-110 cursor-pointer origin-[44px_48.25px] transition-transform">

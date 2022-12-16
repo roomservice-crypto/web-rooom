@@ -185,7 +185,7 @@ export default function Create() {
 								required
 								type='text'
 								placeholder='Enter your room name'
-								className=' placeholder: mt-[6px] w-full rounded-[10px] border border-black border-opacity-10 py-[10px] px-[14px]'
+								className=' mt-[6px] w-full rounded-[10px] border border-black border-opacity-10 py-[10px] px-[14px] placeholder:font-normal placeholder:text-black placeholder:text-opacity-40'
 							/>
 						</div>
 						<div className='mx-auto mt-5 w-[360px] text-left'>

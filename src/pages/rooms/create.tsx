@@ -13,6 +13,7 @@ import Card5 from '@/svgs/create/card-5.svg'
 import Card6 from '@/svgs/create/card-6.svg'
 import Card7 from '@/svgs/create/card-7.svg'
 import Card8 from '@/svgs/create/card-8.svg'
+import Checkbox from '@/svgs/create/checkbox.svg'
 import clsx from 'clsx'
 import { addRoom, getRooms } from '@/utils/storage'
 import { useRouter } from 'next/router'
@@ -48,8 +49,6 @@ const TYPE_CARDS = {
 	'Key Users': ['Gaming profile', 'Hall of fame', 'Post'],
 	'Web3 Projects': ['Hall of fame', 'Post', 'Game room']
 }
-
-function getBase64(file: File) {}
 
 declare const window: {
 	ethereum?: any
@@ -180,17 +179,17 @@ export default function Create() {
 							/>
 						</div>
 						<div className='mx-auto mt-5 w-[360px] text-left'>
-							<div className='text-sm font-medium'>Room Name</div>
+							<div className='text-sm '>Room Name</div>
 							<input
 								ref={nameRef}
 								required
 								type='text'
 								placeholder='Enter your room name'
-								className='mt-[6px] w-full rounded-[10px] border border-black border-opacity-10 py-[10px] px-[14px]'
+								className=' placeholder: mt-[6px] w-full rounded-[10px] border border-black border-opacity-10 py-[10px] px-[14px]'
 							/>
 						</div>
 						<div className='mx-auto mt-5 w-[360px] text-left'>
-							<div className='text-sm font-medium'>Connect your wallet</div>
+							<div className='text-sm '>Connect your wallet</div>
 							<div className='mt-[6px] flex w-full items-center rounded-[10px] border border-black border-opacity-10 py-[10px] px-[14px]'>
 								<Metamask className='mr-2 h-5 w-5' />
 								<span>Metamask</span>
@@ -203,7 +202,7 @@ export default function Create() {
 							</div>
 						</div>
 						<div className='mx-auto mt-5 w-[360px] text-left'>
-							<div className='mb-[6px] text-sm font-medium'>Room type</div>
+							<div className='mb-[6px] text-sm'>Room type</div>
 
 							<div className='relative'>
 								<Listbox value={type} onChange={setType}>
@@ -213,12 +212,15 @@ export default function Create() {
 										<ChevronDown className='ml-auto' />
 									</Listbox.Button>
 									<Listbox.Options
-										className='absolute top-[58px] w-full gap-y-1 rounded-[10px] border border-dark bg-white p-[6px]'
+										className='absolute top-[58px] h-[190px] w-full gap-y-1 overflow-auto rounded-[10px] border border-dark bg-white py-[6px]'
 										style={{
 											boxShadow: '0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03)'
 										}}>
 										{TYPES.map(t => (
-											<Listbox.Option key={t.name} value={t} className='flex cursor-pointer gap-x-3 px-4 py-[10px]'>
+											<Listbox.Option
+												key={t.name}
+												value={t}
+												className='flex cursor-pointer gap-x-3 px-[22px] py-[10px] hover:bg-black hover:bg-opacity-5'>
 												<img src={t.src} className='h-5 w-5' />
 												<span>{t.name}</span>
 											</Listbox.Option>
@@ -257,36 +259,44 @@ export default function Create() {
 					backgroundImage:
 						'radial-gradient(50.49% 104.08% at 73.33% 50%, rgba(28, 28, 28, 0) 0%, rgba(28, 28, 28, 0.2) 100%)'
 				}}>
-				<Dialog.Panel className='w-[932px] rounded-[32px] border border-dark bg-[#BAEDBD] p-3'>
-					<div className='border-1 rounded-[32px] border border-dark bg-white'>
+				<Dialog.Panel className='w-[932px] rounded-[32px] border-2 border-dark bg-[#BAEDBD] p-3'>
+					<div className='rounded-[32px] border-2 border-dark bg-white'>
 						<div className='p-6'>
-							<Dialog.Title className='mb-5 text-2xl'>Deactivate account</Dialog.Title>
+							<Dialog.Title className='mb-5 text-2xl'>Add Widget</Dialog.Title>
 
 							<div className='grid grid-cols-4 gap-5'>
-								{CARDS.map(c => (
-									<div
-										onClick={() => {
-											const i = selectedCards.indexOf(c.name)
-											if (i > -1) {
-												selectedCards.splice(i, 1)
-											} else selectedCards.push(c.name)
+								{CARDS.map(c => {
+									const active = selectedCards.includes(c.name)
 
-											setSelectedCards([...selectedCards])
-										}}
-										className={clsx(
-											'w-[200px] cursor-pointer overflow-hidden rounded-2xl border',
-											selectedCards.includes(c.name) ? 'border-dark' : 'border-black border-opacity-10'
-										)}
-										key={c.name}>
-										<c.card />
-										<div className='py-3 px-5'>{c.name}</div>
-									</div>
-								))}
+									return (
+										<div
+											onClick={() => {
+												const i = selectedCards.indexOf(c.name)
+												if (i > -1) {
+													selectedCards.splice(i, 1)
+												} else selectedCards.push(c.name)
+
+												setSelectedCards([...selectedCards])
+											}}
+											className={clsx(
+												'w-[200px] cursor-pointer overflow-hidden rounded-2xl border-2',
+												active ? 'border-dark' : 'border-black border-opacity-10'
+											)}
+											key={c.name}>
+											<c.card />
+											<div className='flex items-center justify-between py-3 px-5'>
+												<span>{c.name}</span>
+												{active && <Checkbox />}
+											</div>
+										</div>
+									)
+								})}
 							</div>
 						</div>
 
 						<div className='mt-8 mb-6 border-t'></div>
 
+						{/* Dialog actions */}
 						<div className='flex justify-end gap-x-3 px-6 pb-6'>
 							<button className='w-[180px] rounded-[10px] border border-dark py-3' onClick={() => setDialog(false)}>
 								Cancel

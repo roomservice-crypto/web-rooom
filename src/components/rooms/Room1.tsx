@@ -64,7 +64,7 @@ export default function Room1(props: { room: any }) {
 	const [dialog, setDialog] = useState(false)
 
 	return (
-		<>
+		<div className=' overflow-hidden'>
 			<HeaderRoom />
 			<div
 				className='min-h-[100vh] bg-[#141943] pt-[176px] pb-[124px] text-white'
@@ -610,6 +610,6 @@ export default function Room1(props: { room: any }) {
 					</div>
 				</Dialog.Panel>
 			</Dialog>
-		</>
+		</div>
 	)
 }

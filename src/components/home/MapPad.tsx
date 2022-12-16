@@ -11,7 +11,7 @@ const rises = RISE_ORDER[0]
 
 export default function MapPad() {
 	return (
-		<div className='absolute top-[400px] left-0 right-0 mobile:scale-[70%] mobile:top-[300px]'>
+		<div className='absolute top-[400px] left-0 right-0 mobile:scale-[70%] mobile:top-[400px]'>
 			<div className='absolute left-[50%] -translate-x-[50%]'>
 				<figure className='w-[1875px]'>
 					<Image width={1875} height={778} src='/assets/home/map.png' draggable='false' />

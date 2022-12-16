@@ -108,7 +108,7 @@ export default function Room3(props: { room: any }) {
 	const { room } = props
 
 	return (
-		<>
+		<div className=' overflow-hidden'>
 			<HeaderRoom />
 
 			<div
@@ -188,6 +188,6 @@ export default function Room3(props: { room: any }) {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }

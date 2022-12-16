@@ -18,7 +18,8 @@ module.exports = {
 					25: '#FEFDF6'
 				},
 				secondary: '#C1BFFA',
-				dark: '#1C1C1C'
+				dark: '#1C1C1C',
+				light: '#F7F9FB',
 			},
 			animation: {
 				'spin-about-loops': 'spin 12s linear infinite',

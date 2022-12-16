@@ -206,7 +206,12 @@ export default function ToolLayer(props: {
 											</div>
 											<div className='text-sm text-black text-opacity-40'>{typeWords(r.type)}</div>
 										</div>
-										{r._id === room?._id && <Location className='ml-auto' />}
+										<Location
+											className={clsx(
+												'ml-auto transition-opacity hover:opacity-100',
+												r._id === room?._id ? 'opacity-100' : 'opacity-0'
+											)}
+										/>
 									</div>
 								))}
 							</div>

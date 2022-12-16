@@ -50,7 +50,7 @@ export default function Room4(props: { room: any }) {
 	const { room } = props
 
 	return (
-		<>
+		<div className=' overflow-hidden'>
 			<Head>
 				<link rel='preconnect' href='https://fonts.googleapis.com' />
 				<link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='true' />
@@ -262,6 +262,6 @@ export default function Room4(props: { room: any }) {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }

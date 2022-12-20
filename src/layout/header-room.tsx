@@ -18,8 +18,13 @@ export default function HeaderRoom(props: { className?: string }) {
 					</a>
 				</Link>
 
-				<button onClick={() => router.back()} className='rounded-full bg-white bg-opacity-40 p-[10px]'>
-					<ArrowTopLeft />
+				<button
+					onClick={() => router.back()}
+					className='group overflow-hidden rounded-full bg-white bg-opacity-40 p-[10px]'>
+					<div className='relative transition-transform duration-300 ease-out-back group-hover:-translate-y-6 group-hover:-translate-x-6'>
+						<ArrowTopLeft />
+						<ArrowTopLeft className='absolute left-[120%] top-[120%]' />
+					</div>
 				</button>
 			</div>
 		</header>

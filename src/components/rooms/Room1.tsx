@@ -65,7 +65,7 @@ export default function Room1(props: { room: any }) {
 
 	return (
 		<div className=' overflow-hidden'>
-			<HeaderRoom />
+			<HeaderRoom className='text-white' />
 			<div
 				className='min-h-[100vh] bg-[#141943] pt-[176px] pb-[124px] text-white'
 				style={{

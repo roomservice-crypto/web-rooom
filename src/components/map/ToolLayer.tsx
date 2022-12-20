@@ -1,10 +1,7 @@
 import Plus from '@/svgs/plus.svg'
 import Minus from '@/svgs/minus.svg'
 import Crosshair from '@/svgs/crosshair.svg'
-import Earth from '@/svgs/earth.svg'
 import Home from '@/svgs/home.svg'
-import Location from '@/svgs/location.svg'
-import ChevronRight from '@/svgs/chevron-right.svg'
 import ChevronLeft from '@/svgs/chevron-left.svg'
 import mapboxgl, { LngLatLike } from 'mapbox-gl'
 import React, { Dispatch, useEffect, useState } from 'react'
@@ -13,9 +10,7 @@ import { Transition } from '@headlessui/react'
 import clsx from 'clsx'
 import { ALL } from '@/constants'
 import { useRouter } from 'next/router'
-import { getRooms } from '@/utils/storage'
-import { typeWords } from '@/mock'
-import TypeIcon from '@/components/map/TypeIcon'
+import RoomList from './RoomList'
 
 export default function ToolLayer(props: {
 	map: mapboxgl.Map | null
@@ -27,11 +22,11 @@ export default function ToolLayer(props: {
 	isMobile: boolean
 }) {
 	const { map, ready, filter, setFilter, room, setRoom, isMobile } = props
-	const rooms = getRooms()
 	const router = useRouter()
 	const [localCoords, setLocalCoords] = useState([0, 0])
 	const [open, setOpen] = useState(false)
 
+	// get location coords
 	useEffect(() => {
 		navigator.geolocation.getCurrentPosition(position => {
 			setLocalCoords([position.coords.longitude, position.coords.latitude])
@@ -119,7 +114,7 @@ export default function ToolLayer(props: {
 					enterFrom='opacity-0 bottom-[-100px]'
 					enter='transition-all '
 					as={React.Fragment}>
-					<div className='fixed bottom-0 left-8 right-8 z-[11] flex justify-center gap-x-3 rounded-t-3xl bg-white bg-opacity-20 py-4 shadow-[0px_4px_49px_rgba(0,_7,_72,_0.12)] backdrop-blur-[7.5px]'>
+					<div className='fixed bottom-0 left-8 right-8 z-[11] flex flex-wrap justify-center gap-x-3 gap-y-1 rounded-t-3xl bg-white bg-opacity-20 py-4 px-4 shadow-[0px_4px_49px_rgba(0,_7,_72,_0.12)] backdrop-blur-[7.5px]'>
 						<Tag text={ALL} filter={filter} setFilter={setFilter} />
 						<Tag text='Social' src='/assets/map/tags/social.png' filter={filter} setFilter={setFilter} />
 						<Tag text='Game Playing' src='/assets/map/tags/game.png' filter={filter} setFilter={setFilter} />
@@ -163,61 +158,7 @@ export default function ToolLayer(props: {
 				</Transition>
 
 				{/* right top list pad */}
-				<Transition
-					appear
-					show={ready && open}
-					enterFrom='opacity-0 right-[-100px]'
-					enter='transition-all '
-					as={React.Fragment}>
-					<div className='fixed top-8 right-8 z-[11] flex h-[764px] gap-x-4 rounded-[32px] border-2 border-dark bg-[#BAEDBD] p-3'>
-						<div className='w-[368px] overflow-auto rounded-[32px] border border-dark bg-white'>
-							<div className='flex items-center gap-x-2 px-8 pt-8'>
-								<span className='inline-block p-1'>
-									<Earth className='h-5 w-5' />
-								</span>
-								<ChevronRight className={'text-black text-opacity-40'} />
-								<span className=' inline-block rounded-md bg-black bg-opacity-5 py-1 px-2'>South Korea</span>
-							</div>
-							<div className='mt-4 px-8 text-2xl font-semibold'>Seoul area</div>
-							<div className='mt-1 px-8 text-black text-opacity-80'>440+ Room</div>
-
-							<div className='mt-6 px-8'>
-								<div className='flex rounded-[18px] bg-black bg-opacity-5'>
-									<button className='h-12 w-[50%] rounded-[18px] border-2 border-dark bg-white'>Follow</button>
-									<button className='h-12 w-[50%] rounded-[18px]'>Nearby</button>
-								</div>
-							</div>
-
-							<div className='mt-4 border-t border-dashed border-dark'></div>
-
-							<div className='divide-y divide-black divide-opacity-10'>
-								{rooms.map(r => (
-									<div
-										onClick={() => {
-											map?.flyTo({ center: r.coordinates })
-											setRoom(r)
-										}}
-										key={r._id}
-										className='flex cursor-pointer items-center gap-x-3 px-8 py-6 hover:bg-black hover:bg-opacity-5'>
-										<img src={r.avatar} className=' h-10 w-10 rounded-full' />
-										<div>
-											<div className='flex items-center gap-x-1 font-semibold'>
-												{r.name}.room <TypeIcon type={r.type} className='h-4 w-4' />
-											</div>
-											<div className='text-sm text-black text-opacity-40'>{typeWords(r.type)}</div>
-										</div>
-										<Location
-											className={clsx(
-												'ml-auto transition-opacity hover:opacity-100',
-												r._id === room?._id ? 'opacity-100' : 'opacity-0'
-											)}
-										/>
-									</div>
-								))}
-							</div>
-						</div>
-					</div>
-				</Transition>
+				<RoomList ready={ready} room={room} setRoom={setRoom} open={open} map={map} />
 			</>
 		)
 }
@@ -233,7 +174,7 @@ function Tag(props: { text: string; src?: string; filter: string; setFilter: Dis
 				filter === text ? 'bg-dark text-white' : 'bg-white'
 			)}>
 			{src && <img src={src} className='h-[20px] w-[20px]' />}
-			{props.text}
+			<span className=' whitespace-nowrap'>{props.text}</span>
 		</span>
 	)
 }

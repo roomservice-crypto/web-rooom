@@ -92,7 +92,7 @@ export default function CardLayer(props: {
 				<TransitionBadge appear show={!!room} toClassName='left-20' fromClassName='left-0'>
 					<div
 						onClick={() => map?.flyTo({ center: room.coordinates })}
-						className='fixed top-[92px] h-[492px] w-[448px] cursor-pointer overflow-hidden rounded-[32px] border-2 border-black bg-light bg-white transition-all duration-150 hover:shadow-[0_0_0_12px_rgba(0,0,0,0.2)]'>
+						className='fixed top-[92px] pb-10 w-[448px] cursor-pointer overflow-hidden rounded-[32px] border-2 border-black bg-light bg-white transition-all duration-150 hover:shadow-[0_0_0_12px_rgba(0,0,0,0.2)]'>
 						<div
 							className='flex h-[120px] justify-end border-b-2 border-dashed border-black bg-[#BAEDBD] p-6'
 							style={{ backgroundColor: room.backgroundColor }}></div>
@@ -163,13 +163,13 @@ export default function CardLayer(props: {
 											e.stopPropagation()
 											setIsFollowing(true)
 										}}
-										className='rounded-[24px] bg-dark py-6 px-8 text-xl font-semibold leading-[26px] text-white'>
+										className='rounded-[24px] bg-dark py-6 px-8 text-xl font-semibold leading-[26px] text-white hover:bg-opacity-90'>
 										Follow
 									</button>
 								)}
 								<button
 									onClick={() => router.push(`/room/${room.address}`)}
-									className='ml-3 flex flex-1 justify-center gap-x-4 rounded-[24px] border-2 border-[#1c1c1c] bg-white py-6 px-8 text-center text-xl font-semibold leading-[26px] shadow-[0_4px_#141414] transition-all hover:bg-black hover:bg-opacity-10 hover:shadow-none'>
+									className='ml-3 flex flex-1 justify-center gap-x-4 rounded-[24px] border-2 border-[#1c1c1c] bg-white py-6 px-6 text-center text-xl font-semibold leading-[26px] shadow-[0_4px_#141414] transition-all hover:bg-black hover:bg-opacity-10 hover:shadow-none'>
 									Explore room <ArrowRight />
 								</button>
 							</div>

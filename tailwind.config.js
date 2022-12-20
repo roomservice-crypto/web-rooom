@@ -19,11 +19,14 @@ module.exports = {
 				},
 				secondary: '#C1BFFA',
 				dark: '#1C1C1C',
-				light: '#F7F9FB',
+				light: '#F7F9FB'
 			},
 			animation: {
 				'spin-about-loops': 'spin 12s linear infinite',
 				'spin-about-circle': 'spin 16s linear infinite'
+			},
+			transitionTimingFunction: {
+				'out-back': 'cubic-bezier(0.34, 1.56, 0.64, 1)'
 			}
 		},
 		screens: {

@@ -6,6 +6,7 @@ import BaseLayer from '@/components/map/BaseLayer'
 import CardLayer from '@/components/map/CardLayer'
 import ToolLayer from '@/components/map/ToolLayer'
 import { ALL } from '@/constants'
+import { getRooms } from '@/utils/storage'
 
 const PUBLIC_KEY = 'pk.eyJ1IjoieXlzdW5pIiwiYSI6ImNsYjRzcHE2MjA2MHYzcnBqMTA2NWI4YWoifQ.Wg2EqZN4qi-y6pdffqUPPw'
 mapboxgl.accessToken = PUBLIC_KEY
@@ -16,7 +17,9 @@ export default function Map() {
 	const [ready, setReady] = useState(false)
 	const [filter, setFilter] = useState(ALL)
 	const [isMobile, setIsMobile] = useState(false)
+	const rooms = getRooms()
 
+	// add window size listener
 	useEffect(() => {
 		const handler = () => setIsMobile(window.innerWidth < 960)
 		handler()
@@ -24,6 +27,14 @@ export default function Map() {
 		window.addEventListener('resize', handler)
 		return () => window.removeEventListener('resize', handler)
 	}, [])
+
+	// listen to the filter to change the applicable room
+	useEffect(() => {
+		if (filter !== ALL && room && room.type !== filter) {
+			const applicableRoom = rooms.find(r => r.type === filter)
+			setRoom(applicableRoom || null)
+		}
+	}, [filter, room, rooms])
 
 	return (
 		<>

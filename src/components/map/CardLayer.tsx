@@ -13,7 +13,7 @@ export default function CardLayer(props: {
 	map: mapboxgl.Map | null
 	isMobile: boolean
 }) {
-	const { room, setRoom, map, isMobile } = props
+	const { room, map, isMobile } = props
 	const router = useRouter()
 
 	const [isFollowing, setIsFollowing] = useState(false)
@@ -26,10 +26,10 @@ export default function CardLayer(props: {
 		if (isMobile)
 			return (
 				<TransitionBadge appear show={!!room} toClassName='opacity-100' fromClassName='opacity-0'>
-					<div className='fixed bottom-6 left-0 right-0 flex items-center justify-center bg-light'>
+					<div className='fixed bottom-6 left-0 right-0 flex items-center justify-center'>
 						<div
 							onClick={() => map?.flyTo({ center: room.coordinates })}
-							className='h-[264px] w-[327px] cursor-pointer overflow-hidden rounded-[32px] border-2 border-black bg-white transition-all duration-150 hover:shadow-[0_0_0_12px_rgba(0,0,0,0.2)]'>
+							className='h-[264px] w-[327px] cursor-pointer overflow-hidden rounded-[32px] border-2 border-black bg-light transition-all duration-150 hover:shadow-[0_0_0_12px_rgba(0,0,0,0.2)]'>
 							<div
 								className='flex h-[67px] justify-end border-b-2 border-dashed border-black bg-[#BAEDBD] p-6'
 								style={{ backgroundColor: room.backgroundColor }}></div>
@@ -92,7 +92,7 @@ export default function CardLayer(props: {
 				<TransitionBadge appear show={!!room} toClassName='left-20' fromClassName='left-0'>
 					<div
 						onClick={() => map?.flyTo({ center: room.coordinates })}
-						className='fixed top-[92px] pb-10 w-[448px] cursor-pointer overflow-hidden rounded-[32px] border-2 border-black bg-light bg-white transition-all duration-150 hover:shadow-[0_0_0_12px_rgba(0,0,0,0.2)]'>
+						className='fixed top-[92px] w-[448px] cursor-pointer overflow-hidden rounded-[32px] border-2 border-black bg-light bg-white pb-10 transition-all duration-150 hover:shadow-[0_0_0_12px_rgba(0,0,0,0.2)]'>
 						<div
 							className='flex h-[120px] justify-end border-b-2 border-dashed border-black bg-[#BAEDBD] p-6'
 							style={{ backgroundColor: room.backgroundColor }}></div>

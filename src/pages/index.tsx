@@ -30,7 +30,7 @@ export default function Home() {
 						Reimagine web3 with your own, customizable on-chain spaces
 					</h1>
 
-					<button onClick={() => router.push('/map')} className='button mx-auto mt-8'>
+					<button onClick={() => router.push('/map')} className='button mx-auto mt-8 mobile:mx-0'>
 						<span>Explore Demo</span>
 
 						<ArrowRight />

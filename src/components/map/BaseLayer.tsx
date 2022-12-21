@@ -55,8 +55,6 @@ export default function BaseLayer(props: {
 
 					setReady(true)
 				})
-
-				console.log('[suni position]', map.getCenter())
 			}, 300)
 
 			// display rooms

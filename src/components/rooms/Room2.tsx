@@ -79,7 +79,7 @@ export default function Room2(props: { room: any }) {
 					</div>
 				</div>
 
-				<div className='border-t border-black border-opacity-10 mt-10'></div>
+				<div className='mt-10 border-t border-black border-opacity-10'></div>
 
 				{/* grid */}
 				<div className='mx-auto mt-8 flex w-[1440px] gap-8 px-20'>
@@ -170,7 +170,7 @@ export default function Room2(props: { room: any }) {
 
 					{/* right */}
 					<div className='relative flex-[720] rounded-3xl bg-black bg-opacity-5 p-4'>
-						<div className='flex justify-between border-b border-white border-opacity-10 pb-5 text-lg font-semibold'>
+						<div className='mt-2 flex justify-between border-b border-white border-opacity-10 pb-5 text-lg font-semibold'>
 							<span>Private Game Room</span>
 							<Maximize />
 						</div>

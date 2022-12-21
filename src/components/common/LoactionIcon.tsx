@@ -61,7 +61,7 @@ export default function LoactionIcon(props: { id: number; selected: any; filter:
 						'w-[34px] rounded-full transition-opacity group-hover:opacity-100',
 						active ? 'opacity-100' : 'opacity-0'
 					)}
-					clip-path='inset(0% round 99px)'
+					clipPath='inset(0% round 99px)'
 				/>
 			</svg>
 

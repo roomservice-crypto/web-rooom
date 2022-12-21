@@ -234,7 +234,7 @@ export default function Create() {
 
 						<button
 							type='submit'
-							className='inline-block w-[360px] rounded-[10px] bg-black py-3 font-semibold text-white'>
+							className='inline-block w-[360px] rounded-[10px] bg-black py-3 font-semibold text-white hover:bg-opacity-80'>
 							Continue
 						</button>
 					</form>
@@ -279,8 +279,8 @@ export default function Create() {
 												setSelectedCards([...selectedCards])
 											}}
 											className={clsx(
-												'w-[200px] cursor-pointer overflow-hidden rounded-2xl border-2',
-												active ? 'border-dark' : 'border-black border-opacity-10'
+												'w-[200px] cursor-pointer overflow-hidden rounded-2xl ',
+												active ? 'border-2 border-dark' : 'border border-black border-opacity-10'
 											)}
 											key={c.name}>
 											<c.card />
@@ -298,10 +298,12 @@ export default function Create() {
 
 						{/* Dialog actions */}
 						<div className='flex justify-end gap-x-3 px-6 pb-6'>
-							<button className='w-[180px] rounded-[10px] border border-dark py-3' onClick={() => setDialog(false)}>
+							<button
+								className='w-[180px] rounded-[10px] border border-dark py-3 hover:bg-opacity-5 hover:bg-black'
+								onClick={() => setDialog(false)}>
 								Cancel
 							</button>
-							<button onClick={createRoom} className='w-[180px] rounded-[10px] bg-black text-white'>
+							<button onClick={createRoom} className='w-[180px] rounded-[10px] bg-black text-white hover:bg-opacity-80'>
 								Create room
 							</button>
 						</div>

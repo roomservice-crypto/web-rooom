@@ -30,11 +30,17 @@ export default function Home() {
 						Reimagine web3 with your own, customizable on-chain spaces
 					</h1>
 
-					<button onClick={() => router.push('/map')} className='button mx-auto mt-8 mobile:mx-0'>
+					<button
+						onClick={() => router.push('/map')}
+						className='button mx-auto mt-8 mobile:fixed mobile:bottom-20 mobile:flex mobile:w-[calc(100vw-32px)] mobile:justify-center '>
 						<span>Explore Demo</span>
 
 						<ArrowRight />
 					</button>
+
+					<div
+						className='pointer-events-none fixed left-0 bottom-0 right-0 top-0 hidden mobile:block'
+						style={{ boxShadow: 'inset 0px -50px 20px #fff' }}></div>
 				</div>
 			</main>
 		</>

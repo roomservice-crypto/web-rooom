@@ -130,7 +130,7 @@ export default function CardLayer(props: {
 							</div>
 
 							{/* state */}
-							<button className='mt-4 flex gap-x-2 items-center rounded-[34px] border-2 border-dashed border-[#1c1c1c] py-3 px-6'>
+							<button className='mt-4 flex items-center gap-x-2 rounded-[34px] border-2 border-dashed border-[#1c1c1c] py-3 px-6'>
 								<StateIcon type={room.type} className='h-5 w-5' /> {typeWords(room.type)}
 							</button>
 

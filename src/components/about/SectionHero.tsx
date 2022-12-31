@@ -25,7 +25,7 @@ export default function SectionHero() {
 						Room Service enables web3 users to build, launch and host their own blockchain-based spaces without any
 						coding experience. The possibilities are endless!
 					</p>
-					<button onClick={() => router.push('/map')} className='button mt-8'>
+					<button onClick={() => router.push('/demo')} className='button mt-8 mobile:hidden'>
 						<span>Explore Demo</span>
 
 						<ArrowRight />

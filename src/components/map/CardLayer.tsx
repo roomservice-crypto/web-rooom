@@ -169,7 +169,7 @@ export default function CardLayer(props: {
 								)}
 								<button
 									onClick={() => router.push(`/room/${room.address}`)}
-									className='ml-3 flex flex-1 justify-center gap-x-4 rounded-[24px] border-2 border-[#1c1c1c] bg-white py-6 px-6 text-center text-xl font-semibold leading-[26px] shadow-[0_4px_#141414] transition-all hover:bg-black hover:bg-opacity-10 hover:shadow-none'>
+									className='ml-3 flex flex-1 items-center justify-center gap-x-4 rounded-[24px] border-2 border-[#1c1c1c] bg-white py-6 px-6 text-center text-xl font-semibold leading-[26px] shadow-[0_4px_#141414] transition-all hover:bg-black hover:bg-opacity-10 hover:shadow-none'>
 									Explore room <ArrowRight />
 								</button>
 							</div>

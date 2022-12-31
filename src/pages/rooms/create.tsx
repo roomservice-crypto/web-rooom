@@ -126,7 +126,7 @@ export default function Create() {
 
 		setDialog(false)
 
-		router.push('/map')
+		router.push('/demo')
 	}
 
 	return (

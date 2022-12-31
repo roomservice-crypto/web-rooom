@@ -15,7 +15,6 @@ export default function BaseLayer(props: {
 	const [markerDivs, setMarkerDivs] = useState<HTMLDivElement[] | null>(null)
 
 	const ref = useRef<HTMLDivElement>(null)
-	const router = useRouter()
 	const rooms = getRooms()
 
 	useEffect(() => {
@@ -104,7 +103,7 @@ export default function BaseLayer(props: {
 				setRoom(null)
 			}
 		})
-	}, [rooms, router, setMap, setReady, setRoom])
+	}, [])
 
 	return (
 		<>

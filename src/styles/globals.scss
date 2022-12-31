@@ -26,6 +26,9 @@ body {
 }
 @media (max-width: 960px) {
 	.home {
-		background-image: url(/assets/noise.png), url(/assets/home/grid-mobile.svg);
+		background-image: url(/assets/noise.png), url(/assets/home/grid-fuzzy.png), url(/assets/home/grid-mobile.svg);
+		background-repeat: repeat, no-repeat, no-repeat;
+		background-position: left top, center, center -5px;
+		background-size: auto, 90%, cover;
 	}
 }

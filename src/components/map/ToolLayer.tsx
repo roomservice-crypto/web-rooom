@@ -2,6 +2,7 @@ import Plus from '@/svgs/plus.svg'
 import Minus from '@/svgs/minus.svg'
 import Crosshair from '@/svgs/crosshair.svg'
 import Home from '@/svgs/home.svg'
+import Search from '@/svgs/search.svg'
 import ChevronLeft from '@/svgs/chevron-left.svg'
 import mapboxgl, { LngLatLike } from 'mapbox-gl'
 import React, { Dispatch, useEffect, useState } from 'react'
@@ -142,10 +143,9 @@ export default function ToolLayer(props: {
 						<button onClick={() => router.push('/rooms/create')} className='button_normal'>
 							Create room
 						</button>
-						{/* <button
-						className='flex gap-x-2 rounded-[10px] border border-dark bg-white p-[10px] font-semibold'>
-						<Filter /> Filters
-					</button> */}
+						<button className='flex items-center gap-x-2 rounded-[10px] border border-dark bg-white p-[10px] font-semibold'>
+							<Search clsasName='w-5 h-5' /> Search room
+						</button>
 						<button
 							onClick={() => setOpen(!open)}
 							className={clsx(

@@ -31,8 +31,8 @@ export default function Home() {
 					</h1>
 
 					<button
-						onClick={() => router.push('/map')}
-						className='button mx-auto mt-8 mobile:fixed mobile:bottom-20 mobile:flex mobile:w-[calc(100vw-32px)] mobile:justify-center '>
+						onClick={() => router.push('/demo')}
+						className='button mx-auto mt-8 mobile:mt-6 mobile:w-full  mobile:justify-center '>
 						<span>Explore Demo</span>
 
 						<ArrowRight />
@@ -40,7 +40,9 @@ export default function Home() {
 
 					<div
 						className='pointer-events-none fixed left-0 bottom-0 right-0 top-0 hidden mobile:block'
-						style={{ boxShadow: 'inset 0px -50px 20px #fff' }}></div>
+						style={{
+							boxShadow: 'inset 0px -30px 20px #fff,inset 0px -50px 50px #fff5,inset 0px -100px 50px #fff5'
+						}}></div>
 				</div>
 			</main>
 		</>

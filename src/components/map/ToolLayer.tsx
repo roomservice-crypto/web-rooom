@@ -144,7 +144,7 @@ export default function ToolLayer(props: {
 							Create room
 						</button>
 						<button className='flex items-center gap-x-2 rounded-[10px] border border-dark bg-white p-[10px] font-semibold'>
-							<Search clsasName='w-5 h-5' /> Search room
+							<Search className='h-5 w-5' /> Search room
 						</button>
 						<button
 							onClick={() => setOpen(!open)}

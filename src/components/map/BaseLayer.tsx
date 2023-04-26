@@ -43,7 +43,9 @@ export default function BaseLayer(props: {
 						duration: 3000,
 						easing: t => 1 - Math.pow(1 - t, 3)
 					})
-					map.once('moveend', defaultInit)
+
+					defaultInit()
+					// map.once('moveend', defaultInit)
 				}
 				const defaultInit = () => {
 					map.dragPan.enable()
@@ -57,7 +59,9 @@ export default function BaseLayer(props: {
 
 					map.setMinZoom(2)
 
-					setTimeout(() => setRoom(selectedRoom), 300)
+					if (room) {
+						setTimeout(() => setRoom(selectedRoom), 300)
+					}
 
 					setReady(true)
 				}
@@ -86,7 +90,7 @@ export default function BaseLayer(props: {
 					})
 					setMarkerDivs(divs)
 				},
-				room ? 300 : 3000
+				room ? 300 : 1000
 			)
 		})
 
@@ -103,7 +107,7 @@ export default function BaseLayer(props: {
 				setRoom(null)
 			}
 		})
-	}, [])
+	}, [rooms, setMap, setReady, setRoom])
 
 	return (
 		<>

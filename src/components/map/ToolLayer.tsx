@@ -19,7 +19,7 @@ export default function ToolLayer(props: {
 	filter: string
 	setFilter: Dispatch<string>
 	room: any
-	setRoom: Dispatch<string>
+	setRoom: Dispatch<string | null>
 	isMobile: boolean
 }) {
 	const { map, ready, filter, setFilter, room, setRoom, isMobile } = props
@@ -71,7 +71,12 @@ export default function ToolLayer(props: {
 				{/* left top back button */}
 				<Transition appear show={ready} enterFrom='opacity-0' enter='transition-all ' as={React.Fragment}>
 					<button
-						onClick={() => router.push('/')}
+						onClick={
+							// () => router.push('/')
+							() => {
+								setRoom(null)
+							}
+						}
 						className='fixed left-8 top-8 z-[11] rounded-full bg-white bg-opacity-40 p-[10px]'>
 						<Home />
 					</button>
@@ -109,7 +114,7 @@ export default function ToolLayer(props: {
 				</Transition>
 
 				{/* bottom center tags */}
-				<Transition
+				{/* <Transition
 					appear
 					show={ready}
 					enterFrom='opacity-0 bottom-[-100px]'
@@ -125,7 +130,7 @@ export default function ToolLayer(props: {
 						<Tag text='Key Users' src='/assets/map/tags/key.png' filter={filter} setFilter={setFilter} />
 						<Tag text='Web3 Projects' src='/assets/map/tags/web3.png' filter={filter} setFilter={setFilter} />
 					</div>
-				</Transition>
+				</Transition> */}
 
 				{/* top center linear gradient */}
 				<Transition appear show={ready} enterFrom='opacity-0 top-[-50px]' enter='transition-all' as={React.Fragment}>

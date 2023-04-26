@@ -8,6 +8,8 @@ import ToolLayer from '@/components/map/ToolLayer'
 import { ALL } from '@/constants'
 import { getRooms } from '@/utils/storage'
 import { useRouter } from 'next/router'
+import HeaderBar from '@/components/map/HeaderBar'
+import RoomLayer from '@/components/map/RoomLayer'
 
 const PUBLIC_KEY = 'pk.eyJ1IjoieXlzdW5pIiwiYSI6ImNsYjRzcHE2MjA2MHYzcnBqMTA2NWI4YWoifQ.Wg2EqZN4qi-y6pdffqUPPw'
 mapboxgl.accessToken = PUBLIC_KEY
@@ -57,6 +59,7 @@ export default function Map() {
 			<>
 				<BaseLayer filter={filter} setMap={setMap} setRoom={setRoom} room={room} setReady={setReady} />
 				<CardLayer isMobile={isMobile} room={room} setRoom={setRoom} map={map} />
+				<HeaderBar ready={ready} setRoom={setRoom} />
 				<ToolLayer
 					isMobile={isMobile}
 					room={room}
@@ -66,6 +69,7 @@ export default function Map() {
 					map={map}
 					ready={ready}
 				/>
+				{/* <RoomLayer isMapView={ready} /> */}
 			</>
 		)
 	else

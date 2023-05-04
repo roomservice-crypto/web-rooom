@@ -16,6 +16,8 @@ interface Props {
 	customOnDismiss?: () => void
 	padding?: string
 	hasBorder?: boolean
+	borderRadius?: string
+	borderColor?: string
 	background?: string
 	height?: string
 	backdropColor?: string
@@ -36,6 +38,7 @@ export default function Modal(props: Props) {
 		customIsOpen,
 		customOnDismiss,
 		hasBorder = true,
+		borderRadius,
 		width,
 		maxWidth,
 		padding,
@@ -70,12 +73,13 @@ export default function Modal(props: Props) {
 							width: { xs: 'calc(100vw - 32px)!important', sm: width || 488 },
 							maxWidth,
 							background: theme => background ?? theme.palette.background.paper,
-							border: hasBorder ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid transparent',
+							border: hasBorder ? '12px solid #FAE76C' : '1px solid transparent',
 							boxShadow: 'unset',
 							padding: 0,
 							height: height || 'unset',
 							boxSizing: 'border-box',
-							borderRadius: '12px',
+							borderRadius: borderRadius || '12px',
+							outline: "2px solid",
 							marginBottom: { xs: 0, sm: '10vh' },
 							overflowX: 'hidden',
 							overflowY: 'auto',

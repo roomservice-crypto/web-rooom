@@ -24,17 +24,16 @@ import { ReactElement, useEffect, useState } from 'react'
 import MetamaskLogo from '@/assets/img/metamask.svg'
 import WalletConnectLogo from '@/assets/img/walletconnect.svg'
 import CoinbaseLogo from '@/assets/img/coinbasewallet.svg'
-import Step1 from '@/svgs/step1.svg'
-import Step2 from '@/svgs/step2gray.svg'
 import Pin from '@/svgs/location.svg'
+import { PrimaryButton } from '@/components/Button'
+import { useRouter } from 'next/router'
 
-declare const window: {
-	ethereum?: any
-} & Window
 
 export default function Create() {
 	const [room, setRoom] = useState<null | any>(null)
 	const [ready, setReady] = useState(true)
+	const router = useRouter()
+
 
 	const [open, setOpen] = useState(true)
 	const handleOpen = () => setOpen(true)
@@ -283,14 +282,14 @@ export default function Create() {
 												Description (optional){' '}
 											</Typography>
 											<TextField fullWidth multiline placeholder='Give a description to your room' rows={4}></TextField>
-											<Button
+											<PrimaryButton
+												bg='#000000'
 												onClick={() => {
 													handleNext()
 												}}
-												sx={{ marginTop: '20px', marginBottom: '48px' }}
-												variant='outlined'>
+												style={{ marginTop: '20px', marginBottom: '48px' }}>
 												Create
-											</Button>
+											</PrimaryButton>
 										</FormControl>
 									</Box>
 								)}
@@ -316,10 +315,20 @@ export default function Create() {
 								Next, you can choose to complete your information and let others know you, or you can decorate your room
 								first
 							</Typography>
-							<Button sx={{ marginTop: '24px', marginBottom: '16px' }} variant='outlined'>
+							<PrimaryButton
+								onClick={() => router.push('/rooms/myroom')}
+								bg='#000000'
+								style={{ marginTop: '24px', marginBottom: '16px' }}
+								variant='outlined'>
 								Start decorating the room
-							</Button>
-							<Typography onClick={() => {0}} fontWeight={500} fontSize={14} color='#00000066'>
+							</PrimaryButton>
+							<Typography
+								onClick={() => {
+									0
+								}}
+								fontWeight={500}
+								fontSize={14}
+								color='#00000066'>
 								Maybe later
 							</Typography>
 						</Box>

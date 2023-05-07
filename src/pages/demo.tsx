@@ -69,7 +69,7 @@ export default function Map() {
 					map={map}
 					ready={ready}
 				/>
-				{/* <RoomLayer isMapView={ready} /> */}
+				<RoomLayer isMapView={ready} />
 			</>
 		)
 	else

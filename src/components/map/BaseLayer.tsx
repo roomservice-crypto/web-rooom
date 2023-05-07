@@ -2,7 +2,6 @@ import mapboxgl, { LngLatLike } from 'mapbox-gl'
 import { Dispatch, useEffect, useRef, useState } from 'react'
 import Marker from '../common/Marker'
 import { getRooms } from '@/utils/storage'
-import { useRouter } from 'next/router'
 
 export default function BaseLayer(props: {
 	setMap: Dispatch<mapboxgl.Map>

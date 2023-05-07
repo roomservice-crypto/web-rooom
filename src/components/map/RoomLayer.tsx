@@ -1,8 +1,7 @@
 import React, { Dispatch, useState } from 'react'
 import { Transition } from '@headlessui/react'
-import Card from '../Card'
 import { Box, Typography } from '@mui/material'
-import Create from '@/svgs/create.svg'
+
 import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from 'swiper/react'
 import SwiperType, { Pagination } from 'swiper'
 import fillerImg from '@/assets/img/filler.png'
@@ -12,6 +11,11 @@ import 'swiper/css'
 import DomeCard from '../Card/DomeCard'
 import RoomOverviewCard from '../Card/RoomOverviewCard'
 import SwiperRoomButton from '../Button/SwiperRoomButtons'
+import CommunityCard from '../Card/CommunityCard'
+import HeroCard from '../Card/HeroCard'
+import NewDecorationCard from '../Card/NewDecorationCard'
+import ComingSoonOverlay from '../Paper/ComingSoonOverlay'
+import { fillerNewDeco } from '@/constants/filler'
 
 export default function RoomLayer({ isMapView }: { isMapView: boolean }) {
 	const [roomSwiper, setRoomSwiper] = useState<SwiperType | undefined>(undefined)
@@ -19,7 +23,7 @@ export default function RoomLayer({ isMapView }: { isMapView: boolean }) {
 	return (
 		<Transition show={isMapView}>
 			<div className='fixed top-[72px] left-0 z-[12] grid h-full w-full overflow-auto'>
-				<div className='relative h-[calc(100vh_-_72px)] w-[100vw] overflow-hidden'>
+				<Box className='relative min-h-[calc(100vh_-_72px)] w-[100vw] overflow-hidden' height={'max-content'}>
 					<div
 						className='absolute h-full w-full'
 						style={{
@@ -34,44 +38,10 @@ export default function RoomLayer({ isMapView }: { isMapView: boolean }) {
 						}}></div>
 					<SwiperHero>
 						<SwiperSlide>
-							<Box margin='0 auto' width='100%'>
-								<Card>
-									<div className='flex w-full'>
-										<div className='max-w-[300px]'>
-											<Typography fontSize={36} fontWeight={700}>
-												Time-Limited Room Creation Event
-											</Typography>
-											<Typography
-												fontSize={18}
-												sx={{
-													color: 'rgba(0, 0, 0, 0.4)'
-												}}>
-												Create a room and get League of legends exclusive room badges and room decorations.
-											</Typography>
-											<Typography
-												sx={{
-													borderRadius: '48px',
-													background: '#FAE76C',
-													width: 'max-content',
-													padding: '12px 16px'
-												}}>
-												Furniture rewards
-											</Typography>
-											<button className='ba ml-3 flex flex-1 items-center justify-center gap-x-4 rounded-[24px] border-2 border-[#1c1c1c] bg-[#FAE76C] py-6 px-6 text-center text-xl font-semibold leading-[26px] shadow-[0_4px_#141414] transition-all hover:bg-black hover:bg-opacity-10 hover:shadow-none'>
-												Create room
-												<Create />
-											</button>
-										</div>
-										<img src={fillerImg.src} alt='' />
-									</div>
-								</Card>
-							</Box>
-						</SwiperSlide>
-						<SwiperSlide>
-							<Card>aaa</Card>
+							<HeroCard />
 						</SwiperSlide>
 					</SwiperHero>
-				</div>
+				</Box>
 				<div className='w-full bg-white pb-[200px]'>
 					<div className='h-content mx-auto mt-20 w-[80%] '>
 						<div className='flex justify-between'>
@@ -105,8 +75,38 @@ export default function RoomLayer({ isMapView }: { isMapView: boolean }) {
 							</SwiperSlide>
 						</SwiperRoom>
 						<RoomOverviewCard />
+						<Box mt={120}>
+							<Typography fontSize={30} fontWeight={600} mb={36}>
+								Popular communities
+							</Typography>
+							<Box
+								display={'grid'}
+								gridTemplateColumns={{ xs: '1fr', sm: '1fr 1fr 1fr' }}
+								gap={50}
+								position={'relative'}>
+								<ComingSoonOverlay />
+								{[...Array(3).keys()].map(index => (
+									<CommunityCard key={index} />
+								))}
+							</Box>
+						</Box>
 					</div>
 				</div>
+				<Box className='w-full bg-[#1C1C1C] px-[10%] pb-[200px] pt-[60px] text-white' position={'relative'}>
+					<Box width='100%'>
+						<Box style={{ background: '#1c1c1c', width: '100%' }}>
+							<Box>Coming Soon...</Box>
+						</Box>{' '}
+					</Box>
+					<Box maxWidth={1240} display='grid'>
+						<p className='mb-[34px] text-[30px] font-semibold'>Newly launched decorations</p>
+						<Box display='grid' gap={52}>
+							{fillerNewDeco.map(obj => (
+								<NewDecorationCard key={obj.title} data={obj} />
+							))}
+						</Box>
+					</Box>
+				</Box>
 			</div>
 		</Transition>
 	)
@@ -149,7 +149,6 @@ function SwiperRoom({ children, setSwiper }: { children?: React.ReactNode; setSw
 		<Box
 			position='relative'
 			margin='5% 0'
-			pb={80}
 			sx={{
 				maxWidth: '100%',
 				'& .swiper': {

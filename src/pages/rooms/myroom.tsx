@@ -3,6 +3,62 @@ import Modal from '@/components/Modal'
 import HeaderBar from '@/components/map/HeaderBar'
 import { Box, Divider, Grid, Tab, Tabs, Typography } from '@mui/material'
 import { useState } from 'react'
+import AccountIcon from '@/svgs/settings/account.svg'
+import BoxIcon from '@/svgs/settings/box.svg'
+import ThumbIcon from '@/svgs/settings/thumb.svg'
+
+import { styled } from '@mui/material/styles'
+
+const SettingsTabs = styled(Tabs)({
+	borderBottom: '1px solid #e8e8e8',
+	'& .MuiTabs-indicator': {
+		display: 'none'
+	}
+})
+
+const SettingsTab = styled((props: StyledTabProps) => <Tab disableRipple {...props} />)(({ theme }) => ({
+	textTransform: 'none',
+	alignItems: 'center',
+	flexDirection: 'row',
+	justifyContent: 'flex-start',
+	borderRadius: '20px',
+	padding: '8px 16px',
+	minWidth: 0,
+	minHeight: 0,
+	[theme.breakpoints.up('sm')]: {
+		minWidth: 0
+	},
+	fontWeight: 600,
+	fontSize: '16px',
+	marginRight: theme.spacing(1),
+	svg: {
+		'&.MuiTab-iconWrapper': {
+			marginBottom: 0,
+			marginRight: '12px'
+		}
+	},
+	'&:hover': {
+		opacity: 1,
+		background: '##0000000D'
+	},
+	'&.Mui-selected': {
+		color: '#ffffff',
+		background: '#1C1C1C',
+		rect: { fill: '#FFFFFF', fillOpacity: 1 },
+		path: { fillOpacity: 1 }
+	}
+}))
+
+interface StyledTabProps {
+	label: string
+	icon: any
+}
+
+interface StyledTabsProps {
+	children?: React.ReactNode
+	value: number
+	onChange: (event: React.SyntheticEvent, newValue: number) => void
+}
 
 interface TabPanelProps {
 	children?: React.ReactNode
@@ -80,21 +136,11 @@ export default function MyRoom() {
 									paddingLeft: '24px',
 									justifyContent: 'flex-start'
 								}}>
-								<Tabs orientation='vertical' value={value} onChange={handleChange}>
-									<Tab
-										sx={{
-											alignItems: 'flex-start',
-											textTransform: 'none',
-											fontWeight: '600',
-											fontSize: '16px',
-											background: '#1C1C1C'
-										}}
-										label='Account'
-										{...a11yProps(0)}
-									/>
-									<Tab sx={{ alignItems: 'flex-start', textTransform: 'none' }} label='Assets' {...a11yProps(1)} />
-									<Tab sx={{ alignItems: 'flex-start', textTransform: 'none' }} label='Social' {...a11yProps(2)} />
-								</Tabs>
+								<SettingsTabs orientation='vertical' value={value} onChange={handleChange}>
+									<SettingsTab label='Account' icon={<AccountIcon />} {...a11yProps(0)} />
+									<SettingsTab label='Assets' icon={<BoxIcon />} {...a11yProps(1)} />
+									<SettingsTab label='Social' icon={<ThumbIcon />} {...a11yProps(2)} />
+								</SettingsTabs>
 							</Box>
 						</Grid>
 						<Grid item xs={8}>

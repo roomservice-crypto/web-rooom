@@ -138,7 +138,7 @@ export default function ToolLayer(props: {
 				</Transition>
 
 				{/* right top buttons */}
-				<Transition appear show={ready} enterFrom='opacity-0 right-[-100px]' as={React.Fragment}>
+				{/* <Transition appear show={ready} enterFrom='opacity-0 right-[-100px]' as={React.Fragment}>
 					<div
 						className={clsx(
 							'fixed top-8 z-[11] flex gap-x-4 rounded-2xl bg-white bg-opacity-20 p-3 backdrop-blur-[7.5px] transition-all',
@@ -160,7 +160,7 @@ export default function ToolLayer(props: {
 							<ChevronsLeft />
 						</button>
 					</div>
-				</Transition>
+				</Transition> */}
 
 				{/* right top list pad */}
 				<RoomList ready={ready} room={room} setRoom={setRoom} open={open} map={map} />

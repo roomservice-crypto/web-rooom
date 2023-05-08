@@ -36,7 +36,8 @@
 		"react-spring": "^9.5.5",
 		"redux": "^4.2.1",
 		"swiper": "^9.2.2",
-		"tiny-invariant": "^1.3.1"
+		"tiny-invariant": "^1.3.1",
+		"web3": "^1.9.0"
 	},
 	"devDependencies": {
 		"@nastyox/rando.js": "^2.0.5",

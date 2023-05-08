@@ -1,6 +1,6 @@
 import { Transition } from '@headlessui/react'
 import clsx from 'clsx'
-import { useRouter } from 'next/router'
+
 import Image from 'next/image'
 import LogoText from '@/svgs/logo-text.svg'
 import { Dispatch } from 'react'
@@ -8,10 +8,23 @@ import { useState } from 'react'
 import { Switch } from '@headlessui/react'
 import Map from '@/svgs/map.svg'
 import Room from '@/svgs/room.svg'
+import CreateButton from '../Button/CreateButton'
 
-export default function HeaderBar({ ready, setRoom }: { ready: boolean; setRoom: Dispatch<string | null> }) {
-	const router = useRouter()
+export enum HeaderBarState {
+	mapView,
+	roomView,
+	myRoom
+}
 
+export default function HeaderBar({
+	ready,
+	setRoom,
+	state
+}: {
+	ready: boolean
+	setRoom: Dispatch<string | null>
+	state?: HeaderBarState
+}) {
 	return (
 		<Transition appear show={ready}>
 			<header
@@ -27,11 +40,7 @@ export default function HeaderBar({ ready, setRoom }: { ready: boolean; setRoom:
 					{/* <LogoText className='ml-[10px] mt-1' /> */}
 				</button>
 				<Toggle myRoom={false} />
-				<button
-					onClick={() => router.push('/rooms/create')}
-					className='h-[48px] w-[150px] rounded-3xl bg-dark px-4 py-2 text-sm font-[500] text-white disabled:bg-black disabled:bg-opacity-5 disabled:text-black disabled:text-opacity-10'>
-					Create room
-				</button>
+				<CreateButton />
 			</header>
 		</Transition>
 	)

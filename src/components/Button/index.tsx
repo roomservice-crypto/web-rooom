@@ -64,14 +64,17 @@ export function CloseIcon({
 	)
 }
 
-export function PrimaryButton(props: { children: React.ReactNode; bg?: string } & ButtonProps) {
-	const { children, bg, ...btnProps } = props
+export function PrimaryButton(
+	props: { children: React.ReactNode; bgClass?: string; shadowClass?: string } & ButtonProps
+) {
+	const { children, bgClass, shadowClass, ...btnProps } = props
 	return (
 		<button
 			{...btnProps}
 			className={clsx(
-				'ba flex h-[74px] flex-1 items-center justify-center gap-x-4 rounded-[24px] border-2  border-[#1c1c1c] py-6 px-6 text-center text-xl font-semibold leading-[26px] shadow-[0_4px_#141414] transition-all hover:bg-black hover:bg-opacity-10 hover:shadow-none',
-				bg ? `bg-[${bg}]` : 'bg-[#FAE76C]'
+				'flex h-[74px] flex-1 items-center justify-center gap-x-4 rounded-[24px] border-2  border-[#1c1c1c] py-6 px-6 text-center text-xl font-semibold leading-[26px] transition-all hover:bg-black hover:bg-opacity-10 hover:shadow-none',
+				bgClass ?? 'bg-[#FAE76C]',
+				shadowClass ?? 'shadow-[0_4px_#141414]'
 			)}>
 			{children}
 		</button>

@@ -20,22 +20,22 @@ import {
 	stepConnectorClasses,
 	styled
 } from '@mui/material'
-import { ReactElement, useEffect, useState } from 'react'
+import { ReactElement, useCallback, useEffect, useState } from 'react'
 import MetamaskLogo from '@/assets/img/metamask.svg'
 import WalletConnectLogo from '@/assets/img/walletconnect.svg'
 import CoinbaseLogo from '@/assets/img/coinbasewallet.svg'
 import Step1 from '@/svgs/step1.svg'
 import Step2 from '@/svgs/step2gray.svg'
 import Pin from '@/svgs/location.svg'
+import useConnectors from '@/hooks/web3/useConnectors'
+import { Connector } from '@web3-react/types'
+import { useWeb3React } from '@web3-react/core'
 
 declare const window: {
 	ethereum?: any
 } & Window
 
 export default function Create() {
-	const [room, setRoom] = useState<null | any>(null)
-	const [ready, setReady] = useState(true)
-
 	const [open, setOpen] = useState(true)
 	const handleOpen = () => setOpen(true)
 	const handleClose = () => setOpen(false)
@@ -43,11 +43,26 @@ export default function Create() {
 	const [activeStep, setActiveStep] = useState(0)
 	const [completed, setCompleted] = useState(false)
 
+	const { account } = useWeb3React()
+
+	const connectors = useConnectors()
+	const onActivate = useCallback(async (connector: Connector) => {
+		try {
+			await connector.activate()
+		} catch (error) {}
+	}, [])
+
 	useEffect(() => {
 		if (activeStep === 2) {
 			setCompleted(true)
 		}
 	}, [activeStep])
+
+	useEffect(() => {
+		if (account) {
+			setActiveStep(1)
+		}
+	}, [account])
 
 	const handleNext = () => {
 		setActiveStep(prevActiveStep => prevActiveStep + 1)
@@ -120,7 +135,7 @@ export default function Create() {
 				backgroundRepeat: 'no-repeat',
 				backgroundSize: 'cover'
 			}}>
-			<HeaderBar ready={ready} setRoom={setRoom} />
+			<HeaderBar ready={true} setRoom={() => {}} />
 
 			<Modal maxWidth='724px' customIsOpen={open} borderRadius='46px'>
 				<Box
@@ -192,15 +207,17 @@ export default function Create() {
 											<Grid item xs={4}>
 												<Card
 													onClick={() => {
-														handleNext()
+														onActivate(connectors.metaMask)
+														// handleNext()
 													}}
 													sx={{
+														cursor: 'pointer',
 														display: 'flex',
 														alignItems: 'center',
 														flexDirection: 'column',
 														justifyContent: 'center',
-														height: '180px',
-														width: '180px',
+														height: '160px',
+														width: '100%',
 														borderRadius: '24px',
 														border: '2px solid'
 													}}>
@@ -212,16 +229,17 @@ export default function Create() {
 											</Grid>
 											<Grid item xs={4}>
 												<Card
-													onClick={() => {
-														handleBack()
-													}}
+													// onClick={() => {
+													// 	handleBack()
+													// }}
 													sx={{
+														opacity: 0.5,
 														display: 'flex',
 														alignItems: 'center',
 														flexDirection: 'column',
 														justifyContent: 'center',
-														height: '180px',
-														width: '180px',
+														height: '160px',
+														width: '100%',
 														borderRadius: '24px',
 														border: '2px solid'
 													}}>
@@ -238,10 +256,11 @@ export default function Create() {
 														alignItems: 'center',
 														flexDirection: 'column',
 														justifyContent: 'center',
-														height: '180px',
-														width: '180px',
+														height: '160px',
+														width: '100%',
 														borderRadius: '24px',
-														border: '2px solid'
+														border: '2px solid',
+														opacity: 0.5
 													}}>
 													<CoinbaseLogo />
 													<Typography fontSize={14} fontWeight={500}>
@@ -319,7 +338,13 @@ export default function Create() {
 							<Button sx={{ marginTop: '24px', marginBottom: '16px' }} variant='outlined'>
 								Start decorating the room
 							</Button>
-							<Typography onClick={() => {0}} fontWeight={500} fontSize={14} color='#00000066'>
+							<Typography
+								onClick={() => {
+									0
+								}}
+								fontWeight={500}
+								fontSize={14}
+								color='#00000066'>
 								Maybe later
 							</Typography>
 						</Box>

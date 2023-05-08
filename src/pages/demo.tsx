@@ -69,7 +69,6 @@ export default function Map() {
 					map={map}
 					ready={ready}
 				/>
-				<RoomLayer isMapView={ready} />
 			</>
 		)
 	else

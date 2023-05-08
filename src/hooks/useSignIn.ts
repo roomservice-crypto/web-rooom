@@ -5,89 +5,50 @@ import { useWeb3Instance } from './useWeb3Instance'
 import { useWeb3React } from '@web3-react/core'
 
 interface SignInResponse {
-  bio: string
-  id: string
-  token: string
-  username: string
+  code: number,
+  data: "string",
+  msg: "string"
 }
 
 export function useSignIn() {
+  // const [random, setRandom] = useState(Math.random())
   const { account } = useWeb3React()
   const web3 = useWeb3Instance()
 
-  const sign = useCallback(async () => {
+  const signIn = useCallback(async () => {
     if (!web3 || !account) return
 
-    const message = 'Sign in to Settlement'
+    const message = 'Sign in to Room Service'
+    try{
     const signature = await web3.eth.personal.sign(message, account, '')
-    const formData = new FormData()
-    formData.append('message', message)
-    formData.append('publicAddress', account)
-    formData.append('signature', signature)
+    const res = await Axios.post<SignInResponse>('/user/signIn', {message,account,signature})
 
-    return Axios.post<SignInResponse>('/accountSign', formData)
-  }, [account, web3])
-
-  useEffect(() => {
-    if (!account) return
-    if (getCookie(API_TOKEN + account)) {
-      axiosInstance.defaults.headers.common['token'] = getCookie(API_TOKEN + account)
-      return
-    }
-    sign()
-      .then(r => {
-        if (r?.data.code === 200) {
-          setCookie(API_TOKEN + account, r.data.data.token)
-          axiosInstance.defaults.headers.common['token'] = r.data.data.token
+        if (res?.status === 200) {
+          setCookie(API_TOKEN + account, res.data.data)
+          axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${res.data.data}`
         } else {
           throw Error('Sign in error')
         }
-      })
-      .catch(e => {
-        console.error(e)
-      })
-  }, [account, sign])
-
-  return
-}
-
-export function useSign() {
-  const { account } = useActiveWeb3React()
-  const web3 = useWeb3Instance()
-  const [random, setRandom] = useState(Math.random())
-
-  const sign = useCallback(async () => {
-    if (!web3 || !account) return
-
-    const message = 'Sign in to Settlement'
-    const signature = await web3.eth.personal.sign(message, account, '')
-    const formData = new FormData()
-    formData.append('message', message)
-    formData.append('publicAddress', account)
-    formData.append('signature', signature)
-
-    Axios.post<SignInResponse>('/accountSign', formData)
-      .then(r => {
-        if (r?.data.code === 200) {
-          setCookie(API_TOKEN + account, r.data.data.token)
-          axiosInstance.defaults.headers.common['token'] = r.data.data.token
-        } else {
-          throw Error('Sign in error')
-        }
-      })
-      .catch(e => {
-        console.error(e)
-      })
+    } catch (e) {
+      console.error(e)
+  }
+    
   }, [account, web3])
+
 
   const token = useMemo(() => {
-    setTimeout(() => setRandom(Math.random()), 2000)
-    return getCookie(API_TOKEN + account)
+    // setTimeout(() => setRandom(Math.random()), 2000)
+    if(!account) return null
+    const storedToken = getCookie(API_TOKEN + account)
+    if (storedToken) {
+      axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`
+      return storedToken
+    } else {
+      signIn()
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [account, random])
+  }, [account])
 
-  return {
-    sign,
-    token
-  }
+
+  return {token,signIn}
 }

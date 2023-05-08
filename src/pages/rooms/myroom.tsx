@@ -6,9 +6,7 @@ import { useState } from 'react'
 import AccountIcon from '@/svgs/settings/account.svg'
 import BoxIcon from '@/svgs/settings/box.svg'
 import ThumbIcon from '@/svgs/settings/thumb.svg'
-
 import { styled } from '@mui/material/styles'
-import { PrimaryButton } from '@/components/Button'
 import Pin from '@/svgs/location.svg'
 
 const SettingsTabs = styled(Tabs)({
@@ -96,7 +94,7 @@ function a11yProps(index: number) {
 export default function MyRoom() {
 	const [ready, setReady] = useState(true)
 	const [room, setRoom] = useState<null | any>(null)
-	const [open, setOpen] = useState(true)
+	const [open, setOpen] = useState(false)
 	const [value, setValue] = useState(0)
 
 	const handleChange = (event: any, newValue: number) => {

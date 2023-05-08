@@ -7,10 +7,10 @@ export const axiosInstance = axios.create({
 })
 
 export const Axios = {
-	get<T = any>(url: string, params: { [key: string]: any } = {}): AxiosPromise<ResponseType<T>> {
+	get<T = any>(url: string, params: { [key: string]: any } = {}): AxiosPromise<T> {
 		return axiosInstance.get(url, { params })
 	},
-	post<T = any>(url: string, data: { [key: string]: any }, params = {}): AxiosPromise<ResponseType<T>> {
+	post<T = any>(url: string, data: { [key: string]: any }, params = {}): AxiosPromise<T> {
 		return axiosInstance.post(url, data, { params })
 	}
 }

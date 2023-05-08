@@ -1,16 +1,17 @@
 import * as React from 'react'
 import Modal from '@/components/Modal'
 import HeaderBar from '@/components/map/HeaderBar'
-import { Box, Divider, Grid, Tab, Tabs, Typography } from '@mui/material'
+import { Box, Checkbox, Divider, FormControl, Grid, IconButton, Tab, Tabs, TextField, Typography } from '@mui/material'
 import { useState } from 'react'
 import AccountIcon from '@/svgs/settings/account.svg'
 import BoxIcon from '@/svgs/settings/box.svg'
 import ThumbIcon from '@/svgs/settings/thumb.svg'
 
 import { styled } from '@mui/material/styles'
+import { PrimaryButton } from '@/components/Button'
+import Pin from '@/svgs/location.svg'
 
 const SettingsTabs = styled(Tabs)({
-	borderBottom: '1px solid #e8e8e8',
 	'& .MuiTabs-indicator': {
 		display: 'none'
 	}
@@ -144,12 +145,52 @@ export default function MyRoom() {
 							</Box>
 						</Grid>
 						<Grid item xs={8}>
-							<Box paddingTop={8}>
+							<Box padding='32px'>
 								<TabPanel value={value} index={0}>
-									<Typography fontSize={24} fontWeight={600} padding={24}>
+									<Typography fontSize={24} fontWeight={600}>
 										ACCOUNT
 									</Typography>
-									<Divider sx={{ margin: '24px', border: '2px dashed #1C1C1C' }} />
+									<Divider sx={{ margin: '24px 0px 24px 0px', border: '2px dashed #1C1C1C' }} />
+									<FormControl fullWidth>
+										<Typography fontWeight={500} fontSize={16} paddingBottom={8}>
+											Room name
+										</Typography>
+										<TextField
+											variant='outlined'
+											fullWidth
+											placeholder='The name you want to give to your room'></TextField>
+										<Typography fontWeight={500} fontSize={16} paddingBottom={8} marginTop={24}>
+											Select room address
+										</Typography>
+										<TextField
+											InputProps={{
+												endAdornment: (
+													<IconButton onClick={() => 0}>
+														<Pin />
+													</IconButton>
+												)
+											}}
+											fullWidth
+											placeholder='Select a location for your room'></TextField>
+										<Typography fontWeight={500} fontSize={16} paddingBottom={8} marginTop={24}>
+											Description (optional)
+										</Typography>
+										<TextField fullWidth multiline placeholder='Give a description to your room' rows={4}></TextField>
+										<Box marginTop={24}>
+											<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+												<Typography sx={{ fontSize: '16px', fontWeight: 500 }}>Show my ERC20 assets</Typography>
+												<Checkbox />
+											</Box>
+											<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+												<Typography sx={{ fontSize: '16px', fontWeight: 500 }}>Show my NFT assets</Typography>
+												<Checkbox />
+											</Box>
+											<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+												<Typography sx={{ fontSize: '16px', fontWeight: 500 }}>Get email notifications</Typography>
+												<Checkbox />
+											</Box>
+										</Box>
+									</FormControl>
 								</TabPanel>
 								<TabPanel value={value} index={1}>
 									<Typography fontSize={24} fontWeight={600} padding={24}>

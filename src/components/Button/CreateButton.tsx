@@ -13,7 +13,7 @@ import { SupportedChainId } from '@/constants/chains'
 
 export default function CreateButton() {
 	const router = useRouter()
-	const { account, chainId, provider } = useWeb3React()
+	const { account, chainId, provider, connector } = useWeb3React()
 
 	const { showModal, hideModal } = useModal()
 
@@ -54,6 +54,7 @@ export default function CreateButton() {
 						</button>
 					)}
 					<PrimaryButton
+						onClick={() => (connector.deactivate ? connector.deactivate() : connector.resetState())}
 						shadowClass='shadow-[0_2px_#141414]'
 						style={{
 							display: 'flex',

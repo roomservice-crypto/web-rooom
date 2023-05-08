@@ -108,7 +108,7 @@ export const themeColors = {
 		secondary: '#484D50'
 	},
 	text: {
-		primary: '#333333',
+		primary: '#1C1C1C',
 		secondary: '#828282',
 		disabled: '#828282'
 	},

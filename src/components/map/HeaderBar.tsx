@@ -36,8 +36,8 @@ export default function HeaderBar({
 					onClick={() => {
 						setRoom(null)
 					}}>
-					{/* <Image src='/logo.svg' width='36px' height='36px' /> */}
-					{/* <LogoText className='ml-[10px] mt-1' /> */}
+					<Image src='/logo.svg' width='36px' height='36px' />
+					<LogoText className='ml-[10px] mt-1' />
 				</button>
 				<Toggle myRoom={false} />
 				<CreateButton />

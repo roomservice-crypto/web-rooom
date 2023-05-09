@@ -79,7 +79,7 @@ export default function Modal(props: Props) {
 							height: height || 'unset',
 							boxSizing: 'border-box',
 							borderRadius: borderRadius || '12px',
-							outline: "2px solid",
+							outline: '2px solid',
 							marginBottom: { xs: 0, sm: '10vh' },
 							overflowX: 'hidden',
 							overflowY: 'auto',
@@ -89,16 +89,18 @@ export default function Modal(props: Props) {
 						...(!isCardOnMobile
 							? {
 									[theme.breakpoints.down('sm')]: {
-										border: 'none',
 										width: '100%!important',
 										maxWidth: 'unset!important',
 										maxHeight: `calc(100vh - ${theme.height.mobileHeader})`,
 										height: height || 'auto',
-										borderRadius: '12px',
+										borderRadius: '46px',
 										marginTop: theme.height.mobileHeader,
 										marginBottom: 0,
-										pb: '10px',
-										pt: '10px'
+										// border: 'none',
+										// boxShadow: 'none',
+										background: 'transparent',
+										mb: '50px'
+										// pt: '10px'
 									}
 							  }
 							: { [theme.breakpoints.down('sm')]: { margin: 0, pb: '20px', borderRadius: '0' } })
@@ -113,7 +115,7 @@ export default function Modal(props: Props) {
 					}
 				}}
 				onClose={hide}>
-				<Box width='100%' height='100%' position='relative' padding={padding || 0}>
+				<Box width='100%' height='100%' position='relative' padding={padding || 0} sx={{ overflowY: 'auto' }}>
 					{onBack && (
 						<BackBtn
 							onClick={onBack}
@@ -129,6 +131,8 @@ export default function Modal(props: Props) {
 							onClick={hide}
 							variant={closeVariant}
 							sx={{
+								'& svg': { fill: '#1c1c1c' },
+								zIndex: 2,
 								position: 'absolute',
 								top: {
 									xs: 20,

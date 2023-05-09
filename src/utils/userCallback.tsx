@@ -1,13 +1,25 @@
 import { Axios } from '@/utils/axios'
 
-export const editUserCallback = (arg: { bio: string; address: [number, number]; roomName: string }) => {
-	Axios.post('/user/edit', {
+export const editUserCallback = (arg: {
+	bio: string
+	address?: [number, number]
+	roomName: string
+	emailNotify?: boolean
+	showErc20?: boolean
+	showNft?: boolean
+}) => {
+	return Axios.post('/user/edit', {
 		avatar: '',
 		bio: arg.bio,
-		getEmailNotify: true,
-		roomAddr: arg.address.toString(),
+		getEmailNotify: !!arg.emailNotify,
 		roomName: arg.roomName,
-		showERC20: true,
-		showNFT: true
+		showERC20: !!arg.showErc20,
+		showNFT: !!arg.showNft,
+		...(arg.address
+			? {
+					x: arg.address[0],
+					y: arg.address[1]
+			  }
+			: {})
 	})
 }

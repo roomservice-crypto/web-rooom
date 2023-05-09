@@ -1,28 +1,21 @@
 import { Box } from '@mui/material'
 import { useEffect } from 'react'
 
-function TestFunction() {
-	window.location.href = 'http://localhost:8080?id=123&name=zhanghng'
-}
+const href = 'https://3d-rs.z-crypto.ml'
 
-function removeFunction() {
-	const el = document.getElementById('untiyweb')
-
-	if (!el) {
-		return
-	}
-	const w = el as HTMLIFrameElement
-	w?.contentWindow?.postMessage
-	w.contentWindow?.postMessage('主页面消息!!!', 'http://localhost:8080')
-}
-
-export default function Frame() {
+export default function Frame({ setSettingOpen }: { setSettingOpen: () => void }) {
 	useEffect(() => {
 		window.addEventListener(
 			'message',
 			function (event) {
-				if (event.origin === 'http://localhost:8080') {
-					alert(JSON.stringify(event.data))
+				if (event.origin !== href) return
+				var data = JSON.parse(event.data)
+				if (data) {
+					if (data.eventType == 'info') {
+						//TODO: pop up info modal
+					} else if (data.eventType == 'setting') {
+						setSettingOpen()
+					}
 				}
 			},
 			false
@@ -32,48 +25,23 @@ export default function Frame() {
 		if (!el) {
 			return
 		}
-
 		const w = el as HTMLIFrameElement
-		w?.contentWindow?.postMessage
 
-		// w?.contentWindow?.addEventListener(
-		// 	'message',
-		// 	function (event) {
-		// 		if (event.origin === 'http://localhost:9015') {
-		// 			alert(JSON.stringify(event.data))
-		// 		}
-		// 	},
-		// 	false
-		// )
+		var jsondata: any = { jwtToken: '', roomId: '', auth: 0 }
+		//roomId : id of room that will be visited
+		//auth : 0 = other， 1 = myRoom
+		//visitorName : when auth = 0时 need to display username for message board
 
-		w.contentWindow?.postMessage('main page', 'http://localhost:9015/')
-	}, [])
+		w.contentWindow?.postMessage(JSON.stringify(jsondata), '*')
+	}, [setSettingOpen])
 
 	return (
-		<Box>
-			<button id='aa' onClick={TestFunction}>
-				ClickMe{' '}
-			</button>
-			<button id='bb' onClick={removeFunction}>
-				RemoveMe{' '}
-			</button>
-
+		<Box width='100%' height='100%' pt='73px'>
 			<iframe
 				id='untiyweb'
-				src='http://localhost:8080/'
-				frameBorder='0'
-				scrolling='no'
-				style={{ marginLeft: 0, marginTop: 0, width: '1440px', height: 900 }}>
-				<a href='http://localhost:8080/'>你的浏览器不支持iframe页面嵌套，请点击这里访问页面内容。1</a>
-				<script></script>
-				<button
-					style={{ position: 'fixed', zIndex: 1000, top: 0, left: 0 }}
-					onClick={() => {
-						window.parent.postMessage('inside!!!!!', '*')
-						console.log(89898)
-					}}>
-					12323432534
-				</button>
+				src={href}
+				style={{ marginLeft: 0, marginTop: -0, width: '100%', height: '100%', overflow: 'hidden', border: 0 }}>
+				<a href={href}>Your browser doesnt support Iframe</a>
 			</iframe>
 		</Box>
 	)

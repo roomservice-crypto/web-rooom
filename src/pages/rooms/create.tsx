@@ -31,8 +31,9 @@ import useConnectors from '@/hooks/web3/useConnectors'
 import { Connector } from '@web3-react/types'
 import { useWeb3React } from '@web3-react/core'
 import { useSignIn } from '@/hooks/useSignIn'
-import SelectLocation from '@/components/map/SelectLocation'
+import SelectLocation from '@/components/Modal/SelectLocationModal'
 import { editUserCallback } from '@/utils/userCallback'
+import { useEditUserInfo, useUserInfo } from '@/hooks/useUserInfo'
 
 const NumberConnector = styled(StepConnector)(({ theme }) => ({
 	[`&.${stepConnectorClasses.vertical}`]: {
@@ -72,9 +73,6 @@ const NumberStepIconRoot = styled('div')<{
 export default function Create() {
 	const [open, setOpen] = useState(true)
 	const [mapOpen, setMapOpen] = useState(false)
-	const [address, setAddress] = useState<[number, number] | undefined>(undefined)
-	const [bio, setBio] = useState('')
-	const [roomName, setRoomName] = useState('')
 
 	const handleOpen = () => setOpen(true)
 	const handleClose = () => setOpen(false)
@@ -82,9 +80,11 @@ export default function Create() {
 	const [activeStep, setActiveStep] = useState(0)
 	const [completed, setCompleted] = useState(false)
 
+	const { address, setAddress, bio, setBio, roomName, setRoomName } = useEditUserInfo()
 	const router = useRouter()
 	const { account } = useWeb3React()
 	useSignIn()
+	const { info } = useUserInfo()
 	const connectors = useConnectors()
 	const onActivate = useCallback(async (connector: Connector) => {
 		try {
@@ -116,6 +116,12 @@ export default function Create() {
 		setActiveStep(0)
 	}
 
+	useEffect(() => {
+		if (info && info.roomName) {
+			router.push('/rooms/myroom')
+		}
+	}, [info, info?.roomName, router])
+
 	return (
 		<>
 			<Box
@@ -132,12 +138,13 @@ export default function Create() {
 					<Box
 						display='flex'
 						width='100%'
-						height='100%'
 						sx={{
+							maxHeight: '100%',
 							backgroundColor: '#F0F0F0',
 							justifyContent: 'flex-start',
 							border: '2px solid',
-							borderRadius: '34px'
+							borderRadius: '34px',
+							overflow: 'auto'
 						}}>
 						{!completed ? (
 							<Grid container>
@@ -283,6 +290,7 @@ export default function Create() {
 													Select room address
 												</Typography>
 												<TextField
+													disabled
 													value={address?.toString()}
 													InputProps={{
 														endAdornment: (
@@ -337,11 +345,10 @@ export default function Create() {
 								}}>
 								<Typography fontWeight={800} fontSize={24} paddingBottom={16}>
 									🎉
-								</Typography>{' '}
+								</Typography>
 								<Typography fontWeight={800} fontSize={24} paddingBottom={16}>
-									{' '}
 									Congratulations, the room was created successfully!
-								</Typography>{' '}
+								</Typography>
 								<Typography fontWeight={400} fontSize={16} color='#00000066'>
 									Next, you can choose to complete your information and let others know you, or you can decorate your
 									room first

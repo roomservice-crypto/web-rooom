@@ -1,10 +1,11 @@
 import mapboxgl from 'mapbox-gl'
-import Modal from '../Modal'
+import Modal from '.'
 import { Dispatch, useEffect, useRef, useState } from 'react'
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { Box } from '@mui/material'
+import { PrimaryButton } from '../Button'
 
 const PUBLIC_KEY = 'pk.eyJ1IjoieXlzdW5pIiwiYSI6ImNsYjRzcHE2MjA2MHYzcnBqMTA2NWI4YWoifQ.Wg2EqZN4qi-y6pdffqUPPw'
 mapboxgl.accessToken = PUBLIC_KEY
@@ -75,11 +76,29 @@ export default function SelectLocation({
 					setLocation(tempLocation)
 					onDismiss()
 				}}>
-				<Box ref={mapRef} height={600} width='100%' position='relative'></Box>
-				<Box position='absolute' sx={{ top: 0, left: 0, background: '#00000050', color: '#fff', padding: '10px 20px' }}>
-					LNG: {tempLocation[0]}
-					<br />
-					lAT: {tempLocation[1]}
+				<Box position='relative'>
+					<Box ref={mapRef} height={600} width='100%' position='relative'>
+						<Box
+							style={{ position: 'absolute', bottom: '10px', width: '90%', left: '5%', zIndex: 100 }}
+							className='rounded-[24px] bg-white'>
+							<PrimaryButton
+								bgClass='bg-[#ffffff]'
+								style={{ width: '100%' }}
+								onClick={() => {
+									setLocation(tempLocation)
+									onDismiss()
+								}}>
+								Save
+							</PrimaryButton>
+						</Box>
+					</Box>
+					<Box
+						position='absolute'
+						sx={{ top: 0, left: 0, background: '#00000050', color: '#fff', padding: '10px 20px' }}>
+						LNG: {tempLocation[0]}
+						<br />
+						lAT: {tempLocation[1]}
+					</Box>
 				</Box>
 			</Modal>
 		</>

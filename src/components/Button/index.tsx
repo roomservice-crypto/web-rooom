@@ -35,9 +35,9 @@ export function CloseIcon({
 
 	if (variant === 'plain') {
 		return (
-			<ButtonBase onClick={onClick} sx={{ position: 'absolute', ...sx }}>
+			<ButtonBase onClick={onClick} sx={{ position: 'absolute', ...sx }} disableRipple>
 				<MuiCloseIcon
-					sx={{ fontSize: 20, color: theme.palette.text.secondary, '&:hover': { color: theme.palette.text.primary } }}
+					sx={{ fontSize: 24, color: theme.palette.text.secondary, '&:hover': { color: theme.palette.text.primary } }}
 				/>
 			</ButtonBase>
 		)

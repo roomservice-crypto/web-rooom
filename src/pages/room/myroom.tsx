@@ -27,6 +27,8 @@ export default function MyRoom() {
 				backgroundSize: 'cover'
 			}}>
 			<Frame
+				roomId={info?.userId}
+				userId={info?.userId}
 				setSettingOpen={() => {
 					setSettingOpen(true)
 				}}

@@ -45,6 +45,7 @@ export function CloseIcon({
 
 	return (
 		<IconButton
+			className='mt-1 flex h-[40px] w-[40px] items-center justify-center rounded-3xl border-2 border-[#1c1c1c] font-[500] shadow-[0_2px_#141414]'
 			onClick={onClick}
 			sx={{
 				padding: 0,

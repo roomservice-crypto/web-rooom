@@ -1,9 +1,22 @@
+import { useSignInToken } from '@/hooks/useSignIn'
 import { Box } from '@mui/material'
+import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
 const href = 'https://3d-rs.z-crypto.ml'
 
-export default function Frame({ setSettingOpen }: { setSettingOpen: () => void }) {
+export default function Frame({
+	setSettingOpen,
+	roomId,
+	userId
+}: {
+	setSettingOpen: () => void
+	roomId?: number
+	userId?: number
+}) {
+	const { token } = useSignInToken()
+	const router = useRouter()
+
 	useEffect(() => {
 		window.addEventListener(
 			'message',
@@ -15,25 +28,35 @@ export default function Frame({ setSettingOpen }: { setSettingOpen: () => void }
 						//TODO: pop up info modal
 					} else if (data.eventType == 'setting') {
 						setSettingOpen()
+					} else if (data.eventType == 'nft') {
+						//TODO: pop up nft modal
+					} else if (data.eventType == 'visitroom') {
+						router.push('/room/' + data.roomId)
 					}
 				}
 			},
 			false
 		)
+	}, [router, setSettingOpen])
 
+	useEffect(() => {
 		const el = document.getElementById('untiyweb')
-		if (!el) {
+		console.log(68686, roomId, userId)
+		if (!el || !roomId || !userId) {
 			return
 		}
 		const w = el as HTMLIFrameElement
 
-		var jsondata: any = { jwtToken: '', roomId: '', auth: 0 }
-		//roomId : id of room that will be visited
-		//auth : 0 = other， 1 = myRoom
-		//visitorName : when auth = 0时 need to display username for message board
+		var jsondata: any = {
+			jwtToken: token, //
+			roomId: roomId, //id of room that will be visited
+			roomUserId: roomId, //id of user of the room that will be visited
+			selfUserId: userId //id of visiter when roomUserId==selfUserId means visiting your own room
+		}
 
 		w.contentWindow?.postMessage(JSON.stringify(jsondata), '*')
-	}, [setSettingOpen])
+		console.log(`111`, JSON.stringify(jsondata))
+	}, [roomId, token, userId])
 
 	return (
 		<Box width='100%' height='100%' pt='73px'>

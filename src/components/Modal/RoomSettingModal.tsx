@@ -59,7 +59,7 @@ export default function RoomSettingModal({ isOpen, onDismiss }: { isOpen: boolea
 						borderRadius: '34px'
 					}}>
 					<Grid container height='100%' overflow={'hidden'}>
-						<Grid item xs={12} md={4} sx={{ height: { xs: '60px', md: 'auto' } }}>
+						<Grid item xs={12} md={4} sx={{ height: { xs: '80px', md: 'auto' } }}>
 							<Box
 								sx={{
 									height: '100%',
@@ -78,7 +78,7 @@ export default function RoomSettingModal({ isOpen, onDismiss }: { isOpen: boolea
 								</SettingsTabs>
 							</Box>
 						</Grid>
-						<Grid item xs={12} md={8} overflow={'hidden'} sx={{ height: { xs: 'calc(100% - 60px)', md: '100%' } }}>
+						<Grid item xs={12} md={8} overflow={'hidden'} sx={{ height: { xs: 'calc(100% - 80px)', md: '100%' } }}>
 							<Box
 								padding='20px'
 								height='100%'
@@ -88,11 +88,7 @@ export default function RoomSettingModal({ isOpen, onDismiss }: { isOpen: boolea
 										display: 'none'
 									}
 								}}>
-								<TabPanel value={value} index={0}>
-									<Typography fontSize={24} fontWeight={600}>
-										ACCOUNT
-									</Typography>
-									<Divider sx={{ margin: '24px 0px 24px 0px', border: '2px dashed #1C1C1C' }} />
+								<TabPanel value={value} index={0} label='ACCOUNT'>
 									<FormControl fullWidth>
 										<Typography fontWeight={500} fontSize={16} paddingBottom={8}>
 											Room name
@@ -165,18 +161,10 @@ export default function RoomSettingModal({ isOpen, onDismiss }: { isOpen: boolea
 										Save
 									</PrimaryButton>
 								</TabPanel>
-								<TabPanel value={value} index={1}>
-									<Typography fontSize={24} fontWeight={600} padding={24}>
-										ASSETS
-									</Typography>
-									<Divider sx={{ margin: '24px', border: '2px dashed #1C1C1C' }} />{' '}
+								<TabPanel value={value} index={1} label='ASSETS'>
+									<Box></Box>
 								</TabPanel>
-								<TabPanel value={value} index={2}>
-									<Typography fontSize={24} fontWeight={600} padding={24}>
-										SOCIAL
-									</Typography>
-									<Divider sx={{ margin: '24px', border: '2px dashed #1C1C1C' }} />{' '}
-								</TabPanel>
+								<TabPanel value={value} index={2} label={'SOCIAL'}></TabPanel>
 							</Box>
 						</Grid>
 					</Grid>

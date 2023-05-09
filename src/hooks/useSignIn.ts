@@ -52,3 +52,20 @@ export function useSignIn() {
 
   return {token,signIn}
 }
+
+
+export function useSignInToken() {
+  const { account } = useWeb3React()
+
+  const token = useMemo(() => {
+ 
+    if(!account) return null
+    const storedToken = getCookie(API_TOKEN + account)
+    if (storedToken) {
+      return storedToken
+    } 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [account])
+
+  return {token}
+}

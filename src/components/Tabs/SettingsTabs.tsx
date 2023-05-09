@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Tab, Tabs, Typography, styled } from '@mui/material'
+import { Box, Divider, Tab, Tabs, Typography, styled } from '@mui/material'
 
 interface StyledTabProps {
 	label: string
@@ -57,8 +57,8 @@ interface TabPanelProps {
 	value: number
 }
 
-export function TabPanel(props: TabPanelProps) {
-	const { children, value, index, ...other } = props
+export function TabPanel(props: TabPanelProps & { label: string }) {
+	const { children, value, index, label, ...other } = props
 
 	return (
 		<div
@@ -68,8 +68,12 @@ export function TabPanel(props: TabPanelProps) {
 			aria-labelledby={`simple-tab-${index}`}
 			{...other}>
 			{value === index && (
-				<Box sx={{ p: 3 }}>
-					<Typography>{children}</Typography>
+				<Box sx={{ p: '20px 10px' }}>
+					<Typography fontSize={20} fontWeight={600}>
+						{label}
+					</Typography>
+					<Divider sx={{ margin: '20px 0px 28px', border: '1px dashed #1C1C1C50' }} />
+					<Typography component={'div'}>{children}</Typography>
 				</Box>
 			)}
 		</div>

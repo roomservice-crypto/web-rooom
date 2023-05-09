@@ -118,7 +118,7 @@ export default function Create() {
 
 	useEffect(() => {
 		if (info && info.roomName) {
-			router.push('/rooms/myroom')
+			router.push('/room/myroom')
 		}
 	}, [info, info?.roomName, router])
 
@@ -354,7 +354,7 @@ export default function Create() {
 									room first
 								</Typography>
 								<PrimaryButton
-									onClick={() => router.push('/rooms/myroom')}
+									onClick={() => router.push('/room/myroom')}
 									bgClass='bg-[transparent]'
 									style={{ marginTop: '24px', marginBottom: '16px' }}
 									variant='outlined'>

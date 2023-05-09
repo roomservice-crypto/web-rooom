@@ -23,7 +23,7 @@ export default function CreateButton() {
 				<Box display={'flex'} gap={10} alignItems={'center'}>
 					{chainId && ALL_SUPPORTED_CHAIN_IDS.includes(chainId) ? (
 						<button
-							className='mt-1 flex h-[40px] w-[40px] items-center justify-center rounded-3xl border-2 border-[#1c1c1c] font-[500] shadow-[0_2px_#141414] '
+							className='mt-1 flex h-[40px] w-[40px] items-center justify-center rounded-3xl border-2 border-[#1c1c1c] font-[500] shadow-[0_2px_#141414]'
 							disabled>
 							<ETH />
 						</button>

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import HeaderBar from '@/components/map/HeaderBar'
+import HeaderBar, { HeaderBarState } from '@/components/map/HeaderBar'
 import { Box } from '@mui/material'
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
@@ -20,11 +20,11 @@ export default function MyRoom() {
 	return (
 		<Box
 			sx={{
-				height: '100vh',
-				backgroundImage: `url(${'/assets/backgroundroom.png'})`,
-				backgroundPosition: 'center',
-				backgroundRepeat: 'no-repeat',
-				backgroundSize: 'cover'
+				height: '100vh'
+				// backgroundImage: `url(${'/assets/backgroundroom.png'})`,
+				// backgroundPosition: 'center',
+				// backgroundRepeat: 'no-repeat',
+				// backgroundSize: 'cover'
 			}}>
 			<Frame
 				roomId={info?.userId}
@@ -33,7 +33,7 @@ export default function MyRoom() {
 					setSettingOpen(true)
 				}}
 			/>
-			<HeaderBar ready={true} setRoom={() => 0} />
+			<HeaderBar ready={true} setRoom={() => 0} state={HeaderBarState.myRoom} />
 			<RoomSettingModal
 				isOpen={settingOpen}
 				onDismiss={() => {

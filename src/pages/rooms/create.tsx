@@ -1,5 +1,5 @@
 import Modal from '@/components/Modal'
-import HeaderBar from '@/components/map/HeaderBar'
+import HeaderBar, { HeaderBarState } from '@/components/map/HeaderBar'
 import {
 	Box,
 	Button,
@@ -132,7 +132,7 @@ export default function Create() {
 					backgroundRepeat: 'no-repeat',
 					backgroundSize: 'cover'
 				}}>
-				<HeaderBar ready={true} setRoom={() => {}} />
+				<HeaderBar ready={true} setRoom={() => {}} state={HeaderBarState.mapView} />
 
 				<Modal maxWidth='724px' customIsOpen={open} borderRadius='46px'>
 					<Box

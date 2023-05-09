@@ -10,12 +10,16 @@ import { Error } from '@mui/icons-material'
 import useModal from '@/hooks/useModal'
 import Modal from '../Modal'
 import { SupportedChainId } from '@/constants/chains'
+import useBreakpoint from '@/hooks/useBreakpoint'
+import { UserInfo } from '@/hooks/useUserInfo'
 
-export default function CreateButton() {
+export default function CreateButton({ info }: { info: UserInfo }) {
 	const router = useRouter()
 	const { account, chainId, provider, connector } = useWeb3React()
 
 	const { showModal, hideModal } = useModal()
+
+	const isDownMd = useBreakpoint('md')
 
 	return (
 		<>
@@ -60,15 +64,32 @@ export default function CreateButton() {
 							display: 'flex',
 							gap: 10,
 							alignItems: 'center',
-							height: '30px',
 							borderRadius: '50px',
 							fontWeight: 300,
 							fontSize: 14,
-							padding: '20px 10px'
+							padding: isDownMd ? '10px 0' : '20px 10px',
+							...(isDownMd
+								? {
+										width: 40,
+										height: 40,
+										marginTop: 4
+								  }
+								: {
+										height: '30px'
+								  })
 						}}
 						bgClass={'bg-[transparent]'}>
-						<Box height='32px' width='32px' sx={{ background: '#cccccc', borderRadius: 5 }}></Box>
-						{account?.substring(0, 6)}...{account?.substring(account?.length - 4)}
+						{!isDownMd && (
+							<>
+								{!!info?.avatar && (
+									<Box
+										height='32px'
+										width='32px'
+										sx={{ borderRadius: 5, background: `#cccccc url(${info.avatar})` }}></Box>
+								)}
+								{account?.substring(0, 6)}...{account?.substring(account?.length - 4)}
+							</>
+						)}
 						<Logout className='ml-2' />
 					</PrimaryButton>
 				</Box>

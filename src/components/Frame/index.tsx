@@ -41,7 +41,6 @@ export default function Frame({
 
 	useEffect(() => {
 		const el = document.getElementById('untiyweb')
-		console.log(68686, roomId, userId)
 		if (!el || !roomId || !userId) {
 			return
 		}
@@ -55,14 +54,13 @@ export default function Frame({
 		}
 
 		w.contentWindow?.postMessage(JSON.stringify(jsondata), '*')
-		console.log(`111`, JSON.stringify(jsondata))
 	}, [roomId, token, userId])
 
 	return (
-		<Box width='100%' height='100%' pt='73px'>
+		<Box width='100%' height='100%' pt='72px'>
 			<iframe
 				id='untiyweb'
-				src={href}
+				src={roomId ? `${href}?id=${roomId}` + roomId : href}
 				style={{ marginLeft: 0, marginTop: -0, width: '100%', height: '100%', overflow: 'hidden', border: 0 }}>
 				<a href={href}>Your browser doesnt support Iframe</a>
 			</iframe>

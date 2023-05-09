@@ -8,8 +8,8 @@ import ToolLayer from '@/components/map/ToolLayer'
 import { ALL } from '@/constants'
 import { getRooms } from '@/utils/storage'
 import { useRouter } from 'next/router'
-import HeaderBar from '@/components/map/HeaderBar'
-import RoomLayer from '@/components/map/RoomLayer'
+import HeaderBar, { HeaderBarState } from '@/components/map/HeaderBar'
+import { Room } from '@/hooks/useGetRooms'
 
 const PUBLIC_KEY = 'pk.eyJ1IjoieXlzdW5pIiwiYSI6ImNsYjRzcHE2MjA2MHYzcnBqMTA2NWI4YWoifQ.Wg2EqZN4qi-y6pdffqUPPw'
 mapboxgl.accessToken = PUBLIC_KEY
@@ -17,7 +17,7 @@ mapboxgl.accessToken = PUBLIC_KEY
 export default function Map() {
 	const [isBrowser, setIsBrower] = useState(false)
 	const [map, setMap] = useState<mapboxgl.Map | null>(null)
-	const [room, setRoom] = useState<null | any>(null)
+	const [room, setRoom] = useState<null | Room>(null)
 	const [ready, setReady] = useState(false)
 	const [filter, setFilter] = useState(ALL)
 	const [isMobile, setIsMobile] = useState(false)
@@ -40,16 +40,16 @@ export default function Map() {
 	}, [])
 
 	// listen to the filter to change the applicable room
-	useEffect(() => {
-		if (filter !== ALL && room && room.type !== filter) {
-			const applicableRoom = rooms.find(r => r.type === filter)
-			setRoom(applicableRoom || null)
-		}
-	}, [filter, room, rooms])
+	// useEffect(() => {
+	// 	if (filter !== ALL && room && room.type !== filter) {
+	// 		const applicableRoom = rooms.find(r => r.type === filter)
+	// 		setRoom(applicableRoom || null)
+	// 	}
+	// }, [filter, room, rooms])
 
 	useEffect(() => {
 		if (room) {
-			const url = router.pathname + '?room=' + encodeURIComponent(room.name)
+			const url = router.pathname + '?room=' + encodeURIComponent(room.userId)
 			history.pushState({ path: url }, '', url)
 		}
 	}, [room, router.pathname])
@@ -57,9 +57,9 @@ export default function Map() {
 	if (isBrowser)
 		return (
 			<>
-				<BaseLayer filter={filter} setMap={setMap} setRoom={setRoom} room={room} setReady={setReady} />
+				<BaseLayer filter={filter} setMap={setMap} setRoom={setRoom} room={room} setReady={setReady} map={map} />
 				<CardLayer isMobile={isMobile} room={room} setRoom={setRoom} map={map} />
-				<HeaderBar ready={ready} setRoom={setRoom} />
+				<HeaderBar ready={ready} setRoom={setRoom} state={HeaderBarState.mapView} />
 				<ToolLayer
 					isMobile={isMobile}
 					room={room}

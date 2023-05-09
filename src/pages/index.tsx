@@ -31,7 +31,7 @@ export default function Home() {
 					</h1>
 
 					<button
-						onClick={() => router.push('/demo')}
+						onClick={() => router.push('/map')}
 						className='button mx-auto mt-8 mobile:mt-6 mobile:w-full  mobile:justify-center '>
 						<span>Explore Demo</span>
 

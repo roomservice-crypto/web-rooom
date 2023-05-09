@@ -10,10 +10,15 @@ export default function LoactionIcon(props: { id: number; selected: any; filter:
 	const rooms = getRooms()
 
 	const active = id == selected?._id
-	const display = filter === ALL || filter === rooms[id].type ? true : false
+	// const display = filter === ALL || filter === rooms[id].type ? true : false
 
 	return (
-		<div className={clsx('group relative flex cursor-pointer justify-center', !display && 'hidden')} data-id={props.id}>
+		<div
+			className={clsx(
+				'group relative flex cursor-pointer justify-center'
+				// !display && 'hidden'
+			)}
+			data-id={props.id}>
 			<div
 				className={clsx(
 					'absolute bottom-[88px] rounded-xl bg-dark px-4 py-[10px] text-center text-white group-hover:block',
@@ -65,13 +70,13 @@ export default function LoactionIcon(props: { id: number; selected: any; filter:
 				/>
 			</svg>
 
-			<div
+			{/* <div
 				className={clsx(
 					'pointer-events-none absolute bottom-[14px] ml-8 transition-opacity group-hover:opacity-100',
 					active ? 'opacity-100' : 'opacity-0'
 				)}>
 				<TypeIcon type={rooms[id].type} className='h-6 w-6' />
-			</div>
+			</div> */}
 		</div>
 	)
 }

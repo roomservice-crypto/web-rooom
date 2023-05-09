@@ -3,17 +3,33 @@ import clsx from 'clsx'
 
 import Image from 'next/image'
 import LogoText from '@/svgs/logo-text.svg'
-import { Dispatch } from 'react'
-import { useState } from 'react'
-import { Switch } from '@headlessui/react'
+import { Dispatch, useMemo } from 'react'
 import Map from '@/svgs/map.svg'
 import Room from '@/svgs/room.svg'
+import MyRoom from '@/svgs/myRoom.svg'
 import CreateButton from '../Button/CreateButton'
+import { useSignInToken } from '@/hooks/useSignIn'
+import { Box } from '@mui/material'
+import useBreakpoint from '@/hooks/useBreakpoint'
+import { useRouter } from 'next/router'
+import { useUserInfo } from '@/hooks/useUserInfo'
+import Logo from '@/svgs/animated-logo.svg'
 
 export enum HeaderBarState {
 	mapView,
 	roomView,
 	myRoom
+}
+
+const toggleData = {
+	xs: { [HeaderBarState.mapView]: 0, [HeaderBarState.roomView]: 45, [HeaderBarState.myRoom]: 92 },
+	md: { [HeaderBarState.mapView]: 0, [HeaderBarState.roomView]: 136, [HeaderBarState.myRoom]: 272 },
+	fullLength: 260,
+	fullLengthMyRoom: 420,
+	fullLengthMobile: 100,
+	fullLengthMyRoomMobile: 150,
+	buttonLength: 140,
+	buttonLengthMobile: 50
 }
 
 export default function HeaderBar({
@@ -23,57 +39,137 @@ export default function HeaderBar({
 }: {
 	ready: boolean
 	setRoom: Dispatch<string | null>
-	state?: HeaderBarState
+	state: HeaderBarState
 }) {
+	useSignInToken()
+	const { info, loading } = useUserInfo()
+	const router = useRouter()
+
 	return (
-		// <Transition appear show={ready}>
-		<header
-			className={clsx(
-				'fixed top-0 z-50 flex h-[72px] w-[100%] items-center justify-between border-b border-dark bg-white px-20 mobile:h-[72px] mobile:px-4'
-			)}>
-			<button
-				className='flex w-[150px] items-center'
-				onClick={() => {
-					setRoom(null)
-				}}>
-				<Image src='/logo.svg' width='36px' height='36px' />
-				<LogoText className='ml-[10px] mt-1' />
-			</button>
-			<Toggle myRoom={false} />
-			<CreateButton />
-		</header>
-		// </Transition>
+		<>
+			{loading && !router.pathname.includes('/map') && (
+				<Box
+					sx={{
+						width: '100vw',
+						height: '100vh',
+						background: '#ffffff',
+						zIndex: 1000,
+						position: 'fixed',
+						fontSize: 50,
+						top: 0,
+						left: 0,
+						display: 'flex'
+					}}>
+					<Logo style={{ width: '80%', margin: 'auto', maxWidth: 300 }} />
+				</Box>
+			)}
+			{/* <Transition appear show={ready}> */}
+			<header
+				className={clsx(
+					'fixed top-0 z-50 flex h-[72px] w-[100%] items-center justify-between border-b border-dark bg-white px-20 mobile:h-[72px] mobile:px-4'
+				)}>
+				<button
+					className='flex w-[150px] items-center'
+					onClick={() => {
+						setRoom(null)
+					}}>
+					<Image src='/logo.svg' width='36px' height='36px' />
+					<LogoText className='ml-[10px] mt-1' />
+				</button>
+				<Toggle state={state} myRoom={!!info} />
+				<CreateButton info={info} />
+			</header>
+			{/* </Transition> */}
+		</>
 	)
 }
 
-function Toggle({ myRoom }: { myRoom: boolean }) {
-	const [enabled, setEnabled] = useState(false)
+function Toggle({ state, myRoom }: { state: HeaderBarState; myRoom: boolean }) {
+	const isDownMd = useBreakpoint('md')
+	const router = useRouter()
 
 	return (
-		<Switch
-			checked={enabled}
-			onChange={setEnabled}
-			className={`relative relative inline-flex h-[48px] w-[300px] items-center justify-between rounded-full border-2 border-dark px-[2px] py-2`}>
-			<span
-				className={`${
+		<>
+			<Box
+				width={
+					myRoom
+						? isDownMd
+							? toggleData.fullLengthMyRoomMobile
+							: toggleData.fullLengthMyRoom
+						: isDownMd
+						? toggleData.buttonLengthMobile
+						: toggleData.fullLength
+				}
+				className={`relative relative inline-flex h-[48px] items-center justify-between rounded-full border-2 border-dark px-[2px] py-2`}
+				sx={{
+					'& button': {
+						whiteSpace: 'nowrap'
+					}
+				}}>
+				<Box
+					component={'span'}
+					className={`absolute inline-block h-[41px] rounded-[42px] bg-black transition`}
+					width={isDownMd ? toggleData.buttonLengthMobile : toggleData.buttonLength}
+					style={{
+						transform: `translateX(${toggleData[isDownMd ? 'xs' : 'md'][state]}px)`
+					}}
+				/>
+				{/* ${
 					enabled ? 'translate-x-[142px]' : 'translate-x-[0px]'
-				} absolute inline-block h-[41px] w-[150px] transform rounded-[42px] bg-black transition`}
-			/>
-			<span className={clsx('z-[2] flex items-center gap-2 pl-4', !enabled && 'text-white')}>
-				<Map />
-				Map view
-			</span>
+				} */}
+				<button
+					className={clsx('z-[2] flex items-center gap-2 pl-4', state === HeaderBarState.mapView && 'text-white')}
+					onClick={() => {
+						router.push('/map')
+					}}>
+					<Map />
+					{!isDownMd && <>Map view</>}
+				</button>
 
-			<span className={clsx('z-[2] flex items-center gap-2 pr-4', enabled && 'text-white')}>
-				<Room />
-				Room view
-			</span>
-			{myRoom && (
-				<span className={clsx('z-[2] flex items-center gap-2 pr-4', enabled && 'text-white')}>
+				<button
+					className={clsx('z-[2] flex items-center gap-2 px-4', state === HeaderBarState.roomView && 'text-white')}
+					onClick={() => {
+						router.push('/rooms')
+					}}>
 					<Room />
-					Room view
-				</span>
-			)}
-		</Switch>
+					{!isDownMd && <>Room view</>}
+				</button>
+				{myRoom && (
+					<button
+						className={clsx('z-[2] flex items-center gap-2 pr-4', state === HeaderBarState.myRoom && 'text-white')}
+						onClick={() => {
+							router.push('/room/myroom')
+						}}>
+						<MyRoom />
+						{!isDownMd && <>My Room</>}
+					</button>
+				)}
+			</Box>
+		</>
+		// <Switch
+		// 	checked={enabled}
+		// 	onChange={setEnabled}
+		// 	className={`relative relative inline-flex h-[48px] w-[300px] items-center justify-between rounded-full border-2 border-dark px-[2px] py-2`}>
+		// 	<span
+		// 		className={`${
+		// 			enabled ? 'translate-x-[142px]' : 'translate-x-[0px]'
+		// 		} absolute inline-block h-[41px] w-[150px] transform rounded-[42px] bg-black transition`}
+		// 	/>
+		// 	<span className={clsx('z-[2] flex items-center gap-2 pl-4', !enabled && 'text-white')}>
+		// 		<Map />
+		// 		Map view
+		// 	</span>
+
+		// 	<span className={clsx('z-[2] flex items-center gap-2 pr-4', enabled && 'text-white')}>
+		// 		<Room />
+		// 		Room view
+		// 	</span>
+		// 	{myRoom && (
+		// 		<span className={clsx('z-[2] flex items-center gap-2 pr-4', enabled && 'text-white')}>
+		// 			<Room />
+		// 			Room view
+		// 		</span>
+		// 	)}
+		// </Switch>
 	)
 }

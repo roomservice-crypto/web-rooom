@@ -67,9 +67,9 @@ export default function CardLayer(props: {
 								</div>
 
 								{/* state */}
-								<button className='mt-4 flex items-center gap-x-2 rounded-[34px] border-2 border-dashed border-[#1c1c1c] py-[6px] px-3 text-sm'>
+								{/* <button className='mt-4 flex items-center gap-x-2 rounded-[34px] border-2 border-dashed border-[#1c1c1c] py-[6px] px-3 text-sm'>
 									<StateIcon type={room.type} className='h-4 w-4' /> {typeWords(room.type)}
-								</button>
+								</button> */}
 
 								{/* following & likes */}
 								<div className='mt-4 text-sm font-normal text-black text-opacity-40'>
@@ -130,9 +130,9 @@ export default function CardLayer(props: {
 							</div>
 
 							{/* state */}
-							<button className='mt-4 flex items-center gap-x-2 rounded-[34px] border-2 border-dashed border-[#1c1c1c] py-3 px-6'>
+							{/* <button className='mt-4 flex items-center gap-x-2 rounded-[34px] border-2 border-dashed border-[#1c1c1c] py-3 px-6'>
 								<StateIcon type={room.type} className='h-5 w-5' /> {typeWords(room.type)}
-							</button>
+							</button> */}
 
 							{/* following & likes */}
 							<div className='mt-4 text-sm font-normal text-black text-opacity-40'>
@@ -168,7 +168,7 @@ export default function CardLayer(props: {
 									</button>
 								)}
 								<button
-									onClick={() => router.push(`/room/${room.address}`)}
+									onClick={() => router.push(`/room/${room.userId}`)}
 									className='ml-3 flex flex-1 items-center justify-center gap-x-4 rounded-[24px] border-2 border-[#1c1c1c] bg-white py-6 px-6 text-center text-xl font-semibold leading-[26px] shadow-[0_4px_#141414] transition-all hover:bg-black hover:bg-opacity-10 hover:shadow-none'>
 									Explore room <ArrowRight />
 								</button>

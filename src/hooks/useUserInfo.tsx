@@ -21,25 +21,33 @@ export interface UserInfo {
 }
 
 export function useUserInfo(refresh?: number) {
+	const [loading, setLoading] = useState<undefined | boolean>(undefined)
 	const [info, setInfo] = useState<undefined | UserInfo>(undefined)
 	const { account } = useWeb3React()
 
 	useEffect(() => {
 		if (!account) return
+		setLoading(true)
 		Axios.get<ResponseType<UserInfo>>('/user/info', { account })
 			.then(r => {
 				if (r.data.code === 200) {
 					setInfo(r.data.data)
 				}
+				setTimeout(() => {
+					setLoading(false)
+				}, 1500)
 			})
 			.catch(e => {
 				console.error(e)
+				setTimeout(() => {
+					setLoading(false)
+				}, 1500)
 			})
 
 		// Axios.get()
 	}, [account, refresh])
 
-	return { info }
+	return { info, loading }
 }
 
 export function useEditUserInfo() {

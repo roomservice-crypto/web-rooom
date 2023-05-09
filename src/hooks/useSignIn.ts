@@ -62,6 +62,7 @@ export function useSignInToken() {
     if(!account) return null
     const storedToken = getCookie(API_TOKEN + account)
     if (storedToken) {
+      axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`
       return storedToken
     } 
     // eslint-disable-next-line react-hooks/exhaustive-deps

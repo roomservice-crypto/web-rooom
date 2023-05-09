@@ -8,7 +8,6 @@ import { MulticallUpdater } from '@/state/multicall'
 import { BlockNumberProvider } from '@/hooks/useBlockNumber'
 import { ModalProvider } from '@/context/ModalContext'
 import { ThemeProvider } from '@/theme'
-import HeaderBar from '@/components/map/HeaderBar'
 
 function App({ Component, pageProps }: AppProps) {
 	return (

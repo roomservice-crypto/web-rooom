@@ -59,7 +59,7 @@ export default function SectionValues() {
 						Create, customize and take ownership of your own free web3 space today!
 					</h3>
 
-					<button onClick={() => router.push('/demo')} className='button mt-16 mobile:mt-8'>
+					<button onClick={() => router.push('/map')} className='button mt-16 mobile:mt-8'>
 						<span>Explore Demo</span>
 
 						<ArrowRight />

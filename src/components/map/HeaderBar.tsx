@@ -24,7 +24,7 @@ export enum HeaderBarState {
 const toggleData = {
 	xs: { [HeaderBarState.mapView]: 0, [HeaderBarState.roomView]: 45, [HeaderBarState.myRoom]: 92 },
 	md: { [HeaderBarState.mapView]: 0, [HeaderBarState.roomView]: 136, [HeaderBarState.myRoom]: 272 },
-	fullLength: 260,
+	fullLength: 284,
 	fullLengthMyRoom: 420,
 	fullLengthMobile: 100,
 	fullLengthMyRoomMobile: 150,

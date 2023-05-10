@@ -26,7 +26,10 @@ export function useUserInfo(refresh?: number) {
 	const { account } = useWeb3React()
 
 	useEffect(() => {
-		if (!account) return
+		if (!account) {
+			setInfo(undefined)
+			return
+		}
 		setLoading(true)
 		Axios.get<ResponseType<UserInfo>>('/user/info', { account })
 			.then(r => {

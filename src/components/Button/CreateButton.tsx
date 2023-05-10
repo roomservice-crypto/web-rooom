@@ -13,7 +13,7 @@ import { SupportedChainId } from '@/constants/chains'
 import useBreakpoint from '@/hooks/useBreakpoint'
 import { UserInfo } from '@/hooks/useUserInfo'
 
-export default function CreateButton({ info }: { info: UserInfo }) {
+export default function CreateButton({ info }: { info: UserInfo | undefined }) {
 	const router = useRouter()
 	const { account, chainId, provider, connector } = useWeb3React()
 

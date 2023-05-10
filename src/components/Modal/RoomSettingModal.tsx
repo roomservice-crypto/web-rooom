@@ -54,9 +54,7 @@ export default function RoomSettingModal({ isOpen, onDismiss }: { isOpen: boolea
 					height='100%'
 					sx={{
 						backgroundColor: '#F0F0F0',
-						justifyContent: 'flex-start',
-						border: '2px solid',
-						borderRadius: '34px'
+						justifyContent: 'flex-start'
 					}}>
 					<Grid container height='100%' overflow={'hidden'}>
 						<Grid item xs={12} md={4} sx={{ height: { xs: '80px', md: 'auto' } }}>

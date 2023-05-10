@@ -45,7 +45,7 @@ export function CloseIcon({
 
 	return (
 		<IconButton
-			className='mt-1 flex h-[40px] w-[40px] items-center justify-center rounded-3xl border-2 border-[#1c1c1c] font-[500] shadow-[0_2px_#141414]'
+			className='mt-1 flex h-[40px] w-[40px] items-center justify-center rounded-3xl border-2 border-[#1c1c1c] bg-white font-[500] shadow-[0_2px_#141414]'
 			onClick={onClick}
 			sx={{
 				padding: 0,
@@ -56,7 +56,9 @@ export function CloseIcon({
 				height: { xs: 32, md: 52 },
 				border: '1px solid transparent',
 				'&:hover': {
-					borderColor: '#000000'
+					borderColor: '#000000',
+					backgroundColor: '#eeeeee',
+					boxShadow: 'none'
 				},
 				...sx
 			}}>
@@ -79,5 +81,37 @@ export function PrimaryButton(
 			)}>
 			{children}
 		</button>
+	)
+}
+
+export function CircleButton({
+	onClick,
+	sx,
+	children
+}: {
+	onClick?: () => void
+	sx?: SxProps
+	children?: React.ReactNode
+}) {
+	return (
+		<IconButton
+			className='mt-1 flex items-center justify-center rounded-3xl border-2 border-[#1c1c1c] bg-white font-[500] shadow-[0_2px_#141414]'
+			onClick={onClick}
+			sx={{
+				padding: 0,
+				position: 'absolute',
+				borderRadius: '8px',
+				width: { xs: 32, md: 52 },
+				height: { xs: 32, md: 52 },
+				border: '1px solid transparent',
+				'&:hover': {
+					borderColor: '#000000',
+					backgroundColor: '#eeeeee',
+					boxShadow: 'none'
+				},
+				...sx
+			}}>
+			{children}
+		</IconButton>
 	)
 }

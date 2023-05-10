@@ -8,6 +8,7 @@ import { useSignIn } from '@/hooks/useSignIn'
 import RoomSettingModal from '@/components/Modal/RoomSettingModal'
 import { useWeb3React } from '@web3-react/core'
 import { useRouter } from 'next/router'
+import ProfileModal from '@/components/Modal/ProfileModal'
 
 const Frame = dynamic(() => import('../../components/Frame'), {
 	ssr: false
@@ -16,6 +17,7 @@ const Frame = dynamic(() => import('../../components/Frame'), {
 export default function MyRoom() {
 	const { account } = useWeb3React()
 	const [settingOpen, setSettingOpen] = useState(false)
+	const [profileOpen, setProfileOpen] = useState(false)
 
 	const { info } = useUserInfo()
 	const router = useRouter()
@@ -42,12 +44,22 @@ export default function MyRoom() {
 				setSettingOpen={() => {
 					setSettingOpen(true)
 				}}
+				setProfileOpen={() => {
+					setProfileOpen(true)
+				}}
 			/>
 			<HeaderBar ready={true} setRoom={() => 0} state={HeaderBarState.myRoom} />
 			<RoomSettingModal
 				isOpen={settingOpen}
 				onDismiss={() => {
 					setSettingOpen(false)
+				}}
+			/>
+			<ProfileModal
+				info={info}
+				isOpen={profileOpen}
+				onDismiss={() => {
+					setProfileOpen(false)
 				}}
 			/>
 		</Box>

@@ -7,9 +7,11 @@ const href = 'https://3d-rs.z-crypto.ml'
 
 export default function Frame({
 	setSettingOpen,
+	setProfileOpen,
 	roomId,
 	userId
 }: {
+	setProfileOpen: () => void
 	setSettingOpen: () => void
 	roomId?: number
 	userId?: number
@@ -40,7 +42,7 @@ export default function Frame({
 			var data = JSON.parse(event.data)
 			if (data) {
 				if (data.eventType == 'info') {
-					//TODO: pop up info modal
+					setProfileOpen()
 				} else if (data.eventType == 'setting') {
 					setSettingOpen()
 				} else if (data.eventType == 'nft') {

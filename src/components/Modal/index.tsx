@@ -63,6 +63,7 @@ export default function Modal(props: Props) {
 					'& .MuiDialog-container ': {
 						alignItems: { xs: !isCardOnMobile ? 'flex-end' : 'center', sm: 'center' }
 					},
+
 					margin: '0 16px'
 				}}
 				TransitionComponent={Transition}
@@ -115,7 +116,12 @@ export default function Modal(props: Props) {
 					}
 				}}
 				onClose={hide}>
-				<Box width='100%' height='100%' position='relative' padding={padding || 0} sx={{ overflowY: 'auto' }}>
+				<Box
+					width='100%'
+					height='100%'
+					position='relative'
+					padding={padding || 0}
+					sx={{ overflowY: 'auto', border: '2px solid', borderRadius: '34px' }}>
 					{onBack && (
 						<BackBtn
 							onClick={onBack}

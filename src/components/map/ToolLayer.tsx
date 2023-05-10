@@ -12,6 +12,7 @@ import clsx from 'clsx'
 import { ALL } from '@/constants'
 import { useRouter } from 'next/router'
 import RoomList from './RoomList'
+import { Room } from '@/hooks/useGetRooms'
 
 export default function ToolLayer(props: {
 	map: mapboxgl.Map | null
@@ -19,7 +20,7 @@ export default function ToolLayer(props: {
 	filter: string
 	setFilter: Dispatch<string>
 	room: any
-	setRoom: Dispatch<string | null>
+	setRoom: Dispatch<Room | null>
 	isMobile: boolean
 }) {
 	const { map, ready, filter, setFilter, room, setRoom, isMobile } = props
@@ -163,7 +164,7 @@ export default function ToolLayer(props: {
 				</Transition> */}
 
 				{/* right top list pad */}
-				<RoomList ready={ready} room={room} setRoom={setRoom} open={open} map={map} />
+				{/* <RoomList ready={ready} room={room} setRoom={setRoom} open={open} map={map} /> */}
 			</>
 		)
 }

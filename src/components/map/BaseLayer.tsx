@@ -2,17 +2,19 @@ import mapboxgl, { LngLatLike } from 'mapbox-gl'
 import { Dispatch, useEffect, useRef, useState } from 'react'
 import Marker from '../common/Marker'
 import useGetRooms, { Room } from '@/hooks/useGetRooms'
+import { ParsedUrlQuery } from 'querystring'
 // import { getRooms } from '@/utils/storage'
 
 export default function BaseLayer(props: {
 	setMap: Dispatch<mapboxgl.Map>
-	setRoom: Dispatch<Room>
+	setRoom: Dispatch<Room | null>
 	room: Room
 	setReady: Dispatch<boolean>
 	filter: string
 	map: mapboxgl.Map | null
+	query: ParsedUrlQuery
 }) {
-	const { setMap, setRoom, room, setReady, filter, map } = props
+	const { setMap, setRoom, room, setReady, filter, map, query } = props
 	const [markerDivs, setMarkerDivs] = useState<HTMLDivElement[] | null>(null)
 	const [bounds, setBounds] = useState<[string, string]>(['0.0,0.0', '0.0,0.0'])
 
@@ -76,9 +78,9 @@ export default function BaseLayer(props: {
 				// let selectedRoom = rooms[0]
 
 				if (room) {
-					// selectedRoom = room
+					const selectedRoom = room
 					map.jumpTo({
-						center: [room.x, room.y],
+						center: [selectedRoom.x, room.y],
 						zoom: 7.8
 					})
 					defaultInit()
@@ -103,8 +105,20 @@ export default function BaseLayer(props: {
 	}, [room, setMap, setReady, setRoom])
 
 	useEffect(() => {
+		let queryRoom
+		if (query) {
+			const t = rooms.find(r => r.userId == Number(query.room))
+
+			if (t && room?.userId !== t.userId) {
+				queryRoom === t
+				setRoom(t)
+			}
+		}
+	}, [map, query, room, rooms, setRoom])
+
+	useEffect(() => {
 		if (!map || !ref.current) return
-		const listener = e => {
+		const listener = (e: any) => {
 			let i: any
 			if ((i = (e.target as HTMLDivElement | null)?.dataset.id)) {
 				const room = rooms.find(r => r.userId == i)

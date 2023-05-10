@@ -3,13 +3,14 @@ import { shortenAddress } from '@/utils'
 import { getRooms } from '@/utils/storage'
 import clsx from 'clsx'
 import TypeIcon from '../map/TypeIcon'
+import { Room } from '@/hooks/useGetRooms'
 
-export default function LoactionIcon(props: { id: number; selected: any; filter: string }) {
+export default function LoactionIcon(props: { id: number; selected: Room; filter: string }) {
 	const { id, selected, filter } = props
 
 	const rooms = getRooms()
 
-	const active = id == selected?._id
+	const active = id == selected?.userId
 	// const display = filter === ALL || filter === rooms[id].type ? true : false
 
 	return (

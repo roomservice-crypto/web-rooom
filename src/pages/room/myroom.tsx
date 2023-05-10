@@ -21,11 +21,11 @@ export default function MyRoom() {
 	const router = useRouter()
 	useSignIn()
 
-	useEffect(() => {
-		if (!account) {
-			router.push('/map')
-		}
-	}, [account, router])
+	// useEffect(() => {
+	// 	if (!account) {
+	// 		router.push('/map')
+	// 	}
+	// }, [account, router])
 
 	return (
 		<Box

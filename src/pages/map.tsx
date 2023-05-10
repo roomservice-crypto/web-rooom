@@ -57,7 +57,15 @@ export default function Map() {
 	if (isBrowser)
 		return (
 			<>
-				<BaseLayer filter={filter} setMap={setMap} setRoom={setRoom} room={room} setReady={setReady} map={map} />
+				<BaseLayer
+					filter={filter}
+					setMap={setMap}
+					setRoom={setRoom}
+					room={room}
+					setReady={setReady}
+					map={map}
+					query={router.query}
+				/>
 				<CardLayer isMobile={isMobile} room={room} setRoom={setRoom} map={map} />
 				<HeaderBar ready={ready} setRoom={setRoom} state={HeaderBarState.mapView} />
 				<ToolLayer

@@ -15,6 +15,7 @@ export default class JsonRpcConnector extends Connector {
   }: {
     actions: Actions
     provider: JsonRpcProvider
+    // eslint-disable-next-line no-unused-vars
     onError?: (error: Error) => void
   }) {
     super(actions, onError)

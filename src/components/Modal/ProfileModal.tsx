@@ -1,4 +1,4 @@
-import { Box, Divider, Typography, Grid } from '@mui/material'
+import { Box, Typography, Grid } from '@mui/material'
 import Modal from '.'
 import map from '@/assets/img/map.png'
 import { UserInfo } from '@/hooks/useUserInfo'
@@ -47,7 +47,11 @@ export default function ProfileModal({
 								borderRadius: '50%',
 								background: `#cccccc url(${info?.avatar})`
 							}}>
-							<CircleButton sx={{ position: 'absolute', top: -10, right: 0, width: 30, height: 30, minWidth: 'unset' }} onClick={()=>{setAvatarOpen(true)}}>
+							<CircleButton
+								sx={{ position: 'absolute', top: -10, right: 0, width: 30, height: 30, minWidth: 'unset' }}
+								onClick={() => {
+									setAvatarOpen(true)
+								}}>
 								<EditIcon style={{ width: 20, height: 20 }} />
 							</CircleButton>
 						</Box>

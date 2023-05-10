@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createTheme, darken, styled, ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 
 export type PaletteMode = 'light' | 'dark'

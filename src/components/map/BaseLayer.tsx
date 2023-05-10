@@ -8,7 +8,7 @@ import { ParsedUrlQuery } from 'querystring'
 export default function BaseLayer(props: {
 	setMap: Dispatch<mapboxgl.Map>
 	setRoom: Dispatch<Room | null>
-	room: Room
+	room: Room | null
 	setReady: Dispatch<boolean>
 	filter: string
 	map: mapboxgl.Map | null

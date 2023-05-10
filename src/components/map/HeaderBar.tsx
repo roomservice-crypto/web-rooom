@@ -1,9 +1,9 @@
-import { Transition } from '@headlessui/react'
+/* eslint-disable no-unused-vars */
 import clsx from 'clsx'
 
 import Image from 'next/image'
 import LogoText from '@/svgs/logo-text.svg'
-import { Dispatch, useMemo } from 'react'
+import { Dispatch } from 'react'
 import Map from '@/svgs/map.svg'
 import Room from '@/svgs/room.svg'
 import MyRoom from '@/svgs/myRoom.svg'
@@ -14,6 +14,7 @@ import useBreakpoint from '@/hooks/useBreakpoint'
 import { useRouter } from 'next/router'
 import { useUserInfo } from '@/hooks/useUserInfo'
 import Logo from '@/svgs/animated-logo.svg'
+import { Room as RoomType } from '@/hooks/useGetRooms'
 
 export enum HeaderBarState {
 	mapView,
@@ -38,7 +39,7 @@ export default function HeaderBar({
 	state
 }: {
 	ready: boolean
-	setRoom: Dispatch<string | null>
+	setRoom: Dispatch<RoomType | null>
 	state: HeaderBarState
 }) {
 	useSignInToken()

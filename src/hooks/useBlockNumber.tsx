@@ -6,6 +6,7 @@ const MISSING_PROVIDER = Symbol()
 const BlockNumberContext = createContext<
 	| {
 			value?: number
+			// eslint-disable-next-line no-unused-vars
 			fastForward(block: number): void
 	  }
 	| typeof MISSING_PROVIDER
@@ -24,6 +25,7 @@ export default function useBlockNumber(): number | undefined {
 	return useBlockNumberContext().value
 }
 
+// eslint-disable-next-line no-unused-vars
 export function useFastForwardBlockNumber(): (block: number) => void {
 	return useBlockNumberContext().fastForward
 }

@@ -4,7 +4,7 @@ import AccountIcon from '@/svgs/settings/account.svg'
 import BoxIcon from '@/svgs/settings/box.svg'
 import ThumbIcon from '@/svgs/settings/thumb.svg'
 import Pin from '@/svgs/location.svg'
-import { Box, Checkbox, Divider, FormControl, Grid, IconButton, TextField, Typography } from '@mui/material'
+import { Box, Checkbox, FormControl, Grid, IconButton, TextField, Typography } from '@mui/material'
 import { SettingsTab, SettingsTabs, TabPanel, a11yProps } from '../Tabs/SettingsTabs'
 import { useEditUserInfo } from '@/hooks/useUserInfo'
 import SelectLocation from './SelectLocationModal'
@@ -155,7 +155,7 @@ export default function RoomSettingModal({ isOpen, onDismiss }: { isOpen: boolea
 											</Box>
 										</Box>
 									</FormControl>
-									<PrimaryButton onClick={e => editUserInfo()} style={{ height: 60, marginTop: 10, width: '100%' }}>
+									<PrimaryButton onClick={() => editUserInfo()} style={{ height: 60, marginTop: 10, width: '100%' }}>
 										Save
 									</PrimaryButton>
 								</TabPanel>

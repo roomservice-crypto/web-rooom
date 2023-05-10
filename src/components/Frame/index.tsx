@@ -61,7 +61,7 @@ export default function Frame({
 		return () => {
 			window.removeEventListener('message', cb, false)
 		}
-	}, [roomCb, router, setSettingOpen])
+	}, [roomCb, router, setProfileOpen, setSettingOpen])
 
 	return (
 		<Box width='100%' height='100%' pt='72px'>

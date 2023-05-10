@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useWeb3React } from '@web3-react/core'
 import useBlockNumber from '@/hooks/useBlockNumber'
 import multicall from '@/state/multicall'

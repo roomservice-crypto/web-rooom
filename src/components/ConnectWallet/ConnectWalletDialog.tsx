@@ -122,7 +122,9 @@ export function ConnectWalletDialog() {
 	const onActivate = useCallback(async (connector: Connector) => {
 		try {
 			await connector.activate()
-		} catch (error) {}
+		} catch (error) {
+			console.error(error)
+		}
 	}, [])
 
 	return (

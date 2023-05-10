@@ -19,6 +19,7 @@ export default function useIsWindowVisible(): boolean {
 
   useEffect(() => {
     if (!isVisibilityStateSupported()) return undefined
+    // eslint-disable-next-line no-unused-vars
     setFocused((focused) => isWindowVisible())
 
     document.addEventListener('visibilitychange', listener)

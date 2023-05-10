@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useMemo} from 'react'
 import { Axios, axiosInstance } from '@/utils/axios'
 import { API_TOKEN, getCookie, setCookie } from '@/utils/cookies'
 import { useWeb3Instance } from './useWeb3Instance'

@@ -146,8 +146,8 @@ export default function RoomOverviewCard() {
 								fontSize: { xs: '16px', md: undefined }
 							}
 						}}>
-						<PrimaryButton bg='#000000'>Follow</PrimaryButton>
-						<PrimaryButton bg='transparent' style={{ whiteSpace: 'nowrap' }}>
+						<PrimaryButton bgClass='bg-[#000000]'>Follow</PrimaryButton>
+						<PrimaryButton bgClass='bg-[transparent]' style={{ whiteSpace: 'nowrap' }}>
 							Explore room
 						</PrimaryButton>
 					</Box>

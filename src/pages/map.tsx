@@ -6,7 +6,7 @@ import BaseLayer from '@/components/map/BaseLayer'
 import CardLayer from '@/components/map/CardLayer'
 import ToolLayer from '@/components/map/ToolLayer'
 import { ALL } from '@/constants'
-import { getRooms } from '@/utils/storage'
+// import { getRooms } from '@/utils/storage'
 import { useRouter } from 'next/router'
 import HeaderBar, { HeaderBarState } from '@/components/map/HeaderBar'
 import { Room } from '@/hooks/useGetRooms'
@@ -22,7 +22,7 @@ export default function Map() {
 	const [filter, setFilter] = useState(ALL)
 	const [isMobile, setIsMobile] = useState(false)
 	const router = useRouter()
-	const rooms = getRooms()
+	// const rooms = getRooms()
 
 	useEffect(() => {
 		if (window) {

@@ -21,15 +21,7 @@ export default function Room() {
 
 			// if (!room) return <>ERROR</>
 
-			return (
-				<Frame
-					roomId={info?.userId}
-					userId={info?.userId}
-					setSettingOpen={() => {
-						setSettingOpen(true)
-					}}
-				/>
-			)
+			return <Frame roomId={info?.userId} userId={info?.userId} setSettingOpen={() => {}} setProfileOpen={() => 0} />
 		} else {
 			return null
 		}

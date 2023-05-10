@@ -2,16 +2,16 @@ import Plus from '@/svgs/plus.svg'
 import Minus from '@/svgs/minus.svg'
 import Crosshair from '@/svgs/crosshair.svg'
 import Home from '@/svgs/home.svg'
-import Search from '@/svgs/search.svg'
+// import Search from '@/svgs/search.svg'
 import ChevronLeft from '@/svgs/chevron-left.svg'
 import mapboxgl, { LngLatLike } from 'mapbox-gl'
 import React, { Dispatch, useEffect, useState } from 'react'
-import ChevronsLeft from '@/svgs/chevrons-left.svg'
+// import ChevronsLeft from '@/svgs/chevrons-left.svg'
 import { Transition } from '@headlessui/react'
-import clsx from 'clsx'
-import { ALL } from '@/constants'
+// import clsx from 'clsx'
+// import { ALL } from '@/constants'
 import { useRouter } from 'next/router'
-import RoomList from './RoomList'
+// import RoomList from './RoomList'
 import { Room } from '@/hooks/useGetRooms'
 
 export default function ToolLayer(props: {
@@ -23,10 +23,10 @@ export default function ToolLayer(props: {
 	setRoom: Dispatch<Room | null>
 	isMobile: boolean
 }) {
-	const { map, ready, filter, setFilter, room, setRoom, isMobile } = props
+	const { map, ready, setRoom, isMobile } = props
 	const router = useRouter()
 	const [localCoords, setLocalCoords] = useState([0, 0])
-	const [open, setOpen] = useState(false)
+	const [open] = useState(false)
 
 	// get location coords
 	useEffect(() => {
@@ -89,6 +89,7 @@ export default function ToolLayer(props: {
 						<button
 							onClick={() => {
 								if (navigator.geolocation) {
+									// eslint-disable-next-line no-unused-vars
 									navigator.geolocation.getCurrentPosition(position => {
 										map!.flyTo({ center: localCoords as LngLatLike, zoom: 9 })
 									})
@@ -169,18 +170,18 @@ export default function ToolLayer(props: {
 		)
 }
 
-function Tag(props: { text: string; src?: string; filter: string; setFilter: Dispatch<string> }) {
-	const { filter, setFilter, text, src } = props
+// function Tag(props: { text: string; src?: string; filter: string; setFilter: Dispatch<string> }) {
+// 	const { filter, setFilter, text, src } = props
 
-	return (
-		<span
-			onClick={() => setFilter(text)}
-			className={clsx(
-				'flex cursor-pointer gap-x-1 overflow-auto rounded-full border border-dark py-2 px-4',
-				filter === text ? 'bg-dark text-white' : 'bg-white'
-			)}>
-			{src && <img src={src} className='h-[20px] w-[20px]' />}
-			<span className=' whitespace-nowrap'>{props.text}</span>
-		</span>
-	)
-}
+// 	return (
+// 		<span
+// 			onClick={() => setFilter(text)}
+// 			className={clsx(
+// 				'flex cursor-pointer gap-x-1 overflow-auto rounded-full border border-dark py-2 px-4',
+// 				filter === text ? 'bg-dark text-white' : 'bg-white'
+// 			)}>
+// 			{src && <img src={src} className='h-[20px] w-[20px]' />}
+// 			<span className=' whitespace-nowrap'>{props.text}</span>
+// 		</span>
+// 	)
+// }

@@ -110,6 +110,7 @@ export function Provider({
 const onError = (error: Error) => console.error(error)
 
 function initializeWeb3ReactConnector<T extends Connector, P extends object>(
+	// eslint-disable-next-line no-unused-vars
 	Constructor: { new (options: P): T },
 	options?: Omit<P, 'actions'>
 ): Web3ReactConnector<T> {

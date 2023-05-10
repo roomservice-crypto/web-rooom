@@ -1,12 +1,12 @@
-import { ALL } from '@/constants'
+// import { ALL } from '@/constants'
 import { shortenAddress } from '@/utils'
 import { getRooms } from '@/utils/storage'
 import clsx from 'clsx'
-import TypeIcon from '../map/TypeIcon'
+// import TypeIcon from '../map/TypeIcon'
 import { Room } from '@/hooks/useGetRooms'
 
 export default function LoactionIcon(props: { id: number; selected: Room; filter: string }) {
-	const { id, selected, filter } = props
+	const { id, selected } = props
 
 	const rooms = getRooms()
 

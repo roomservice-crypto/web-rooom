@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * List of all the networks supported
  */

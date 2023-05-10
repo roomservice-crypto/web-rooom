@@ -6,11 +6,11 @@ interface StyledTabProps {
 	icon: any
 }
 
-interface StyledTabsProps {
-	children?: React.ReactNode
-	value: number
-	onChange: (event: React.SyntheticEvent, newValue: number) => void
-}
+// interface StyledTabsProps {
+// 	children?: React.ReactNode
+// 	value: number
+// 	onChange: (event: React.SyntheticEvent, newValue: number) => void
+// }
 
 export const SettingsTabs = styled(Tabs)({
 	'& .MuiTabs-indicator': {

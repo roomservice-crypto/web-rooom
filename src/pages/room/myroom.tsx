@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import HeaderBar, { HeaderBarState } from '@/components/map/HeaderBar'
 import { Box } from '@mui/material'
 import { useState } from 'react'
@@ -6,8 +5,8 @@ import dynamic from 'next/dynamic'
 import { useUserInfo } from '@/hooks/useUserInfo'
 import { useSignIn } from '@/hooks/useSignIn'
 import RoomSettingModal from '@/components/Modal/RoomSettingModal'
-import { useWeb3React } from '@web3-react/core'
-import { useRouter } from 'next/router'
+// import { useWeb3React } from '@web3-react/core'
+// import { useRouter } from 'next/router'
 import ProfileModal from '@/components/Modal/ProfileModal'
 
 const Frame = dynamic(() => import('../../components/Frame'), {
@@ -15,12 +14,12 @@ const Frame = dynamic(() => import('../../components/Frame'), {
 })
 
 export default function MyRoom() {
-	const { account } = useWeb3React()
+	// const { account } = useWeb3React()
 	const [settingOpen, setSettingOpen] = useState(false)
 	const [profileOpen, setProfileOpen] = useState(false)
 
 	const { info } = useUserInfo()
-	const router = useRouter()
+	// const router = useRouter()
 	useSignIn()
 
 	// useEffect(() => {

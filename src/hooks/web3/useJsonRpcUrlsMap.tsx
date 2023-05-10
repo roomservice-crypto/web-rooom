@@ -16,6 +16,7 @@ export default function useJsonRpcUrlsMap(): Record<SupportedChainId, string[]> 
 	return useMemo(() => toJsonRpcUrlsMap(jsonRpcMap), [jsonRpcMap])
 }
 
+// eslint-disable-next-line no-unused-vars
 function toJsonRpcMap<T>(getChainConnections: (chainId: SupportedChainId) => T): Record<SupportedChainId, T> {
 	return {
 		[SupportedChainId.MAINNET]: getChainConnections(SupportedChainId.MAINNET),

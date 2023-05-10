@@ -2,16 +2,13 @@ import Modal from '@/components/Modal'
 import HeaderBar, { HeaderBarState } from '@/components/map/HeaderBar'
 import {
 	Box,
-	Button,
 	Card,
-	Dialog,
 	Divider,
 	FormControl,
 	Grid,
 	IconButton,
 	Step,
 	StepConnector,
-	StepIcon,
 	StepIconProps,
 	StepLabel,
 	Stepper,
@@ -35,7 +32,7 @@ import SelectLocation from '@/components/Modal/SelectLocationModal'
 import { editUserCallback } from '@/utils/userCallback'
 import { useEditUserInfo, useUserInfo } from '@/hooks/useUserInfo'
 
-const NumberConnector = styled(StepConnector)(({ theme }) => ({
+const NumberConnector = styled(StepConnector)(() => ({
 	[`&.${stepConnectorClasses.vertical}`]: {
 		[`&.${stepConnectorClasses.active}`]: {
 			[`& .${stepConnectorClasses.line}`]: {
@@ -71,11 +68,11 @@ const NumberStepIconRoot = styled('div')<{
 }))
 
 export default function Create() {
-	const [open, setOpen] = useState(true)
+	const [open] = useState(true)
 	const [mapOpen, setMapOpen] = useState(false)
 
-	const handleOpen = () => setOpen(true)
-	const handleClose = () => setOpen(false)
+	// const handleOpen = () => setOpen(true)
+	// const handleClose = () => setOpen(false)
 
 	const [activeStep, setActiveStep] = useState(0)
 	const [completed, setCompleted] = useState(false)
@@ -89,7 +86,9 @@ export default function Create() {
 	const onActivate = useCallback(async (connector: Connector) => {
 		try {
 			await connector.activate()
-		} catch (error) {}
+		} catch (error) {
+			console.error(error)
+		}
 	}, [])
 
 	useEffect(() => {
@@ -108,13 +107,13 @@ export default function Create() {
 		setActiveStep(prevActiveStep => prevActiveStep + 1)
 	}
 
-	const handleBack = () => {
-		setActiveStep(prevActiveStep => prevActiveStep - 1)
-	}
+	// const handleBack = () => {
+	// 	setActiveStep(prevActiveStep => prevActiveStep - 1)
+	// }
 
-	const handleReset = () => {
-		setActiveStep(0)
-	}
+	// const handleReset = () => {
+	// 	setActiveStep(0)
+	// }
 
 	useEffect(() => {
 		if (info && info.roomName) {

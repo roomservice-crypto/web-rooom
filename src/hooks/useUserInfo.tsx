@@ -49,14 +49,12 @@ export function useUserInfo(refresh?: boolean | number) {
 					setLoading(false)
 				}, 1500)
 			})
-
-		// Axios.get()
 	}, [account, refresh])
 
 	return { info, loading }
 }
 
-export function useEditUserInfo(prevInfo: UserInfo | undefined, cb?: () => void) {
+export function useEditUserInfo(prevInfo?: UserInfo | undefined, cb?: () => void) {
 	const { account } = useWeb3React()
 	const [address, setAddress] = useState<[number, number] | undefined>(undefined)
 	const [bio, setBio] = useState('')

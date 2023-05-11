@@ -1,8 +1,6 @@
 import 'mapbox-gl/dist/mapbox-gl.css'
 import mapboxgl from 'mapbox-gl'
 import { useEffect, useState } from 'react'
-
-import BaseLayer from '@/components/map/BaseLayer'
 import CardLayer from '@/components/map/CardLayer'
 import ToolLayer from '@/components/map/ToolLayer'
 import { ALL } from '@/constants'
@@ -10,9 +8,14 @@ import { ALL } from '@/constants'
 import { useRouter } from 'next/router'
 import HeaderBar, { HeaderBarState } from '@/components/map/HeaderBar'
 import { Room } from '@/hooks/useGetRooms'
+import dynamic from 'next/dynamic'
 
 const PUBLIC_KEY = 'pk.eyJ1IjoieXlzdW5pIiwiYSI6ImNsYjRzcHE2MjA2MHYzcnBqMTA2NWI4YWoifQ.Wg2EqZN4qi-y6pdffqUPPw'
 mapboxgl.accessToken = PUBLIC_KEY
+
+const BaseLayer = dynamic(() => import('../components/map/BaseLayer'), {
+	ssr: false
+})
 
 export default function Map() {
 	const [isBrowser, setIsBrower] = useState(false)

@@ -37,18 +37,18 @@ export default function CreateButton({ info }: { info: UserInfo | undefined }) {
 							onClick={() => {
 								showModal(
 									<Modal>
-										<Box padding='60px' display='flex' alignItems={'center'}>
+										<Box padding='60px' display='flex' alignItems={'center'} className='rounded-3xl'>
 											<PrimaryButton
 												bgClass='bg-[transparent]'
 												onClick={() => {
 													provider?.send('wallet_switchEthereumChain', [
-														{ chainId: '0x' + SupportedChainId.SEPOLIA.toString(16) },
+														{ chainId: '0x' + SupportedChainId.MAINNET.toString(16) },
 														account
 													])
 													hideModal()
 												}}>
 												<ETH />
-												Switch to Sepolia
+												Switch to Ethereum Mainnet
 											</PrimaryButton>
 										</Box>
 									</Modal>

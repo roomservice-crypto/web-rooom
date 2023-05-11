@@ -18,6 +18,9 @@ export interface UserInfo {
 	userId?: number
 	x: number
 	y: number
+	websiteUrl: string
+	discordUrl: string
+	telegramUrl: string
 }
 
 export function useUserInfo(refresh?: number) {
@@ -58,6 +61,11 @@ export function useEditUserInfo() {
 	const [address, setAddress] = useState<[number, number] | undefined>(undefined)
 	const [bio, setBio] = useState('')
 	const [roomName, setRoomName] = useState('')
+
+	const [websiteUrl, setWebsiteUrl] = useState('')
+	const [discordUrl, setDiscordUrl] = useState('')
+	const [telegramUrl, setTelegramUrl] = useState('')
+
 	const [showErc20, setShowErc20] = useState(false)
 	const [showNft, setShowNft] = useState(false)
 	const [emailNotify, setEmailNotify] = useState(false)
@@ -118,6 +126,12 @@ export function useEditUserInfo() {
 		setShowNft,
 		emailNotify,
 		setEmailNotify,
-		editUserInfo
+		editUserInfo,
+		websiteUrl,
+		setWebsiteUrl,
+		discordUrl,
+		setDiscordUrl,
+		telegramUrl,
+		setTelegramUrl
 	}
 }

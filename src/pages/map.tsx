@@ -60,7 +60,7 @@ export default function Map() {
 	if (isBrowser)
 		return (
 			<>
-				{/* <BaseLayer
+				<BaseLayer
 					filter={filter}
 					setMap={setMap}
 					setRoom={setRoom}
@@ -68,9 +68,9 @@ export default function Map() {
 					setReady={setReady}
 					map={map}
 					query={router.query}
-				/> */}
-				{/* <CardLayer isMobile={isMobile} room={room ?? undefined} map={map} /> */}
-				{/* <HeaderBar ready={ready} setRoom={setRoom} state={HeaderBarState.mapView} />
+				/>
+				<CardLayer isMobile={isMobile} room={room ?? undefined} map={map} />
+				{/* <HeaderBar ready={ready} setRoom={setRoom} state={HeaderBarState.mapView} /> */}
 				<ToolLayer
 					isMobile={isMobile}
 					room={room}
@@ -79,7 +79,7 @@ export default function Map() {
 					setFilter={setFilter}
 					map={map}
 					ready={ready}
-				/> */}
+				/>
 			</>
 		)
 	else

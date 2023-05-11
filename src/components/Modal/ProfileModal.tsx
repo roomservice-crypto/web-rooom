@@ -5,6 +5,7 @@ import { UserInfo } from '@/hooks/useUserInfo'
 import EditIcon from '@mui/icons-material/Edit'
 import { CircleButton } from '../Button'
 import { useState } from 'react'
+import Dropzone from '../Dropzone'
 
 export default function ProfileModal({
 	isOpen,
@@ -102,7 +103,9 @@ export default function ProfileModal({
 				}}
 				height='400px'
 				closeIcon>
-				<Box></Box>
+				<Box display={'flex'} alignItems={'flex-end'} height='100%'>
+					<Dropzone title={'Click to upload avatar image'} onUploadSrc={url => console.log(url)} />
+				</Box>
 			</Modal>
 		</>
 	)

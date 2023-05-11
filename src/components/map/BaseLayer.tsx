@@ -20,7 +20,7 @@ export default function BaseLayer(props: {
 
 	const ref = useRef<HTMLDivElement>(null)
 	// const rooms = getRooms()
-	const rooms = useGetRooms(bounds)
+	const { rooms, roomsDict } = useGetRooms(bounds)
 
 	useEffect(() => {
 		const map = new mapboxgl.Map({
@@ -155,7 +155,7 @@ export default function BaseLayer(props: {
 		<>
 			<div ref={ref} className='h-[100vh] w-full'></div>
 			{markerDivs?.map(d => (
-				<Marker key={d.id} container={d} id={Number(d.id)} selected={room} filter={filter} />
+				<Marker key={d.id} container={d} id={Number(d.id)} selected={room} filter={filter} roomsDict={roomsDict} />
 			))}
 		</>
 	)

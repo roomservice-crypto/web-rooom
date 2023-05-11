@@ -5,7 +5,7 @@ export default function Card({ children, padding, sx }: { children: React.ReactN
 	return (
 		<Box
 			margin='0 auto'
-			className='md:w-[80%] ml-[10%] w-[90%] max-w-[1200px] cursor-pointer overflow-hidden rounded-[28px] border-[12px] border-[#FAE76C] bg-light bg-white shadow-[0_0_0_2px_#000000] transition-all'
+			className='md:w-[80%] w-[90%] max-w-[1200px] cursor-pointer overflow-hidden rounded-[28px] border-[12px] border-[#FAE76C] bg-light bg-white shadow-[0_0_0_2px_#000000] transition-all'
 			height={'max-content'}
 			sx={sx}>
 			<Box

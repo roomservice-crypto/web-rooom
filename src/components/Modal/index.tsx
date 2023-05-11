@@ -121,7 +121,7 @@ export default function Modal(props: Props) {
 					height='100%'
 					position='relative'
 					padding={padding || 0}
-					sx={{ overflowY: 'auto', border: '2px solid', borderRadius: '34px' }}>
+					sx={{ overflowY: 'auto', border: '2px solid', borderRadius: '34px', background: '#ffffff' }}>
 					{onBack && (
 						<BackBtn
 							onClick={onBack}

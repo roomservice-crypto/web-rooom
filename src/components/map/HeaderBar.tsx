@@ -45,6 +45,7 @@ export default function HeaderBar({
 	useSignInToken()
 	const { info, loading } = useUserInfo()
 	const router = useRouter()
+	const isDownMd = useBreakpoint('md')
 
 	return (
 		<>
@@ -70,12 +71,12 @@ export default function HeaderBar({
 					'fixed top-0 z-50 flex h-[72px] w-[100%] items-center justify-between border-b border-dark bg-white px-20 mobile:h-[72px] mobile:px-4'
 				)}>
 				<button
-					className='flex w-[150px] items-center'
+					className='flex items-center'
 					onClick={() => {
 						setRoom(null)
 					}}>
 					<Image src='/logo.svg' width='36px' height='36px' />
-					<LogoText className='ml-[10px] mt-1' />
+					{!isDownMd && <LogoText className='ml-[10px] mt-1' />}
 				</button>
 				<Toggle state={state} myRoom={!!info} />
 				<CreateButton info={info} />

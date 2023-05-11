@@ -5,10 +5,10 @@ import clsx from 'clsx'
 // import TypeIcon from '../map/TypeIcon'
 import { Room } from '@/hooks/useGetRooms'
 
-export default function LoactionIcon(props: { id: number; selected: Room; filter: string }) {
-	const { id, selected } = props
+export default function LoactionIcon(props: { id: number; selected: Room; filter: string; roomsDict: any }) {
+	const { id, selected, roomsDict } = props
 
-	const rooms = getRooms()
+	// const rooms = getRooms()
 
 	const active = id == selected?.userId
 	// const display = filter === ALL || filter === rooms[id].type ? true : false
@@ -25,8 +25,8 @@ export default function LoactionIcon(props: { id: number; selected: Room; filter
 					'absolute bottom-[88px] rounded-xl bg-dark px-4 py-[10px] text-center text-white group-hover:block',
 					active ? 'block' : 'hidden'
 				)}>
-				<div className='text-sm font-semibold'>{rooms[id]?.name}.room</div>
-				<div className='text-xs opacity-80'>{shortenAddress(rooms[id]?.address)}</div>
+				<div className='text-sm font-semibold'>{roomsDict?.[id]?.roomName}.room</div>
+				<div className='text-xs opacity-80'>{shortenAddress(roomsDict?.[id]?.account)}</div>
 			</div>
 
 			<svg
@@ -62,7 +62,7 @@ export default function LoactionIcon(props: { id: number; selected: Room; filter
 				<image
 					x='10'
 					y='6'
-					href={rooms[id].avatar}
+					href={roomsDict?.[id]?.avatar}
 					className={clsx(
 						'w-[34px] rounded-full transition-opacity group-hover:opacity-100',
 						active ? 'opacity-100' : 'opacity-0'

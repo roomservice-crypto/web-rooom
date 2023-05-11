@@ -1,11 +1,14 @@
 import { Axios, ResponseType } from '@/utils/axios'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 export interface Room {
 	roomAddr: 'string'
 	userId: number
 	x: number
 	y: number
+	account: string
+	avatar: string
+	roomName: string
 }
 
 export default function useGetRooms(bounds: [string, string]) {
@@ -26,5 +29,12 @@ export default function useGetRooms(bounds: [string, string]) {
 			})
 	}, [bounds])
 
-	return rooms
+	const roomsDict = useMemo(() => {
+		return rooms.reduce((acc, r) => {
+			acc[r.userId] = r
+			return acc
+		}, {} as any)
+	}, [rooms])
+
+	return { rooms, roomsDict }
 }

@@ -27,7 +27,6 @@
 		"@web3-react/walletconnect": "8.1.2-beta.0",
 		"clsx": "^1.2.1",
 		"ethers": "^5.7.2",
-		"gsap": "npm:@gsap/business@^3.11.3",
 		"mapbox-gl": "^2.11.0",
 		"next": "12.3.1",
 		"qrcode": "^1.5.0",

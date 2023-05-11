@@ -1,6 +1,6 @@
 // import { ALL } from '@/constants'
 import { shortenAddress } from '@/utils'
-import { getRooms } from '@/utils/storage'
+// import { getRooms } from '@/utils/storage'
 import clsx from 'clsx'
 // import TypeIcon from '../map/TypeIcon'
 import { Room } from '@/hooks/useGetRooms'

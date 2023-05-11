@@ -3,7 +3,7 @@ import clsx from 'clsx'
 
 import Image from 'next/image'
 import LogoText from '@/svgs/logo-text.svg'
-import { Dispatch } from 'react'
+import { Dispatch, useState } from 'react'
 import Map from '@/svgs/map.svg'
 import Room from '@/svgs/room.svg'
 import MyRoom from '@/svgs/myRoom.svg'
@@ -27,7 +27,7 @@ const toggleData = {
 	md: { [HeaderBarState.mapView]: 0, [HeaderBarState.roomView]: 136, [HeaderBarState.myRoom]: 272 },
 	fullLength: 284,
 	fullLengthMyRoom: 420,
-	fullLengthMobile: 100,
+	fullLengthMobile: 102,
 	fullLengthMyRoomMobile: 150,
 	buttonLength: 140,
 	buttonLengthMobile: 50
@@ -43,9 +43,10 @@ export default function HeaderBar({
 	state: HeaderBarState
 }) {
 	useSignInToken()
-	const { info, loading } = useUserInfo()
 	const router = useRouter()
 	const isDownMd = useBreakpoint('md')
+	const [refresh, setRefresh] = useState(false)
+	const { info, loading } = useUserInfo(refresh)
 
 	return (
 		<>
@@ -79,7 +80,7 @@ export default function HeaderBar({
 					{!isDownMd && <LogoText className='ml-[10px] mt-1' />}
 				</button>
 				<Toggle state={state} myRoom={!!info} />
-				<CreateButton info={info} />
+				<CreateButton info={info} refresh={refresh} setRefresh={setRefresh} />
 			</header>
 			{/* </Transition> */}
 		</>
@@ -99,7 +100,7 @@ function Toggle({ state, myRoom }: { state: HeaderBarState; myRoom: boolean }) {
 							? toggleData.fullLengthMyRoomMobile
 							: toggleData.fullLengthMyRoom
 						: isDownMd
-						? toggleData.buttonLengthMobile
+						? toggleData.fullLengthMobile
 						: toggleData.fullLength
 				}
 				className={`relative relative inline-flex h-[48px] items-center justify-between rounded-full border-2 border-dark px-[2px] py-2`}

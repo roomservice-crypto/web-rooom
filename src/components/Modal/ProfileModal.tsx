@@ -3,20 +3,52 @@ import Modal from '.'
 import map from '@/assets/img/map.png'
 import { UserInfo } from '@/hooks/useUserInfo'
 import EditIcon from '@mui/icons-material/Edit'
-import { CircleButton } from '../Button'
-import { useState } from 'react'
+import { CircleButton, PrimaryButton } from '../Button'
+import { useCallback, useState } from 'react'
 import Dropzone from '../Dropzone'
+import { editUserCallback } from '@/utils/userCallback'
+import { Axios } from '@/utils/axios'
 
 export default function ProfileModal({
 	isOpen,
 	onDismiss,
-	info
+	info,
+	setRefresh
 }: {
 	isOpen: boolean
 	onDismiss: () => void
 	info: UserInfo | undefined
+	setRefresh: () => void
 }) {
 	const [avatarOpen, setAvatarOpen] = useState(false)
+	const [formData, setFormData] = useState<undefined | FormData>(undefined)
+
+	const onUpload = useCallback(() => {
+		setAvatarOpen(false)
+		if (!info || !formData) return
+		Axios.post(
+			'/img/upload',
+			formData,
+			{},
+			{
+				headers: {
+					'Content-Type': 'multipart/form-data'
+				}
+			}
+		)
+			.then(response => {
+				editUserCallback({ ...info, avatar: response.data.data })
+					.then(() => {
+						setRefresh()
+					})
+					.catch(error => {
+						console.error('edit', error)
+					})
+			})
+			.catch(error => {
+				console.error('upload-img', error)
+			})
+	}, [formData, info, setRefresh])
 
 	return (
 		<>
@@ -43,10 +75,11 @@ export default function ProfileModal({
 						<Box
 							sx={{
 								position: 'relative',
-								height: '80px',
-								width: '80px',
+								height: '60px',
+								width: '60px',
 								borderRadius: '50%',
-								background: `#cccccc url(${info?.avatar})`
+								background: `#cccccc url(${info?.avatar}) no-repeat center center`,
+								backgroundSize: 'cover'
 							}}>
 							<CircleButton
 								sx={{ position: 'absolute', top: -10, right: 0, width: 30, height: 30, minWidth: 'unset' }}
@@ -103,8 +136,16 @@ export default function ProfileModal({
 				}}
 				height='400px'
 				closeIcon>
-				<Box display={'flex'} alignItems={'flex-end'} height='100%'>
-					<Dropzone title={'Click to upload avatar image'} onUploadSrc={url => console.log(url)} />
+				<Box display={'flex'} alignItems={'center'} height='100%' flexDirection={'column'}>
+					<Dropzone
+						title={'Click to upload avatar image'}
+						onUploadSrc={formData => {
+							setFormData(formData)
+						}}
+					/>
+					<PrimaryButton onClick={onUpload} style={{ height: 30, marginBottom: 10, width: '90%' }}>
+						Save
+					</PrimaryButton>
 				</Box>
 			</Modal>
 		</>

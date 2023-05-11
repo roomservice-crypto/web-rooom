@@ -1,10 +1,9 @@
 import { Box, Typography } from '@mui/material'
 import { useCallback, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
-import { Axios } from '../../utils/axios'
 
 // eslint-disable-next-line no-unused-vars
-export default function Dropzone({ title, onUploadSrc }: { title: string; onUploadSrc: (url: string) => void }) {
+export default function Dropzone({ title, onUploadSrc }: { title: string; onUploadSrc: (url: FormData) => void }) {
 	const [files, setFiles] = useState<any[]>([])
 
 	const onDrop = useCallback(
@@ -20,22 +19,7 @@ export default function Dropzone({ title, onUploadSrc }: { title: string; onUplo
 			const formData = new FormData()
 			formData.append('file', acceptedFiles[0])
 
-			Axios.post(
-				'/img/upload',
-				formData,
-				{},
-				{
-					headers: {
-						'Content-Type': 'multipart/form-data'
-					}
-				}
-			)
-				.then(response => {
-					onUploadSrc(response.data.msg)
-				})
-				.catch(error => {
-					console.log('upload-img', error)
-				})
+			onUploadSrc(formData)
 		},
 		[onUploadSrc]
 	)

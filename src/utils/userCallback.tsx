@@ -7,9 +7,10 @@ export const editUserCallback = (arg: {
 	emailNotify?: boolean
 	showErc20?: boolean
 	showNft?: boolean
+	avatar?: string
 }) => {
 	return Axios.post('/user/edit', {
-		avatar: '',
+		avatar: arg.avatar,
 		bio: arg.bio,
 		getEmailNotify: !!arg.emailNotify,
 		roomName: arg.roomName,

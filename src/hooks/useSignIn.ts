@@ -10,7 +10,7 @@ interface SignInResponse {
   msg: "string"
 }
 
-export function useSignIn() {
+export function useSignIn(cb?:()=>void) {
   // const [random, setRandom] = useState(Math.random())
   const { account } = useWeb3React()
   const web3 = useWeb3Instance()
@@ -22,18 +22,18 @@ export function useSignIn() {
     try{
     const signature = await web3.eth.personal.sign(message, account, '')
     const res = await Axios.post<SignInResponse>('/user/signIn', {message,account,signature})
-
-        if (res?.status === 200) {
-          setCookie(API_TOKEN + account, res.data.data)
-          axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${res.data.data}`
-        } else {
-          throw Error('Sign in error')
-        }
+      if (res?.status === 200) {
+        setCookie(API_TOKEN + account, res.data.data)
+        axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${res.data.data}`
+          cb&&cb()
+      } else {
+        throw Error('Sign in error')
+      }
     } catch (e) {
       console.error(e)
   }
     
-  }, [account, web3])
+  }, [account, cb, web3])
 
 
   const token = useMemo(() => {

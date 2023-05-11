@@ -1,7 +1,9 @@
 import axios, { AxiosResponse, AxiosPromise } from 'axios'
 
+export const BASE_URL = 'https://api-rs.z-crypto.ml/room'
+
 export const axiosInstance = axios.create({
-	baseURL: 'https://api-rs.z-crypto.ml/room',
+	baseURL: BASE_URL,
 	timeout: 10000,
 	headers: { 'content-type': 'application/json', accept: 'application/json' }
 })

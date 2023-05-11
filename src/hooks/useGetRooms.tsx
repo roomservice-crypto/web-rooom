@@ -1,4 +1,4 @@
-import { Axios, ResponseType } from '@/utils/axios'
+import { Axios, BASE_URL, ResponseType } from '@/utils/axios'
 import { useEffect, useMemo, useState } from 'react'
 
 export interface Room {
@@ -22,7 +22,11 @@ export default function useGetRooms(bounds: [string, string]) {
 			bottomRightXY: bounds[1]
 		})
 			.then(r => {
-				setRooms(r.data.data)
+				setRooms(
+					r.data.data.map(r => {
+						return { ...r, avatar: r.avatar === '' ? '' : `${BASE_URL.slice(0, -5)}${r.avatar}` }
+					})
+				)
 			})
 			.catch(e => {
 				console.error(e)

@@ -1,4 +1,4 @@
-import { Axios, ResponseType } from '@/utils/axios'
+import { Axios, BASE_URL, ResponseType } from '@/utils/axios'
 import { editUserCallback } from '@/utils/userCallback'
 import { useWeb3React } from '@web3-react/core'
 import { useCallback, useEffect, useState } from 'react'
@@ -20,21 +20,21 @@ export interface UserInfo {
 	y: number
 }
 
-export function useUserInfo(refresh?: number) {
+export function useUserInfo(refresh?: boolean | number) {
 	const [loading, setLoading] = useState<undefined | boolean>(undefined)
 	const [info, setInfo] = useState<undefined | UserInfo>(undefined)
 	const { account } = useWeb3React()
 
 	useEffect(() => {
-		if (!account) {
-			setInfo(undefined)
-			return
-		}
 		setLoading(true)
-		Axios.get<ResponseType<UserInfo>>('/user/info', { account })
+		Axios.get<ResponseType<UserInfo>>('/user/info', { account: account ? account : 'NULL' })
 			.then(r => {
 				if (r.data.code === 200) {
-					setInfo(r.data.data)
+					setInfo(
+						r.data.data.avatar === ''
+							? r.data.data
+							: { ...r.data.data, avatar: `${BASE_URL.slice(0, -5)}${r.data.data.avatar}` }
+					)
 				}
 				setTimeout(() => {
 					setLoading(false)
@@ -97,7 +97,7 @@ export function useEditUserInfo() {
 		})
 			.then(r => {
 				if (r.data.code === 200) {
-					setInfoFlag(prev => prev++)
+					setInfoFlag(prev => prev + 1)
 				}
 			})
 			.catch(e => {

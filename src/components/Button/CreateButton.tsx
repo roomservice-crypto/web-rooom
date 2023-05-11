@@ -1,6 +1,5 @@
 import { Box } from '@mui/material'
 import { useWeb3React } from '@web3-react/core'
-import { useRouter } from 'next/router'
 
 import { PrimaryButton } from '.'
 import Logout from '@/svgs/logout.svg'
@@ -12,10 +11,20 @@ import Modal from '../Modal'
 import { SupportedChainId } from '@/constants/chains'
 import useBreakpoint from '@/hooks/useBreakpoint'
 import { UserInfo } from '@/hooks/useUserInfo'
+import CreateModal from '../Modal/createModal'
+import { Dispatch, useEffect, useState } from 'react'
 
-export default function CreateButton({ info }: { info: UserInfo | undefined }) {
-	const router = useRouter()
+export default function CreateButton({
+	info,
+	refresh,
+	setRefresh
+}: {
+	info: UserInfo | undefined
+	refresh: boolean
+	setRefresh: Dispatch<any>
+}) {
 	const { account, chainId, provider, connector } = useWeb3React()
+	const [createOpen, setCreateOpen] = useState(false)
 
 	const { showModal, hideModal } = useModal()
 
@@ -95,11 +104,20 @@ export default function CreateButton({ info }: { info: UserInfo | undefined }) {
 				</Box>
 			) : (
 				<button
-					onClick={() => router.push('/rooms/create')}
+					onClick={() => setCreateOpen(true)}
 					className='h-[48px] w-[150px] rounded-3xl bg-dark px-4 py-2 text-sm font-[500] text-white disabled:bg-black disabled:bg-opacity-5 disabled:text-black disabled:text-opacity-10'>
 					Connect wallet
 				</button>
 			)}
+			<CreateModal
+				info={info}
+				refresh={refresh}
+				setRefresh={setRefresh}
+				isOpen={createOpen}
+				onDismiss={() => {
+					setCreateOpen(false)
+				}}
+			/>
 		</>
 	)
 }

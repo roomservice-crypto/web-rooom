@@ -9,6 +9,7 @@ export interface Room {
 	account: string
 	avatar: string
 	roomName: string
+	fansCount: number
 }
 
 export default function useGetRooms(bounds: [string, string]) {

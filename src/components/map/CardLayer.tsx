@@ -29,7 +29,7 @@ export default function CardLayer(props: {
 					<div className='fixed bottom-6 left-0 right-0 flex items-center justify-center'>
 						<div
 							onClick={() => map?.flyTo({ center: room.coordinates })}
-							className='h-[264px] w-[327px] cursor-pointer overflow-hidden rounded-[32px] border-2 border-black bg-light transition-all duration-150 hover:shadow-[0_0_0_12px_rgba(0,0,0,0.2)]'>
+							className=' w-[327px] cursor-pointer overflow-hidden rounded-[32px] border-2 border-black bg-light transition-all duration-150 hover:shadow-[0_0_0_12px_rgba(0,0,0,0.2)]'>
 							<div
 								className='flex h-[67px] justify-end border-b-2 border-dashed border-black bg-[#BAEDBD] p-6'
 								style={{ backgroundColor: room.backgroundColor }}></div>
@@ -81,6 +81,36 @@ export default function CardLayer(props: {
 										<span className='mr-1 font-semibold text-black text-opacity-80'>{room.likes}</span>
 										Likes
 									</span>
+								</div>
+								{/* buttons */}
+								<div className='mt-8 flex items-center pb-5'>
+									{isFollowing ? (
+										<button
+											style={{ height: 40 }}
+											onClick={e => {
+												e.stopPropagation()
+												setIsFollowing(true)
+											}}
+											className='rounded-[24px] border-2 border-dark bg-black bg-opacity-5 py-2 px-8 font-semibold'>
+											Following
+										</button>
+									) : (
+										<button
+											style={{ height: 40 }}
+											onClick={e => {
+												e.stopPropagation()
+												setIsFollowing(true)
+											}}
+											className='rounded-[24px] bg-dark py-2 px-8 font-semibold leading-[26px] text-white hover:bg-opacity-90'>
+											Follow
+										</button>
+									)}
+									<button
+										style={{ height: 40, whiteSpace: 'nowrap' }}
+										onClick={() => router.push(`/room/${room.userId}`)}
+										className='ml-3 flex flex-1 items-center justify-center gap-x-4 rounded-[24px] border-2 border-[#1c1c1c] bg-white py-2 px-6 text-center  font-semibold leading-[26px]  transition-all hover:bg-black hover:bg-opacity-10 hover:shadow-none'>
+										Explore
+									</button>
 								</div>
 							</div>
 						</div>
@@ -137,13 +167,13 @@ export default function CardLayer(props: {
 							{/* following & likes */}
 							<div className='mt-4 text-sm font-normal text-black text-opacity-40'>
 								<span>
-									<span className='mr-1 font-semibold text-black text-opacity-80'>{room.followers}</span>
+									<span className='mr-1 font-semibold text-black text-opacity-80'>{room.fansCount}</span>
 									Following
 								</span>
-								<span className='ml-5'>
+								{/* <span className='ml-5'>
 									<span className='mr-1 font-semibold text-black text-opacity-80'>{room.likes}</span>
 									Likes
-								</span>
+								</span> */}
 							</div>
 
 							{/* buttons */}

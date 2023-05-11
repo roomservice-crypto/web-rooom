@@ -8,6 +8,8 @@ export default function Marker(props: {
 	selected: any
 	filter: string
 	roomsDict: any
+	// eslint-disable-next-line no-unused-vars
+	onClick: (e: any) => void
 }) {
 	const { container, ...others } = props
 

@@ -56,7 +56,7 @@ export function useUserInfo(refresh?: boolean | number) {
 	return { info, loading }
 }
 
-export function useEditUserInfo() {
+export function useEditUserInfo(prevInfo: UserInfo | undefined, cb?: () => void) {
 	const { account } = useWeb3React()
 	const [address, setAddress] = useState<[number, number] | undefined>(undefined)
 	const [bio, setBio] = useState('')
@@ -69,9 +69,6 @@ export function useEditUserInfo() {
 	const [showErc20, setShowErc20] = useState(false)
 	const [showNft, setShowNft] = useState(false)
 	const [emailNotify, setEmailNotify] = useState(false)
-	const [infoFlag, setInfoFlag] = useState(0)
-
-	const { info: prevInfo } = useUserInfo(infoFlag)
 
 	useEffect(() => {
 		if (!prevInfo) return
@@ -105,13 +102,14 @@ export function useEditUserInfo() {
 		})
 			.then(r => {
 				if (r.data.code === 200) {
-					setInfoFlag(prev => prev + 1)
+					// setInfoFlag(prev => prev + 1)
+					cb && cb()
 				}
 			})
 			.catch(e => {
 				console.error(e)
 			})
-	}, [address, bio, emailNotify, roomName, showErc20, showNft])
+	}, [address, bio, cb, emailNotify, roomName, showErc20, showNft])
 
 	return {
 		address,

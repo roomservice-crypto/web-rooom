@@ -4,23 +4,19 @@ import { shortenAddress } from '@/utils'
 // import { typeWords } from '@/mock'
 // import StateIcon from './StateIcon'
 import { useRouter } from 'next/router'
-import { Dispatch, useEffect, useState } from 'react'
+import { useState } from 'react'
 import mapboxgl from 'mapbox-gl'
+import { Room } from '@/hooks/useGetRooms'
 
-export default function CardLayer(props: {
-	room: any
-	setRoom: Dispatch<any>
-	map: mapboxgl.Map | null
-	isMobile: boolean
-}) {
+export default function CardLayer(props: { room: Room | undefined; map: mapboxgl.Map | null; isMobile: boolean }) {
 	const { room, map, isMobile } = props
 	const router = useRouter()
 
 	const [isFollowing, setIsFollowing] = useState(false)
 
-	useEffect(() => {
-		setIsFollowing(false)
-	}, [room])
+	// useEffect(() => {
+	// 	setIsFollowing(false)
+	// }, [room])
 
 	if (room)
 		if (isMobile)
@@ -28,15 +24,16 @@ export default function CardLayer(props: {
 				<TransitionBadge appear show={!!room} toClassName='opacity-100' fromClassName='opacity-0'>
 					<div className='fixed bottom-6 left-0 right-0 flex items-center justify-center'>
 						<div
-							onClick={() => map?.flyTo({ center: room.coordinates })}
+							onClick={() => map?.flyTo({ center: [room.x, room.y] })}
 							className=' w-[327px] cursor-pointer overflow-hidden rounded-[32px] border-2 border-black bg-light transition-all duration-150 hover:shadow-[0_0_0_12px_rgba(0,0,0,0.2)]'>
 							<div
 								className='flex h-[67px] justify-end border-b-2 border-dashed border-black bg-[#BAEDBD] p-6'
-								style={{ backgroundColor: room.backgroundColor }}></div>
+								// style={{ backgroundColor: room.backgroundColor }}
+							></div>
 
 							<div className='px-8'>
 								{/* avatar */}
-								<div className='mt-3 flex justify-between'>
+								{/* <div className='mt-3 flex justify-between'>
 									<img
 										key={room.avatar}
 										src={room.avatar}
@@ -58,12 +55,12 @@ export default function CardLayer(props: {
 											</span>
 										</span>
 									)}
-								</div>
+								</div> */}
 
 								{/* base */}
-								<div className='mt-4 font-semibold'>{room.name}.room</div>
+								<div className='mt-4 font-semibold'>{room?.roomName ?? ''}.room</div>
 								<div className='text-xs font-normal text-black text-opacity-40'>
-									Room NFT owned by {shortenAddress(room.address)}
+									Room NFT owned by {shortenAddress(room?.account)}
 								</div>
 
 								{/* state */}
@@ -74,13 +71,13 @@ export default function CardLayer(props: {
 								{/* following & likes */}
 								<div className='mt-4 text-sm font-normal text-black text-opacity-40'>
 									<span>
-										<span className='mr-1 font-semibold text-black text-opacity-80'>{room.followers}</span>
+										<span className='mr-1 font-semibold text-black text-opacity-80'>{room.fansCount}</span>
 										Following
 									</span>
-									<span className='ml-5'>
+									{/* <span className='ml-5'>
 										<span className='mr-1 font-semibold text-black text-opacity-80'>{room.likes}</span>
 										Likes
-									</span>
+									</span> */}
 								</div>
 								{/* buttons */}
 								<div className='mt-8 flex items-center pb-5'>
@@ -121,11 +118,12 @@ export default function CardLayer(props: {
 			return (
 				<TransitionBadge appear show={!!room} toClassName='left-20' fromClassName='left-0'>
 					<div
-						onClick={() => map?.flyTo({ center: room.coordinates })}
+						onClick={() => map?.flyTo({ center: [room.x, room.y] })}
 						className='fixed top-[92px] w-[448px] cursor-pointer overflow-hidden rounded-[32px] border-2 border-black bg-light bg-white pb-10 transition-all duration-150 hover:shadow-[0_0_0_12px_rgba(0,0,0,0.2)]'>
 						<div
 							className='flex h-[120px] justify-end border-b-2 border-dashed border-black bg-[#BAEDBD] p-6'
-							style={{ backgroundColor: room.backgroundColor }}></div>
+							// style={{ backgroundColor: room.backgroundColor }}
+						></div>
 
 						<div className='px-8'>
 							{/* avatar */}
@@ -134,8 +132,9 @@ export default function CardLayer(props: {
 									key={room.avatar}
 									src={room.avatar}
 									className='-mt-12 h-[96px] w-[96px] rounded-full border-4 border-white bg-green-400 shadow-lg'
-									style={{ backgroundColor: room.backgroundColor }}></img>
-								{room.visitors?.length > 0 && (
+									// style={{ backgroundColor: room.backgroundColor }}
+								></img>
+								{/* {room.visitors?.length > 0 && (
 									<span className='flex'>
 										<img
 											src={room.visitors[0]}
@@ -150,13 +149,13 @@ export default function CardLayer(props: {
 											+{room.visitorsNumber}
 										</span>
 									</span>
-								)}
+								)} */}
 							</div>
 
 							{/* base */}
-							<div className='mt-6 text-2xl font-semibold'>{room.name}.room</div>
+							<div className='mt-6 text-2xl font-semibold'>{room.roomName}.room</div>
 							<div className='text-md font-normal text-black text-opacity-40'>
-								Room NFT owned by {shortenAddress(room.address)}
+								Room NFT owned by {shortenAddress(room.account)}
 							</div>
 
 							{/* state */}

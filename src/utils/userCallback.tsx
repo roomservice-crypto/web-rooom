@@ -24,3 +24,9 @@ export const editUserCallback = (arg: {
 			: {})
 	})
 }
+
+export const editUserAvatarCallback = (arg: { avatar?: string }) => {
+	return Axios.post('/user/edit', {
+		avatar: arg.avatar
+	})
+}

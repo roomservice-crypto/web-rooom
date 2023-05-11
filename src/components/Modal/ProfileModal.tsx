@@ -37,7 +37,7 @@ export default function ProfileModal({
 			}
 		)
 			.then(response => {
-				editUserCallback({ ...info, avatar: response.data.data })
+				editUserCallback({ ...info, avatar: response.data.data, address: [info.x, info.y] })
 					.then(() => {
 						setRefresh()
 					})

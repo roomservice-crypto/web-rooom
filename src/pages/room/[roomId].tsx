@@ -4,12 +4,13 @@ import Frame from '@/components/Frame'
 import { Box } from '@mui/material'
 import HeaderBar, { HeaderBarState } from '@/components/map/HeaderBar'
 import RoomSettingModal from '@/components/Modal/RoomSettingModal'
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 export default function Room() {
 	const [settingOpen, setSettingOpen] = useState(false)
 	const router = useRouter()
-	const { info, loading } = useUserInfo()
+	const [refresh, setRefresh] = useState(false)
+	const { info, loading } = useUserInfo(refresh)
 
 	const main = useMemo(() => {
 		const roomId = router.query.roomId
@@ -21,11 +22,24 @@ export default function Room() {
 
 			// if (!room) return <>ERROR</>
 
-			return <Frame roomId={info?.userId} userId={info?.userId} setSettingOpen={() => {}} setProfileOpen={() => 0} />
+			return (
+				<Frame
+					roomId={info?.userId}
+					userId={info?.userId}
+					setSettingOpen={() => {
+						setSettingOpen(true)
+					}}
+					setProfileOpen={() => 0}
+				/>
+			)
 		} else {
 			return null
 		}
 	}, [info, loading, router])
+
+	const handleRefresh = useCallback(() => {
+		setRefresh(prev => !prev)
+	}, [])
 
 	return (
 		<Box
@@ -35,6 +49,8 @@ export default function Room() {
 			{main}
 			<HeaderBar ready={true} setRoom={() => 0} state={HeaderBarState.mapView} />
 			<RoomSettingModal
+				info={info}
+				setRefresh={handleRefresh}
 				isOpen={settingOpen}
 				onDismiss={() => {
 					setSettingOpen(false)

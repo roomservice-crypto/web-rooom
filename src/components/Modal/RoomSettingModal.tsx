@@ -6,7 +6,7 @@ import ThumbIcon from '@/svgs/settings/thumb.svg'
 import Pin from '@/svgs/location.svg'
 import { Box, Checkbox, FormControl, Grid, IconButton, Tab, Tabs, TextField, Typography, styled } from '@mui/material'
 import { SettingsTab, SettingsTabs, TabPanel, a11yProps } from '../Tabs/SettingsTabs'
-import { useEditUserInfo } from '@/hooks/useUserInfo'
+import { UserInfo, useEditUserInfo } from '@/hooks/useUserInfo'
 import SelectLocation from './SelectLocationModal'
 import { PrimaryButton } from '../Button'
 import useBreakpoint from '@/hooks/useBreakpoint'
@@ -28,7 +28,17 @@ const StyledTextField = styled(TextField)({
 	}
 })
 
-export default function RoomSettingModal({ isOpen, onDismiss }: { isOpen: boolean; onDismiss: () => void }) {
+export default function RoomSettingModal({
+	isOpen,
+	onDismiss,
+	setRefresh,
+	info
+}: {
+	isOpen: boolean
+	onDismiss: () => void
+	setRefresh: () => void
+	info: UserInfo | undefined
+}) {
 	const [value, setValue] = useState(0)
 	const [value2, setValue2] = useState(0)
 
@@ -54,7 +64,7 @@ export default function RoomSettingModal({ isOpen, onDismiss }: { isOpen: boolea
 		setDiscordUrl,
 		telegramUrl,
 		setTelegramUrl
-	} = useEditUserInfo()
+	} = useEditUserInfo(info, setRefresh)
 
 	const isDownMd = useBreakpoint('md')
 
@@ -136,7 +146,7 @@ export default function RoomSettingModal({ isOpen, onDismiss }: { isOpen: boolea
 												endAdornment: (
 													<IconButton
 														onClick={() => {
-															//bindTwitter()
+															setMapOpen(true)
 														}}>
 														<Pin />
 													</IconButton>
@@ -184,7 +194,11 @@ export default function RoomSettingModal({ isOpen, onDismiss }: { isOpen: boolea
 											</Box>
 										</Box>
 									</FormControl>
-									<PrimaryButton onClick={() => editUserInfo()} style={{ height: 60, marginTop: 10, width: '100%' }}>
+									<PrimaryButton
+										onClick={() => {
+											editUserInfo()
+										}}
+										style={{ height: 60, marginTop: 10, width: '100%' }}>
 										Save
 									</PrimaryButton>
 								</TabPanel>

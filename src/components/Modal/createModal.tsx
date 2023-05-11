@@ -30,7 +30,7 @@ import { useWeb3React } from '@web3-react/core'
 import { useSignIn } from '@/hooks/useSignIn'
 import SelectLocation from '@/components/Modal/SelectLocationModal'
 import { editUserCallback } from '@/utils/userCallback'
-import { UserInfo, useEditUserInfo, useUserInfo } from '@/hooks/useUserInfo'
+import { UserInfo, useEditUserInfo } from '@/hooks/useUserInfo'
 
 const NumberConnector = styled(StepConnector)(() => ({
 	[`&.${stepConnectorClasses.vertical}`]: {
@@ -105,7 +105,7 @@ export default function CreateModal({
 	}, [setRefresh])
 
 	useSignIn(refreshCb)
-	const { address, setAddress, bio, setBio, roomName, setRoomName } = useEditUserInfo()
+	const { address, setAddress, bio, setBio, roomName, setRoomName } = useEditUserInfo(info, refreshCb)
 
 	useEffect(() => {
 		if (activeStep === 2) {

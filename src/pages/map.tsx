@@ -69,7 +69,7 @@ export default function Map() {
 					map={map}
 					query={router.query}
 				/>
-				<CardLayer isMobile={isMobile} room={room} setRoom={setRoom} map={map} />
+				<CardLayer isMobile={isMobile} room={room ?? undefined} map={map} />
 				<HeaderBar ready={ready} setRoom={setRoom} state={HeaderBarState.mapView} />
 				<ToolLayer
 					isMobile={isMobile}

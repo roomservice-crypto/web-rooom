@@ -54,6 +54,8 @@ export default function MyRoom() {
 			/>
 			<HeaderBar ready={true} setRoom={() => 0} state={info ? HeaderBarState.myRoom : HeaderBarState.mapView} />
 			<RoomSettingModal
+				info={info}
+				setRefresh={handleRefresh}
 				isOpen={settingOpen}
 				onDismiss={() => {
 					setSettingOpen(false)

@@ -5,8 +5,15 @@ import clsx from 'clsx'
 // import TypeIcon from '../map/TypeIcon'
 import { Room } from '@/hooks/useGetRooms'
 
-export default function LoactionIcon(props: { id: number; selected: Room; filter: string; roomsDict: any }) {
-	const { id, selected, roomsDict } = props
+export default function LoactionIcon(props: {
+	id: number
+	selected: Room
+	filter: string
+	roomsDict: any
+	// eslint-disable-next-line no-unused-vars
+	onClick: (e: any) => void
+}) {
+	const { id, selected, roomsDict, onClick } = props
 
 	// const rooms = getRooms()
 
@@ -15,6 +22,7 @@ export default function LoactionIcon(props: { id: number; selected: Room; filter
 
 	return (
 		<div
+			onClick={onClick}
 			className={clsx(
 				'group relative flex cursor-pointer justify-center'
 				// !display && 'hidden'
@@ -49,6 +57,16 @@ export default function LoactionIcon(props: { id: number; selected: Room; filter
 					stroke='#292929'
 					strokeWidth={1.5}
 				/>
+
+				<image
+					xlinkHref={roomsDict?.[id]?.avatar}
+					className={clsx(
+						' object-cover transition-opacity group-hover:opacity-100',
+						active ? 'opacity-100' : 'opacity-0'
+					)}
+					clipPath='url(#mask)'
+				/>
+
 				<circle
 					cx='27'
 					cy='23'
@@ -56,19 +74,21 @@ export default function LoactionIcon(props: { id: number; selected: Room; filter
 					fill='#FBEC95'
 					stroke='#292929'
 					strokeWidth={1.5}
-					className={clsx('transition-colors group-hover:fill-white', active && 'hidden fill-white')}
+					className={clsx(
+						'transition-colors group-hover:fill-white'
+						// , active && 'hidden fill-white'
+					)}
+					style={{ background: `#ffffff url(${roomsDict?.[id]?.avatar})` }}
 				/>
 
-				<image
-					x='10'
-					y='6'
-					href={roomsDict?.[id]?.avatar}
-					className={clsx(
-						'w-[34px] rounded-full transition-opacity group-hover:opacity-100',
-						active ? 'opacity-100' : 'opacity-0'
-					)}
-					clipPath='inset(0% round 99px)'
-				/>
+				<defs>
+					<clipPath id='mask'>
+						<path
+							d='M32.59 43.006c.826-.825 1.833-1.436 2.89-1.931C42.287 37.887 47 30.982 47 22.977 47 11.944 38.046 3 27 3S7 11.944 7 22.977c0 8.073 4.794 15.028 11.694 18.178 1.088.497 2.125 1.117 2.972 1.96l4.542 4.525c.482.48 1.263.48 1.744 0l4.638-4.634z'
+							fill='#fff'
+						/>
+					</clipPath>
+				</defs>
 			</svg>
 
 			{/* <div

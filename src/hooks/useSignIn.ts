@@ -60,7 +60,7 @@ export function useSignInToken() {
 
   const token = useMemo(() => {
  
-    if(!account&&!hasWindow) return null
+    // if(!account&&!hasWindow) return null
     // const storedToken = getCookie(API_TOKEN + account)
     // if (storedToken) {
       // axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`

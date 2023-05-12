@@ -80,7 +80,7 @@ export default function HeaderBar({
 					{!isDownMd && <LogoText className='ml-[10px] mt-1' />}
 				</button>
 				<Toggle state={state} myRoom={!!info} />
-				<CreateButton info={info} refresh={refresh} setRefresh={setRefresh} />
+				{/* <CreateButton info={info} refresh={refresh} setRefresh={setRefresh} /> */}
 			</header>
 			{/* </Transition> */}
 		</>

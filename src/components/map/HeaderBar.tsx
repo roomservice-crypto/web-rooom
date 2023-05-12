@@ -42,7 +42,7 @@ export default function HeaderBar({
 	setRoom: Dispatch<RoomType | null>
 	state: HeaderBarState
 }) {
-	useSignInToken()
+	const { token } = useSignInToken()
 	const router = useRouter()
 	const isDownMd = useBreakpoint('md')
 	const [refresh, setRefresh] = useState(false)

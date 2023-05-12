@@ -79,7 +79,7 @@ export default function HeaderBar({
 					<Image src='/logo.svg' width='36px' height='36px' />
 					{!isDownMd && <LogoText className='ml-[10px] mt-1' />}
 				</button>
-				<Toggle state={state} myRoom={!!info} />
+				{/* <Toggle state={state} myRoom={!!info} /> */}
 				{/* <CreateButton info={info} refresh={refresh} setRefresh={setRefresh} /> */}
 			</header>
 			{/* </Transition> */}

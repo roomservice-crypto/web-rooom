@@ -55,25 +55,25 @@ export function useSignIn(cb?:()=>void) {
 
 
 export function useSignInToken() {
-  const { account } = useWeb3React()
+  // const { account } = useWeb3React()
+  const account=''
   const [hasWindow,setHasWindow]=useState(false)
 
   const token = useMemo(() => {
- return null
-    // if(!account&&!hasWindow) return null
-    // const storedToken = getCookie(API_TOKEN + account)
-    // if (storedToken) {
-      // axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`
-    //   return storedToken
-    // } 
+    if(!account&&!hasWindow) return null
+    const storedToken = getCookie(API_TOKEN + account)
+    if (storedToken) {
+      axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`
+      return storedToken
+    } 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account])
 
-  // useEffect(() => {
-  //   if (window) {
-  //     setHasWindow(true)
-  //   }
-  // },[])
+  useEffect(() => {
+    if (window) {
+      setHasWindow(true)
+    }
+  },[])
 
   return {token}
 }

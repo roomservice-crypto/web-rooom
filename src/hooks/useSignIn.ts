@@ -19,8 +19,9 @@ export function useSignIn(cb?:()=>void) {
     if (!web3 || !account) return
 
     const message = 'Sign in to Room Service'
-    try{
-    const signature = await web3.eth.personal.sign(message, account, '')
+    try {
+      const signature=''
+    // const signature = await web3.eth.personal.sign(message, account, '')
     const res = await Axios.post<SignInResponse>('/user/signIn', {message,account,signature})
       if (res?.status === 200) {
         setCookie(API_TOKEN + account, res.data.data)

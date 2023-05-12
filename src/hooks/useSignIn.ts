@@ -1,4 +1,4 @@
-import { useCallback, useMemo} from 'react'
+import { useCallback, useEffect, useMemo, useState} from 'react'
 import { Axios, axiosInstance } from '@/utils/axios'
 import { API_TOKEN, getCookie, setCookie } from '@/utils/cookies'
 import { useWeb3Instance } from './useWeb3Instance'
@@ -56,10 +56,11 @@ export function useSignIn(cb?:()=>void) {
 
 export function useSignInToken() {
   const { account } = useWeb3React()
+  const [hasWindow,setHasWindow]=useState(false)
 
   const token = useMemo(() => {
  
-    if(!account&&typeof window === 'undefined') return null
+    if(!account&&!hasWindow) return null
     const storedToken = getCookie(API_TOKEN + account)
     if (storedToken) {
       axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`
@@ -67,6 +68,12 @@ export function useSignInToken() {
     } 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account])
+
+  useEffect(() => {
+    if (window) {
+      setHasWindow(true)
+    }
+  },[])
 
   return {token}
 }

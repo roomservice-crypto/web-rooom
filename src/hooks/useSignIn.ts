@@ -12,6 +12,7 @@ interface SignInResponse {
 
 export function useSignIn(cb?:()=>void) {
   // const [random, setRandom] = useState(Math.random())
+  const [hasWindow,setHasWindow]=useState(false)
   const { account } = useWeb3React()
   const web3 = useWeb3Instance()
 
@@ -20,8 +21,7 @@ export function useSignIn(cb?:()=>void) {
 
     const message = 'Sign in to Room Service'
     try {
-      const signature=''
-    // const signature = await web3.eth.personal.sign(message, account, '')
+    const signature = await web3.eth.personal.sign(message, account, '')
     const res = await Axios.post<SignInResponse>('/user/signIn', {message,account,signature})
       if (res?.status === 200) {
         setCookie(API_TOKEN + account, res.data.data)
@@ -39,7 +39,7 @@ export function useSignIn(cb?:()=>void) {
 
   const token = useMemo(() => {
     // setTimeout(() => setRandom(Math.random()), 2000)
-    if(!account) return null
+    if(!account||!hasWindow) return null
     const storedToken = getCookie(API_TOKEN + account)
     if (storedToken) {
       axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`
@@ -51,6 +51,12 @@ export function useSignIn(cb?:()=>void) {
   }, [account])
 
 
+  useEffect(() => {
+    if (window) {
+      setHasWindow(true)
+    }
+  },[])
+
   return {token,signIn}
 }
 
@@ -61,7 +67,7 @@ export function useSignInToken() {
 
   const token = useMemo(() => {
  
-    if(!account&&!hasWindow) return null
+    if(!account||!hasWindow) return null
     const storedToken = getCookie(API_TOKEN + account)
     if (storedToken) {
       axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`

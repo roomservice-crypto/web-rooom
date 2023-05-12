@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState} from 'react'
 import { Axios, axiosInstance } from '@/utils/axios'
 import { API_TOKEN, getCookie, setCookie } from '@/utils/cookies'
-import { useWeb3Instance } from './useWeb3Instance'
 import { useWeb3React } from '@web3-react/core'
 
 interface SignInResponse {
@@ -13,15 +12,18 @@ interface SignInResponse {
 export function useSignIn(cb?:()=>void) {
   // const [random, setRandom] = useState(Math.random())
   const [hasWindow,setHasWindow]=useState(false)
-  const { account } = useWeb3React()
-  const web3 = useWeb3Instance()
+  const { account, provider} = useWeb3React()
+
 
   const signIn = useCallback(async () => {
-    if (!web3 || !account) return
+    if (!account) return
 
     const message = 'Sign in to Room Service'
+
     try {
-      const signature = await web3.eth.personal.sign(message, account, '')
+      // const signature = await web3.eth.personal.sign(message, account, '')
+      const signature=await provider?.send('personal_sign', [message, account, message],
+      )
       
     const res = await Axios.post<SignInResponse>('/user/signIn', {message,account,signature})
       if (res?.status === 200) {
@@ -35,7 +37,7 @@ export function useSignIn(cb?:()=>void) {
       console.error(e)
   }
     
-  }, [account, cb, web3])
+  }, [account, cb, provider])
 
 
   const token = useMemo(() => {

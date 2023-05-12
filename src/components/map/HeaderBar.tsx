@@ -50,7 +50,7 @@ export default function HeaderBar({
 
 	return (
 		<>
-			{/* {loading && !router.pathname.includes('/map') && (
+			{loading && !router.pathname.includes('/map') && (
 				<Box
 					sx={{
 						width: '100vw',
@@ -65,22 +65,22 @@ export default function HeaderBar({
 					}}>
 					<Logo style={{ width: '80%', margin: 'auto', maxWidth: 300 }} />
 				</Box>
-			)} */}
+			)}
 			{/* <Transition appear show={ready}> */}
 			<header
 				className={clsx(
 					'fixed top-0 z-50 flex h-[72px] w-[100%] items-center justify-between border-b border-dark bg-white px-20 mobile:h-[72px] mobile:px-4'
 				)}>
-				{/* <button
+				<button
 					className='flex items-center'
 					onClick={() => {
 						setRoom(null)
 					}}>
 					<Image src='/logo.svg' width='36px' height='36px' />
 					{!isDownMd && <LogoText className='ml-[10px] mt-1' />}
-				</button> */}
-				{/* <Toggle state={state} myRoom={!!info} /> */}
-				{/* <CreateButton info={info} refresh={refresh} setRefresh={setRefresh} /> */}
+				</button>
+				<Toggle state={state} myRoom={!!info} />
+				<CreateButton info={info} refresh={refresh} setRefresh={setRefresh} />
 			</header>
 			{/* </Transition> */}
 		</>

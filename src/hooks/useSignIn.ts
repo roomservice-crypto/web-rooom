@@ -69,11 +69,11 @@ export function useSignInToken() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account])
 
-  useEffect(() => {
-    if (window) {
-      setHasWindow(true)
-    }
-  },[])
+  // useEffect(() => {
+  //   if (window) {
+  //     setHasWindow(true)
+  //   }
+  // },[])
 
   return {token}
 }

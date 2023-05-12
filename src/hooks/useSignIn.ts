@@ -55,7 +55,7 @@ export function useSignIn(cb?:()=>void) {
 
 
 export function useSignInToken() {
-  const token=''
+  // const token=''
   // const { account } = useWeb3React()
   // const account=''
   // const [hasWindow,setHasWindow]=useState(false)
@@ -76,5 +76,5 @@ export function useSignInToken() {
   //   }
   // },[])
 
-  return {token}
+  return {token:null}
 }

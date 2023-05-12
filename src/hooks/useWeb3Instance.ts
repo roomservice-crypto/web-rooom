@@ -8,12 +8,12 @@ export function useWeb3Instance() {
 
   useEffect(() => {
     if (provider) {
-      // const instance = new Web3(
-      //   Web3.givenProvider
-      //   ||
-      //   (provider.provider)
-      // )
-      // setWeb3jsInstance(instance)
+      const instance = new Web3(
+        Web3.givenProvider
+        ||
+        (provider.provider)
+      )
+      setWeb3jsInstance(instance)
     }
   }, [isActive, provider])
 

@@ -50,7 +50,7 @@ export default function HeaderBar({
 
 	return (
 		<>
-			{loading && !router.pathname.includes('/map') && (
+			{/* {loading && !router.pathname.includes('/map') && (
 				<Box
 					sx={{
 						width: '100vw',
@@ -65,7 +65,7 @@ export default function HeaderBar({
 					}}>
 					<Logo style={{ width: '80%', margin: 'auto', maxWidth: 300 }} />
 				</Box>
-			)}
+			)} */}
 			{/* <Transition appear show={ready}> */}
 			<header
 				className={clsx(

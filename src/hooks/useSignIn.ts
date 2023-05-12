@@ -14,14 +14,15 @@ export function useSignIn(cb?:()=>void) {
   // const [random, setRandom] = useState(Math.random())
   const [hasWindow,setHasWindow]=useState(false)
   const { account } = useWeb3React()
-  const web3 = useWeb3Instance()
-
+  // const web3 = useWeb3Instance()
+const web3=null
   const signIn = useCallback(async () => {
     if (!web3 || !account) return
 
     const message = 'Sign in to Room Service'
     try {
-    const signature = await web3.eth.personal.sign(message, account, '')
+      const signature=''
+    // const signature = await web3.eth.personal.sign(message, account, '')
     const res = await Axios.post<SignInResponse>('/user/signIn', {message,account,signature})
       if (res?.status === 200) {
         setCookie(API_TOKEN + account, res.data.data)

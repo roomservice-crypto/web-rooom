@@ -59,7 +59,7 @@ export function useSignInToken() {
   const [hasWindow,setHasWindow]=useState(false)
 
   const token = useMemo(() => {
- 
+ return null
     // if(!account&&!hasWindow) return null
     // const storedToken = getCookie(API_TOKEN + account)
     // if (storedToken) {

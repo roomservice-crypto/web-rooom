@@ -24,7 +24,7 @@ export default function Room() {
 
 			return (
 				<Frame
-					roomId={info?.userId}
+					roomId={roomId ? Number(roomId) : info?.userId}
 					userId={info?.userId}
 					setSettingOpen={() => {
 						setSettingOpen(true)

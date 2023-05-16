@@ -4,7 +4,28 @@ import AccountIcon from '@/svgs/settings/account.svg'
 import BoxIcon from '@/svgs/settings/box.svg'
 import ThumbIcon from '@/svgs/settings/thumb.svg'
 import Pin from '@/svgs/location.svg'
-import { Box, Checkbox, FormControl, Grid, IconButton, Tab, Tabs, TextField, Typography, styled } from '@mui/material'
+import {
+	Box,
+	Checkbox,
+	FormControl,
+	Grid,
+	IconButton,
+	ImageList,
+	ImageListItem,
+	ImageListItemBar,
+	Tab,
+	Table,
+	TableBody,
+	TableCell,
+	TableContainer,
+	TableHead,
+	TablePagination,
+	TableRow,
+	Tabs,
+	TextField,
+	Typography,
+	styled
+} from '@mui/material'
 import { SettingsTab, SettingsTabs, TabPanel, a11yProps } from '../Tabs/SettingsTabs'
 import { UserInfo, useEditUserInfo } from '@/hooks/useUserInfo'
 import SelectLocation from './SelectLocationModal'
@@ -13,6 +34,9 @@ import useBreakpoint from '@/hooks/useBreakpoint'
 import Discord from '@/svgs/social/discord.svg'
 import Telegram from '@/svgs/social/telegram.svg'
 import GlobeIcon from '@/svgs/social/website.svg'
+import { theme } from '@/theme'
+import axios from 'axios'
+import { useWeb3React } from '@web3-react/core'
 
 const StyledTextField = styled(TextField)({
 	'& .MuiOutlinedInput-root': {
@@ -41,6 +65,17 @@ export default function RoomSettingModal({
 }) {
 	const [value, setValue] = useState(0)
 	const [value2, setValue2] = useState(0)
+
+	const [data, setData] = useState([
+		['hi', 'hi2', 'hi3'],
+		['hi', 'hi2', 'hi3'],
+		['hi', 'hi2', 'hi3']
+	])
+
+	const [nftData, setNftData] = useState([])
+	const headerKeys = ['Token', 'Price', 'Balance']
+	const [page, setPage] = useState(0)
+	const [rowsPerPage, setRowsPerPage] = useState(10)
 
 	const [mapOpen, setMapOpen] = useState(false)
 
@@ -75,8 +110,75 @@ export default function RoomSettingModal({
 	const handleChange2 = (event: any, newValue: number) => {
 		setValue2(newValue)
 	}
+	const handleChangePage = (event: unknown, newPage: number) => {
+		setPage(newPage)
+	}
 
-	useEffect(() => {})
+	const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setRowsPerPage(+event.target.value)
+		setPage(0)
+	}
+
+	const { account, chainId } = useWeb3React()
+
+	useEffect(() => {
+		async function fetchData() {
+			try {
+				const response = await axios.get(`your-api-endpoint-here?chainId=${chainId}&address=${address}`)
+				const rawData = response.data.result.data
+				const mappedData = rawData.map(({ metadata: { imageURL, collectionName, name }, tokenId }) => ({
+					imageURL,
+					collectionName,
+					name,
+					tokenId
+				}))
+				setNftData(mappedData)
+			} catch (error) {
+				console.error(error)
+			}
+		}
+
+		fetchData()
+	}, [])
+
+	const testNftData = [
+		{
+			imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+			collectionName: 'My Collection',
+			name: 'My NFT',
+			tokenId: '1234'
+		},
+		{
+			imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+			collectionName: 'My Collection',
+			name: 'Another NFT',
+			tokenId: '5678'
+		},
+		{
+			imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+			collectionName: 'My Collection',
+			name: 'My NFT',
+			tokenId: '1234'
+		},
+		{
+			imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+			collectionName: 'My Collection',
+			name: 'Another NFT',
+			tokenId: '5678'
+		},
+		{
+			imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+			collectionName: 'My Collection',
+			name: 'My NFT',
+			tokenId: '1234'
+		},
+		{
+			imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+			collectionName: 'My Collection',
+			name: 'Another NFT',
+			tokenId: '5678'
+		}
+	]
 
 	return (
 		<>
@@ -232,6 +334,86 @@ export default function RoomSettingModal({
 											}}
 										/>
 									</Tabs>
+									<TabPanel value={value2} index={0} label={''}>
+										<TableContainer
+											sx={{
+												display: 'flex',
+												justifyContent: 'space-between',
+												flexDirection: 'column',
+												height: 1,
+												borderRadius: '22px'
+											}}>
+											<Table>
+												<TableHead>
+													<TableRow key={'header'}>
+														{headerKeys.map(key => (
+															<TableCell
+																key={key}
+																sx={{
+																	padding: '24px',
+																	backgroundColor: 'transparent',
+																	color: '#00000066',
+																	border: 0
+																}}
+																padding='none'>
+																{key}
+															</TableCell>
+														))}
+													</TableRow>
+												</TableHead>
+												<TableBody sx={{ backgroundColor: theme.palette.background.paper }}>
+													{data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((item, idx) => (
+														<TableRow key={idx}>
+															{Object.values(item).map(val => (
+																<TableCell key={val} sx={{ paddingLeft: '24px', borderBottom: 'none' }}>
+																	{val as string}
+																</TableCell>
+															))}
+														</TableRow>
+													))}
+												</TableBody>
+											</Table>
+										</TableContainer>
+									</TabPanel>
+									<TabPanel value={value2} index={1} label={''}>
+										<Box sx={{ borderRadius: '22px', backgroundColor: theme.palette.background.paper }}>
+											<ImageList
+												cols={3}
+												sx={{
+													padding: '24px 30px 24px 30px',
+													width: '100%',
+													height: '100%',
+													scrollbarWidth: 'thin',
+													'&::-webkit-scrollbar': {
+														width: 8,
+														height: 8
+													},
+													'&::-webkit-scrollbar-thumb': {
+														backgroundColor: 'rgba(0, 0, 0, 0.4)',
+														borderRadius: 8
+													},
+													'&::-webkit-scrollbar-track': {
+														backgroundColor: 'transparent'
+													}
+												}}>
+												{testNftData.map(item => (
+													<ImageListItem key={item.imageURL}>
+														<img
+															src={`${item.imageURL}?w=248&fit=crop&auto=format`}
+															srcSet={`${item.imageURL}?w=248&fit=crop&auto=format&dpr=2 2x`}
+															loading='lazy'
+															style={{ borderRadius: '22px', width: '144px', height: '144px' }}
+														/>
+														<ImageListItemBar
+															title={item.collectionName + ' - ' + item.name}
+															subtitle={<span># {item.tokenId}</span>}
+															position='below'
+														/>
+													</ImageListItem>
+												))}
+											</ImageList>
+										</Box>
+									</TabPanel>
 								</TabPanel>
 								<TabPanel value={value} index={2} label={'SOCIAL'}>
 									<FormControl fullWidth>

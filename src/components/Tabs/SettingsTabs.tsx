@@ -70,10 +70,10 @@ export function TabPanel(props: TabPanelProps & { label: string }) {
 			{...other}>
 			{value === index && (
 				<Box sx={{ p: '20px 10px' }}>
-					<Typography fontSize={20} fontWeight={600}>
+					<Typography fontSize={20} fontWeight={600} marginBottom={20}>
 						{label}
 					</Typography>
-					{divider && <Divider sx={{ margin: '20px 0px 28px', border: '1px dashed #1C1C1C50' }} />}
+					{divider && <Divider sx={{ border: '1px dashed #1C1C1C50' }} />}
 					<Typography component={'div'}>{children}</Typography>
 				</Box>
 			)}

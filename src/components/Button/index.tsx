@@ -48,15 +48,16 @@ export function CloseIcon({
 			className='mt-1 flex h-[40px] w-[40px] items-center justify-center rounded-3xl border-2 border-[#1c1c1c] bg-white font-[500] shadow-[0_2px_#141414]'
 			onClick={onClick}
 			sx={{
+				borderRadius: '50%',
 				padding: 0,
 				position: 'absolute',
-				background: theme.palette.background.default,
-				borderRadius: '8px',
+				// background: theme.palette.background.default,
+				// borderRadius: '8px',
 				width: { xs: 32, md: 52 },
 				height: { xs: 32, md: 52 },
-				border: '1px solid transparent',
+				border: '1px solid #000000',
 				'&:hover': {
-					borderColor: '#000000',
+					// borderColor: '#000000',
 					backgroundColor: '#eeeeee',
 					boxShadow: 'none'
 				},

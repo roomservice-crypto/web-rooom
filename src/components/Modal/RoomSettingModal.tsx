@@ -19,7 +19,6 @@ import {
 	TableCell,
 	TableContainer,
 	TableHead,
-	TablePagination,
 	TableRow,
 	Tabs,
 	TextField,
@@ -129,13 +128,15 @@ export default function RoomSettingModal({
 				)
 				const rawData = response.data.data.data
 				console.log(rawData)
-				const mappedData = rawData.map(({ metadata: { imageURL, gatewayImageURL, collectionName, name }, tokenId }: any) => ({
-					imageURL,
-					gatewayImageURL,
-					collectionName,
-					name,
-					tokenId
-				}))
+				const mappedData = rawData.map(
+					({ metadata: { imageURL, gatewayImageURL, collectionName, name }, tokenId }: any) => ({
+						imageURL,
+						gatewayImageURL,
+						collectionName,
+						name,
+						tokenId
+					})
+				)
 				console.log(mappedData)
 				setNftData(mappedData)
 			} catch (error) {
@@ -145,45 +146,6 @@ export default function RoomSettingModal({
 
 		fetchData()
 	}, [])
-
-	const testNftData = [
-		{
-			imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-			collectionName: 'My Collection',
-			name: 'My NFT',
-			tokenId: '1234'
-		},
-		{
-			imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-			collectionName: 'My Collection',
-			name: 'Another NFT',
-			tokenId: '5678'
-		},
-		{
-			imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-			collectionName: 'My Collection',
-			name: 'My NFT',
-			tokenId: '1234'
-		},
-		{
-			imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-			collectionName: 'My Collection',
-			name: 'Another NFT',
-			tokenId: '5678'
-		},
-		{
-			imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-			collectionName: 'My Collection',
-			name: 'My NFT',
-			tokenId: '1234'
-		},
-		{
-			imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-			collectionName: 'My Collection',
-			name: 'Another NFT',
-			tokenId: '5678'
-		}
-	]
 
 	return (
 		<>

@@ -8,6 +8,7 @@ import RoomSettingModal from '@/components/Modal/RoomSettingModal'
 import { useWeb3React } from '@web3-react/core'
 import { useRouter } from 'next/router'
 import ProfileModal from '@/components/Modal/ProfileModal'
+import SelectNftModal from '@/components/Modal/SelectNftModal'
 
 const Frame = dynamic(() => import('../../components/Frame'), {
 	ssr: false
@@ -18,6 +19,7 @@ export default function MyRoom() {
 	const [settingOpen, setSettingOpen] = useState(false)
 	const [profileOpen, setProfileOpen] = useState(false)
 	const [refresh, setRefresh] = useState(false)
+	const [nftOpen, setNftOpen] = useState(false)
 
 	const { info, loading } = useUserInfo(refresh)
 	const router = useRouter()
@@ -51,6 +53,9 @@ export default function MyRoom() {
 				setProfileOpen={() => {
 					setProfileOpen(true)
 				}}
+				setNftSelectionOpen={() => {
+					setNftOpen(true)
+				}}
 			/>
 			<HeaderBar ready={true} setRoom={() => 0} state={info ? HeaderBarState.myRoom : HeaderBarState.mapView} />
 			<RoomSettingModal
@@ -67,6 +72,12 @@ export default function MyRoom() {
 				isOpen={profileOpen}
 				onDismiss={() => {
 					setProfileOpen(false)
+				}}
+			/>
+			<SelectNftModal
+				isOpen={nftOpen}
+				onDismiss={() => {
+					setNftOpen(false)
 				}}
 			/>
 		</Box>

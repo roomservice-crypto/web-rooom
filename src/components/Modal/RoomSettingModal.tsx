@@ -72,7 +72,7 @@ export default function RoomSettingModal({
 		['hi', 'hi2', 'hi3']
 	])
 
-	const [nftData, setNftData] = useState([])
+	const [nftData, setNftData] = useState<any[]>([])
 	const headerKeys = ['Token', 'Price', 'Balance']
 	const [page, setPage] = useState(0)
 	const [rowsPerPage, setRowsPerPage] = useState(10)
@@ -124,14 +124,19 @@ export default function RoomSettingModal({
 	useEffect(() => {
 		async function fetchData() {
 			try {
-				const response = await axios.get(`your-api-endpoint-here?chainId=${chainId}&address=${address}`)
-				const rawData = response.data.result.data
-				const mappedData = rawData.map(({ metadata: { imageURL, collectionName, name }, tokenId }) => ({
+				const response = await axios.get(
+					`https://api-rs.z-crypto.ml/room/rpc/nfts?chain=${1}&accountAddress=${'0x51ba9D1d64c6278BfBDf3c073d5aFBC6c372a939'}`
+				)
+				const rawData = response.data.data.data
+				console.log(rawData)
+				const mappedData = rawData.map(({ metadata: { imageURL, gatewayImageURL, collectionName, name }, tokenId }: any) => ({
 					imageURL,
+					gatewayImageURL,
 					collectionName,
 					name,
 					tokenId
 				}))
+				console.log(mappedData)
 				setNftData(mappedData)
 			} catch (error) {
 				console.error(error)
@@ -396,10 +401,10 @@ export default function RoomSettingModal({
 														backgroundColor: 'transparent'
 													}
 												}}>
-												{testNftData.map(item => (
-													<ImageListItem key={item.imageURL}>
+												{nftData.map(item => (
+													<ImageListItem key={item.id}>
 														<img
-															src={`${item.imageURL}?w=248&fit=crop&auto=format`}
+															src={`${item.gatewayImageURL}?w=248&fit=crop&auto=format`}
 															srcSet={`${item.imageURL}?w=248&fit=crop&auto=format&dpr=2 2x`}
 															loading='lazy'
 															style={{ borderRadius: '22px', width: '144px', height: '144px' }}

@@ -78,6 +78,11 @@ export default function SelectNftModal({ isOpen, onDismiss }: { isOpen: boolean;
 								style={{ borderRadius: '22px', width: '144px', height: '144px' }}
 							/>
 							<ImageListItemBar
+								sx={{
+									'& .MuiImageListItemBar': {
+										whiteSpace: 'pre-wrap'
+									}
+								}}
 								title={item.collectionName + ' - ' + item.name}
 								subtitle={<span># {item.tokenId}</span>}
 								position='below'

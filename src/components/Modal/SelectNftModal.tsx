@@ -1,4 +1,4 @@
-import { Box, ImageList, ImageListItem, ImageListItemBar } from '@mui/material'
+import { Box, ImageList, ImageListItem, ImageListItemBar, Typography } from '@mui/material'
 import Modal from '.'
 import { useState } from 'react'
 
@@ -45,8 +45,11 @@ export default function SelectNftModal({ isOpen, onDismiss }: { isOpen: boolean;
 	const [nftData, setNftData] = useState<any[]>([])
 
 	return (
-		<Modal customIsOpen={isOpen} borderRadius='46px' customOnDismiss={onDismiss}>
-			<Box sx={{ borderRadius: '22px', backgroundColor: '#ffffff' }}>
+		<Modal customIsOpen={isOpen} borderRadius='46px' customOnDismiss={onDismiss} closeIcon>
+			<Box sx={{ borderRadius: '22px', backgroundColor: '#ffffff', minHeight: 600, padding: '40px 20px 20px' }}>
+				<Typography fontSize={32} fontWeight={700}>
+					Select Nft
+				</Typography>
 				<ImageList
 					cols={3}
 					sx={{
@@ -66,7 +69,7 @@ export default function SelectNftModal({ isOpen, onDismiss }: { isOpen: boolean;
 							backgroundColor: 'transparent'
 						}
 					}}>
-					{nftData.map(item => (
+					{testNftData.map(item => (
 						<ImageListItem key={item.id}>
 							<img
 								src={`${item.gatewayImageURL}?w=248&fit=crop&auto=format`}

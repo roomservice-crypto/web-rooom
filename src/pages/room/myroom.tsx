@@ -44,6 +44,14 @@ export default function MyRoom() {
 		[showModal]
 	)
 
+	const handleSetting = useCallback(() => {
+		setSettingOpen(true)
+	}, [])
+
+	const handleProfile = useCallback(() => {
+		setProfileOpen(true)
+	}, [])
+
 	return (
 		<Box
 			sx={{
@@ -56,12 +64,8 @@ export default function MyRoom() {
 			<Frame
 				roomId={info?.userId}
 				userId={info?.userId}
-				setSettingOpen={() => {
-					setSettingOpen(true)
-				}}
-				setProfileOpen={() => {
-					setProfileOpen(true)
-				}}
+				setSettingOpen={handleSetting}
+				setProfileOpen={handleProfile}
 				setNftSelectionOpen={handlePhotobox}
 			/>
 			<HeaderBar ready={true} setRoom={() => 0} state={info ? HeaderBarState.myRoom : HeaderBarState.mapView} />

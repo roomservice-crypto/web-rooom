@@ -113,10 +113,10 @@ export default function SelectNftModal({ photoBoxId }: { photoBoxId: string | nu
 							backgroundColor: 'transparent'
 						}
 					}}>
-					{testNftData.map(item => (
+					{testNftData.map((item, index) => (
 						<ImageListItem
 							onClick={handleSelectNftFac(item)}
-							key={item.contract + item.tokenId}
+							key={item.contract + item.tokenId + index}
 							className={
 								selectedNft?.contract === item.contract && selectedNft?.tokenId === item.tokenId ? 'selected' : ''
 							}
@@ -134,12 +134,14 @@ export default function SelectNftModal({ photoBoxId }: { photoBoxId: string | nu
 								}
 							}}>
 							<img
+								key={item.contract + item.tokenId + index}
 								// src={`${item.gatewayImageURL}?w=248&fit=crop&auto=format`}
 								srcSet={`${item.imageURL}?w=248&fit=crop&auto=format&dpr=2 2x`}
 								loading='lazy'
 								style={{ width: '100%', height: '144px', objectFit: 'cover' }}
 							/>
 							<ImageListItemBar
+								key={index + 'item'}
 								sx={{
 									fontWeight: 700,
 									fontSize: 14,

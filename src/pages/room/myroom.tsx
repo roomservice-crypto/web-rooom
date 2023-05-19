@@ -17,7 +17,7 @@ const Frame = dynamic(() => import('../../components/Frame'), {
 
 export default function MyRoom() {
 	const { account } = useWeb3React()
-	const [settingOpen, setSettingOpen] = useState(false)
+	const [settingOpen, setSettingOpen] = useState(true)
 	const [profileOpen, setProfileOpen] = useState(false)
 	const [refresh, setRefresh] = useState(false)
 	const [nftOpen, setNftOpen] = useState(false)

@@ -33,9 +33,14 @@ import useBreakpoint from '@/hooks/useBreakpoint'
 import Discord from '@/svgs/social/discord.svg'
 import Telegram from '@/svgs/social/telegram.svg'
 import GlobeIcon from '@/svgs/social/website.svg'
+import ETH from '@/svgs/currency/eth_logo.svg'
+import MATIC from '@/svgs/currency/matic.svg'
+import USDT from '@/svgs/currency/usdt_logo.svg'
+
 import { theme } from '@/theme'
 import axios from 'axios'
 import { useWeb3React } from '@web3-react/core'
+import CurrencyLogo from '../CurrencyLogo'
 
 const StyledTextField = styled(TextField)({
 	'& .MuiOutlinedInput-root': {
@@ -50,6 +55,14 @@ const StyledTextField = styled(TextField)({
 		}
 	}
 })
+
+function truncateString(str: string, num: number) {
+	if (str.length > num) {
+		return str.slice(0, num) + '...'
+	} else {
+		return str
+	}
+}
 
 export default function RoomSettingModal({
 	isOpen,
@@ -66,9 +79,10 @@ export default function RoomSettingModal({
 	const [value2, setValue2] = useState(0)
 
 	const [data, setData] = useState([
-		['hi', 'hi2', 'hi3'],
-		['hi', 'hi2', 'hi3'],
-		['hi', 'hi2', 'hi3']
+		[<CurrencyLogo key={1} currency='BTC' text='BTC' />, '$13.53 / 0.2861', '$633.53 / 0.2864'],
+		[<CurrencyLogo key={2} currency='ETH' text='ETH' />, '$13.53 / 0.2861', '$633.53 / 0.2864'],
+		[<CurrencyLogo key={3} currency='USDT' text='USDT' />, '$13.53 / 0.2861', '$633.53 / 0.2864'],
+		[<CurrencyLogo key={4} currency='USDC' text='USDC' />, '$13.53 / 0.2861', '$633.53 / 0.2864']
 	])
 
 	const [nftData, setNftData] = useState<any[]>([])
@@ -124,7 +138,7 @@ export default function RoomSettingModal({
 		async function fetchData() {
 			try {
 				const response = await axios.get(
-					`https://api-rs.z-crypto.ml/room/rpc/nfts?chain=${1}&accountAddress=${'0x51ba9D1d64c6278BfBDf3c073d5aFBC6c372a939'}`
+					`https://api-rs.z-crypto.ml/room/rpc/nfts?chain=${chainId}&accountAddress=${account}`
 				)
 				const rawData = response.data.data.data
 				console.log(rawData)
@@ -146,6 +160,95 @@ export default function RoomSettingModal({
 
 		fetchData()
 	}, [])
+
+	const testNftData = [
+		{
+			imageURL: 'https://ipfs-gateway.blockvision.org/ipfs/QmSc9Kix8fhtBmh8eyZgkCqgiKDgmFb524mZ8HokRkwHzZ/0',
+			collectionName: '',
+			name: 'Mystery Moca',
+			tokenId: '1370',
+			contract: ''
+		},
+		{
+			imageURL: 'https://ipfs-gateway.blockvision.org/ipfs/QmTWshKnbxb78gZZm5fvqrgHNrMWXzL2bz2hZVHFKExazy',
+			collectionName: 'MutantApeYachtClub',
+			name: '#20418',
+			tokenId: '#20418',
+			contract: ''
+		},
+		{
+			imageURL: 'https://ipfs-gateway.blockvision.org/ipfs/QmdqSCuf7jAkp733wyAADjK2JbCVuR4RaRHjHxAfg4eRzu',
+			collectionName: 'MutantApeYachtClub',
+			name: '#20355',
+			tokenId: '20355',
+			contract: ''
+		},
+		{
+			imageURL:
+				'https://ipfs-gateway.blockvision.org/ipfs/QmeC3PgKkhmmpM7buuGK8RBYd4uJdYY34PeU69VygSJGMR/Underground_Season_1.gif',
+			collectionName: 'underground',
+			name: 'Underground S1 Access Pass',
+			tokenId: '1',
+			contract: ''
+		},
+		{
+			imageURL: 'https://ipfs.io/ipfs/QmcUCAAwtXLAgFp6kjENc676S8QBx5dyZcvfk4huYxdAVi/4160.png',
+			collectionName: 'Flat-n',
+			name: 'flat-n #4160',
+			tokenId: '4160',
+			contract: ''
+		},
+		{
+			imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+			collectionName: 'Breakfast',
+			name: 'Eggs&Bacon',
+			tokenId: '56784',
+			contract: ''
+		},
+		{
+			imageURL: 'https://ipfs-gateway.blockvision.org/ipfs/QmSc9Kix8fhtBmh8eyZgkCqgiKDgmFb524mZ8HokRkwHzZ/0',
+			collectionName: '',
+			name: 'Mystery Moca',
+			tokenId: '1370',
+			contract: ''
+		},
+		{
+			imageURL: 'https://ipfs-gateway.blockvision.org/ipfs/QmTWshKnbxb78gZZm5fvqrgHNrMWXzL2bz2hZVHFKExazy',
+			collectionName: 'MutantApeYachtClub',
+			name: '#20418',
+			tokenId: '#20418',
+			contract: ''
+		},
+		{
+			imageURL: 'https://ipfs-gateway.blockvision.org/ipfs/QmdqSCuf7jAkp733wyAADjK2JbCVuR4RaRHjHxAfg4eRzu',
+			collectionName: 'MutantApeYachtClub',
+			name: '#20355',
+			tokenId: '20355',
+			contract: ''
+		},
+		{
+			imageURL:
+				'https://ipfs-gateway.blockvision.org/ipfs/QmeC3PgKkhmmpM7buuGK8RBYd4uJdYY34PeU69VygSJGMR/Underground_Season_1.gif',
+			collectionName: 'underground',
+			name: 'Underground S1 Access Pass',
+			tokenId: '1',
+			contract: ''
+		},
+		{
+			imageURL: 'https://ipfs.io/ipfs/QmcUCAAwtXLAgFp6kjENc676S8QBx5dyZcvfk4huYxdAVi/4160.png',
+			collectionName: 'Flat-n',
+			name: 'flat-n #4160',
+			tokenId: '4160',
+			contract: ''
+		},
+		{
+			imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+			collectionName: 'Breakfast',
+			name: 'Eggs&Bacon',
+			tokenId: '56784',
+			contract: ''
+		}
+	]
 
 	return (
 		<>
@@ -318,6 +421,7 @@ export default function RoomSettingModal({
 																key={key}
 																sx={{
 																	padding: '24px',
+																	paddingBottom: '12px',
 																	backgroundColor: 'transparent',
 																	color: '#00000066',
 																	border: 0
@@ -363,16 +467,16 @@ export default function RoomSettingModal({
 														backgroundColor: 'transparent'
 													}
 												}}>
-												{nftData.map(item => (
-													<ImageListItem key={item.id}>
+												{testNftData.map(item => (
+													<ImageListItem key={item.idx}>
 														<img
-															src={`${item.gatewayImageURL}?w=248&fit=crop&auto=format`}
+															src={`${item.imageURL}?w=248&fit=crop&auto=format`}
 															srcSet={`${item.imageURL}?w=248&fit=crop&auto=format&dpr=2 2x`}
 															loading='lazy'
 															style={{ borderRadius: '22px', width: '144px', height: '144px' }}
 														/>
 														<ImageListItemBar
-															title={item.collectionName + ' - ' + item.name}
+															title={truncateString(item.collectionName + ' - ' + item.name, 17)}
 															subtitle={<span># {item.tokenId}</span>}
 															position='below'
 														/>

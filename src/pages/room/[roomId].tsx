@@ -47,7 +47,7 @@ export default function Room() {
 				height: '100vh'
 			}}>
 			{main}
-			<HeaderBar ready={true} setRoom={() => 0} state={HeaderBarState.mapView} />
+			<HeaderBar ready={true} setRoom={() => 0} state={HeaderBarState.roomView} />
 			{/* <RoomSettingModal
 				info={info}
 				setRefresh={handleRefresh}

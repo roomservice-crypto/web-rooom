@@ -23,7 +23,7 @@ export default function Frame({
 
 	const roomCb = useCallback(() => {
 		const el = document.getElementById('untiyweb')
-		if (!el || !roomId || !userId) {
+		if (!el || !roomId) {
 			return
 		}
 		const w = el as HTMLIFrameElement

@@ -131,9 +131,10 @@ function Toggle({ state, myRoom }: { state: HeaderBarState; myRoom: boolean }) {
 
 				<button
 					className={clsx('z-[2] flex items-center gap-2 px-4', state === HeaderBarState.roomView && 'text-white')}
-					onClick={() => {
-						router.push('/rooms')
-					}}>
+					// onClick={() => {
+					// 	router.push('/rooms')
+					// }}
+				>
 					<Room />
 					{!isDownMd && <>Room view</>}
 				</button>

@@ -14,7 +14,7 @@ export default function Frame({
 }: {
 	setProfileOpen: () => void
 	setSettingOpen: () => void
-	setNftSelectionOpen?: () => void
+	setNftSelectionOpen?: (photoBoxId: number | string) => void
 	roomId?: number
 	userId?: number
 }) {
@@ -48,7 +48,7 @@ export default function Frame({
 				} else if (data.eventType == 'setting') {
 					setSettingOpen()
 				} else if (data.eventType == 'nft') {
-					setNftSelectionOpen && setNftSelectionOpen()
+					setNftSelectionOpen && setNftSelectionOpen(data.PhotoBoxId)
 				} else if (data.eventType == 'visitroom') {
 					roomCb()
 				}
@@ -63,7 +63,7 @@ export default function Frame({
 		return () => {
 			window.removeEventListener('message', cb, false)
 		}
-	}, [roomCb, router, setProfileOpen, setSettingOpen])
+	}, [roomCb, router, setNftSelectionOpen, setProfileOpen, setSettingOpen])
 
 	return (
 		<Box width='100%' height='100%' pt='72px'>

@@ -127,7 +127,7 @@ export default function RoomSettingModal({
 					`https://api-rs.z-crypto.ml/room/rpc/nfts?chain=${1}&accountAddress=${'0x51ba9D1d64c6278BfBDf3c073d5aFBC6c372a939'}`
 				)
 				const rawData = response.data.data.data
-				console.log(rawData)
+				// console.log(rawData)
 				const mappedData = rawData.map(
 					({ metadata: { imageURL, gatewayImageURL, collectionName, name }, tokenId }: any) => ({
 						imageURL,
@@ -137,7 +137,7 @@ export default function RoomSettingModal({
 						tokenId
 					})
 				)
-				console.log(mappedData)
+				// console.log(mappedData)
 				setNftData(mappedData)
 			} catch (error) {
 				console.error(error)
@@ -363,8 +363,8 @@ export default function RoomSettingModal({
 														backgroundColor: 'transparent'
 													}
 												}}>
-												{nftData.map(item => (
-													<ImageListItem key={item.id}>
+												{nftData.map((item, index) => (
+													<ImageListItem key={item.contract + item.tokenId + index}>
 														<img
 															src={`${item.gatewayImageURL}?w=248&fit=crop&auto=format`}
 															srcSet={`${item.imageURL}?w=248&fit=crop&auto=format&dpr=2 2x`}

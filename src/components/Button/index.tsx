@@ -101,13 +101,15 @@ export function CircleButton({
 			sx={{
 				padding: 0,
 				position: 'absolute',
-				borderRadius: '8px',
+				background: '#ffffff',
+				// borderRadius: '8px',
 				width: { xs: 32, md: 52 },
 				height: { xs: 32, md: 52 },
-				border: '1px solid transparent',
+				border: '1px solid #1c1c1c',
 				'&:hover': {
-					borderColor: '#000000',
-					backgroundColor: '#eeeeee',
+					background: '#ffffff',
+					// borderColor: '#000000',
+					// backgroundColor: '#eeeeee',
 					boxShadow: 'none'
 				},
 				...sx

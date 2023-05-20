@@ -138,7 +138,7 @@ export default function ProfileModal({
 				closeIcon>
 				<Box display={'flex'} alignItems={'center'} height='100%' flexDirection={'column'}>
 					<Dropzone
-						title={'Click to upload avatar image'}
+						title={'Click to upload avatar'}
 						onUploadSrc={formData => {
 							setFormData(formData)
 						}}

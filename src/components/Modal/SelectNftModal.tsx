@@ -7,45 +7,46 @@ import { Axios } from '@/utils/axios'
 
 const testNftData = [
 	{
-		imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-		collectionName: 'My Collection',
-		name: 'My NFT',
-		tokenId: '1234',
+		imageURL: 'https://ipfs-gateway.blockvision.org/ipfs/QmSc9Kix8fhtBmh8eyZgkCqgiKDgmFb524mZ8HokRkwHzZ/0',
+		collectionName: '',
+		name: 'Mystery Moca',
+		tokenId: '13701',
+		contract: ''
+	},
+	{
+		imageURL: 'https://ipfs-gateway.blockvision.org/ipfs/QmTWshKnbxb78gZZm5fvqrgHNrMWXzL2bz2hZVHFKExazy',
+		collectionName: 'MutantApeYachtClub',
+		name: '#20418',
+		tokenId: '#204182',
+		contract: ''
+	},
+	{
+		imageURL: 'https://ipfs-gateway.blockvision.org/ipfs/QmdqSCuf7jAkp733wyAADjK2JbCVuR4RaRHjHxAfg4eRzu',
+		collectionName: 'MutantApeYachtClub',
+		name: '#20355',
+		tokenId: '203553',
+		contract: ''
+	},
+	{
+		imageURL:
+			'https://ipfs-gateway.blockvision.org/ipfs/QmeC3PgKkhmmpM7buuGK8RBYd4uJdYY34PeU69VygSJGMR/Underground_Season_1.gif',
+		collectionName: 'underground',
+		name: 'Underground S1 Access Pass',
+		tokenId: '14',
+		contract: ''
+	},
+	{
+		imageURL: 'https://ipfs.io/ipfs/QmcUCAAwtXLAgFp6kjENc676S8QBx5dyZcvfk4huYxdAVi/4160.png',
+		collectionName: 'Flat-n',
+		name: 'flat-n #4160',
+		tokenId: '41605',
 		contract: ''
 	},
 	{
 		imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-		collectionName: 'My Collection',
-		name: 'Another NFT',
-		tokenId: '5678',
-		contract: ''
-	},
-	{
-		imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-		collectionName: 'My Collection',
-		name: 'My NFT',
-		tokenId: '12341',
-		contract: ''
-	},
-	{
-		imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-		collectionName: 'My Collection',
-		name: 'Another NFT',
-		tokenId: '56782',
-		contract: ''
-	},
-	{
-		imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-		collectionName: 'My Collection',
-		name: 'My NFT',
-		tokenId: '12343',
-		contract: ''
-	},
-	{
-		imageURL: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-		collectionName: 'My Collection',
-		name: 'Another NFT',
-		tokenId: '56784',
+		collectionName: 'Breakfast',
+		name: 'Eggs&Bacon',
+		tokenId: '567846',
 		contract: ''
 	}
 ]

@@ -436,7 +436,7 @@ export default function RoomSettingModal({
 													{data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((item, idx) => (
 														<TableRow key={idx}>
 															{Object.values(item).map(val => (
-																<TableCell key={val} sx={{ paddingLeft: '24px', borderBottom: 'none' }}>
+																<TableCell key={val + ''} sx={{ paddingLeft: '24px', borderBottom: 'none' }}>
 																	{val as string}
 																</TableCell>
 															))}

@@ -75,6 +75,7 @@ export default function HeaderBar({
 					className='flex items-center'
 					onClick={() => {
 						setRoom(null)
+						router.push('/map')
 					}}>
 					<Image src='/logo.svg' width='36px' height='36px' />
 					{!isDownMd && <LogoText className='ml-[10px] mt-1' />}

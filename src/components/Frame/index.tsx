@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 import { useRouter } from 'next/router'
 import { useCallback, useEffect } from 'react'
 
-const href = 'https://3d-rs.z-crypto.ml'
+const href = 'https://3d-rs.23crypto.club'
 
 export default function Frame({
 	setSettingOpen,

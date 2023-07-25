@@ -75,10 +75,10 @@ export default function HeaderBar({
 					className='flex items-center'
 					onClick={() => {
 						setRoom(null)
-						router.push('/map')
+						router.push('/')
 					}}>
-					<Image src='/logo.svg' width='36px' height='36px' />
-					{!isDownMd && <LogoText className='ml-[10px] mt-1' />}
+					<Image src='/logo.svg' width='100px' height='36px' />
+					{/* {!isDownMd && <LogoText className='ml-[10px] mt-1' />} */}
 				</button>
 				<Toggle state={state} myRoom={!!info} />
 				<CreateButton info={info} refresh={refresh} setRefresh={setRefresh} />

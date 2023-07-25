@@ -1,6 +1,6 @@
 import axios, { AxiosResponse, AxiosPromise } from 'axios'
 
-export const BASE_URL = 'https://api-rs.z-crypto.ml/room'
+export const BASE_URL = 'https://api-rs.23crypto.club/room'
 
 export const axiosInstance = axios.create({
 	baseURL: BASE_URL,

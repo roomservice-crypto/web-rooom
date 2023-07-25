@@ -10,7 +10,7 @@ import ToTop from '@/components/common/ToTop'
 import Header from '@/layout/header'
 import Head from 'next/head'
 
-const TITLE = 'About | Room Service'
+const TITLE = 'About | World Room'
 
 export default function About() {
 	return (

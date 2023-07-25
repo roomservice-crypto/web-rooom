@@ -27,7 +27,7 @@ export default function BannerThin() {
 						.fill(0)
 						.map((item, i) => (
 							<text key={i} x={i * SINGLE_WIDTH} y='26' fill='white' className='font-mona font-[600]'>
-								ROOM SERVICE
+								World Room
 							</text>
 						))}
 				</animated.svg>

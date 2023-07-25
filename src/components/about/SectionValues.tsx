@@ -10,7 +10,7 @@ export default function SectionValues() {
 	return (
 		<>
 			<div className='bg-[#FAE76C] px-20 py-10 font-mona text-[60px] font-[900] leading-[95px] mobile:px-4 mobile:pt-8 mobile:pb-4 mobile:text-[36px] mobile:leading-[42px]'>
-				Room Service's Values
+				World Room's Values
 			</div>
 
 			<section className='grid grid-cols-3 border-t border-dark mobile:block'>
@@ -21,9 +21,9 @@ export default function SectionValues() {
 						<h3 className='mt-8 mb-3  text-[30px] font-semibold leading-[36px]'>Emphasis on User Ownership</h3>
 
 						<p>
-							Room Service strives not only to help user create and customize their own spaces but also take ownership
-							of these spaces and the content they create and publish within them- an important ethos consistent with
-							that of crypto as a whole!
+							World Room strives not only to help user create and customize their own spaces but also take ownership of
+							these spaces and the content they create and publish within them- an important ethos consistent with that
+							of crypto as a whole!
 						</p>
 					</div>
 				</div>
@@ -34,8 +34,8 @@ export default function SectionValues() {
 						<h3 className='mt-8 mb-3  text-[30px] font-semibold leading-[36px]'>Provide Composability</h3>
 
 						<p>
-							Room Service provides a series of room infrastructure components, which will appear in various rooms in
-							free combination
+							World Room provides a series of room infrastructure components, which will appear in various rooms in free
+							combination
 						</p>
 					</div>
 				</div>

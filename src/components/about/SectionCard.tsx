@@ -36,7 +36,7 @@ export default function SectionCard() {
 					<div className='flex w-[547px] flex-1 flex-col justify-between pb-[96px] pt-10 mobile:w-full mobile:pt-5 mobile:pb-8'>
 						<p className='px-20 text-lg leading-[24px] mobile:px-4'>
 							Users can freely engage not only with exciting and competitive games with friends but also enjoy the
-							ability to trade tokenized in-game assets. With Room Service, gaming is "leveled up"!
+							ability to trade tokenized in-game assets. With World Room, gaming is "leveled up"!
 						</p>
 
 						<div className='flex flex-wrap gap-x-3 gap-y-2 pl-20 mobile:mt-4 mobile:px-4'>
@@ -58,7 +58,7 @@ export default function SectionCard() {
 				<div className='flex mobile:flex-col'>
 					<div className='flex w-[547px] flex-1 flex-col justify-between pb-[96px] pt-10 mobile:w-full mobile:pt-5 mobile:pb-8'>
 						<p className='px-20 text-lg leading-[24px] mobile:px-4'>
-							Room Service can be an effective tool for projects looking to expand their marketing efforts. Rooms can be
+							World Room can be an effective tool for projects looking to expand their marketing efforts. Rooms can be
 							used to publish and display the latest news about a project. Furthermore, Rooms can be used to facilitate
 							the recruitment process, display relevant token & NFT data, as well as launch various different marketing
 							activities. All within a fast, composite, and blockchain-secured space.
@@ -85,9 +85,8 @@ export default function SectionCard() {
 				<div className='flex mobile:flex-col'>
 					<div className='flex w-[547px] flex-1 flex-col justify-between pb-[96px] pt-10 mobile:w-full mobile:pt-5 mobile:pb-8'>
 						<p className='px-20 text-lg leading-[24px] mobile:px-4'>
-							Can't code? No problem! Room Service is designed to help users maximize their on-chain experience
-							regardless of their technical background. Customize your room to fit your needs with our easy, no-code
-							solution!
+							Can't code? No problem! World Room is designed to help users maximize their on-chain experience regardless
+							of their technical background. Customize your room to fit your needs with our easy, no-code solution!
 						</p>
 
 						<div className='flex flex-wrap gap-x-3 gap-y-2 pl-20 mobile:mt-4 mobile:px-4'>

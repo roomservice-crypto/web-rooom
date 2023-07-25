@@ -19,8 +19,8 @@ export default function Header(props: { className?: string }) {
 			)}>
 			<Link href='/'>
 				<a className='flex items-center'>
-					<Image src='/logo.svg' width='36px' height='36px' />
-					<LogoText className='ml-[10px] mt-1' />
+					<Image src='/logo.svg' width='100px' height='36px' />
+					{/* <LogoText className='ml-[10px] mt-1' /> */}
 				</a>
 			</Link>
 

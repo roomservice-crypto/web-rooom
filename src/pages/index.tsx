@@ -4,7 +4,7 @@ import ArrowRight from '@/svgs/arrow-right.svg'
 import MapPad from '@/components/home/MapPad'
 import { useRouter } from 'next/router'
 
-const TITLE = 'Room Service'
+const TITLE = 'World Room'
 
 export default function Home() {
 	const router = useRouter()
@@ -27,7 +27,7 @@ export default function Home() {
 					<h1
 						className='mx-auto max-w-[1250px] text-center font-mona text-[60px] font-[900] uppercase leading-[1.2] mobile:text-left mobile:text-4xl'
 						style={{ textShadow: '0px 5px 0px #E1E1E1' }}>
-						Reimagine web3 with your own, customizable on-chain spaces
+						For a more human digital community, empowering creation and connection on the blockchain
 					</h1>
 
 					<button

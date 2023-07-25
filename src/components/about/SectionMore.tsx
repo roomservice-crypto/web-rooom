@@ -13,8 +13,8 @@ export default function SectionMore() {
 							IPFS Secured User Content
 						</h3>
 						<p className=' mt-4 text-lg leading-[24px]'>
-							Content within Room Service is built on top of IPFS, ensuring that user blog posts, photos and other
-							content is user owned. Securely confirm ownership using the power of IPFS's peer to peer network!
+							Content within World Room is built on top of IPFS, ensuring that user blog posts, photos and other content
+							is user owned. Securely confirm ownership using the power of IPFS's peer to peer network!
 						</p>
 					</div>
 				</div>
@@ -42,7 +42,7 @@ export default function SectionMore() {
 							Open, Lightweight Gaming Ecosystem
 						</h3>
 						<p className='mt-4 text-lg leading-[24px]'>
-							Room Service openly collaborates with third-party gaming developers to integrate Web2 native games with
+							World Room openly collaborates with third-party gaming developers to integrate Web2 native games with
 							Web3! In doing so, we've built a diverse ecosystem of on-chain games harnessing the power of smart
 							contracts. Invite friends to unlock even more fun and rewards while you game!
 						</p>
@@ -84,8 +84,8 @@ export default function SectionMore() {
 							Engaging Campaigns
 						</h3>
 						<p className='mt-4 text-lg leading-[24px]'>
-							With Room Service Campaigns, users can quickly launch specific activities in their room, such as funny
-							game missions. Doing so can be a powerful tool to boost engagement and achieve marketing goals.
+							With World Room Campaigns, users can quickly launch specific activities in their room, such as funny game
+							missions. Doing so can be a powerful tool to boost engagement and achieve marketing goals.
 						</p>
 					</div>
 					<img className='mt-auto  w-full' src='/assets/about/campaigns.png' />
@@ -96,7 +96,7 @@ export default function SectionMore() {
 							NFT Showcase
 						</h3>
 						<p className='mt-4 text-lg leading-[24px]'>
-							Build your own NFT marketplace with Room Service's NFT Bundle which provides multiple tools to help
+							Build your own NFT marketplace with World Room's NFT Bundle which provides multiple tools to help
 							facilitate the minting, selling and auctioning processes.
 						</p>
 					</div>

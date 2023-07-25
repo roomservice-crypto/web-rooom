@@ -22,8 +22,8 @@ export default function SectionHero() {
 						A "Web3 Wonderland"
 					</h1>
 					<p className='mt-6 text-lg font-normal'>
-						Room Service enables web3 users to build, launch and host their own blockchain-based spaces without any
-						coding experience. The possibilities are endless!
+						World Room enables web3 users to build, launch and host their own blockchain-based spaces without any coding
+						experience. The possibilities are endless!
 					</p>
 					<button onClick={() => router.push('/map')} className='button mt-8 mobile:hidden'>
 						<span>Explore Demo</span>

@@ -1,4 +1,3 @@
-import LogoText from '@/svgs/logo-text.svg'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -20,7 +19,6 @@ export default function Header(props: { className?: string }) {
 			<Link href='/'>
 				<a className='flex items-center'>
 					<Image src='/logo.svg' width='100px' height='36px' />
-					{/* <LogoText className='ml-[10px] mt-1' /> */}
 				</a>
 			</Link>
 

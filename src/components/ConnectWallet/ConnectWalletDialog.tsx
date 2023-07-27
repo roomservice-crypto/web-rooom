@@ -1,18 +1,11 @@
-import { Box, Button, Typography, styled } from '@mui/material'
+import { Box, Button, Card, Grid, Typography, styled, Divider } from '@mui/material'
 import { Connector } from '@web3-react/types'
-import METAMASK_ICON_URL from '@/assets/img/metamaskIcon.png'
-
+import MetamaskLogo from '@/assets/img/metamask.svg'
+import WalletConnectLogo from '@/assets/img/walletconnect.svg'
+import CoinbaseLogo from '@/assets/img/coinbasewallet.svg'
 import useConnectors from '@/hooks/web3/useConnectors'
 import { useCallback, useEffect, useState } from 'react'
 import { WalletConnectQR } from '@/utils/WalletConnect'
-
-const Body = styled(Box)`
-	display: grid;
-	gap: 12px;
-	grid-template-columns: repeat(2, calc(50% - 0.5em / 2));
-	grid-template-rows: 2fr 1fr;
-	height: calc(100% - 2.5em);
-`
 
 const StyledButtonContents = styled(Box)`
 	display: grid;
@@ -99,14 +92,6 @@ function WalletConnectButton({
 	)
 }
 
-function MetaMaskButton({ walletName, logoSrc, onClick }: ButtonProps) {
-	return (
-		<StyledSmallButton color='primary' onClick={onClick}>
-			<ButtonContents logoSrc={logoSrc} walletName={walletName} />
-		</StyledSmallButton>
-	)
-}
-
 // function NoWalletButton() {
 // 	return (
 // 		<StyledSmallButton color='primary' onClick={() => window.open(NO_WALLET_HELP_CENTER_URL)}>
@@ -128,23 +113,81 @@ export function ConnectWalletDialog() {
 	}, [])
 
 	return (
-		<>
-			<Box>
-				<Typography>Connect wallet</Typography>
-			</Box>
-			<Body alignItems='stretch'>
-				<WalletConnectButton
+		<Box paddingTop={8}>
+			<Typography fontSize={24} fontWeight={600} padding={24}>
+				CONNECT TO A WALLET
+			</Typography>
+			<Divider sx={{ margin: '24px', border: '2px dashed #1C1C1C' }} />
+			<Grid container spacing={12} padding={24}>
+				<Grid item xs={4}>
+					<Card
+						onClick={() => {
+							onActivate(connectors.metaMask)
+
+							// handleNext()
+						}}
+						sx={{
+							cursor: 'pointer',
+							display: 'flex',
+							alignItems: 'center',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							height: '160px',
+							width: '100%',
+							borderRadius: '24px',
+							border: '2px solid'
+						}}>
+						<MetamaskLogo />
+						<Typography fontSize={14} fontWeight={500}>
+							MetaMask
+						</Typography>
+					</Card>
+				</Grid>
+				<Grid item xs={4}>
+					<Card
+						sx={{
+							opacity: 0.5,
+							display: 'flex',
+							alignItems: 'center',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							height: '160px',
+							width: '100%',
+							borderRadius: '24px',
+							border: '2px solid'
+						}}>
+						{/* <WalletConnectButton
 					walletName='WalletConnect'
 					logoSrc={METAMASK_ICON_URL.src}
 					walletConnectQR={connectors.walletConnectQR}
 					onClick={() => onActivate(connectors.walletConnect)}
-				/>
-				<MetaMaskButton
-					walletName='MetaMask'
-					logoSrc={METAMASK_ICON_URL.src}
-					onClick={() => onActivate(connectors.metaMask)}
-				/>
-			</Body>
-		</>
+				/> */}
+						<WalletConnectLogo />
+						<Typography fontSize={14} fontWeight={500}>
+							Wallet Connect
+						</Typography>
+					</Card>
+				</Grid>
+				<Grid item xs={4}>
+					<Card
+						sx={{
+							display: 'flex',
+							alignItems: 'center',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							height: '160px',
+							width: '100%',
+							borderRadius: '24px',
+							border: '2px solid',
+							opacity: 0.5
+						}}>
+						<CoinbaseLogo />
+						<Typography fontSize={14} fontWeight={500}>
+							Coinbase Wallet
+						</Typography>
+					</Card>
+				</Grid>
+			</Grid>
+		</Box>
 	)
 }

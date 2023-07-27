@@ -1,40 +1,34 @@
 import { useCallback, useState } from 'react'
 
 import { ConnectWalletDialog } from './ConnectWalletDialog'
-import { Box, Button, Typography, styled } from '@mui/material'
-import { useConditionalHandler } from '@/hooks/useConditionalHandler'
-import Modal from '../Modal'
+import ModalWithStepper from '../Modal/ModalWithStepper'
 
 interface ConnectWalletProps {
 	disabled?: boolean
 }
-
-const WalletButton = styled(Button)<{ hidden?: boolean }>`
-	filter: none;
-	visibility: ${({ hidden }) => (hidden ? 'hidden' : 'visible')};
-`
 
 export default function ConnectWallet({ disabled }: ConnectWalletProps) {
 	// Opens a dialog that initiates own wallet connection flow
 	const [open, setOpen] = useState(false)
 	const onClose = () => setOpen(false)
 
-	const onConnectWalletClick = useConditionalHandler(() => {})
 	const onClick = useCallback(async () => {
-		setOpen(await onConnectWalletClick())
-	}, [onConnectWalletClick])
+		setOpen(true)
+	}, [])
 
 	return (
 		<>
-			<WalletButton hidden={disabled} onClick={onClick} color='secondary' data-testid='connect-wallet'>
-				<Box display='flex'>
-					<Typography>Connect wallet</Typography>
-				</Box>
-			</WalletButton>
+			<button
+				onClick={onClick}
+				data-testid='connect-wallet'
+				className='h-[48px] w-[150px] rounded-3xl bg-dark px-4 py-2 text-sm font-[500] text-white disabled:bg-black disabled:bg-opacity-5 disabled:text-black disabled:text-opacity-10'
+				style={{ visibility: disabled ? 'hidden' : 'visible' }}>
+				Connect Wallet
+			</button>
 
-			<Modal customIsOpen={open} customOnDismiss={onClose}>
+			<ModalWithStepper isOpen={open} onDismiss={onClose} activeStep={0}>
 				<ConnectWalletDialog />
-			</Modal>
+			</ModalWithStepper>
 		</>
 	)
 }

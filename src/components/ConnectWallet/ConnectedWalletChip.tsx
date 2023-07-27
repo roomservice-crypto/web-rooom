@@ -1,33 +1,94 @@
-import { Button, Typography, styled } from '@mui/material'
+import { Box } from '@mui/material'
 import { useWeb3React } from '@web3-react/core'
-import { useState } from 'react'
+import { ALL_SUPPORTED_CHAIN_IDS } from '@/constants/chains'
+import ETH from '@/svgs/web3/eth.svg'
+import useModal from '@/hooks/useModal'
+import Modal from '../Modal'
+import { PrimaryButton } from '../Button'
+import { SupportedChainId } from '@/constants/chains'
+import useBreakpoint from '@/hooks/useBreakpoint'
+import { Error } from '@mui/icons-material'
+import Logout from '@/svgs/logout.svg'
+import { UserInfo } from '@/hooks/useUserInfo'
 
-const AccountButton = styled(Button)<{ hidden?: boolean }>`
-	filter: none;
-	visibility: ${({ hidden }) => (hidden ? 'hidden' : 'visible')};
-`
+export default function ConnectedWalletChip({ info }: { info: UserInfo | undefined }) {
+	const { account, chainId, provider, connector } = useWeb3React()
 
-export default function ConnectedWalletChip({ disabled, account }: { disabled?: boolean; account?: string }) {
-	const [hover, setHover] = useState(false)
-	const { connector } = useWeb3React()
+	const { showModal, hideModal } = useModal()
+
+	const isDownMd = useBreakpoint('md')
 
 	return (
 		<>
-			<AccountButton
-				hidden={disabled}
-				onClick={() => (connector.deactivate ? connector.deactivate() : connector.resetState())}
-				color='secondary'
-				onMouseEnter={() => setHover(true)}
-				onMouseLeave={() => setHover(false)}
-				data-testid='account'>
-				{hover ? (
-					<Typography>Disconnect wallet</Typography>
+			<Box display={'flex'} gap={10} alignItems={'center'}>
+				{chainId && ALL_SUPPORTED_CHAIN_IDS.includes(chainId) ? (
+					<button
+						className='mt-1 flex h-[40px] w-[40px] items-center justify-center rounded-3xl border-2 border-[#1c1c1c] font-[500] shadow-[0_2px_#141414]'
+						disabled>
+						<ETH />
+					</button>
 				) : (
-					<Typography>
-						{account?.substring(0, 6)}...{account?.substring(account?.length - 4)}
-					</Typography>
+					<button
+						className='mt-1 flex h-[40px] w-[40px] items-center justify-center rounded-3xl border-2 border-[#1c1c1c] bg-[red] shadow-[0_2px_#141414] hover:bg-white'
+						onClick={() => {
+							showModal(
+								<Modal>
+									<Box padding='60px' display='flex' alignItems={'center'} className='rounded-3xl'>
+										<PrimaryButton
+											bgClass='bg-[transparent]'
+											onClick={() => {
+												provider?.send('wallet_switchEthereumChain', [
+													{ chainId: '0x' + SupportedChainId.MAINNET.toString(16) },
+													account
+												])
+												hideModal()
+											}}>
+											<ETH />
+											Switch to Ethereum Mainnet
+										</PrimaryButton>
+									</Box>
+								</Modal>
+							)
+						}}>
+						<Error />
+					</button>
 				)}
-			</AccountButton>
+				<PrimaryButton
+					onClick={() => (connector.deactivate ? connector.deactivate() : connector.resetState())}
+					shadowClass='shadow-[0_2px_#141414]'
+					style={{
+						display: 'flex',
+						gap: 10,
+						alignItems: 'center',
+						borderRadius: '50px',
+						fontWeight: 300,
+						fontSize: 14,
+						padding: isDownMd ? '10px 0' : '20px 10px',
+						...(isDownMd
+							? {
+									width: 40,
+									height: 40,
+									marginTop: 4
+							  }
+							: {
+									height: '30px'
+							  })
+					}}
+					bgClass={'bg-[transparent]'}>
+					{!isDownMd && (
+						<>
+							{!!info?.avatar && (
+								<Box
+									height='32px'
+									width='32px'
+									sx={{ borderRadius: 5, background: `#cccccc url(${info.avatar})` }}></Box>
+							)}
+							{account?.substring(0, 6)}...{account?.substring(account?.length - 4)}
+						</>
+					)}
+					<Logout className='ml-2' />
+				</PrimaryButton>
+			</Box>
 		</>
 	)
 }

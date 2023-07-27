@@ -5,7 +5,7 @@ import { Network } from '@web3-react/network'
 import { createContext, PropsWithChildren, useContext, useEffect } from 'react'
 import invariant from 'tiny-invariant'
 import JsonRpcConnector from '@/utils/JsonRpcConnector'
-import { WalletConnectPopup, WalletConnectQR } from '@/utils/WalletConnect'
+// import { WalletConnectPopup, WalletConnectQR } from '@/utils/WalletConnect'
 import { ALL_SUPPORTED_CHAIN_IDS } from '@/constants/chains'
 import useModal from '../useModal'
 import Modal from '@/components/Modal'
@@ -13,8 +13,8 @@ import Modal from '@/components/Modal'
 export interface Connectors {
 	user: EIP1193 | JsonRpcConnector | undefined
 	metaMask: MetaMask
-	walletConnect: WalletConnectPopup
-	walletConnectQR: WalletConnectQR
+	// walletConnect: WalletConnectPopup
+	// walletConnectQR: WalletConnectQR
 	network: Network
 }
 

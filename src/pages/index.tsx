@@ -27,7 +27,16 @@ export default function Home() {
 					<h1
 						className='mx-auto max-w-[1250px] text-center font-mona text-[60px] font-[900] uppercase leading-[1.2] mobile:text-left mobile:text-4xl'
 						style={{ textShadow: '0px 5px 0px #E1E1E1' }}>
-						For a more human digital community, empowering creation and connection on the blockchain
+						<span className='block text-[30px] font-[400]'>For a more human digital community,</span>
+						empowering creation and connection on&nbsp;
+						<span
+							className='block text-white'
+							style={{
+								textShadow: '-1px 0 black, 0 3px black, 1px 0 black, 0 -1px black',
+								WebkitTextStroke: '1px black'
+							}}>
+							the blockchain
+						</span>
 					</h1>
 
 					<button

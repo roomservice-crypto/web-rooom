@@ -54,7 +54,7 @@ export default function SectionValues() {
 			</section>
 
 			<section className='flex aspect-[1440/550] border-t border-dark mobile:aspect-auto mobile:flex-col'>
-				<div className='w-[50%] border-r border-dark pl-20 pt-[96px] mobile:w-full mobile:border-none mobile:px-4 mobile:pt-8'>
+				<div className=' w-[50%] border-r border-dark py-[96px] pl-20 mobile:w-full mobile:border-none mobile:px-4 mobile:py-8'>
 					<h3 className='w-[490px] font-mona text-[48px] font-[800] leading-[52px] mobile:w-full mobile:text-[36px] mobile:font-[700] mobile:leading-[1.2]'>
 						Create, customize and take ownership of your own free web3 space today!
 					</h3>

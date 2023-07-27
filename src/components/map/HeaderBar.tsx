@@ -3,28 +3,41 @@ import clsx from 'clsx'
 
 import Image from 'next/image'
 import LogoText from '@/svgs/logo-text.svg'
-import { Dispatch, useState } from 'react'
+import { Dispatch, useCallback, useState } from 'react'
 import Map from '@/svgs/map.svg'
 import Room from '@/svgs/room.svg'
 import MyRoom from '@/svgs/myRoom.svg'
 import CreateButton from '../Button/CreateButton'
-import { useSignInToken } from '@/hooks/useSignIn'
+import { useSignIn, useSignInToken } from '@/hooks/useSignIn'
 import { Box } from '@mui/material'
 import useBreakpoint from '@/hooks/useBreakpoint'
 import { useRouter } from 'next/router'
 import { useUserInfo } from '@/hooks/useUserInfo'
 import Logo from '@/svgs/animated-logo.svg'
 import { Room as RoomType } from '@/hooks/useGetRooms'
+import { useWeb3React } from '@web3-react/core'
 
 export enum HeaderBarState {
 	mapView,
-	roomView,
+	// roomView,
 	myRoom
 }
 
 const toggleData = {
-	xs: { [HeaderBarState.mapView]: 0, [HeaderBarState.roomView]: 45, [HeaderBarState.myRoom]: 92 },
-	md: { [HeaderBarState.mapView]: 0, [HeaderBarState.roomView]: 136, [HeaderBarState.myRoom]: 272 },
+	xs: {
+		[HeaderBarState.mapView]: 0,
+		[HeaderBarState.myRoom]: 45
+		// [HeaderBarState.roomView]: 45,
+		// [HeaderBarState.myRoom]: 92
+	},
+	md: {
+		[HeaderBarState.mapView]: 0,
+		[HeaderBarState.myRoom]: 136
+		// [HeaderBarState.roomView]: 136,
+		// [HeaderBarState.myRoom]: 272
+	},
+	mapOnlyLength: 147,
+	mapOnlyLengthMobile: 51,
 	fullLength: 284,
 	fullLengthMyRoom: 420,
 	fullLengthMobile: 102,
@@ -43,10 +56,17 @@ export default function HeaderBar({
 	state: HeaderBarState
 }) {
 	useSignInToken()
+	const { account } = useWeb3React()
 	const router = useRouter()
 	const isDownMd = useBreakpoint('md')
 	const [refresh, setRefresh] = useState(false)
 	const { info, loading } = useUserInfo(refresh)
+
+	const refreshCb = useCallback(() => {
+		setRefresh((prev: boolean) => !prev)
+	}, [setRefresh])
+
+	useSignIn(refreshCb)
 
 	return (
 		<>
@@ -78,10 +98,9 @@ export default function HeaderBar({
 						router.push('/')
 					}}>
 					<Image src='/logo.svg' width='100px' height='36px' />
-					{/* {!isDownMd && <LogoText className='ml-[10px] mt-1' />} */}
 				</button>
-				<Toggle state={state} myRoom={!!info} />
-				<CreateButton info={info} refresh={refresh} setRefresh={setRefresh} />
+				<Toggle state={state} myRoom={!!info && !!account} />
+				<CreateButton info={info} refreshCb={refreshCb} needCreate={!!account && !loading && !info?.roomName} />
 			</header>
 			{/* </Transition> */}
 		</>
@@ -98,11 +117,11 @@ function Toggle({ state, myRoom }: { state: HeaderBarState; myRoom: boolean }) {
 				width={
 					myRoom
 						? isDownMd
-							? toggleData.fullLengthMyRoomMobile
-							: toggleData.fullLengthMyRoom
+							? toggleData.fullLengthMobile
+							: toggleData.fullLength
 						: isDownMd
-						? toggleData.fullLengthMobile
-						: toggleData.fullLength
+						? toggleData.mapOnlyLengthMobile
+						: toggleData.mapOnlyLength
 				}
 				className={`relative relative inline-flex h-[48px] items-center justify-between rounded-full border-2 border-dark px-[2px] py-2`}
 				sx={{
@@ -129,16 +148,15 @@ function Toggle({ state, myRoom }: { state: HeaderBarState; myRoom: boolean }) {
 					<Map />
 					{!isDownMd && <>Map view</>}
 				</button>
-
+				{/* 
 				<button
 					className={clsx('z-[2] flex items-center gap-2 px-4', state === HeaderBarState.roomView && 'text-white')}
-					// onClick={() => {
-					// 	router.push('/rooms')
-					// }}
-				>
+					onClick={() => {
+						router.push('/rooms')
+					}}>
 					<Room />
 					{!isDownMd && <>Room view</>}
-				</button>
+				</button> */}
 				{myRoom && (
 					<button
 						className={clsx('z-[2] flex items-center gap-2 pr-4', state === HeaderBarState.myRoom && 'text-white')}
@@ -151,30 +169,5 @@ function Toggle({ state, myRoom }: { state: HeaderBarState; myRoom: boolean }) {
 				)}
 			</Box>
 		</>
-		// <Switch
-		// 	checked={enabled}
-		// 	onChange={setEnabled}
-		// 	className={`relative relative inline-flex h-[48px] w-[300px] items-center justify-between rounded-full border-2 border-dark px-[2px] py-2`}>
-		// 	<span
-		// 		className={`${
-		// 			enabled ? 'translate-x-[142px]' : 'translate-x-[0px]'
-		// 		} absolute inline-block h-[41px] w-[150px] transform rounded-[42px] bg-black transition`}
-		// 	/>
-		// 	<span className={clsx('z-[2] flex items-center gap-2 pl-4', !enabled && 'text-white')}>
-		// 		<Map />
-		// 		Map view
-		// 	</span>
-
-		// 	<span className={clsx('z-[2] flex items-center gap-2 pr-4', enabled && 'text-white')}>
-		// 		<Room />
-		// 		Room view
-		// 	</span>
-		// 	{myRoom && (
-		// 		<span className={clsx('z-[2] flex items-center gap-2 pr-4', enabled && 'text-white')}>
-		// 			<Room />
-		// 			Room view
-		// 		</span>
-		// 	)}
-		// </Switch>
 	)
 }

@@ -129,14 +129,16 @@ function Toggle({ state, myRoom }: { state: HeaderBarState; myRoom: boolean }) {
 						whiteSpace: 'nowrap'
 					}
 				}}>
-				<Box
-					component={'span'}
-					className={`absolute inline-block h-[41px] rounded-[42px] bg-black transition`}
-					width={isDownMd ? toggleData.buttonLengthMobile : toggleData.buttonLength}
-					style={{
-						transform: `translateX(${toggleData[isDownMd ? 'xs' : 'md'][state]}px)`
-					}}
-				/>
+				{(state === HeaderBarState.mapView || state === HeaderBarState.myRoom) && (
+					<Box
+						component={'span'}
+						className={`absolute inline-block h-[41px] rounded-[42px] bg-black transition`}
+						width={isDownMd ? toggleData.buttonLengthMobile : toggleData.buttonLength}
+						style={{
+							transform: `translateX(${toggleData[isDownMd ? 'xs' : 'md'][state]}px)`
+						}}
+					/>
+				)}
 				{/* ${
 					enabled ? 'translate-x-[142px]' : 'translate-x-[0px]'
 				} */}

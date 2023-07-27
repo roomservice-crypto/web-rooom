@@ -11,7 +11,7 @@ interface SignInResponse {
 
 export function useSignIn(cb?:()=>void) {
   // const [random, setRandom] = useState(Math.random())
-  const { account,provider } = useWeb3React()
+  const { account,provider ,connector} = useWeb3React()
 
   const signIn = useCallback(async () => {
     if (!account) return
@@ -30,10 +30,11 @@ export function useSignIn(cb?:()=>void) {
         throw Error('Sign in error')
       }
     } catch (e) {
+      (connector.deactivate ? connector.deactivate() : connector.resetState())
       console.error(e)
   }
     
-  }, [account, cb, provider])
+  }, [account, cb, connector, provider])
 
 
   const token = useMemo(() => {

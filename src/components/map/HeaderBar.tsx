@@ -66,7 +66,7 @@ export default function HeaderBar({
 		setRefresh((prev: boolean) => !prev)
 	}, [setRefresh])
 
-	useSignIn(refreshCb)
+	const { token } = useSignIn(refreshCb)
 
 	return (
 		<>
@@ -100,7 +100,11 @@ export default function HeaderBar({
 					<Image src='/logo.svg' width='100px' height='36px' />
 				</button>
 				<Toggle state={state} myRoom={!!info && !!account} />
-				<CreateButton info={info} refreshCb={refreshCb} needCreate={!!account && !loading && !info?.roomName} />
+				<CreateButton
+					info={info}
+					refreshCb={refreshCb}
+					needCreate={!!account && !!token && !loading && !info?.roomName}
+				/>
 			</header>
 			{/* </Transition> */}
 		</>

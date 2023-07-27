@@ -61,7 +61,7 @@ export default function LoactionIcon(props: {
 				<image
 					xlinkHref={roomsDict?.[id]?.avatar}
 					className={clsx(
-						' object-cover transition-opacity group-hover:opacity-100',
+						' w-full object-cover transition-opacity group-hover:opacity-100',
 						active ? 'opacity-100' : 'opacity-0'
 					)}
 					clipPath='url(#mask)'
@@ -75,7 +75,9 @@ export default function LoactionIcon(props: {
 					stroke='#292929'
 					strokeWidth={1.5}
 					className={clsx(
-						'transition-colors group-hover:fill-white'
+						roomsDict?.[id]?.avatar
+							? 'transition-colors group-hover:fill-transparent group-hover:stroke-transparent'
+							: ''
 						// , active && 'hidden fill-white'
 					)}
 					style={{ background: `#ffffff url(${roomsDict?.[id]?.avatar})` }}

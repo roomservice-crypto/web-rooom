@@ -5,55 +5,55 @@ import WalletConnectLogo from '@/assets/img/walletconnect.svg'
 import CoinbaseLogo from '@/assets/img/coinbasewallet.svg'
 import useConnectors from '@/hooks/web3/useConnectors'
 import { useCallback, useEffect, useState } from 'react'
-import { WalletConnectQR } from '@/utils/WalletConnect'
+// import { WalletConnectQR } from '@/utils/WalletConnect'
 
-const StyledButtonContents = styled(Box)`
-	display: grid;
-	gap: 0.75em;
-	justify-items: center;
-`
+// const StyledButtonContents = styled(Box)`
+// 	display: grid;
+// 	gap: 0.75em;
+// 	justify-items: center;
+// `
 
-const StyledMainButton = styled(Button)`
-	border-radius: ${({ theme }) => theme.shape.borderRadius};
-	grid-column: 1 / 3;
-	height: 100%;
-	padding: 22px;
-`
+// const StyledMainButton = styled(Button)`
+// 	border-radius: ${({ theme }) => theme.shape.borderRadius};
+// 	grid-column: 1 / 3;
+// 	height: 100%;
+// 	padding: 22px;
+// `
 
-const StyledMainButtonRow = styled(Box)`
-	display: flex;
-	grid-template-columns: repeat(2, calc(50% - 1em / 2));
-	justify-items: center;
-`
+// const StyledMainButtonRow = styled(Box)`
+// 	display: flex;
+// 	grid-template-columns: repeat(2, calc(50% - 1em / 2));
+// 	justify-items: center;
+// `
 
-const StyledSmallButton = styled(Button)`
-	border-radius: ${({ theme }) => theme.shape.borderRadius * 0.75}em;
-	height: 88px;
-	padding: 16px;
-`
+// const StyledSmallButton = styled(Button)`
+// 	border-radius: ${({ theme }) => theme.shape.borderRadius * 0.75}em;
+// 	height: 88px;
+// 	padding: 16px;
+// `
 
-const QRCodeWrapper = styled('div')`
-	height: 110px;
-	width: 110px;
-	path {
-		/* Maximize contrast: transparent in light theme, otherwise hard-coded to light theme. */
-		fill: #00000000;
-	}
-`
+// const QRCodeWrapper = styled('div')`
+// 	height: 110px;
+// 	width: 110px;
+// 	path {
+// 		/* Maximize contrast: transparent in light theme, otherwise hard-coded to light theme. */
+// 		fill: #00000000;
+// 	}
+// `
 
-function ButtonContents({ walletName, logoSrc, caption }: ButtonProps) {
-	return (
-		<StyledButtonContents>
-			<img src={logoSrc} alt={walletName} width={26} />
-			<Typography>{walletName}</Typography>
-			{caption && (
-				<Typography color='secondary'>
-					<Typography>{caption}</Typography>
-				</Typography>
-			)}
-		</StyledButtonContents>
-	)
-}
+// function ButtonContents({ walletName, logoSrc, caption }: ButtonProps) {
+// 	return (
+// 		<StyledButtonContents>
+// 			<img src={logoSrc} alt={walletName} width={26} />
+// 			<Typography>{walletName}</Typography>
+// 			{caption && (
+// 				<Typography color='secondary'>
+// 					<Typography>{caption}</Typography>
+// 				</Typography>
+// 			)}
+// 		</StyledButtonContents>
+// 	)
+// }
 
 interface ButtonProps {
 	walletName?: string
@@ -62,35 +62,35 @@ interface ButtonProps {
 	onClick?: () => void
 }
 
-function WalletConnectButton({
-	walletName,
-	logoSrc,
-	walletConnectQR: walletConnect,
-	onClick
-}: ButtonProps & { walletConnectQR: WalletConnectQR }) {
-	const [svg, setSvg] = useState(walletConnect.svg)
-	useEffect(() => {
-		if (!svg) walletConnect.activate()
+// function WalletConnectButton({
+// 	walletName,
+// 	logoSrc,
+// 	walletConnectQR: walletConnect,
+// 	onClick
+// }: ButtonProps & { walletConnectQR: WalletConnectQR }) {
+// 	const [svg, setSvg] = useState(walletConnect.svg)
+// 	useEffect(() => {
+// 		if (!svg) walletConnect.activate()
 
-		walletConnect.events.on(WalletConnectQR.SVG_AVAILABLE, setSvg)
-		return () => {
-			walletConnect.events.off(WalletConnectQR.SVG_AVAILABLE, setSvg)
-		}
-	}, [svg, walletConnect])
+// 		walletConnect.events.on(WalletConnectQR.SVG_AVAILABLE, setSvg)
+// 		return () => {
+// 			walletConnect.events.off(WalletConnectQR.SVG_AVAILABLE, setSvg)
+// 		}
+// 	}, [svg, walletConnect])
 
-	return (
-		<StyledMainButton color='primary' onClick={onClick}>
-			<StyledMainButtonRow>
-				<ButtonContents
-					logoSrc={logoSrc}
-					walletName={walletName}
-					caption={'Scan to connect your wallet. Works with most wallets.'}
-				/>
-				{svg && <QRCodeWrapper dangerouslySetInnerHTML={{ __html: svg }} />}
-			</StyledMainButtonRow>
-		</StyledMainButton>
-	)
-}
+// 	return (
+// 		<StyledMainButton color='primary' onClick={onClick}>
+// 			<StyledMainButtonRow>
+// 				<ButtonContents
+// 					logoSrc={logoSrc}
+// 					walletName={walletName}
+// 					caption={'Scan to connect your wallet. Works with most wallets.'}
+// 				/>
+// 				{svg && <QRCodeWrapper dangerouslySetInnerHTML={{ __html: svg }} />}
+// 			</StyledMainButtonRow>
+// 		</StyledMainButton>
+// 	)
+// }
 
 // function NoWalletButton() {
 // 	return (

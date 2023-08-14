@@ -1,10 +1,10 @@
-import { Box, Button, Card, Grid, Typography, styled, Divider } from '@mui/material'
+import { Box, Card, Grid, Typography, Divider } from '@mui/material'
 import { Connector } from '@web3-react/types'
 import MetamaskLogo from '@/assets/img/metamask.svg'
 import WalletConnectLogo from '@/assets/img/walletconnect.svg'
 import CoinbaseLogo from '@/assets/img/coinbasewallet.svg'
 import useConnectors from '@/hooks/web3/useConnectors'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback } from 'react'
 // import { WalletConnectQR } from '@/utils/WalletConnect'
 
 // const StyledButtonContents = styled(Box)`
@@ -55,12 +55,12 @@ import { useCallback, useEffect, useState } from 'react'
 // 	)
 // }
 
-interface ButtonProps {
-	walletName?: string
-	logoSrc?: string
-	caption?: string
-	onClick?: () => void
-}
+// interface ButtonProps {
+// 	walletName?: string
+// 	logoSrc?: string
+// 	caption?: string
+// 	onClick?: () => void
+// }
 
 // function WalletConnectButton({
 // 	walletName,

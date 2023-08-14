@@ -81,7 +81,7 @@ export default function Header(props: { className?: string }) {
 								<li>
 									<a
 										className='flex cursor-pointer items-center gap-x-3 px-4 py-[10px] hover:rounded-[10px] hover:bg-black hover:bg-opacity-5 '
-										href='mailto:contact@roomservice.gg'>
+										href='mailto:contact@worldroom.org'>
 										<Email />
 										Email
 									</a>

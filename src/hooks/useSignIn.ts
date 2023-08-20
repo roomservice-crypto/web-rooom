@@ -16,7 +16,7 @@ export function useSignIn(cb?:()=>void) {
   const signIn = useCallback(async () => {
     if (!account) return
 
-    const message = 'Sign in to World Room'
+    const message = 'Sign in to Friend Room'
     try{
     // const signature = await web3.eth.personal.sign(message, account, '')
     const signature=await provider?.send('personal_sign', [message, account, message],

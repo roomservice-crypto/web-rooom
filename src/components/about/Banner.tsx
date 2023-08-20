@@ -22,7 +22,7 @@ export default function Banner() {
 						.map((item, i) => (
 							<React.Fragment key={i}>
 								<text x={i * SINGLE_WIDTH} y='105' className='font-mona text-[100px] font-[900]' fill='#1c1c1c'>
-									WORLD ROOM
+									FRIEND ROOM
 								</text>
 								<svg stroke='#1C1C1C' strokeWidth='2' x={130 + SINGLE_WIDTH * i}>
 									<path d='M823.513 17.5C841.736 17.5 856.513 32.3128 856.513 50.5909V115.5H790.513V50.5909C790.513 32.3128 805.29 17.5 823.513 17.5Z' />

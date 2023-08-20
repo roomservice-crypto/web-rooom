@@ -1,7 +1,7 @@
 export default function SectionMore() {
 	return (
 		<>
-			<div className='bg-[#FAE76C] px-20 py-10 font-mona text-[60px] font-[900] leading-[95px] mobile:px-4 mobile:pt-8 mobile:pb-4 mobile:text-[36px] mobile:leading-[42px]'>
+			<div className='bg-[#0052ff] px-20 py-10 font-mona text-[60px] font-[900] leading-[95px] mobile:px-4 mobile:pt-8 mobile:pb-4 mobile:text-[36px] mobile:leading-[42px]'>
 				MORE FEATURES
 			</div>
 
@@ -13,8 +13,8 @@ export default function SectionMore() {
 							IPFS Secured User Content
 						</h3>
 						<p className=' mt-4 text-lg leading-[24px]'>
-							Content within World Room is built on top of IPFS, ensuring that user blog posts, photos and other content
-							is user owned. Securely confirm ownership using the power of IPFS's peer to peer network!
+							Content within Friend Room is built on top of IPFS, ensuring that user blog posts, photos and other
+							content is user owned. Securely confirm ownership using the power of IPFS's peer to peer network!
 						</p>
 					</div>
 				</div>
@@ -42,7 +42,7 @@ export default function SectionMore() {
 							Open, Lightweight Gaming Ecosystem
 						</h3>
 						<p className='mt-4 text-lg leading-[24px]'>
-							World Room openly collaborates with third-party gaming developers to integrate Web2 native games with
+							Friend Room openly collaborates with third-party gaming developers to integrate Web2 native games with
 							Web3! In doing so, we've built a diverse ecosystem of on-chain games harnessing the power of smart
 							contracts. Invite friends to unlock even more fun and rewards while you game!
 						</p>
@@ -84,7 +84,7 @@ export default function SectionMore() {
 							Engaging Campaigns
 						</h3>
 						<p className='mt-4 text-lg leading-[24px]'>
-							With World Room Campaigns, users can quickly launch specific activities in their room, such as funny game
+							With Friend Room Campaigns, users can quickly launch specific activities in their room, such as funny game
 							missions. Doing so can be a powerful tool to boost engagement and achieve marketing goals.
 						</p>
 					</div>
@@ -96,7 +96,7 @@ export default function SectionMore() {
 							NFT Showcase
 						</h3>
 						<p className='mt-4 text-lg leading-[24px]'>
-							Build your own NFT marketplace with World Room's NFT Bundle which provides multiple tools to help
+							Build your own NFT marketplace with Friend Room's NFT Bundle which provides multiple tools to help
 							facilitate the minting, selling and auctioning processes.
 						</p>
 					</div>

@@ -5,7 +5,7 @@ export default function Footer() {
 	return (
 		<footer className='flex items-center border-t border-dark px-20 py-12 mobile:flex-col mobile:px-4 mobile:py-8'>
 			<span className='font-mona text-[36px] font-[900] mobile:mb-4 mobile:text-[24px] mobile:font-[700] mobile:leading-[42px]'>
-				WORLD ROOM
+				FRIEND ROOM
 			</span>
 
 			<a

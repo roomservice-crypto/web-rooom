@@ -92,11 +92,11 @@ export default function Header(props: { className?: string }) {
 				</ul>
 			</nav>
 
-			<button
+			{/* <button
 				onClick={() => router.push('/map')}
 				className='rounded-3xl bg-dark px-4 py-2 text-sm font-[500] text-white disabled:bg-black disabled:bg-opacity-5 disabled:text-black disabled:text-opacity-10 mobile:hidden'>
 				Explore Demo
-			</button>
+			</button> */}
 
 			<MobileMenu />
 		</header>

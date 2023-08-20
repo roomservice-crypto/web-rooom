@@ -4,7 +4,7 @@ import ArrowRight from '@/svgs/arrow-right.svg'
 import MapPad from '@/components/home/MapPad'
 import { useRouter } from 'next/router'
 
-const TITLE = 'World Room'
+const TITLE = 'Friend Room'
 
 export default function Home() {
 	const router = useRouter()
@@ -39,13 +39,13 @@ export default function Home() {
 						</span>
 					</h1>
 
-					<button
+					{/* <button
 						onClick={() => router.push('/map')}
 						className='button mx-auto mt-8 mobile:mt-6 mobile:w-full  mobile:justify-center '>
 						<span>Explore Demo</span>
 
 						<ArrowRight />
-					</button>
+					</button> */}
 
 					<div
 						className='pointer-events-none fixed left-0 bottom-0 right-0 top-0 hidden mobile:block'
